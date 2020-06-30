@@ -1,0 +1,1257 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input[type="submit"] {
+  border: none;
+  background: none;
+  color: unset;
+  cursor: pointer;
+}
+
+/* general */
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  min-height: 700px;
+}
+
+/* header */
+
+#header {
+  height: 50px;
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  background-color: #e57098;
+}
+#header .title {
+  margin: 0;
+  padding: 0 1rem;
+  color: #ffffff;
+}
+
+.header-buttons-container {
+  display: flex;
+  position: absolute;
+  right: 20px;
+}
+
+/* #header .auth-options button {
+  padding: 0 1rem;
+  background-color: #b91b1b;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+#header .auth-options button:hover {
+  background-color: #be3a3a;
+} */
+
+/* form */
+
+.form label,
+.form input {
+  display: block;
+}
+.form input {
+  margin-bottom: 1rem;
+}
+.form label {
+  margin-bottom: 0.2rem;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #c2c2c2;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  font-size: 1.1rem;
+}
+.form input:focus {
+  border: 1px solid #50a4e9;
+  box-shadow: inset 0px 0px 5px rgba(38, 142, 228, 0.5);
+  outline: none;
+}
+.form input[type="submit"] {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #6aa051;
+  border-radius: 8px;
+  background-color: #c8ecb7;
+  font-size: 1.1rem;
+}
+
+/* todo list */
+
+.todo-list ul {
+  list-style: disc;
+  cursor: pointer;
+}
+
+.todo-list li:hover {
+  text-decoration: line-through;
+}
+
+/* error notice */
+
+.error-notice {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #e07c7c;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8d6d6;
+}
+.error-notice button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #df4343;
+  color: #ffffff;
+}
+
+/* media queries */
+
+@media screen and (max-width: 550px) {
+  #header .title {
+    font-size: 1.2rem;
+  }
+  #header .auth-options button {
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+.product {
+  position: relative;
+  width: 25vw;
+  /* height: 430px; */
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: white;
+  /* color: #e57098; */
+  font-family: "Luckiest Guy", cursive;
+}
+.product-title {
+  /* background-color: red;
+  z-index: 100; */
+  margin: auto;
+  width: 300px;
+}
+.product > img {
+  /* to handle on rotate the background not going over the container */
+  margin-top: 27px;
+  margin-bottom: 25px;
+  /* transition */
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  /* z-index: -1; */
+}
+
+.product > img:hover {
+  -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+}
+
+.product:hover {
+  opacity: 0.8;
+}
+
+.product-price {
+  position: relative;
+  border: 3px solid #e57098;
+  /* width: 50px; */
+  display: inline-block;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 2vw;
+}
+
+.product-basket-button {
+  margin-top: 10px;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #e57098;
+  padding: 20px;
+  border-radius: 50px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin-bottom: 10px;
+}
+
+.product-basket-button:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+/* .product:hover {
+  background-color: #cccccc;
+} */
+
+.product > img {
+  position: relative;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.product > h2 {
+  font-size: 1.3em;
+  text-shadow: 2px 2px 4px #808080;
+}
+.products-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+.product-page-button {
+  background-color: #e57098;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: white;
+}
+
+.hvr-grow {
+  vertical-align: middle;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow2 {
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
+}
+
+.hvr-grow2:hover,
+.hvr-grow2:focus,
+.hvr-grow2:active {
+  transform: scale(1.1);
+}
+
+.instagram-svg {
+  margin-left: 10px;
+  fill: white;
+  transition: 0.4s ease;
+}
+
+.instagram-svg:hover {
+  fill: rgb(212, 21, 155);
+}
+
+.facebook-svg {
+  margin-left: 10px;
+  fill: white;
+  transition: 0.4s ease;
+}
+
+.facebook-svg:hover {
+  fill: rgb(212, 21, 155);
+}
+
+.login-container {
+  background-color: white;
+  border: 2px solid #e7e8e9;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  height: 40px;
+  padding-top: 5px;
+}
+
+.home-basket {
+  background-color: white;
+  border: 2px solid #e7e8e9;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.basket-container {
+  margin-left: 10px;
+}
+
+.header-basket-container {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border: 2px solid #e7e8e9;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  height: 40px;
+
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header-basket-container > svg {
+  position: relative;
+}
+
+.header-basket-title {
+  padding-right: 10px;
+}
+
+.header-login-title {
+  padding-right: 10px;
+}
+
+.header-login-button-container {
+  display: flex;
+  background-color: white;
+  border: 2px solid #e7e8e9;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.header-login-button {
+  display: flex;
+}
+
+.basketOverlay {
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+  /* display: none; */
+  position: absolute;
+  width: 300px;
+  height: auto;
+  /* top: 40px; */
+  right: 1%;
+  background-color: white;
+  border: 1px solid #f6f6f6;
+  z-index: 2;
+  border-radius: 15px;
+  box-shadow: 5px 10px 8px #696969;
+  text-shadow: 2px 2px 4px #808080;
+}
+
+.basket-image-container {
+  /* background-color: white;
+  border: 3px solid pink;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+  position: relative;
+  padding: 10px;
+  top: -10px;
+  margin-left: 5px;
+  height: 70px;
+  width: 70px; */
+
+  max-width: 70px;
+  max-height: 70px;
+  position: relative;
+  border: 3px solid pink;
+  text-align: center;
+  display: flex;
+  margin-bottom: 10px;
+  left: 5px;
+  border-radius: 10px;
+}
+
+.basket-image-container > img {
+  max-width: 50px;
+  max-height: 50px;
+  margin: auto;
+  padding: 5px;
+}
+
+.basket-button-v1 {
+  background-color: #fff;
+  width: 40px;
+  height: 20px;
+  border-radius: 25px;
+  box-shadow: 5px 10px 8px #888888;
+  /* border: 1px solid black; */
+}
+
+.basket-button-increment {
+  background-color: rgb(94, 186, 125);
+}
+
+.basket-button-decrement {
+  background-color: rgb(255, 77, 77);
+}
+
+.basket-list {
+  list-style: none;
+  display: flex;
+  /* height: 100px; */
+  border-bottom: 1px solid #e5e5e5;
+  padding-top: 20px;
+}
+.basket-title {
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+.product-name-basket {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.basket-remove-button {
+  background-color: #fff;
+  width: 100px;
+  height: 20px;
+  border-radius: 25px;
+  border: 1px solid black;
+  font-weight: 600;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  left: 20px;
+}
+
+.basket-buttons-container {
+  position: relative;
+  width: 20%;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.basket-buttons-container > h4 {
+  position: relative;
+  left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.basket-info-container {
+  width: 80%;
+}
+
+.basket-checkout-button {
+  margin: auto;
+  background-color: rgb(94, 186, 125);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.quantity {
+  display: flex;
+  position: relative;
+  /* bottom: 70px; */
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.shop {
+  display: flex;
+  flex-direction: row;
+}
+
+.shop-links {
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 3px;
+  background-color: #e57098;
+  position: relative;
+  left: 0px;
+  /* padding-left: 5vw;
+  padding-right: 5vw; */
+  width: 15vw;
+  /* padding-left: 10px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 5px;
+  height: 100%;
+  font-weight: 600;
+  border-radius: 25px;
+  text-align: left;
+  box-shadow: 5px 10px 8px #888888;
+  text-shadow: 2px 2px 4px #808080;
+  text-align: center;
+}
+
+.emoji-list::before {
+  content: "\1F36C";
+}
+
+.shadow:hover {
+  opacity: 0.9;
+}
+.pages-container {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  bottom: 5px;
+}
+
+.page-button {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  margin: 5px;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+@keyframes hoverUpButton {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.page-button-selected-page {
+  animation: 0.4s hoverUpButton ease-in;
+  transform: translateY(-10px);
+}
+
+.products-component-container {
+  width: 80%;
+}
+.amount {
+  position: absolute;
+  top: 5px;
+}
+
+/* INDIVIDUAL PRODUCTS STYLING BELOW */
+.individual-product-page {
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
+.i-sub-description {
+  background-color: white;
+  margin-left: 20px;
+  width: 30vw;
+  text-align: center;
+  border-radius: 25px;
+  position: relative;
+}
+.i-sub-description > li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.i-title-image-subDescription-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.i-image {
+  background-color: white;
+  border-radius: 25px;
+}
+
+.i-image > img {
+  margin: 2vw;
+}
+
+.i-title-container {
+  background-color: white;
+  border-radius: 25px;
+  height: 50px;
+  /* text-align: center; */
+  margin-bottom: 20px;
+  text-align: center;
+}
+.i-title-container > h2 {
+  position: relative;
+  top: 10px;
+}
+
+.i-product-description-container {
+  background-color: white;
+  border-radius: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1200px;
+  position: relative;
+  left: 1vw;
+}
+
+.i-product-description {
+  font-weight: 600;
+  padding: 60px;
+  text-align: center;
+}
+
+.i-product-price-container {
+  margin-bottom: 20px;
+  background-color: rgb(94, 186, 125);
+  text-align: center;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 30px 20px 30px 20px;
+}
+
+.i-product-price {
+  font-size: 3em;
+}
+.i-price-basket {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  /* align-items: flex-start; */
+}
+
+.i-product-page-button {
+  margin-bottom: 5px;
+  text-align: center;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 0 20px 0 20px;
+  font-size: 3em;
+}
+
+.i-amount-container {
+  margin-bottom: 20px;
+  background-color: rgb(94, 186, 125);
+  text-align: center;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 30px 20px 30px 20px;
+}
+
+.i-amount {
+  font-size: 3em;
+}
+
+.i-basket-container {
+  margin-bottom: 20px;
+  background-color: rgb(94, 186, 125);
+  text-align: center;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 30px 20px 30px 20px;
+}
+
+.i-basket-container > h2 {
+  position: relative;
+  top: 10px;
+}
+
+.decrease {
+  background-color: rgb(255, 77, 77);
+}
+.increase {
+  background-color: rgb(94, 186, 125);
+}
+
+/* SLIDER CSS */
+
+.i-product-container .i-slider {
+  width: 500px;
+  background-color: white;
+  border-radius: 25px;
+  margin-left: 3vw;
+  margin-top: 50px;
+}
+
+.i-product-container .i-product-container {
+  text-align: center;
+}
+
+.i-product-container .i-product-container > a > img {
+  position: relative;
+  left: 120px;
+  padding: 20px;
+}
+
+/* homepage CSS */
+
+@keyframes movein {
+  0% {
+    left: -800px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes movein2 {
+  0% {
+    right: -800px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+.block-1 {
+  position: relative;
+  animation: movein 2s 1;
+}
+
+.block-2 {
+  position: relative;
+  animation: movein2 2s 1;
+}
+
+.homepage-banner {
+  display: flex;
+  /* position: absolute; */
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+  /* justify-content: space-evenly; */
+}
+
+.homepage-banner > div > img {
+  position: relative;
+  width: 49.4vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.thumbnail-row {
+  position: relative;
+  display: flex;
+  box-shadow: 0px 0px 0px 4000px rgba(110, 32, 100, 0.5) inset;
+  height: 100vh;
+  width: 98.8vw;
+  margin: auto;
+}
+
+.thumbnail-row div::after {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 4000px rgba(27, 61, 88, 0.5) inset;
+}
+
+.thumbnail-image {
+  display: inline-block;
+  width: 49.4vw;
+  height: 100vh;
+  /*opacity: 0.5;*/
+  /*box-shadow: inset 0 0 0 4000px rgba(27,61,88,.5)!important;*/
+}
+
+.my-work-image {
+  position: relative;
+}
+
+.img__description_layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; /*change it to 50%, if you want the text only shows in the half part */
+  right: 0;
+  background: rgba(119, 60, 99, 0.2);
+  color: #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0px 0px 4000px rgba(255, 132, 214, 0.7) inset;
+  /* transition effect. not necessary */
+  transition: opacity ease-in-out 0.4s, visibility ease-in-out 0.4s;
+  /*transition: box-shadow 0.4s ease-in-out;*/
+}
+
+.my-work-image:hover .img__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description {
+  transition: 0.2s;
+  transform: translateY(1em);
+  margin: 0 auto;
+}
+
+.my-work-image:hover .img__description {
+  transform: translateY(0);
+}
+
+.thumbnail-image {
+  position: relative;
+  z-index: -1;
+}
+
+.slick-list,
+.slick-track,
+.slick-slide > div {
+  height: 100%;
+}
+
+.banner-image {
+  position: absolute;
+  top: 1250px;
+  z-index: -1;
+  margin-bottom: 100px;
+}
+.banner-image > img {
+  height: 400px;
+  width: 100%;
+}
+
+.logo {
+  width: 250px;
+  margin-left: 20px;
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+/* bottom header */
+.bottom-footer {
+  position: relative;
+  /* top: 100px; */
+  width: 100%;
+  height: 200px;
+  background-color: #e57098;
+  z-index: 2;
+  display: flex;
+}
+
+.footer-logo-container {
+  width: 60%;
+  margin: auto;
+}
+
+.footer-logo-container > img {
+  width: 400px;
+}
+
+.footer-list-container {
+  width: 40%;
+  text-align: center;
+  /* margin-top: 30px; */
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: start;
+}
+
+.list-title-footer {
+  /* text-align: left; */
+  margin-bottom: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+/* info blocks */
+.homepage-info-block {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  background-color: white;
+  width: 100%;
+  /* height: 400px; */
+  display: flex;
+  justify-content: space-evenly;
+  text-shadow: 2px 2px 4px #808080;
+}
+
+.homepage-info-block > div {
+  position: relative;
+  width: 40vw;
+  text-align: center;
+}
+
+/* bottom banner css overlay image */
+.homepage-image-bottom-blocks {
+  display: flex;
+  justify-content: space-evenly;
+  height: 500px;
+  text-align: center;
+}
+
+.homepage-image-bottom-blocks::after {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 4000px rgba(27, 61, 88, 0.5) inset;
+}
+
+.image-bottom-block-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  box-shadow: 0px 0px 4000px rgba(110, 32, 100, 1) inset;
+  /* z-index: 12; */
+}
+
+.image-bottom-block-container:hover .bottom-block-image-description-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+.thumbnail-image-bottom-block {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 0px 0px 0px 4000px rgba(27, 61, 88, 0.5) inset; */
+
+  opacity: 0.6;
+  /*box-shadow: inset 0 0 0 4000px rgba(27,61,88,.5)!important;*/
+}
+
+.bottom-block-image-description-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; /*change it to 50%, if you want the text only shows in the half part */
+  right: 0;
+  background: rgba(119, 60, 99, 0.2);
+  color: #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0px 0px 4000px rgba(255, 132, 214, 0.7) inset;
+  /* transition effect. not necessary */
+  transition: opacity ease-in-out 0.4s, visibility ease-in-out 0.4s;
+  /*transition: box-shadow 0.4s ease-in-out;*/
+}
+
+.bottom-block-image-description {
+  transition: 0.2s;
+  transform: translateY(1em);
+  margin: 0 auto;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #e57098;
+  height: 60px;
+  text-shadow: 2px 4px 4px #000000;
+  font-family: "Luckiest Guy", cursive;
+  opacity: 0.9;
+}
+
+nav > div > h2 {
+  position: relative;
+  color: white;
+  /* width: 10vw; */
+  font-size: 2vw;
+  transition: 0.5s ease;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-bottom: 3px solid white;
+}
+
+nav > div > h2:hover {
+  color: rgb(212, 21, 155);
+}
+
+.list-link {
+  background-color: #e27da0;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  top: 110px;
+  z-index: 2;
+  border: 4px solid white;
+  opacity: 0.9;
+}
+
+.header-links {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 300px;
+  padding-right: 300px;
+  position: relative;
+  top: 30px;
+}
+
+.intro-container {
+  height: 25vh;
+  padding-left: 2vw;
+  /* margin-bottom: 100px; */
+}
+
+.timeout-intro {
+  position: relative;
+  top: 10vh;
+  transition: 5s ease;
+  color: white;
+}
+
+/* animation for nav */
+@keyframes hoverUpDown {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -5px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes hoverUp {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -5px;
+  }
+}
+
+nav > div > h2:hover {
+  animation: 0.5s hoverUpDown ease-in-out;
+}
+
+.header-links > li > a:hover {
+  position: relative;
+  animation: hoverUpDown 0.5s ease-in-out;
+}
+
+.fade-in {
+  text-shadow: 2px 2px 4px #808080;
+
+  color: black;
+}
+
+/* pink ff1694 */
+
+.home-feed-container {
+  margin-left: 10px;
+  display: flex;
+  flex: row;
+}
+
+canvas {
+  display: block;
+}
+
+/* nav banner image */
+nav {
+  background-image: url(./img/candy-kabin-banner.png);
+  background-repeat: repeat-x;
+  background-position-y: 10px;
+  opacity: 1;
+}
+
+.homepage-slider {
+  width: 98.9vw;
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; */
+}
+
+.home-page .slick-slide {
+  /* box-sizing: border-box; */
+  /* width: 900px; */
+}
+
+.home-page .slick-slide img {
+  width: 100vw;
+}
+
+.slick-next {
+  right: 30px !important;
+}
+
+.slick-prev {
+  left: 30px !important;
+  z-index: 1;
+}
+
+.home-page {
+  /* overflow-y: hidden; */
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes bounce2 {
+  0% {
+    transform: translateY(-7vw);
+  }
+  50% {
+    /* bottom: 10px; */
+    transform: translateY(-5vw);
+  }
+  100% {
+    transform: translateY(-7vw);
+  }
+}
+
+.home-down-arrow-container-1 {
+  z-index: 10;
+  position: absolute;
+  left: 92vw;
+  bottom: 40px;
+  background-color: white;
+  border: 2px solid #e7e8e9;
+  padding: 15px;
+  border-radius: 100px;
+  box-shadow: 5px 5px 8px #888888;
+  animation: 1s bounce ease-in-out;
+}
+.home-down-arrow-container-1 > button > svg {
+  fill: #535a6b;
+  width: 50px;
+  height: 50px;
+}
+
+.home-down-arrow-container-2 {
+  z-index: 10;
+  position: absolute;
+  left: 92vw;
+  /* bottom: 40px; */
+  /* top: 10px; */
+  background-color: white;
+  border: 2px solid #e7e8e9;
+  padding: 15px;
+  border-radius: 100px;
+  box-shadow: 5px 5px 8px #696969;
+  transform: translateY(-7vw);
+}
+
+.bounce {
+  animation: 1.5s bounce2 ease-in-out;
+}
+
+.home-down-arrow-container-2 > button > svg {
+  fill: #535a6b;
+  width: 50px;
+  height: 50px;
+}
+
+/* checkout styling */
+
+.checkout-section {
+  text-align: center;
+  border-top: 1px solid grey;
+  /* width: 300px; */
+  margin: auto;
+}
+
+@keyframes left-thumbnail-move-in {
+  0% {
+    transform: translateX(-30vw);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes right-thumbnail-move-in {
+  0% {
+    transform: translateX(30vw);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.margin-left-image-animation {
+  animation: 1s right-thumbnail-move-in ease-in-out;
+}
+
+.margin-right-image-animation {
+  animation: 1s left-thumbnail-move-in ease-in-out;
+}
+
+/* static pages */
+.static-page {
+  width: 800px;
+  min-height: 800px;
+  margin: auto;
+  background-color: #e57098;
+  border-radius: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #808080;
+}
+
+.static-page-title-container {
+  text-align: center;
+  font-size: 1.3em;
+  font-family: "Luckiest Guy", cursive;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.static-page-info-container {
+  font-size: 1.5vw;
+  /* text-align: center; */
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: justify;
+}
+.static-page-info-container > h4 {
+  border-bottom: 2px solid white;
+  display: inline-block;
+  color: white;
+  font-family: "Luckiest Guy", cursive;
+}
