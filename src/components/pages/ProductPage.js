@@ -131,14 +131,14 @@ export const ProductPage = ({ match, location, history }) => {
         <div className="i-product-container">
           <div className="i-title-image-subDescription-container">
             <div className="i-title-image-container">
-              <div className="i-title-container hvr-grow">
+              <div className="i-title-container hvr-grow2">
                 <h2>
                   <Emoji text=":heart_eyes:" />
                   <span className="i-title">{product.productName}</span>
                   <Emoji text=":heart_eyes:" />
                 </h2>
               </div>
-              <div className="i-image">
+              <div className="i-image hvr-grow2">
                 <img src={product.imageURL} />
               </div>
               {product.ingredients ? (
@@ -151,7 +151,7 @@ export const ProductPage = ({ match, location, history }) => {
             </div>
 
             <div className="i-sub-description-container">
-              <ul className="i-sub-description">
+              <ul className="i-sub-description hvr-grow2">
                 {product.subDescription1 ? (
                   <li className="hvr-grow">
                     <Emoji text="<3" />
@@ -237,7 +237,7 @@ export const ProductPage = ({ match, location, history }) => {
                   </button>
                 </div>
               </div>
-              <Slider {...settings} className="i-slider">
+              {/* <Slider {...settings} className="i-slider">
                 <div class="i-product-container">
                   <a href="/test-product.html">
                     <img src="https://candy.tobenmedia.co.uk/img/product.png" />
@@ -273,11 +273,11 @@ export const ProductPage = ({ match, location, history }) => {
                     <p class="price">£1.35</p>
                   </a>
                 </div>
-              </Slider>
+              </Slider> */}
             </div>
           </div>
 
-          <div className="i-product-description-container hvr-grow">
+          <div className="i-product-description-container hvr-grow2">
             {product.description ? (
               <p className="i-product-description">
                 <Emoji text=":fire::fire::fire::fire:" />
