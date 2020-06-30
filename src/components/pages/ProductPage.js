@@ -138,9 +138,16 @@ export const ProductPage = ({ match, location, history }) => {
                   <Emoji text=":heart_eyes:" />
                 </h2>
               </div>
-              <div className="i-image hvr-grow">
+              <div className="i-image">
                 <img src={product.imageURL} />
               </div>
+              {product.ingredients ? (
+                <div className="i-ingredients">
+                  <p>{product.ingredients}</p>
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
 
             <div className="i-sub-description-container">

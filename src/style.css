@@ -333,10 +333,18 @@ body {
   padding-right: 10px;
   border-radius: 10px;
   height: 40px;
-
   justify-content: space-evenly;
   align-items: center;
 }
+
+/* FIX for the hover basket not appearing on top */
+.header-basket-container:hover + .basketOverlay {
+  z-index: 10;
+}
+.basketOverlay:hover {
+  z-index: 10;
+}
+/* ----------------------------------------- */
 
 .header-basket-container > svg {
   position: relative;
@@ -375,25 +383,12 @@ body {
   right: 1%;
   background-color: white;
   border: 1px solid #f6f6f6;
-  z-index: 2;
   border-radius: 15px;
   box-shadow: 5px 10px 8px #696969;
   text-shadow: 2px 2px 4px #808080;
 }
 
 .basket-image-container {
-  /* background-color: white;
-  border: 3px solid pink;
-  border-radius: 5px;
-  display: block;
-  margin: auto;
-  position: relative;
-  padding: 10px;
-  top: -10px;
-  margin-left: 5px;
-  height: 70px;
-  width: 70px; */
-
   max-width: 70px;
   max-height: 70px;
   position: relative;
@@ -597,10 +592,51 @@ body {
 .i-image {
   background-color: white;
   border-radius: 25px;
+  z-index: 2;
 }
 
 .i-image > img {
   margin: 2vw;
+  max-width: 30vw;
+}
+
+.i-ingredients {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  background-color: #e57098;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: relative;
+  /* top: -100px; */
+  top: -100px;
+  z-index: -1;
+}
+
+.i-ingredients > p {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
+  /* font-size: 15px; */
+  text-shadow: 2px 2px 4px #808080;
+}
+
+.i-image:hover + .i-ingredients {
+  animation: slide-out-ingredients 0.4s;
+  top: -20px;
+}
+
+.i-ingredients:hover {
+  animation: slide-out-ingredients 0.4s;
+  top: -20px;
+}
+
+@keyframes slide-out-ingredients {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }
 
 .i-title-container {
