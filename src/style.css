@@ -158,7 +158,7 @@ body {
   border-radius: 20px;
   background-color: white;
   /* color: #e57098; */
-  font-family: "Chewy", cursive;
+  font-family: "Fredoka One", cursive;
 }
 .product-title {
   /* background-color: red;
@@ -496,7 +496,7 @@ body {
 }
 
 .shop-links {
-  font-family: "Chewy", cursive;
+  font-family: "Fredoka One", cursive;
   letter-spacing: 3px;
   background-color: #e57098;
   position: relative;
@@ -519,7 +519,7 @@ body {
 }
 
 .dietary-links {
-  font-family: "Chewy", cursive;
+  font-family: "Fredoka One", cursive;
   letter-spacing: 3px;
   background-color: #e57098;
   position: relative;
@@ -1047,7 +1047,7 @@ nav {
   background-color: #e57098;
   height: 80px;
   text-shadow: 2px 4px 4px #000000;
-  font-family: "Chewy", cursive;
+  font-family: "Fredoka One", cursive;
   opacity: 0.9;
 }
 
@@ -1326,7 +1326,7 @@ nav {
 .static-page-title-container {
   text-align: center;
   font-size: 1.3em;
-  font-family: "Chewy", cursive;
+  font-family: "Fredoka One", cursive;
   color: white;
   letter-spacing: 2px;
 }
@@ -1342,7 +1342,7 @@ nav {
   border-bottom: 2px solid white;
   display: inline-block;
   color: white;
-  font-family: "Chewy", cursive;
+  font-family: "Fredoka One", cursive;
 }
 
 /* table styling */

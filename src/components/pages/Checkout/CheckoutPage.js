@@ -117,7 +117,7 @@ export const CheckoutPage = () => {
       </div>
       {readyForCheckout ? (
         <StripeCheckout
-          stripeKey="pk_live_51Gm1fBBzvrElWXfAcDHHyAKeFVVDEzawhk9V7dg5z89eW9q78KBlV3gIeKDS9F9vfSkWRvRKmVKUGa37FMf6N6dg00oGfIB8mK"
+          stripeKey="pk_live_51Gm1fBBzvrElWXfA6Rdl7eKc5Udkc65Vyv3JgiNYp4I5qHeoR2exGlPEXMvDhix9KtyZty1AjaCsvht3cyQCuFJR006L4YWTzS"
           token={makePayment}
           billingAddress
           shippingAddress
