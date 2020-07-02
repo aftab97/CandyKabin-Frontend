@@ -7,19 +7,11 @@ export const ShoppingList = () => {
   const handleIncrement = (e) => {
     ++e.currentTarget.parentNode.querySelector(".table-amount").childNodes[0]
       .data;
-
-    handleChange();
   };
 
   const handleDecrement = (e) => {
     --e.currentTarget.parentNode.querySelector(".table-amount").childNodes[0]
       .data;
-
-    handleChange();
-  };
-
-  const handleChange = () => {
-    console.log(e);
   };
 
   return shoppingCart ? (
