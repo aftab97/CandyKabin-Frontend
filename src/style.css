@@ -339,9 +339,11 @@ body {
 /* FIX for the hover basket not appearing on top */
 .header-basket-container:hover + .basketOverlay {
   z-index: 2;
+  display: block;
 }
 .basketOverlay:hover {
   z-index: 2;
+  display: block;
 }
 /* ----------------------------------------- */
 
@@ -508,13 +510,36 @@ body {
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 5px;
-  height: 100%;
   font-weight: 600;
   border-radius: 25px;
   text-align: left;
   box-shadow: 5px 10px 8px #888888;
   text-shadow: 2px 2px 4px #808080;
   text-align: center;
+}
+
+.dietary-links {
+  font-family: "Chewy", cursive;
+  letter-spacing: 3px;
+  background-color: #e57098;
+  position: relative;
+  left: 0px;
+  /* padding-left: 5vw;
+  padding-right: 5vw; */
+  width: 15vw;
+  /* padding-left: 10px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 5px;
+  font-weight: 600;
+  border-radius: 25px;
+  text-align: left;
+  box-shadow: 5px 10px 8px #888888;
+  text-shadow: 2px 2px 4px #808080;
+  text-align: center;
+  color: white;
 }
 
 .emoji-list::before {

@@ -1,17 +1,18 @@
 import React, { useEffect, useState, useContext } from "react";
 import Axios from "axios";
 import holdOn from "react-hold-on";
-import BasketContext from "../../../../context/BasketContext";
+import BasketContext from "../../../context/BasketContext";
 import { useHistory } from "react-router-dom";
 import Emoji from "react-emoji-render";
 
 export const SubCategoryPage = (params) => {
+  //set NONE to dietarty by default
   useEffect(() => {
-    //sort out higlighting of which sub category we're on
-    // let link = document.querySelector(".chocolate-bars-link > a");
-    // console.log(link);
-    // link.text += <Emoji text=":heart_eyes:" />;
+    let radiobtn = document.getElementById("default-checked-option");
+    radiobtn.checked = true;
+  }, []);
 
+  useEffect(() => {
     let listAmount = document.querySelectorAll(".shop-links > li").length;
 
     for (let i = 1; i < listAmount + 1; i++) {
@@ -20,17 +21,12 @@ export const SubCategoryPage = (params) => {
       if (listLink.classList.contains("emoji-list")) {
         listLink.classList.remove("emoji-list");
       }
-      console.log(listLink);
     }
-
-    console.log(params.subCategory);
 
     let subCategory = params.subCategory.toLowerCase();
 
     if (params.subCategory.includes(" ")) {
-      console.log("true");
       subCategory = subCategory.replace(" ", "-");
-      console.log(subCategory);
     }
     let link = document.querySelector(`.${subCategory}-link`);
     link.classList.add("emoji-list");
@@ -51,7 +47,7 @@ export const SubCategoryPage = (params) => {
   useEffect(() => {
     const grabData = async () => {
       const fetchedData = await Axios.get(
-        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=-1`
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=-1&dietary=${params.dietary}`
       );
 
       setProducts(fetchedData.data);
@@ -59,6 +55,19 @@ export const SubCategoryPage = (params) => {
 
     grabData();
   }, []);
+
+  //change the products according to dietary
+  useEffect(() => {
+    const grabData = async () => {
+      const fetchedData = await Axios.get(
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=-1&dietary=${params.dietary}`
+      );
+
+      setProducts(fetchedData.data);
+    };
+
+    grabData();
+  }, [params.dietary]);
 
   const handleClick = (e) => {
     let productName = e.currentTarget.querySelector("span").className;

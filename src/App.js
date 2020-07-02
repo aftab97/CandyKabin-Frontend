@@ -12,7 +12,6 @@ import "./style.css";
 import { Products } from "./components/pages/Products";
 import { Shop } from "./components/pages/Shop/Shop";
 import { ProductPage } from "./components/pages/ProductPage";
-import { Candy } from "./components/pages/Shop/Candy/Candy";
 import { Dietary } from "./components/pages/Dietary/Dietary";
 import AdminSummary from "./components/pages/AdminSummary";
 import { Navbar } from "./components/layout/Navbar";
@@ -27,6 +26,7 @@ import { ReturnsPolicy } from "./components/pages/StaticPages/ReturnsPolicy";
 import { AboutUs } from "./components/pages/StaticPages/AboutUs";
 import { PrivacyPolicy } from "./components/pages/StaticPages/PrivacyPolicy";
 import { CheckoutPage2 } from "./components/pages/Checkout/CheckoutPage2";
+import { PickAndMix } from "./components/pages/PickAndMix/PickAndMix";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -124,10 +124,10 @@ export default function App() {
                 <Route exact path="/products" component={Products} />
                 <Route path="/products/:id" component={ProductPage} />
                 <Route path="/shop" component={Shop} />
+                <Route path="/pick-and-mix" component={PickAndMix} />
                 <Route path="/dietary" component={Dietary} />
                 <Route path="/three" component={Three} />
                 <Route path="/checkout" component={CheckoutPage} />
-                <Route path="/checkout2" component={CheckoutPage2} />
                 {/* static pages */}
                 <Route path="/customer-services" component={CustomerServices} />
                 <Route

@@ -167,16 +167,14 @@ export default function Header() {
 
   const handleMouseOver = () => {
     const basketOverlay = document.querySelector(".basketOverlay");
-    const dietary = document.querySelector("#dietary");
     basketOverlay.style.opacity = "1";
-    dietary.style.zIndex = 0;
+    basketOverlay.style.display = "block";
   };
 
   const handleMouseLeave = () => {
     const basketOverlay = document.querySelector(".basketOverlay");
     basketOverlay.style.opacity = "0";
-    const dietary = document.querySelector("#dietary");
-    dietary.style.zIndex = 0;
+    basketOverlay.style.display = "none";
   };
 
   return (

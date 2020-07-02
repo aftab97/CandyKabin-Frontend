@@ -81,10 +81,36 @@ export const Navbar = () => {
           onMouseLeave={mouseLeaveHandle}
         >
           <ul className="header-links">
-            <li>B</li>
-            <li>B</li>
-            <li>B</li>
-            <li>B</li>
+            <li>
+              <Link to="/pick-and-mix/lollipops">
+                <h2>LOLLIPOPS</h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="/pick-and-mix/bubblegum">
+                <h2>BUBBLEGUM</h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="/pick-and-mix/funcandy">
+                <h2>FUN CANDY</h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="/pick-and-mix/hardcandy">
+                <h2>HARD CANDY</h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="/pick-and-mix/gummycandy">
+                <h2>GUMMY CANDY</h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="/pick-and-mix/chewycandy">
+                <h2>CHEWY CANDY</h2>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
