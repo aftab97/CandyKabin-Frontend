@@ -26,6 +26,7 @@ import { DeliveryInformation } from "./components/pages/StaticPages/DeliveryInfo
 import { ReturnsPolicy } from "./components/pages/StaticPages/ReturnsPolicy";
 import { AboutUs } from "./components/pages/StaticPages/AboutUs";
 import { PrivacyPolicy } from "./components/pages/StaticPages/PrivacyPolicy";
+import { CheckoutPage2 } from "./components/pages/Checkout/CheckoutPage2";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -35,13 +36,18 @@ export default function App() {
 
   const [shoppingCart, setShoppingCart] = useState([]);
 
+  const [location, setLocation] = useState(undefined);
+
+  const [readyForCheckout, setReadyForCheckout] = useState(false);
+
   const [count, setCount] = useState(0);
+
+  const [productCost, setProductCost] = useState(0);
 
   const incrementCounter = () => setCount((counter) => counter + 1);
   const decrementCounter = () => setCount((counter) => counter - 1);
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_TEST_ENV);
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
       let basket = localStorage.getItem("basket");
@@ -79,6 +85,13 @@ export default function App() {
     checkLoggedIn();
   }, []);
 
+  useEffect(() => {
+    let cost = 0;
+    shoppingCart.map((item) => (cost += item.amount * item.price));
+
+    setProductCost(cost);
+  }, [shoppingCart]);
+
   return (
     <>
       <BrowserRouter>
@@ -87,10 +100,16 @@ export default function App() {
             value={{
               shoppingCart,
               setShoppingCart,
+              location,
+              setLocation,
               count,
               setCount,
               incrementCounter,
               decrementCounter,
+              readyForCheckout,
+              setReadyForCheckout,
+              productCost,
+              setProductCost,
             }}
           >
             <Header />
@@ -108,6 +127,7 @@ export default function App() {
                 <Route path="/dietary" component={Dietary} />
                 <Route path="/three" component={Three} />
                 <Route path="/checkout" component={CheckoutPage} />
+                <Route path="/checkout2" component={CheckoutPage2} />
                 {/* static pages */}
                 <Route path="/customer-services" component={CustomerServices} />
                 <Route

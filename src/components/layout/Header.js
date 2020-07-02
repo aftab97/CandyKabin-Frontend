@@ -62,6 +62,23 @@ export default function Header() {
     }
   };
 
+  const handleRemove = (e) => {
+    let productName = e.currentTarget.parentNode.parentNode.querySelector(
+      ".product-name-basket"
+    ).childNodes[0].data;
+
+    let nonSelectedItem = shoppingCart.filter(
+      (p) => p.productName !== productName
+    );
+
+    let combinedArr = [...nonSelectedItem];
+
+    combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+
+    setShoppingCart(combinedArr);
+    localStorage.setItem("basket", JSON.stringify(combinedArr));
+  };
+
   const basketOverlayData =
     shoppingCart.length > 0 ? (
       JSON.parse(localStorage.getItem("basket")).map((data, index) => (
@@ -71,7 +88,9 @@ export default function Header() {
           </div>
           <div className="basket-info-container">
             <h4 className="product-name-basket">{data.productName}</h4>{" "}
-            <button className="basket-remove-button">REMOVE</button>
+            <button className="basket-remove-button" onClick={handleRemove}>
+              REMOVE
+            </button>
           </div>
           <div className="basket-buttons-container">
             <button
@@ -148,14 +167,16 @@ export default function Header() {
 
   const handleMouseOver = () => {
     const basketOverlay = document.querySelector(".basketOverlay");
-    console.log(basketOverlay);
-    // basketOverlay.style.display = "block";
+    const dietary = document.querySelector("#dietary");
     basketOverlay.style.opacity = "1";
+    dietary.style.zIndex = 0;
   };
 
   const handleMouseLeave = () => {
     const basketOverlay = document.querySelector(".basketOverlay");
     basketOverlay.style.opacity = "0";
+    const dietary = document.querySelector("#dietary");
+    dietary.style.zIndex = 0;
   };
 
   return (

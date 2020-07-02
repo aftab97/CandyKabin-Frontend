@@ -63,6 +63,8 @@ export const ProductPage = ({ match, location, history }) => {
 
     let weight = parseInt(nonParsedWeight);
 
+    let totalCost = pickedAmount * data;
+
     if (pickedAmount > 0) {
       incrementCounter();
       setShoppingCart([
@@ -75,6 +77,7 @@ export const ProductPage = ({ match, location, history }) => {
           weight,
           orderNo: count,
           imageSrc: image.src,
+          totalCost,
         },
       ]);
 
@@ -88,6 +91,7 @@ export const ProductPage = ({ match, location, history }) => {
           weight,
           orderNo: count,
           imageSrc: image.src,
+          totalCost,
         },
       ];
 
@@ -103,8 +107,9 @@ export const ProductPage = ({ match, location, history }) => {
                 weight: b.weight,
                 orderNo: b.orderNo,
                 imageSrc: b.imageSrc,
+                totalCost: b.totalCost,
               })
-            : (a[i].amount += b.amount),
+            : ((a[i].amount += b.amount), (a[i].totalCost += b.totalCost)),
           a
         );
       }, []);

@@ -158,13 +158,13 @@ body {
   border-radius: 20px;
   background-color: white;
   /* color: #e57098; */
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Chewy", cursive;
 }
 .product-title {
   /* background-color: red;
   z-index: 100; */
   margin: auto;
-  width: 300px;
+  width: 24vw;
 }
 .product > img {
   /* to handle on rotate the background not going over the container */
@@ -339,10 +339,10 @@ body {
 
 /* FIX for the hover basket not appearing on top */
 .header-basket-container:hover + .basketOverlay {
-  z-index: 10;
+  z-index: 2;
 }
 .basketOverlay:hover {
-  z-index: 10;
+  z-index: 2;
 }
 /* ----------------------------------------- */
 
@@ -495,7 +495,7 @@ body {
 }
 
 .shop-links {
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Chewy", cursive;
   letter-spacing: 3px;
   background-color: #e57098;
   position: relative;
@@ -1021,9 +1021,9 @@ nav {
   justify-content: center;
   text-align: center;
   background-color: #e57098;
-  height: 60px;
+  height: 80px;
   text-shadow: 2px 4px 4px #000000;
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Chewy", cursive;
   opacity: 0.9;
 }
 
@@ -1031,7 +1031,7 @@ nav > div > h2 {
   position: relative;
   color: white;
   /* width: 10vw; */
-  font-size: 2vw;
+  font-size: 3vw;
   transition: 0.5s ease;
   margin-right: 20px;
   margin-left: 20px;
@@ -1048,7 +1048,7 @@ nav > div > h2:hover {
   left: 0;
   width: 100%;
   height: 100px;
-  top: 110px;
+  top: 125px;
   z-index: 2;
   border: 4px solid white;
   opacity: 0.9;
@@ -1057,8 +1057,6 @@ nav > div > h2:hover {
 .header-links {
   display: flex;
   justify-content: space-evenly;
-  padding-left: 300px;
-  padding-right: 300px;
   position: relative;
   top: 30px;
 }
@@ -1129,7 +1127,7 @@ canvas {
 nav {
   background-image: url(./img/candy-kabin-banner.png);
   background-repeat: repeat-x;
-  background-position-y: 10px;
+  background-position-y: 31px;
   opacity: 1;
 }
 
@@ -1229,12 +1227,38 @@ nav {
 }
 
 /* checkout styling */
-
-.checkout-section {
-  text-align: center;
-  border-top: 1px solid grey;
-  /* width: 300px; */
+.checkout-styling-table {
+  position: relative;
   margin: auto;
+}
+.checkout-table-image-container {
+  border: 1px solid #e5e5e5;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-table-image-container > img {
+  display: block;
+  margin: auto;
+}
+
+.checkout-delivery-options-container {
+  width: 700px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.checkout-delivery-options-form {
+  /* text-align: center; */
+}
+
+.checkout-delivery-options-form > label {
+  margin-left: 10px;
+  margin-top: 10px;
+  display: block;
+  text-align: left;
 }
 
 @keyframes left-thumbnail-move-in {
@@ -1278,7 +1302,7 @@ nav {
 .static-page-title-container {
   text-align: center;
   font-size: 1.3em;
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Chewy", cursive;
   color: white;
   letter-spacing: 2px;
 }
@@ -1294,5 +1318,76 @@ nav {
   border-bottom: 2px solid white;
   display: inline-block;
   color: white;
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Chewy", cursive;
+}
+
+/* table styling */
+td {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.table-row-container {
+  display: flex;
+  justify-content: center;
+}
+
+.table-row-container > div {
+  margin: auto;
+  padding-left: 5px;
+}
+
+.table-button {
+  border: 1px solid #e5e5e5;
+  width: 20px;
+  margin: auto;
+  text-align: center;
+}
+
+.table-amount {
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* stripe button styling */
+.StripeCheckout {
+  background-color: #e57098 !important;
+  border-radius: 0 !important;
+  background-image: none !important;
+  padding: 0;
+}
+
+.StripeCheckout > span {
+  background-color: #e57098 !important;
+  color: black !important;
+  border-radius: 0 !important;
+  background-image: none !important;
+}
+
+.disabled-button-checkout {
+  padding: 1px;
+  background-color: #e57098;
+  opacity: 0.7;
+}
+
+.disabled-button-checkout > span {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  position: relative;
+  padding: 0 12px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+  text-shadow: rgba(0, 0, 0, 0.25) 0px -1px 0px;
+  background-color: #e57098;
+}
+
+#dietary {
+  z-index: 5;
 }

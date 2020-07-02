@@ -85,9 +85,7 @@ export const SubCategoryPage = (params) => {
 
     let image = e.currentTarget.parentNode.querySelector("img");
 
-    console.log(image.src);
-
-    console.log(nonParsedWeight);
+    let totalCost = pickedAmount * data;
 
     if (pickedAmount > 0) {
       incrementCounter();
@@ -101,6 +99,7 @@ export const SubCategoryPage = (params) => {
           weight,
           orderNo: count,
           imageSrc: image.src,
+          totalCost,
         },
       ]);
 
@@ -114,6 +113,7 @@ export const SubCategoryPage = (params) => {
           weight,
           orderNo: count,
           imageSrc: image.src,
+          totalCost,
         },
       ];
 
@@ -131,17 +131,15 @@ export const SubCategoryPage = (params) => {
                 weight: b.weight,
                 orderNo: b.orderNo,
                 imageSrc: b.imageSrc,
+                totalCost: b.totalCost,
               })
-            : (a[i].amount += b.amount),
+            : ((a[i].amount += b.amount), (a[i].totalCost += b.totalCost)),
           a
         );
       }, []);
 
-      console.log(arr2);
-
       setShoppingCart(arr2); //this was prev finalshoppingcart
       localStorage.setItem("basket", JSON.stringify(arr2));
-      console.log(JSON.parse(localStorage.getItem("basket")));
     }
   };
 
@@ -189,10 +187,6 @@ export const SubCategoryPage = (params) => {
         pages.classList.remove("page-button-selected-page");
       }
     }
-
-    // .map((x) =>
-    //   x.classList.remove("page-button-selected-page")
-    // );
     e.currentTarget.className += " page-button-selected-page";
   };
 
