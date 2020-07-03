@@ -24,6 +24,7 @@
     "three": "^0.117.1"
   },
   "scripts": {
+    "homepage": "./",
     "start": "cross-env REACT_APP_URL=http://localhost:5000/api react-scripts start",
     "build": "cross-env REACT_APP_URL=http://178.62.61.143/api react-scripts build",
     "test": "react-scripts test",
