@@ -4,6 +4,10 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 export const Shop = ({ match }) => {
   const [dietary, setDietary] = useState("NONE");
+  const [sortByDate, setSortByDate] = useState(-1);
+  const handleRadioButton2 = (e) => {
+    setSortByDate(parseInt(e.target.value));
+  };
 
   useEffect(() => {
     console.log(match);
@@ -57,6 +61,28 @@ export const Shop = ({ match }) => {
             </label>
           </form>
         </ul>
+        <ul>
+          <h4>SORT BY DATE: </h4>
+          <form
+            className="checkout-delivery-options-form"
+            onChange={handleRadioButton2}
+          >
+            <label>
+              <input
+                type="radio"
+                value="-1"
+                name="radio-button"
+                defaultChecked
+                id="default-checked-option2"
+              />
+              NEWEST
+            </label>
+            <label>
+              <input type="radio" value="1" name="radio-button" />
+              OLDEST
+            </label>
+          </form>
+        </ul>
       </div>
 
       <Route
@@ -65,13 +91,23 @@ export const Shop = ({ match }) => {
         // component={ChocolateBars}
         exact
         render={() => (
-          <SubCategoryPage subCategory="Chocolate Bars" dietary={dietary} />
+          <SubCategoryPage
+            subCategory="Chocolate Bars"
+            dietary={dietary}
+            sortByDate={sortByDate}
+          />
         )}
       />
       <Route
         path="/shop/candy"
         exact
-        render={() => <SubCategoryPage subCategory="Candy" />}
+        render={() => (
+          <SubCategoryPage
+            subCategory="Candy"
+            dietary={dietary}
+            sortByDate={sortByDate}
+          />
+        )}
       />
     </div>
   );

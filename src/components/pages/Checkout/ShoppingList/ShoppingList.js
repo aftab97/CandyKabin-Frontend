@@ -2,16 +2,58 @@ import React, { useContext } from "react";
 import BasketContext from "../../../../context/BasketContext";
 
 export const ShoppingList = () => {
-  const { shoppingCart } = useContext(BasketContext);
+  const { shoppingCart, setShoppingCart } = useContext(BasketContext);
 
   const handleIncrement = (e) => {
-    ++e.currentTarget.parentNode.querySelector(".table-amount").childNodes[0]
-      .data;
+    let productName = e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+      ".product-name-table"
+    ).childNodes[0].data;
+
+    console.log(productName);
+
+    let nonSelectedItem = shoppingCart.filter(
+      (p) => p.productName !== productName
+    );
+
+    let selectedItem = shoppingCart.filter(
+      (p) => p.productName === productName
+    );
+
+    selectedItem[0].amount += 1;
+
+    let combinedArr = [];
+    combinedArr = [...selectedItem, ...nonSelectedItem];
+
+    combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+    setShoppingCart(combinedArr);
+    localStorage.setItem("basket", JSON.stringify(combinedArr));
   };
 
   const handleDecrement = (e) => {
-    --e.currentTarget.parentNode.querySelector(".table-amount").childNodes[0]
-      .data;
+    let productName = e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+      ".product-name-table"
+    ).childNodes[0].data;
+
+    console.log(productName);
+
+    let nonSelectedItem = shoppingCart.filter(
+      (p) => p.productName !== productName
+    );
+
+    let selectedItem = shoppingCart.filter(
+      (p) => p.productName === productName
+    );
+
+    selectedItem[0].amount -= 1;
+
+    let combinedArr = [];
+    combinedArr = [...selectedItem, ...nonSelectedItem];
+
+    combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+    setShoppingCart(combinedArr);
+    localStorage.setItem("basket", JSON.stringify(combinedArr));
   };
 
   return shoppingCart ? (
@@ -43,7 +85,18 @@ export const ShoppingList = () => {
                       style={{ maxWidth: 50, maxHeight: 70 }}
                     />
                   </div>
-                  <div>{item.productName}</div>
+                  <div>
+                    <div className="product-name-table">{item.productName}</div>
+                    <div className="product-individual-price-table">
+                      {item.price}
+                    </div>
+                    <div
+                      className="product-remove-table"
+                      style={{ color: "#e57098" }}
+                    >
+                      REMOVE
+                    </div>
+                  </div>
                 </div>
               </td>
               <td>
@@ -63,7 +116,7 @@ export const ShoppingList = () => {
                   </div>
                 </div>
               </td>
-              <td>NEEDS TO BE FILLED</td>
+              <td>{(item.amount * item.price).toFixed(2)}</td>
             </tr>
           ))}
         </table>

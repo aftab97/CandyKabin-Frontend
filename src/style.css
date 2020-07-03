@@ -1356,11 +1356,9 @@ td {
 
 .table-row-container {
   display: flex;
-  justify-content: center;
 }
 
 .table-row-container > div {
-  margin: auto;
   padding-left: 5px;
 }
 
@@ -1410,4 +1408,9 @@ td {
   box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   text-shadow: rgba(0, 0, 0, 0.25) 0px -1px 0px;
   background-color: #e57098;
+}
+
+/* styling for radio buttons */
+label > input {
+  margin-right: 5px;
 }

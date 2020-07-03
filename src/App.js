@@ -32,6 +32,7 @@ export default function App() {
   const [userData, setUserData] = useState({
     token: undefined,
     user: undefined,
+    email: undefined,
   });
 
   const [shoppingCart, setShoppingCart] = useState([]);
@@ -75,6 +76,7 @@ export default function App() {
         const userRes = await Axios.get(`${process.env.REACT_APP_URL}/users/`, {
           headers: { "x-auth-token": token },
         });
+        console.log(userRes);
         setUserData({
           token,
           user: userRes.data,
@@ -90,6 +92,8 @@ export default function App() {
     shoppingCart.map((item) => (cost += item.amount * item.price));
 
     setProductCost(cost);
+
+    // handle change in total cost
   }, [shoppingCart]);
 
   return (
@@ -128,6 +132,7 @@ export default function App() {
                 <Route path="/dietary" component={Dietary} />
                 <Route path="/three" component={Three} />
                 <Route path="/checkout" component={CheckoutPage} />
+                <Route path="/checkout2" component={CheckoutPage2} />
                 {/* static pages */}
                 <Route path="/customer-services" component={CustomerServices} />
                 <Route

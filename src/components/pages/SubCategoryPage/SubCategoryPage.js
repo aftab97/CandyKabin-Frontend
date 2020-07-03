@@ -47,7 +47,7 @@ export const SubCategoryPage = (params) => {
   useEffect(() => {
     const grabData = async () => {
       const fetchedData = await Axios.get(
-        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=-1&dietary=${params.dietary}`
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
       );
 
       setProducts(fetchedData.data);
@@ -60,7 +60,7 @@ export const SubCategoryPage = (params) => {
   useEffect(() => {
     const grabData = async () => {
       const fetchedData = await Axios.get(
-        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=-1&dietary=${params.dietary}`
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
       );
 
       setProducts(fetchedData.data);
@@ -68,6 +68,19 @@ export const SubCategoryPage = (params) => {
 
     grabData();
   }, [params.dietary]);
+
+  //change the products according to dietary
+  useEffect(() => {
+    const grabData = async () => {
+      const fetchedData = await Axios.get(
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
+      );
+
+      setProducts(fetchedData.data);
+    };
+
+    grabData();
+  }, [params.sortByDate]);
 
   const handleClick = (e) => {
     let productName = e.currentTarget.querySelector("span").className;

@@ -25,6 +25,7 @@ export default function Login() {
       setUserData({
         token: loginRes.data.token,
         user: loginRes.data.user,
+        email: loginRes.data.email,
       });
 
       console.log(loginRes.data.user.cart);
