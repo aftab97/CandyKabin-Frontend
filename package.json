@@ -26,7 +26,7 @@
   "scripts": {
     "homepage": "./",
     "start": "cross-env REACT_APP_URL=http://localhost:5000/api react-scripts start",
-    "build": "cross-env REACT_APP_URL=http://178.62.61.143/api react-scripts build",
+    "build": "cross-env REACT_APP_URL=http://178.62.61.143/api REACT_APP_STRIPE_KEY=pk_live_51Gm1fBBzvrElWXfAejV1c772sgc64VpMtCHPdMMAeqHzP1aUq3mMHr57akvyn1mWjgEYTS1iTYwJsmXJWMzOj6gU00qHjmAlcj react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

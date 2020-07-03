@@ -106,6 +106,8 @@ export const CheckoutPage = () => {
     };
   }, []);
 
+  let stripeKey = `${process.env.REACT_APP_STRIPE_KEY}`;
+
   const handleCheckoutDisabledButton = () => {};
   return (
     <div>
@@ -117,7 +119,7 @@ export const CheckoutPage = () => {
       </div>
       {readyForCheckout ? (
         <StripeCheckout
-          stripeKey="pk_live_51Gm1fBBzvrElWXfAmYJ01wsMtQbK3UJnww6ccAll307nVDxhfbeJXo9LWaao9uyYZw1r85tSTF8l5p7mQhqpQacS00EWwVmtuc"
+          stripeKey={stripeKey}
           token={makePayment}
           billingAddress
           shippingAddress
