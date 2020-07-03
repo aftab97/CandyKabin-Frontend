@@ -39,8 +39,6 @@ export const CheckoutPage2 = () => {
     (productarray) => (total += productarray.price * productarray.amount)
   );
 
-  useEffect(() => {}, []);
-
   const makePayment = async (token, addresses) => {
     let body = {
       token,
@@ -64,10 +62,12 @@ export const CheckoutPage2 = () => {
     }
   };
 
+  let stripeKey = process.env.REACT_APP_STRIPE_KEY;
+
   return (
     <div className="sr-root">
       <StripeCheckout
-        stripeKey="pk_live_51Gm1fBBzvrElWXfAmYJ01wsMtQbK3UJnww6ccAll307nVDxhfbeJXo9LWaao9uyYZw1r85tSTF8l5p7mQhqpQacS00EWwVmtuc"
+        stripeKey={stripeKey}
         token={makePayment}
         billingAddress
         shippingAddress

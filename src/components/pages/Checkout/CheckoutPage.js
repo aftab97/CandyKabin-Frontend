@@ -106,7 +106,7 @@ export const CheckoutPage = () => {
     };
   }, []);
 
-  let stripeKey = `${process.env.REACT_APP_STRIPE_KEY}`;
+  let stripeKey = process.env.REACT_APP_STRIPE_KEY;
 
   const handleCheckoutDisabledButton = () => {};
   return (
