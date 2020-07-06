@@ -33,38 +33,28 @@ export const Navbar = () => {
         >
           <ul className="header-links">
             <li>
-              <Link to="/shop/chocolatebars">
-                <h2>CHOCOLATE BARS</h2>
+              <Link to="/shop/american">
+                <h2>AMERICAN</h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="/shop/pick-and-mix">
+                <h2>PICK & MIX</h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="/shop/australian">
+                <h2>AUSTRALIAN</h2>
               </Link>
             </li>
             <li>
               <Link to="/shop/candy">
-                <h2>CANDY</h2>
+                <h2>TRADITIONAL</h2>
               </Link>
             </li>
             <li>
-              <Link to="/shop/candy">
-                <h2>DRINKS</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/shop/candy">
-                <h2>CRISPS</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/shop/candy">
-                <h2>CAKES</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/shop/candy">
-                <h2>CEREALS</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/shop/candy">
-                <h2>GUM</h2>
+              <Link to="/shop/novelty-and-kids">
+                <h2>NOVELTY & KIDS</h2>
               </Link>
             </li>
           </ul>

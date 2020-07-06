@@ -3,46 +3,55 @@ import { loadStripe } from "@stripe/stripe-js";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import UserContext from "../../../context/UserContext";
+import BasketContext from "../../../context/BasketContext";
 
 export const CheckoutPage2 = () => {
   const { userData } = useContext(UserContext);
 
-  const product = [
-    {
-      id: "knaskjdnaskjlnd",
-      name: "apple",
-      price: 0.1,
-      amount: 2,
-      description: "an apple",
-      category: "fruit",
-    },
-    {
-      id: "knaskjdnaskjlnd",
-      name: "orange",
-      price: 0.1,
-      amount: 2,
-      description: "an orange",
-      category: "fruit",
-    },
-    {
-      id: "knaskjdnaskjlnd",
-      name: "mango",
-      price: 0.2,
-      amount: 3,
-      description: "an mango",
-      category: "fruit",
-    },
-  ];
+  const { shoppingCart } = useContext(BasketContext);
+
+  // let product;
+
+  // useEffect(() => {
+  //   product = shoppingCart;
+  // }, [shoppingCart]);
+
+  // product = [
+  //   {
+  //     _id: "knaskjdnaskjlnd",
+  //     name: "apple",
+  //     price: 0.1,
+  //     amount: 2,
+  //     description: "an apple",
+  //     category: "fruit",
+  //   },
+  //   {
+  //     _id: "knaskjdnaskjlnd",
+  //     name: "orange",
+  //     price: 0.1,
+  //     amount: 2,
+  //     description: "an orange",
+  //     category: "fruit",
+  //   },
+  //   {
+  //     _id: "knaskjdnaskjlnd",
+  //     name: "mango",
+  //     price: 0.2,
+  //     amount: 3,
+  //     description: "an mango",
+  //     category: "fruit",
+  //   },
+  // ];
 
   let total = 0;
-  total = product.map(
+  total = shoppingCart.map(
     (productarray) => (total += productarray.price * productarray.amount)
   );
 
   const makePayment = async (token, addresses) => {
     let body = {
       token,
-      product,
+      shoppingCart,
       userData,
     };
 
@@ -50,7 +59,7 @@ export const CheckoutPage2 = () => {
 
     const response = await axios.post(`${process.env.REACT_APP_URL}/payment`, {
       token,
-      product,
+      shoppingCart,
       userData,
     });
     const { status } = response.data;

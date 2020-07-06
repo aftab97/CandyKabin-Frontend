@@ -493,6 +493,7 @@ body {
 .shop {
   display: flex;
   flex-direction: row;
+  margin-bottom: 10px;
 }
 
 .shop-links {
@@ -540,6 +541,90 @@ body {
   text-shadow: 2px 2px 4px #808080;
   text-align: center;
   color: white;
+}
+
+.sidepanel-option {
+  font-family: "Fredoka One", cursive;
+  letter-spacing: 3px;
+  background-color: #e57098;
+  position: relative;
+  left: 0px;
+  /* padding-left: 5vw;
+  padding-right: 5vw; */
+  width: 15vw;
+  /* padding-left: 10px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 5px;
+  font-weight: 600;
+  border-radius: 25px;
+  text-align: left;
+  box-shadow: 5px 10px 8px #888888;
+  text-shadow: 2px 2px 4px #808080;
+  text-align: center;
+  color: white;
+}
+
+.fixed-height {
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* .fixed-height::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 1em;
+  background-color: red;
+  position: relative;
+  height: 250px;
+}
+.fixed-height::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.fixed-height::-webkit-scrollbar-thumb {
+  position: relative;
+  border-radius: 10px;
+  background-color: white;
+  outline: 1px solid slategrey;
+} */
+
+.fixed-height::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: calc(100% - 20px);
+  top: 10px;
+  right: -1px;
+  width: 5px;
+  background: #666;
+}
+
+.fixed-height::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+.fixed-height::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fixed-height::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border-right: none;
+  border-left: none;
+}
+
+.fixed-height::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 15px;
+}
+
+.fixed-height::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 15px;
 }
 
 .emoji-list::before {

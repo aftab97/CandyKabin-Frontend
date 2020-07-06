@@ -12,25 +12,25 @@ export const SubCategoryPage = (params) => {
     radiobtn.checked = true;
   }, []);
 
-  useEffect(() => {
-    let listAmount = document.querySelectorAll(".shop-links > li").length;
+  // useEffect(() => {
+  //   let listAmount = document.querySelectorAll(".shop-links > li").length;
 
-    for (let i = 1; i < listAmount + 1; i++) {
-      let listLink = document.querySelector(`.shop-links > li:nth-child(${i})`);
+  //   for (let i = 1; i < listAmount + 1; i++) {
+  //     let listLink = document.querySelector(`.shop-links > li:nth-child(${i})`);
 
-      if (listLink.classList.contains("emoji-list")) {
-        listLink.classList.remove("emoji-list");
-      }
-    }
+  //     if (listLink.classList.contains("emoji-list")) {
+  //       listLink.classList.remove("emoji-list");
+  //     }
+  //   }
 
-    let subCategory = params.subCategory.toLowerCase();
+  //   let subCategory = params.subCategory.toLowerCase();
 
-    if (params.subCategory.includes(" ")) {
-      subCategory = subCategory.replace(" ", "-");
-    }
-    let link = document.querySelector(`.${subCategory}-link`);
-    link.classList.add("emoji-list");
-  }, []);
+  //   if (params.subCategory.includes(" ")) {
+  //     subCategory = subCategory.replace(" ", "-");
+  //   }
+  //   let link = document.querySelector(`.${subCategory}-link`);
+  //   link.classList.add("emoji-list");
+  // }, []);
   const [products, setProducts] = useState();
   const { shoppingCart, setShoppingCart, count, incrementCounter } = useContext(
     BasketContext
@@ -47,7 +47,7 @@ export const SubCategoryPage = (params) => {
   useEffect(() => {
     const grabData = async () => {
       const fetchedData = await Axios.get(
-        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&brand=${params.brand}&date=${params.sortByDate}&dietary=${params.dietary}`
       );
 
       setProducts(fetchedData.data);
@@ -56,11 +56,37 @@ export const SubCategoryPage = (params) => {
     grabData();
   }, []);
 
+  //change the products according to subSubCategory
+  useEffect(() => {
+    const grabData = async () => {
+      const fetchedData = await Axios.get(
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&brand=${params.brand}&date=${params.sortByDate}&dietary=${params.dietary}`
+      );
+
+      setProducts(fetchedData.data);
+    };
+
+    grabData();
+  }, [params.subSubCategory]);
+
+  //change the products according to brand
+  useEffect(() => {
+    const grabData = async () => {
+      const fetchedData = await Axios.get(
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&brand=${params.brand}&date=${params.sortByDate}&dietary=${params.dietary}`
+      );
+
+      setProducts(fetchedData.data);
+    };
+
+    grabData();
+  }, [params.brand]);
+
   //change the products according to dietary
   useEffect(() => {
     const grabData = async () => {
       const fetchedData = await Axios.get(
-        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&brand=${params.brand}&date=${params.sortByDate}&dietary=${params.dietary}`
       );
 
       setProducts(fetchedData.data);
@@ -69,11 +95,11 @@ export const SubCategoryPage = (params) => {
     grabData();
   }, [params.dietary]);
 
-  //change the products according to dietary
+  //change the products according to date
   useEffect(() => {
     const grabData = async () => {
       const fetchedData = await Axios.get(
-        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
+        `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&brand=${params.brand}&date=${params.sortByDate}&dietary=${params.dietary}`
       );
 
       setProducts(fetchedData.data);
