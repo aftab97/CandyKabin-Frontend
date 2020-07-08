@@ -13,9 +13,11 @@ export const CheckoutPage = () => {
     readyForCheckout,
     setReadyForCheckout,
     shoppingCart,
+    setDeliveryCost,
+    deliveryCost,
+    productCost,
+    totalCost,
   } = useContext(BasketContext);
-
-  // const {  } = useContext(BasketContext);
 
   const product = [
     {
@@ -50,6 +52,9 @@ export const CheckoutPage = () => {
     let body = {
       token,
       product,
+      deliveryCost,
+      productCost,
+      totalCost,
     };
 
     console.log(token, body);
@@ -74,11 +79,8 @@ export const CheckoutPage = () => {
     console.log(location);
 
     if (typeof location === "undefined" || shoppingCart.length === 0) {
-      console.log("not ready");
-      console.log(location);
       setReadyForCheckout(false);
     } else {
-      console.log("ready");
       setReadyForCheckout(true);
     }
   }, [shoppingCart]);
@@ -87,14 +89,8 @@ export const CheckoutPage = () => {
     console.log(location);
 
     if (typeof location === "undefined" || shoppingCart.length === 0) {
-      console.log("not ready");
-      console.log(location);
-      console.log(shoppingCart);
-      console.log(readyForCheckout);
       setReadyForCheckout(false);
     } else {
-      console.log("ready");
-      console.log(shoppingCart.length);
       setReadyForCheckout(true);
     }
   }, [location]);
@@ -103,6 +99,7 @@ export const CheckoutPage = () => {
   useEffect(() => {
     return () => {
       setLocation(undefined);
+      setDeliveryCost(0);
     };
   }, []);
 

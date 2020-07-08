@@ -8,7 +8,9 @@ import BasketContext from "../../../context/BasketContext";
 export const CheckoutPage2 = () => {
   const { userData } = useContext(UserContext);
 
-  const { shoppingCart } = useContext(BasketContext);
+  const { shoppingCart, productCost, totalCost, deliveryCost } = useContext(
+    BasketContext
+  );
 
   // let product;
 
@@ -53,7 +55,14 @@ export const CheckoutPage2 = () => {
       token,
       shoppingCart,
       userData,
+      productCost,
+      totalCost,
+      deliveryCost,
     };
+
+    console.log(totalCost);
+    console.log(deliveryCost);
+    console.log(productCost);
 
     console.log(token, body);
 
@@ -61,6 +70,9 @@ export const CheckoutPage2 = () => {
       token,
       shoppingCart,
       userData,
+      productCost,
+      totalCost,
+      deliveryCost,
     });
     const { status } = response.data;
     console.log("Response:", response.data);
@@ -71,6 +83,22 @@ export const CheckoutPage2 = () => {
     }
   };
 
+  // useEffect(() => {
+  //   // let product = shoppingCart;
+
+  //   // console.log(shoppingCart.map((item) => item.productName));
+
+  //   if (shoppingCart.length > 0) {
+  //     const doFunc = async () => {
+  //       const response = await axios.post(`${process.env.REACT_APP_URL}/test`, {
+  //         // shoppingCart: JSON.stringify(shoppingCart),
+  //         shoppingCart: shoppingCart,
+  //       });
+  //     };
+  //     doFunc();
+  //   }
+  // }, [shoppingCart]);
+
   let stripeKey = process.env.REACT_APP_STRIPE_KEY;
 
   return (
@@ -80,8 +108,9 @@ export const CheckoutPage2 = () => {
         token={makePayment}
         billingAddress
         shippingAddress
-        amount={total[total.length - 1] * 100}
+        amount={totalCost * 100}
       />
+      <button onClick={makePayment}>check</button>
     </div>
   );
 };

@@ -11,9 +11,11 @@ export const Shipping = () => {
     location,
     setLocation,
     productCost,
+    deliveryCost,
+    setDeliveryCost,
   } = useContext(BasketContext);
 
-  const [deliveryCost, setDeliveryCost] = useState(0);
+  // const [deliveryCost, setDeliveryCost] = useState(0);
 
   const calculateDeliveryCost = () => {
     let totalWeight = 0;

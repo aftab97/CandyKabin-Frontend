@@ -27,6 +27,7 @@ import { AboutUs } from "./components/pages/StaticPages/AboutUs";
 import { PrivacyPolicy } from "./components/pages/StaticPages/PrivacyPolicy";
 import { CheckoutPage2 } from "./components/pages/Checkout/CheckoutPage2";
 import { PickAndMix } from "./components/pages/PickAndMix/PickAndMix";
+import { index } from "./components/pages/Admin";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -38,6 +39,8 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
 
   const [location, setLocation] = useState(undefined);
+  const [deliveryCost, setDeliveryCost] = useState(0);
+  const [totalCost, setTotalCost] = useState(0);
 
   const [readyForCheckout, setReadyForCheckout] = useState(false);
 
@@ -93,6 +96,8 @@ export default function App() {
 
     setProductCost(cost);
 
+    setTotalCost(cost + deliveryCost);
+
     // handle change in total cost
   }, [shoppingCart]);
 
@@ -114,6 +119,10 @@ export default function App() {
               setReadyForCheckout,
               productCost,
               setProductCost,
+              deliveryCost,
+              setDeliveryCost,
+              totalCost,
+              setTotalCost,
             }}
           >
             <Header />
@@ -122,8 +131,9 @@ export default function App() {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
-                <Route path="/adminLogin" component={AdminLogin} />
-                <Route path="/adminSummary" component={AdminSummary} />
+                {/* <Route path="/adminLogin" component={AdminLogin} />
+                <Route path="/adminSummary" component={AdminSummary} /> */}
+                <Route path="/admin" component={index} />
                 <Route path="/register" component={Register} />
                 <Route exact path="/products" component={Products} />
                 <Route path="/products/:id" component={ProductPage} />

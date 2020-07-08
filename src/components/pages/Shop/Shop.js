@@ -31,19 +31,19 @@ export const Shop = ({ match }) => {
       <div>
         <ul className="shop-links">
           <li className="american-link">
-            <Link to={`${match.url}/american`}>American</Link>
+            <Link to={`${match.url}/international`}>International</Link>
+          </li>
+          <li className="candy-link">
+            <Link to={`${match.url}/sweets-and-candy`}>Sweets & Candy</Link>
           </li>
           <li className="candy-link">
             <Link to={`${match.url}/pick-and-mix`}>Pick & Mix</Link>
           </li>
           <li className="candy-link">
-            <Link to={`${match.url}/australian`}>Australian</Link>
-          </li>
-          <li className="candy-link">
             <Link to={`${match.url}/traditional`}>Traditional</Link>
           </li>
           <li className="candy-link">
-            <Link to={`${match.url}/novelty-and-kids`}>Novelty & Kids</Link>
+            <Link to={`${match.url}/clearance`}>Clearance</Link>
           </li>
         </ul>
 
@@ -90,7 +90,7 @@ export const Shop = ({ match }) => {
           </form>
         </ul>
 
-        <ul>
+        <ul className="brand-list">
           <form
             className="checkout-delivery-options-form sidepanel-option fixed-height"
             onChange={handleRadioButton3}
@@ -245,13 +245,13 @@ export const Shop = ({ match }) => {
       </div>
 
       <Route
-        path="/shop/american"
+        path="/shop/international"
         // exact
         // component={ChocolateBars}
         exact
         render={() => (
           <SubCategoryPage
-            subCategory="American"
+            subCategory="International"
             subSubCategory={subSubCategory}
             brand={brand}
             dietary={dietary}
@@ -260,13 +260,13 @@ export const Shop = ({ match }) => {
         )}
       />
       <Route
-        path="/shop/pick-and-mix"
+        path="/shop/sweets-and-candy"
         exact
         render={() => (
           <SubCategoryPage
-            subCategory="Pick And Mix"
+            subCategory={"Sweets And Candy"}
             subSubCategory={subSubCategory}
-            brand={brand}
+            brand={false}
             dietary={dietary}
             sortByDate={sortByDate}
           />

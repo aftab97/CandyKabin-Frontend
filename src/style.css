@@ -440,6 +440,10 @@ body {
   padding-left: 20px;
   padding-right: 10px;
 }
+.product-price-basket {
+  padding-left: 20px;
+  padding-right: 10px;
+}
 .basket-remove-button {
   background-color: #fff;
   width: 100px;

@@ -33,8 +33,8 @@ export const Navbar = () => {
         >
           <ul className="header-links">
             <li>
-              <Link to="/shop/american">
-                <h2>AMERICAN</h2>
+              <Link to="/shop/international">
+                <h2>International</h2>
               </Link>
             </li>
             <li>

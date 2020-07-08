@@ -7,7 +7,9 @@ import Logo from "../../img/logo.png";
 // TODO - Add functionality for remove
 
 export default function Header() {
-  const { shoppingCart, setShoppingCart } = useContext(BasketContext);
+  const { shoppingCart, setShoppingCart, productCost } = useContext(
+    BasketContext
+  );
   const { userData, setUserData } = useContext(UserContext);
   const handlingAdd = (e) => {
     console.log("adding more");
@@ -88,6 +90,7 @@ export default function Header() {
           </div>
           <div className="basket-info-container">
             <h4 className="product-name-basket">{data.productName}</h4>{" "}
+            <h5 className="product-price-basket">£{data.price}</h5>
             <button className="basket-remove-button" onClick={handleRemove}>
               REMOVE
             </button>
@@ -110,7 +113,7 @@ export default function Header() {
         </li>
       ))
     ) : (
-      <li>not loaded</li>
+      <li>Basket contains no items</li>
     );
 
   const logout = async () => {
@@ -238,6 +241,7 @@ export default function Header() {
           <div className="basketOverlay">
             <h2 className="basket-title">BASKET</h2>
             {basketOverlayData}
+            <h2 className="basket-title">Total: £{productCost}</h2>
             <button className="basket-checkout-button">
               <Link to="/checkout">
                 <h2>CHECKOUT</h2>
