@@ -68,15 +68,17 @@ export const SubCategoryPage = (params) => {
   }, [params.subSubCategory, params.brand, params.dietary, params.sortByDate]);
 
   useEffect(() => {
+    let brand = document.querySelector(".brand-list");
+    let brandMobile = document.querySelector(".brand-list-mobile");
     if (params.subCategory !== "International") {
-      let brand = document.querySelector(".brand-list");
       if (brand !== null) {
         brand.style.display = "none";
+        brandMobile.style.display = "none";
       }
     } else {
-      let brand = document.querySelector(".brand-list");
       if (brand !== null) {
         brand.style.display = "block";
+        brandMobile.style.display = "block";
       }
     }
   }, [params.subCategory]);

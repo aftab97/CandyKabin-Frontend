@@ -180,8 +180,22 @@ export default function Header() {
     basketOverlay.style.display = "none";
   };
 
+  const openMobileNav = () => {
+    let hamburger = document.querySelector("#hamburger");
+
+    if (hamburger.style.display === "none") {
+      hamburger.style.display = "block";
+    } else {
+      hamburger.style.display = "none";
+    }
+  };
+
   return (
     <header id="header">
+      <div className="hamburger-button">
+        <button onClick={openMobileNav}>|||</button>
+      </div>
+
       <Link to="/">
         <img src={Logo} className="logo" />
       </Link>

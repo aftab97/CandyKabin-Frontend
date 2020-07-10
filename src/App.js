@@ -28,6 +28,7 @@ import { PrivacyPolicy } from "./components/pages/StaticPages/PrivacyPolicy";
 import { CheckoutPage2 } from "./components/pages/Checkout/CheckoutPage2";
 import { PickAndMix } from "./components/pages/PickAndMix/PickAndMix";
 import { index } from "./components/pages/Admin";
+import { MobileNav } from "./components/layout/MobileNav";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -127,6 +128,7 @@ export default function App() {
           >
             <Header />
             <Navbar />
+            <MobileNav />
             <div className="container">
               <Switch>
                 <Route exact path="/" component={Home} />
@@ -161,8 +163,8 @@ export default function App() {
                 <Route path="/about-us" component={AboutUs} />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
               </Switch>
+              {/* <Footer /> */}
             </div>
-            <Footer />
           </BasketContext.Provider>
         </UserContext.Provider>
       </BrowserRouter>

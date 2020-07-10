@@ -107,7 +107,7 @@ export const CheckoutPage = () => {
 
   const handleCheckoutDisabledButton = () => {};
   return (
-    <div>
+    <div className="checkout-page">
       <div className="checkout-section">
         <ShoppingList />
       </div>
