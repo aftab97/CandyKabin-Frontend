@@ -38,6 +38,7 @@ body {
 /* header */
 
 #header {
+  top: 0;
   height: 50px;
   display: flex;
   /* justify-content: space-evenly; */
@@ -211,6 +212,13 @@ body {
 }
 
 .product-basket-button:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+.product-page-button:hover {
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
   -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
@@ -706,6 +714,7 @@ body {
   background-color: white;
   border-radius: 25px;
   z-index: 2;
+  text-align: center;
 }
 
 .i-image > img {
@@ -1510,6 +1519,43 @@ label > input {
 .Collapsible {
   display: none;
 }
+
+.i-price-container-mobile {
+  display: none;
+}
+
+.arrow-back-svg {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  position: relative;
+  /* top: 5px; */
+}
+.i-go-back-button-container {
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.i-go-back-button-inner-container {
+  display: flex;
+}
+
+.i-go-back-button-inner-container > h3 {
+  position: relative;
+  top: 5px;
+  padding-left: 5px;
+}
+
+.hamburger-button {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   html,
   body {
@@ -1533,7 +1579,7 @@ label > input {
   .hamburger-button {
     width: 50px;
     height: 50px;
-    background-color: red;
+    background-color: #e57098;
     display: flex;
     position: relative;
     transform: rotate(90deg);
@@ -1617,7 +1663,7 @@ label > input {
     margin-right: auto;
   }
   .product > img {
-    max-width: 125px;
+    max-width: 200px;
     max-height: 125px;
   }
   .product-title {
@@ -1644,5 +1690,155 @@ label > input {
     margin-top: 50px;
     background-color: red;
     z-index: 20;
+  }
+
+  .fixed-height-mobile {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 40px;
+
+    /* text-align: left; */
+    /* width: 200px; */
+  }
+  .fixed-height-mobile > label {
+    padding-bottom: 10px;
+    font-size: 1.2em;
+  }
+
+  .container {
+    position: relative;
+    top: 50px;
+  }
+  .non-mobile {
+    display: none;
+  }
+
+  .homepage-info-block {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .block-1 {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+
+  .block-2 {
+    width: 100% !important;
+  }
+
+  .homepage-image-bottom-blocks {
+    flex-direction: column;
+    height: 1000px;
+  }
+
+  /* individual product styling mobile */
+  .i-title-image-subDescription-container {
+    flex-direction: column;
+  }
+  .i-image > img {
+    max-width: 90%;
+  }
+  .i-ingredients {
+    top: 0;
+    border-radius: 20px;
+    padding-top: 0;
+    margin-top: 10px;
+  }
+
+  .i-product-price-container {
+    margin-left: 0;
+  }
+  .i-price-basket {
+    display: none;
+  }
+
+  .i-price-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+  }
+  .i-price-inner-container {
+    display: flex;
+  }
+
+  .i-price-container-mobile {
+    display: block;
+  }
+  .mobile-button {
+    padding: 10px;
+    background-color: rgb(94, 186, 125);
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+
+  .mobile-button > button {
+    font-weight: 600;
+    font-size: 1em;
+  }
+  .mobile-decrease-button {
+    background-color: red;
+    width: 70px;
+  }
+
+  .price-mobile-container {
+    text-align: center;
+    font-size: 2.5em;
+    overflow: auto;
+    width: 120px;
+  }
+  .mobile-button-container-increment-decrement {
+    margin: auto;
+  }
+
+  .amount-mobile {
+    font-size: 2.5em;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 40px;
+    border-radius: 10px;
+  }
+  .mobile-add-to-basket-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 2em;
+  }
+
+  .i-sub-description-container {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .i-sub-description {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .header-buttons-container {
+    right: 10px;
+  }
+  .static-page {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .static-page-info-container {
+    font-size: 1.2em;
+    text-align: left;
+  }
+
+  .homepage-slider {
+    margin: auto;
   }
 }

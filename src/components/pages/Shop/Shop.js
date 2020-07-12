@@ -27,6 +27,14 @@ export const Shop = ({ match }) => {
   const handleRadioButton = (e) => {
     setDietary(e.target.value);
   };
+
+  const handleFilterCollapse = (e) => {
+    let element = document.querySelector(".Collapsible__trigger.is-open");
+    element.classList.remove("is-open");
+    element.classList.add("is-closed");
+    let check = document.querySelector(".Collapsible__contentOuter");
+    check.style.height = "0px!important";
+  };
   return (
     <div className="shop">
       <div className="shop-links-container">
@@ -48,13 +56,13 @@ export const Shop = ({ match }) => {
           </li>
         </ul>
 
-        <ul className="sub-sub-category-links sidepanel-option">
+        <ul className="sub-sub-category-links sidepanel-option international-list">
           <h4>Category:</h4>
           <form
             className="checkout-delivery-options-form"
             onChange={handleRadioButton4}
           >
-            <label>
+            <label onClick={handleFilterCollapse}>
               <input
                 type="radio"
                 value="NONE"
@@ -95,7 +103,7 @@ export const Shop = ({ match }) => {
           </form>
         </ul>
 
-        <ul className="sub-sub-category-links sidepanel-option">
+        <ul className="sub-sub-category-links sidepanel-option sweets-and-candy-list">
           <h4>Category:</h4>
           <form
             className="checkout-delivery-options-form"
@@ -104,11 +112,15 @@ export const Shop = ({ match }) => {
             <label>
               <input
                 type="radio"
-                value="Bubble Gum"
+                value="NONE"
                 name="radio-button"
                 defaultChecked
                 id="default-checked-option"
               />
+              NONE
+            </label>
+            <label>
+              <input type="radio" value="Bubble Gum" name="radio-button" />
               Bubble Gum
             </label>
             <label>
@@ -150,6 +162,95 @@ export const Shop = ({ match }) => {
             <label>
               <input type="radio" value="Toffee" name="radio-button" />
               Toffee
+            </label>
+          </form>
+        </ul>
+
+        <ul className="sub-sub-category-links sidepanel-option pick-and-mix-list">
+          <h4>Category:</h4>
+          <form
+            className="checkout-delivery-options-form"
+            onChange={handleRadioButton4}
+          >
+            <label>
+              <input
+                type="radio"
+                value="NONE"
+                name="radio-button"
+                defaultChecked
+                id="default-checked-option"
+              />
+              NONE
+            </label>
+            <label>
+              <input type="radio" value="Hard Candy" name="radio-button" />
+              Hard Candy
+            </label>
+            <label>
+              <input type="radio" value="Soft Candy" name="radio-button" />
+              Soft Candy
+            </label>
+            <label>
+              <input type="radio" value="Chocolate" name="radio-button" />
+              Chocolate
+            </label>
+            <label>
+              <input type="radio" value="Sour Candy" name="radio-button" />
+              Sour Candy
+            </label>
+            <label>
+              <input type="radio" value="Chewy Candy" name="radio-button" />
+              Chewy Candy
+            </label>
+          </form>
+        </ul>
+        <ul className="sub-sub-category-links sidepanel-option traditional-list">
+          <h4>Category:</h4>
+          <form
+            className="checkout-delivery-options-form"
+            onChange={handleRadioButton4}
+          >
+            <label>
+              <input
+                type="radio"
+                value="NONE"
+                name="radio-button"
+                defaultChecked
+                id="default-checked-option"
+              />
+              NONE
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="Hard Boiled Candy"
+                name="radio-button"
+              />
+              Hard Boiled Candy
+            </label>
+            <label>
+              <input type="radio" value="Soft Candy" name="radio-button" />
+              Soft Candy
+            </label>
+            <label>
+              <input type="radio" value="Licourice" name="radio-button" />
+              Licourice
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="Powder And Sherbets"
+                name="radio-button"
+              />
+              Powder And Sherbets
+            </label>
+            <label>
+              <input type="radio" value="Toffee" name="radio-button" />
+              Toffee
+            </label>
+            <label>
+              <input type="radio" value="Chocolate" name="radio-button" />
+              Chocolate
             </label>
           </form>
         </ul>
@@ -282,6 +383,22 @@ export const Shop = ({ match }) => {
               <input type="radio" value="VEGAN" name="radio-button" />
               VEGAN
             </label>
+            <label>
+              <input type="radio" value="KOSHER" name="radio-button" />
+              KOSHER
+            </label>
+            <label>
+              <input type="radio" value="SUGAR FREE" name="radio-button" />
+              SUGAR FREE
+            </label>
+            <label>
+              <input type="radio" value="FAT FREE" name="radio-button" />
+              FAT FREE
+            </label>
+            <label>
+              <input type="radio" value="GLUTEN FREE" name="radio-button" />
+              GLUTEN FREE
+            </label>
           </form>
         </ul>
         <ul>
@@ -307,9 +424,6 @@ export const Shop = ({ match }) => {
           </form>
         </ul>
       </div>
-
-      <div className="placement"></div>
-
       <Collapsible trigger="FILTER" id="products-collapsible">
         <br />
         <br />
@@ -319,64 +433,199 @@ export const Shop = ({ match }) => {
         <a href="/shop/sweets-and-candy">SWEETS AND CANDY</a>
         <br />
         <br />
-        <Collapsible trigger="CATEGORY">
-          <ul className="sub-sub-category-links-mobile sidepanel-option-mobile">
-            <form
-              className="checkout-delivery-options-form-mobile"
-              onChange={handleRadioButton4}
-            >
-              <label>
-                <input
-                  type="radio"
-                  value="Candy"
-                  name="radio-button"
-                  defaultChecked
-                  id="default-checked-option"
-                />
-                CANDY
-              </label>
-              <br />
-              <label>
-                <input
-                  type="radio"
-                  value="Chocolate Bars"
-                  name="radio-button"
-                />
-                CHOCOLATE BARS
-              </label>
-              <br />
-              <label>
-                <input type="radio" value="Soda / Drinks" name="radio-button" />
-                SODA / DRINKS
-              </label>
-              <br />
-
-              <label>
-                <input type="radio" value="Crisps" name="radio-button" />
-                CRISPS
-              </label>
-              <br />
-
-              <label>
-                <input type="radio" value="Baked Goods" name="radio-button" />
-                BAKED GOODS
-              </label>
-              <br />
-
-              <label>
-                <input type="radio" value="Cereals" name="radio-button" />
-                CEREALS
-              </label>
-              <br />
-
-              <label>
-                <input type="radio" value="Gum" name="radio-button" />
-                GUM
-              </label>
-            </form>
-          </ul>
+        <Collapsible trigger="CATEGORY" className="international-mobile">
+          <form
+            className="checkout-delivery-options-form"
+            onChange={handleRadioButton4}
+          >
+            <label>
+              <input
+                type="radio"
+                value="NONE"
+                name="radio-button"
+                defaultChecked
+                id="default-checked-option"
+              />
+              NONE
+            </label>
+            <label>
+              <input type="radio" value="Candy" name="radio-button" />
+              Candy
+            </label>
+            <label>
+              <input type="radio" value="Chocolate" name="radio-button" />
+              CHOCOLATE
+            </label>
+            <label>
+              <input type="radio" value="Soda / Drinks" name="radio-button" />
+              SODA / DRINKS
+            </label>
+            <label>
+              <input type="radio" value="Crisps" name="radio-button" />
+              CRISPS
+            </label>
+            <label>
+              <input type="radio" value="Baked Goods" name="radio-button" />
+              BAKED GOODS
+            </label>
+            <label>
+              <input type="radio" value="Cereals" name="radio-button" />
+              CEREALS
+            </label>
+            <label>
+              <input type="radio" value="Gum" name="radio-button" />
+              GUM
+            </label>
+          </form>
         </Collapsible>
-        <Collapsible trigger="SORT BY Brand: " className="brand-list-mobile">
+        <Collapsible trigger="CATEGORY" className="sweets-and-candy-mobile">
+          <form
+            className="checkout-delivery-options-form"
+            onChange={handleRadioButton4}
+          >
+            <label>
+              <input
+                type="radio"
+                value="NONE"
+                name="radio-button"
+                defaultChecked
+                id="default-checked-option"
+              />
+              NONE
+            </label>
+            <label>
+              <input type="radio" value="Bubble Gum" name="radio-button" />
+              Bubble Gum
+            </label>
+            <label>
+              <input type="radio" value="Chocolate" name="radio-button" />
+              Chocolate
+            </label>
+            <label>
+              <input type="radio" value="Fun Candy" name="radio-button" />
+              Fun Candy
+            </label>
+            <label>
+              <input type="radio" value="Hard Candy" name="radio-button" />
+              Hard Candy
+            </label>
+            <label>
+              <input type="radio" value="Soft Candy" name="radio-button" />
+              Soft Candy
+            </label>
+            <label>
+              <input type="radio" value="Jellybeans" name="radio-button" />
+              Jellybeans
+            </label>
+            <label>
+              <input type="radio" value="Liquorice" name="radio-button" />
+              Liquorice
+            </label>
+            <label>
+              <input type="radio" value="Lollipops" name="radio-button" />
+              Lollipops
+            </label>
+            <label>
+              <input type="radio" value="Novelty Candy" name="radio-button" />
+              Novelty Candy
+            </label>
+            <label>
+              <input type="radio" value="Powder Sherbet" name="radio-button" />
+              Powder Sherbet
+            </label>
+            <label>
+              <input type="radio" value="Toffee" name="radio-button" />
+              Toffee
+            </label>
+          </form>
+        </Collapsible>
+        <Collapsible trigger="CATEGORY" className="pick-and-mix-mobile">
+          <form
+            className="checkout-delivery-options-form"
+            onChange={handleRadioButton4}
+          >
+            <label>
+              <input
+                type="radio"
+                value="NONE"
+                name="radio-button"
+                defaultChecked
+                id="default-checked-option"
+              />
+              NONE
+            </label>
+            <label>
+              <input type="radio" value="Hard Candy" name="radio-button" />
+              Hard Candy
+            </label>
+            <label>
+              <input type="radio" value="Soft Candy" name="radio-button" />
+              Soft Candy
+            </label>
+            <label>
+              <input type="radio" value="Chocolate" name="radio-button" />
+              Chocolate
+            </label>
+            <label>
+              <input type="radio" value="Sour Candy" name="radio-button" />
+              Sour Candy
+            </label>
+            <label>
+              <input type="radio" value="Chewy Candy" name="radio-button" />
+              Chewy Candy
+            </label>
+          </form>
+        </Collapsible>
+        <Collapsible trigger="CATEGORY" className="traditional-mobile">
+          <form
+            className="checkout-delivery-options-form"
+            onChange={handleRadioButton4}
+          >
+            <label>
+              <input
+                type="radio"
+                value="NONE"
+                name="radio-button"
+                defaultChecked
+                id="default-checked-option"
+              />
+              NONE
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="Hard Boiled Candy"
+                name="radio-button"
+              />
+              Hard Boiled Candy
+            </label>
+            <label>
+              <input type="radio" value="Soft Candy" name="radio-button" />
+              Soft Candy
+            </label>
+            <label>
+              <input type="radio" value="Licourice" name="radio-button" />
+              Licourice
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="Powder And Sherbets"
+                name="radio-button"
+              />
+              Powder And Sherbets
+            </label>
+            <label>
+              <input type="radio" value="Toffee" name="radio-button" />
+              Toffee
+            </label>
+            <label>
+              <input type="radio" value="Chocolate" name="radio-button" />
+              Chocolate
+            </label>
+          </form>
+        </Collapsible>
+        <Collapsible trigger="SORT BY BRAND: " className="brand-list-mobile">
           <ul className="">
             <form
               className="checkout-delivery-options-form-mobile sidepanel-option-mobile fixed-height-mobile"
@@ -396,14 +645,18 @@ export const Shop = ({ match }) => {
                 <input type="radio" value="Jolly Rancher" name="radio-button" />
                 Jolly Rancher
               </label>
+              <br />
+
               <label>
                 <input type="radio" value="Calypso" name="radio-button" />
                 Calypso
               </label>
+
               <label>
                 <input type="radio" value="M-And-Ms" name="radio-button" />
                 M&M'S
               </label>
+              <br />
               <label>
                 <input type="radio" value="Sour Patch" name="radio-button" />
                 Sour Patch
@@ -497,7 +750,46 @@ export const Shop = ({ match }) => {
         exact
         render={() => (
           <SubCategoryPage
-            subCategory={"Sweets And Candy"}
+            subCategory="Sweets And Candy"
+            subSubCategory={subSubCategory}
+            brand={false}
+            dietary={dietary}
+            sortByDate={sortByDate}
+          />
+        )}
+      />
+      <Route
+        path="/shop/pick-and-mix"
+        exact
+        render={() => (
+          <SubCategoryPage
+            subCategory="Pick And Mix"
+            subSubCategory={subSubCategory}
+            brand={false}
+            dietary={dietary}
+            sortByDate={sortByDate}
+          />
+        )}
+      />
+      <Route
+        path="/shop/traditional"
+        exact
+        render={() => (
+          <SubCategoryPage
+            subCategory="Traditional"
+            subSubCategory={subSubCategory}
+            brand={false}
+            dietary={dietary}
+            sortByDate={sortByDate}
+          />
+        )}
+      />
+      <Route
+        path="/shop/clearance"
+        exact
+        render={() => (
+          <SubCategoryPage
+            subCategory="Clearance"
             subSubCategory={subSubCategory}
             brand={false}
             dietary={dietary}

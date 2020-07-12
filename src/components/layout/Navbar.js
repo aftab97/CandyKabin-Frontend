@@ -38,23 +38,24 @@ export const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link to="/shop/sweets-and-candy">
+                <h2>Sweets & Candy</h2>
+              </Link>
+            </li>
+            <li>
               <Link to="/shop/pick-and-mix">
-                <h2>PICK & MIX</h2>
+                <h2>Pick & Mix</h2>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/shop/traditional">
+                <h2>Traditional</h2>
               </Link>
             </li>
             <li>
-              <Link to="/shop/australian">
-                <h2>AUSTRALIAN</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/shop/candy">
-                <h2>TRADITIONAL</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/shop/novelty-and-kids">
-                <h2>NOVELTY & KIDS</h2>
+              <Link to="/shop/clearance">
+                <h2>Clearance</h2>
               </Link>
             </li>
           </ul>

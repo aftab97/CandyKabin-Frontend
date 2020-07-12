@@ -29,6 +29,7 @@ import { CheckoutPage2 } from "./components/pages/Checkout/CheckoutPage2";
 import { PickAndMix } from "./components/pages/PickAndMix/PickAndMix";
 import { index } from "./components/pages/Admin";
 import { MobileNav } from "./components/layout/MobileNav";
+import { NewIn } from "./components/pages/NewIn/NewIn";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -140,6 +141,7 @@ export default function App() {
                 <Route exact path="/products" component={Products} />
                 <Route path="/products/:id" component={ProductPage} />
                 <Route path="/shop" component={Shop} />
+                <Route path="/new-in" component={NewIn} />
                 <Route path="/pick-and-mix" component={PickAndMix} />
                 <Route path="/dietary" component={Dietary} />
                 <Route path="/three" component={Three} />

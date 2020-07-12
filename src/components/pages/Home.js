@@ -118,7 +118,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div class="row thumbnail-row">
+        <div class="row thumbnail-row non-mobile">
           <div class="my-work-image" id="margin-left-image">
             <img
               class="thumbnail-image"

@@ -37,7 +37,7 @@ export const SubCategoryPage = (params) => {
   );
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(6);
+  const [productsPerPage, setProductsPerPage] = useState(12);
 
   const pageNumbers = [];
   let currentProducts = [];
@@ -45,10 +45,12 @@ export const SubCategoryPage = (params) => {
   const history = useHistory();
 
   useEffect(() => {
-    if (params.brand !== "NA") {
+    //if not subsub category or brand
+    console.log("aftab");
+    if (!params.subSubCategory) {
       const grabData = async () => {
         const fetchedData = await Axios.get(
-          `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&brand=${params.brand}&date=${params.sortByDate}&dietary=${params.dietary}`
+          `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
         );
 
         setProducts(fetchedData.data);
@@ -56,14 +58,26 @@ export const SubCategoryPage = (params) => {
 
       grabData();
     } else {
-      const grabData = async () => {
-        const fetchedData = await Axios.get(
-          `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
-        );
+      if (params.brand !== "NA") {
+        const grabData = async () => {
+          const fetchedData = await Axios.get(
+            `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&brand=${params.brand}&date=${params.sortByDate}&dietary=${params.dietary}`
+          );
 
-        setProducts(fetchedData.data);
-      };
-      grabData();
+          setProducts(fetchedData.data);
+        };
+
+        grabData();
+      } else {
+        const grabData = async () => {
+          const fetchedData = await Axios.get(
+            `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
+          );
+
+          setProducts(fetchedData.data);
+        };
+        grabData();
+      }
     }
   }, [params.subSubCategory, params.brand, params.dietary, params.sortByDate]);
 
@@ -79,6 +93,76 @@ export const SubCategoryPage = (params) => {
       if (brand !== null) {
         brand.style.display = "block";
         brandMobile.style.display = "block";
+      }
+    }
+  }, [params.subCategory]);
+
+  useEffect(() => {
+    if (params.subSubCategory) {
+      let international = document.querySelector(
+        ".sub-sub-category-links.sidepanel-option.international-list"
+      );
+      let sweetsAndCandy = document.querySelector(".sweets-and-candy-list");
+      let pickAndMix = document.querySelector(".pick-and-mix-list");
+      let traditional = document.querySelector(".traditional-list");
+
+      let internationalMobile = document.querySelector(".international-mobile");
+      let sweetsAndCandyMobile = document.querySelector(
+        ".sweets-and-candy-mobile"
+      );
+      let pickAndMixMobile = document.querySelector(".pick-and-mix-mobile");
+      let traditionalMobile = document.querySelector(".traditional-mobile");
+
+      if (params.subCategory === "International") {
+        international.style.display = "block";
+        sweetsAndCandy.style.display = "none";
+        pickAndMix.style.display = "none";
+        traditional.style.display = "none";
+
+        internationalMobile.style.display = "block";
+        sweetsAndCandyMobile.style.display = "none";
+        pickAndMixMobile.style.display = "none";
+        traditionalMobile.style.display = "none";
+      } else if (params.subCategory === "Sweets And Candy") {
+        international.style.display = "none";
+        sweetsAndCandy.style.display = "block";
+        pickAndMix.style.display = "none";
+        traditional.style.display = "none";
+
+        internationalMobile.style.display = "none";
+        sweetsAndCandyMobile.style.display = "block";
+        pickAndMixMobile.style.display = "none";
+        traditionalMobile.style.display = "none";
+      } else if (params.subCategory === "Pick And Mix") {
+        international.style.display = "none";
+        sweetsAndCandy.style.display = "none";
+        pickAndMix.style.display = "block";
+        traditional.style.display = "none";
+
+        internationalMobile.style.display = "none";
+        sweetsAndCandyMobile.style.display = "none";
+        pickAndMixMobile.style.display = "block";
+        traditionalMobile.style.display = "none";
+      } else if (params.subCategory === "Traditional") {
+        international.style.display = "none";
+        sweetsAndCandy.style.display = "none";
+        pickAndMix.style.display = "none";
+        traditional.style.display = "block";
+
+        internationalMobile.style.display = "none";
+        sweetsAndCandyMobile.style.display = "none";
+        pickAndMixMobile.style.display = "none";
+        traditionalMobile.style.display = "block";
+      } else {
+        international.style.display = "none";
+        sweetsAndCandy.style.display = "none";
+        pickAndMix.style.display = "none";
+        traditional.style.display = "none";
+
+        internationalMobile.style.display = "none";
+        sweetsAndCandyMobile.style.display = "none";
+        pickAndMixMobile.style.display = "none";
+        traditionalMobile.style.display = "none";
       }
     }
   }, [params.subCategory]);

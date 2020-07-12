@@ -40,17 +40,95 @@ export const ProductPage = ({ match, location, history }) => {
 
   const increment = (e) => {
     ++document.querySelector(".i-amount").innerHTML;
+    ++document.querySelector(".amount-mobile").innerHTML;
     // ++e.currentTarget.parentNode.querySelector("h4").childNodes[0].data;
   };
 
   const decrement = (e) => {
     if (document.querySelector(".i-amount").innerHTML > 0)
       --document.querySelector(".i-amount").innerHTML;
+
+    if (document.querySelector(".amount-mobile").innerHTML > 0) {
+      --document.querySelector(".amount-mobile").innerHTML;
+    }
   };
 
   const handleClick = (e) => {
     let productName = document.querySelector(".i-title ").innerHTML;
     let pickedAmount = parseInt(document.querySelector(".i-amount").innerHTML);
+    let data = parseFloat(
+      document.querySelector(".i-product-price").childNodes[1].data
+    );
+    let id = e.currentTarget.querySelector(".add-to-basket-button").id;
+
+    let image = document.querySelector(".i-image > img");
+
+    let nonParsedWeight = document.querySelector(".i-product-weight")
+      .childNodes[0].data;
+
+    let weight = parseInt(nonParsedWeight);
+
+    let totalCost = pickedAmount * data;
+
+    if (pickedAmount > 0) {
+      incrementCounter();
+      setShoppingCart([
+        ...shoppingCart,
+        {
+          id,
+          productName,
+          amount: pickedAmount,
+          price: data,
+          weight,
+          orderNo: count,
+          imageSrc: image.src,
+          totalCost,
+        },
+      ]);
+
+      let finalAmount = [
+        ...shoppingCart,
+        {
+          id,
+          productName,
+          amount: pickedAmount,
+          price: data,
+          weight,
+          orderNo: count,
+          imageSrc: image.src,
+          totalCost,
+        },
+      ];
+
+      var arr2 = finalAmount.reduce((a, b) => {
+        var i = a.findIndex((x) => x.productName === b.productName);
+        return (
+          i === -1
+            ? a.push({
+                id: b.id,
+                productName: b.productName,
+                amount: b.amount,
+                price: b.price,
+                weight: b.weight,
+                orderNo: b.orderNo,
+                imageSrc: b.imageSrc,
+                totalCost: b.totalCost,
+              })
+            : ((a[i].amount += b.amount), (a[i].totalCost += b.totalCost)),
+          a
+        );
+      }, []);
+
+      setShoppingCart(arr2);
+      localStorage.setItem("basket", JSON.stringify(arr2));
+    }
+  };
+
+  const handleClick2 = (e) => {
+    let productName = document.querySelector(".i-title ").innerHTML;
+    let pickedAmount = parseInt(
+      document.querySelector(".amount-mobile").innerHTML
+    );
     let data = parseFloat(
       document.querySelector(".i-product-price").childNodes[1].data
     );
@@ -130,7 +208,26 @@ export const ProductPage = ({ match, location, history }) => {
 
   return (
     <div className="individual-product-page">
-      <button onClick={goBackButton}>Go Back</button>
+      <button
+        onClick={goBackButton}
+        className="i-go-back-button-container hvr-grow2"
+      >
+        <div className="i-go-back-button-inner-container">
+          <span>
+            <svg
+              className="arrow-back-svg"
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            >
+              <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+            </svg>
+          </span>
+          <h3> Back </h3>
+        </div>
+      </button>
 
       {product ? (
         <div className="i-product-container">
@@ -146,6 +243,7 @@ export const ProductPage = ({ match, location, history }) => {
               <div className="i-image hvr-grow2">
                 <img src={product.imageURL} />
               </div>
+
               {product.ingredients ? (
                 <div className="i-ingredients">
                   <p>{product.ingredients}</p>
@@ -153,6 +251,37 @@ export const ProductPage = ({ match, location, history }) => {
               ) : (
                 <></>
               )}
+
+              <div className="i-price-container-mobile">
+                <div className="i-price-inner-container">
+                  <div className="i-product-price-mobile mobile-button price-mobile-container hvr-grow2">
+                    <Emoji text="<3" />£{(product.price / 100).toFixed(2)}
+                    <Emoji text="<3" />
+                  </div>
+                  <div className="mobile-button-container-increment-decrement">
+                    <div className="mobile-button">
+                      <button className="increase-mobile" onClick={increment}>
+                        +
+                      </button>
+                    </div>
+                    <div className="mobile-button mobile-decrease-button">
+                      <button className="decrease-mobile" onClick={decrement}>
+                        -
+                      </button>
+                    </div>
+                  </div>
+                  <div className="amount-mobile mobile-button">0</div>
+                </div>
+                <div
+                  id={product.productName}
+                  onClick={handleClick2}
+                  className="mobile-button mobile-add-to-basket-container"
+                >
+                  <button className="add-to-basket-button">
+                    ADD TO BASKET
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div className="i-sub-description-container">

@@ -167,6 +167,7 @@ export default function Header() {
 
   const history = useHistory();
   const login = () => history.push("/login");
+  const checkout = () => history.push("/checkout");
 
   const handleMouseOver = () => {
     const basketOverlay = document.querySelector(".basketOverlay");
@@ -223,7 +224,17 @@ export default function Header() {
       </div>
       <div className="header-buttons-container">
         {userData.user ? (
-          <button onClick={logout}>Log out</button>
+          <div className="login-container">
+            <button onClick={logout} className="header-login-button">
+              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 12c8 0 10 6.478 10 12H2c0-5.522 2-12 10-12zm0-12a5.5 5.5 0 110 11 5.5 5.5 0 010-11z"
+                  fill="#535A6B"
+                  fill-rule="nonzero"
+                />
+              </svg>
+            </button>
+          </div>
         ) : (
           <div className="login-container">
             <button onClick={login} className="header-login-button">
@@ -243,6 +254,7 @@ export default function Header() {
           <div
             className="header-basket-container"
             onMouseOver={handleMouseOver}
+            onClick={checkout}
           >
             <svg width="22" height="24" xmlns="http://www.w3.org/2000/svg">
               <path
