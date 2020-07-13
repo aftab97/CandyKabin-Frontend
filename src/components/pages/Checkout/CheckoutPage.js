@@ -19,6 +19,7 @@ export const CheckoutPage = () => {
     totalCost,
   } = useContext(BasketContext);
 
+  const { userData } = useContext(UserContext);
   const product = [
     {
       name: "apple",
@@ -51,17 +52,22 @@ export const CheckoutPage = () => {
   const makePayment = async (token, addresses) => {
     let body = {
       token,
-      product,
-      deliveryCost,
+      shoppingCart,
+      userData,
       productCost,
       totalCost,
+      deliveryCost,
     };
 
     console.log(token, body);
 
     const response = await axios.post(`${process.env.REACT_APP_URL}/payment`, {
       token,
-      product,
+      shoppingCart,
+      userData,
+      productCost,
+      totalCost: productCost + deliveryCost,
+      deliveryCost,
     });
     const { status } = response.data;
     console.log("Response:", response.data);
@@ -102,33 +108,50 @@ export const CheckoutPage = () => {
 
   let stripeKey = process.env.REACT_APP_STRIPE_KEY;
 
-  const handleCheckoutDisabledButton = () => {};
+  const handleCheckoutDisabledButton = () => {
+    let x = document.getElementById("hidden-message-pop-up");
+    let displayValue = window.getComputedStyle(x).display;
+
+    if (displayValue === "none") {
+      x.style.display = "block";
+    }
+  };
   return (
     <div className="checkout-page">
       <div className="checkout-section">
-        <ShoppingList />
-      </div>
-      <div className="checkout-section">
         <Shipping />
       </div>
-      {readyForCheckout ? (
-        <StripeCheckout
-          stripeKey={stripeKey}
-          token={makePayment}
-          billingAddress
-          shippingAddress
-          amount={total[total.length - 1] * 100}
-        />
-      ) : (
-        <button
-          className="disabled-button-checkout"
-          onClick={handleCheckoutDisabledButton}
-        >
-          <span>Pay With Card</span>
-        </button>
-      )}
-      <div>
-        <h4>Please select a</h4>
+      <div className="checkout-section">
+        <ShoppingList />
+      </div>
+
+      <div className="payment-button-container">
+        {readyForCheckout ? (
+          <StripeCheckout
+            stripeKey={stripeKey}
+            token={makePayment}
+            currency="GBP"
+            billingAddress
+            shippingAddress
+            amount={(productCost + deliveryCost) * 100}
+          />
+        ) : (
+          <>
+            <button
+              className="disabled-button-checkout"
+              onClick={handleCheckoutDisabledButton}
+            >
+              <span>Pay With Card</span>
+            </button>
+
+            <div id="hidden-message-pop-up">
+              <h4>
+                Please select your shipping location to continue with your
+                payment
+              </h4>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

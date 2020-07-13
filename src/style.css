@@ -453,16 +453,16 @@ body {
   padding-right: 10px;
 }
 .basket-remove-button {
-  background-color: #fff;
+  background-color: rgb(255, 77, 77);
   width: 100px;
   height: 20px;
   border-radius: 25px;
-  border: 1px solid black;
   font-weight: 600;
   position: relative;
   margin-top: 10px;
   margin-bottom: 10px;
   left: 20px;
+  box-shadow: 5px 10px 8px #888888;
 }
 
 .basket-buttons-container {
@@ -1367,13 +1367,12 @@ nav {
 }
 
 .checkout-delivery-options-container {
-  width: 700px;
   margin: auto;
+  text-align: center;
   margin-top: 20px;
 }
 
 .checkout-delivery-options-form {
-  /* text-align: center; */
 }
 
 .checkout-delivery-options-form > label {
@@ -1381,6 +1380,10 @@ nav {
   margin-top: 10px;
   display: block;
   text-align: left;
+}
+
+.product-weight {
+  display: none;
 }
 
 @keyframes left-thumbnail-move-in {
@@ -1556,6 +1559,16 @@ label > input {
   display: none;
 }
 
+.payment-button-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#hidden-message-pop-up {
+  margin-top: 10px;
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   html,
   body {
@@ -1656,7 +1669,6 @@ label > input {
   }
   .product {
     width: 80vw;
-    height: 400px;
 
     display: block;
     margin-left: auto;
@@ -1840,5 +1852,58 @@ label > input {
 
   .homepage-slider {
     margin: auto;
+  }
+
+  .product {
+    height: none;
+  }
+
+  .homepage-info-block {
+    background-color: transparent;
+  }
+
+  .block-1 {
+    padding: 10px;
+    background-color: white;
+  }
+
+  .block-2 {
+    padding: 10px;
+    background-color: white;
+  }
+
+  .bottom-footer {
+    margin-top: 120px;
+    flex-direction: column;
+    text-align: center;
+    height: unset;
+  }
+
+  .footer-list-container {
+    flex-direction: column;
+    text-align: center;
+    width: unset;
+    margin: unset;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  .footer-list-container > ul {
+    margin-top: 20px;
+  }
+
+  .footer-logo-container {
+    width: unset;
+    margin: unset;
+  }
+  .footer-logo-container > img {
+    width: 300px !important;
+    margin-left: unset;
+    max-width: unset;
+    /* height: 50px; */
+  }
+
+  td {
+    padding-right: unset;
   }
 }

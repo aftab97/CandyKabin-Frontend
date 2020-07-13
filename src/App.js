@@ -165,8 +165,8 @@ export default function App() {
                 <Route path="/about-us" component={AboutUs} />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
               </Switch>
-              {/* <Footer /> */}
             </div>
+            <Footer />
           </BasketContext.Provider>
         </UserContext.Provider>
       </BrowserRouter>

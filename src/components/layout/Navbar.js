@@ -12,9 +12,9 @@ export const Navbar = () => {
 
   const mouseLeaveHandle = (e) => {
     document.querySelector("#shop-header-links").style.display = "none";
-    document.querySelector("#pick-mix-links").style.display = "none";
-    document.querySelector("#traditional-links").style.display = "none";
-    document.querySelector("#dietary-links").style.display = "none";
+    document.querySelector("#new-in-links").style.display = "none";
+    // document.querySelector("#traditional-links").style.display = "none";
+    // document.querySelector("#dietary-links").style.display = "none";
   };
 
   return (
@@ -62,96 +62,20 @@ export const Navbar = () => {
         </div>
       </div>
       <div onMouseLeave={mouseLeaveHandle}>
-        <h2 onMouseOver={hoverHandle} id="pick-mix">
-          PICK & MIX
+        <h2 onMouseOver={hoverHandle} id="new-in">
+          NEW IN
         </h2>
         <div
           className="list-link"
-          id="pick-mix-links"
+          id="new-in-links"
           style={{ display: "none" }}
           onMouseLeave={mouseLeaveHandle}
         >
           <ul className="header-links">
             <li>
-              <Link to="/pick-and-mix/lollipops">
-                <h2>LOLLIPOPS</h2>
+              <Link to="/new-in/products">
+                <h2>Products</h2>
               </Link>
-            </li>
-            <li>
-              <Link to="/pick-and-mix/bubblegum">
-                <h2>BUBBLEGUM</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/pick-and-mix/funcandy">
-                <h2>FUN CANDY</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/pick-and-mix/hardcandy">
-                <h2>HARD CANDY</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/pick-and-mix/gummycandy">
-                <h2>GUMMY CANDY</h2>
-              </Link>
-            </li>
-            <li>
-              <Link to="/pick-and-mix/chewycandy">
-                <h2>CHEWY CANDY</h2>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div onMouseLeave={mouseLeaveHandle}>
-        <h2 onMouseOver={hoverHandle} id="traditional">
-          TRADITIONAL
-        </h2>
-        <div
-          className="list-link"
-          id="traditional-links"
-          style={{ display: "none" }}
-          onMouseLeave={mouseLeaveHandle}
-        >
-          <ul className="header-links">
-            <li>C</li>
-            <li>B</li>
-            <li>B</li>
-            <li>B</li>
-          </ul>
-        </div>
-      </div>
-
-      <div onMouseLeave={mouseLeaveHandle}>
-        <h2 onMouseOver={hoverHandle} id="dietary">
-          DIETARY
-        </h2>
-        <div
-          className="list-link"
-          id="dietary-links"
-          style={{ display: "none" }}
-          onMouseLeave={mouseLeaveHandle}
-        >
-          <ul className="header-links">
-            <li>
-              <h2>SUGAR FREE</h2>
-            </li>
-            <li>
-              <h2>HALAL</h2>
-            </li>
-            <li>
-              <h2>FAT FREE</h2>
-            </li>
-            <li>
-              <h2>GLUTEN FREE</h2>
-            </li>
-            <li>
-              <h2>VEGAN</h2>
-            </li>
-            <li>
-              <h2>KOSHER</h2>
             </li>
           </ul>
         </div>

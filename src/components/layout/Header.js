@@ -90,7 +90,7 @@ export default function Header() {
           </div>
           <div className="basket-info-container">
             <h4 className="product-name-basket">{data.productName}</h4>{" "}
-            <h5 className="product-price-basket">£{data.price}</h5>
+            <h5 className="product-price-basket">£{data.price.toFixed(2)}</h5>
             <button className="basket-remove-button" onClick={handleRemove}>
               REMOVE
             </button>
@@ -267,7 +267,7 @@ export default function Header() {
           <div className="basketOverlay">
             <h2 className="basket-title">BASKET</h2>
             {basketOverlayData}
-            <h2 className="basket-title">Total: £{productCost}</h2>
+            <h2 className="basket-title">Total: £{productCost.toFixed(2)}</h2>
             <button className="basket-checkout-button">
               <Link to="/checkout">
                 <h2>CHECKOUT</h2>

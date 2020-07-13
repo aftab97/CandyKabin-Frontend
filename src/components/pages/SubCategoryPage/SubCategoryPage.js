@@ -46,7 +46,6 @@ export const SubCategoryPage = (params) => {
 
   useEffect(() => {
     //if not subsub category or brand
-    console.log("aftab");
     if (!params.subSubCategory) {
       const grabData = async () => {
         const fetchedData = await Axios.get(
@@ -295,6 +294,11 @@ export const SubCategoryPage = (params) => {
       }
     }
     e.currentTarget.className += " page-button-selected-page";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const handleRedirect = (e) => {

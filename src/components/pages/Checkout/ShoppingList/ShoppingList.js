@@ -2,7 +2,13 @@ import React, { useContext } from "react";
 import BasketContext from "../../../../context/BasketContext";
 
 export const ShoppingList = () => {
-  const { shoppingCart, setShoppingCart } = useContext(BasketContext);
+  const {
+    shoppingCart,
+    setShoppingCart,
+    location,
+    productCost,
+    deliveryCost,
+  } = useContext(BasketContext);
 
   const handleIncrement = (e) => {
     let productName = e.currentTarget.parentNode.parentNode.parentNode.querySelector(
@@ -56,13 +62,35 @@ export const ShoppingList = () => {
     localStorage.setItem("basket", JSON.stringify(combinedArr));
   };
 
+  const handleRemove = (e) => {
+    let productName = e.currentTarget.parentNode.parentNode.querySelector(
+      ".product-name-table"
+    ).childNodes[0].data;
+
+    let nonSelectedItem = shoppingCart.filter(
+      (p) => p.productName !== productName
+    );
+
+    let combinedArr = [...nonSelectedItem];
+
+    combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+
+    setShoppingCart(combinedArr);
+    localStorage.setItem("basket", JSON.stringify(combinedArr));
+  };
+
   return shoppingCart ? (
     <>
       <div className="checkout-styling-table">
         <table
           cellpadding="0"
           cellspacing="0"
-          style={{ margin: "auto", marginTop: 20, border: "1px solid #e5e5e5" }}
+          style={{
+            margin: "auto",
+            marginTop: 20,
+            border: "1px solid #e5e5e5",
+            width: 50,
+          }}
         >
           <tr
             className="checkount-table-header"
@@ -93,8 +121,9 @@ export const ShoppingList = () => {
                     <div
                       className="product-remove-table"
                       style={{ color: "#e57098" }}
+                      onClick={handleRemove}
                     >
-                      REMOVE
+                      <button>REMOVE</button>
                     </div>
                   </div>
                 </div>
@@ -105,20 +134,42 @@ export const ShoppingList = () => {
                     className="table-add table-button"
                     onClick={handleIncrement}
                   >
-                    +
+                    <button>+</button>
                   </div>
                   <div className="table-button table-amount">{item.amount}</div>
                   <div
                     className="table-reduce table-button"
                     onClick={handleDecrement}
                   >
-                    -
+                    <button>-</button>
                   </div>
                 </div>
               </td>
               <td>{(item.amount * item.price).toFixed(2)}</td>
             </tr>
           ))}
+          <tr>
+            <td>PRODUCT COST</td>
+            <td style={{ fontWeight: 600 }}>£{productCost.toFixed(2)}</td>
+          </tr>
+          {location ? (
+            <tr>
+              <td>SHIPPING COST</td>
+              <td style={{ fontWeight: 600 }}>£{deliveryCost.toFixed(2)}</td>
+            </tr>
+          ) : (
+            <></>
+          )}
+          {location ? (
+            <tr>
+              <td>TOTAL COST</td>
+              <td style={{ fontWeight: 600 }}>
+                £{(productCost + deliveryCost).toFixed(2)}
+              </td>
+            </tr>
+          ) : (
+            <></>
+          )}
         </table>
       </div>
     </>

@@ -113,7 +113,7 @@ export const Shipping = () => {
   return (
     <div className="checkout-delivery-cost">
       <div className="checkout-delivery-options-container">
-        <h4>Choose your location:</h4>
+        <h4>SELECT YOUR SHIPPING LOCATION:</h4>
         <form
           className="checkout-delivery-options-form"
           onChange={handleRadioButtion}
@@ -140,14 +140,6 @@ export const Shipping = () => {
           </label>
         </form>
       </div>
-
-      <div>
-        <h2>Shipping Cost: {deliveryCost}</h2>
-      </div>
-      <div>
-        <h2>Product Cost: {productCost}</h2>
-      </div>
-      <div>{/* <h2>Product Cost: {productCost}</h2> */}</div>
     </div>
   );
 };

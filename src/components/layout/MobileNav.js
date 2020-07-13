@@ -25,6 +25,13 @@ export const MobileNav = () => {
         <br />
         <br />
       </Collapsible>
+      <Collapsible trigger="NEW IN">
+        <br />
+        <br />
+        <a href="/new-in/products">Products</a>
+        <br />
+        <br />
+      </Collapsible>
     </div>
   );
 };
