@@ -504,7 +504,7 @@ export const AddProducts = () => {
         <ul className="brand-list">
           <form
             className="checkout-delivery-options-form sidepanel-option fixed-height"
-            onChange={(e) => setBrand(e.target.name)}
+            onChange={(e) => setBrand(e.target.value)}
           >
             <h4>SORT BY Brand: </h4>
 
