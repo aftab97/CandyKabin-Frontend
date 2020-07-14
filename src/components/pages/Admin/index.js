@@ -7,12 +7,12 @@ export const index = () => {
   return (
     <div>
       <div>
-        <button>
+        <button className="sidepanel-option">
           <Link to="/admin/payment-lookup">PAYMENT LOOKUP</Link>
         </button>
       </div>
       <div>
-        <button>
+        <button className="sidepanel-option">
           <Link to="/admin/add-products">ADD PRODUCTS</Link>
         </button>
       </div>

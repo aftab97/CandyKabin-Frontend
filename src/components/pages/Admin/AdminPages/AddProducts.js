@@ -212,10 +212,8 @@ export const AddProducts = () => {
     };
 
     checkLoggedIn();
-  };
 
-  const handleBrand = (e) => {
-    console.log("hello");
+    window.location.reload();
   };
 
   const handleCategory = (e) => {
@@ -504,7 +502,10 @@ export const AddProducts = () => {
       {/* add handler for bramd */}
       <div>
         <ul className="brand-list">
-          <form className="checkout-delivery-options-form sidepanel-option fixed-height">
+          <form
+            className="checkout-delivery-options-form sidepanel-option fixed-height"
+            onChange={(e) => setBrand(e.target.name)}
+          >
             <h4>SORT BY Brand: </h4>
 
             <label>
