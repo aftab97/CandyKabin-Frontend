@@ -1,5 +1,12 @@
 import React from "react";
 
 export const PaymentLookup = () => {
-  return <div>PAYMENT LOOKUP</div>;
+  const handleAddProductPage = () => {};
+  return (
+    <div>
+      <div>
+        <button onClick={handleAddProductPage}>PAYMENT LOOKUP</button>
+      </div>
+    </div>
+  );
 };

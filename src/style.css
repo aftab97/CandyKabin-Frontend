@@ -343,6 +343,9 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+.header-basket-container > h2 {
+  padding-right: 5px;
+}
 
 /* FIX for the hover basket not appearing on top */
 .header-basket-container:hover + .basketOverlay {
@@ -413,7 +416,8 @@ body {
   max-width: 50px;
   max-height: 50px;
   margin: auto;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .basket-button-v1 {
@@ -777,6 +781,7 @@ body {
 }
 
 .i-product-description-container {
+  margin-top: 20px;
   background-color: white;
   border-radius: 25px;
   position: relative;
@@ -1011,7 +1016,7 @@ body {
 
 .logo {
   width: 250px;
-  margin-left: 20px;
+  margin-left: 5px;
   filter: drop-shadow(5px 5px 5px #222);
 }
 
@@ -1569,6 +1574,32 @@ label > input {
   display: none;
 }
 
+.admin-page {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-button {
+  background-color: pink;
+  margin-bottom: 20px;
+}
+
+.admin-page > div {
+  margin-top: 50px;
+}
+
+.admin-page > div > div {
+  margin-top: 20px;
+}
+
+.admin-page > div > div > div {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
 @media only screen and (max-width: 600px) {
   html,
   body {
@@ -1670,7 +1701,6 @@ label > input {
   .product {
     width: 80vw;
 
-    display: block;
     margin-left: auto;
     margin-right: auto;
   }

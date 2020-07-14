@@ -256,6 +256,7 @@ export default function Header() {
             onMouseOver={handleMouseOver}
             onClick={checkout}
           >
+            <h2>{shoppingCart.length}</h2>
             <svg width="22" height="24" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M6.894 5.469c0-2.254 1.712-4.019 3.898-4.019 2.17 0 3.868 1.765 3.868 4.019v.86H6.894v-.86zm9.216.86v-.86C16.11 2.402 13.774 0 10.792 0 7.794 0 5.445 2.402 5.445 5.469v.86H1.449C.306 6.329 0 7 0 8.032V22c0 1.099.724 1.696 1.75 1.696h18.355c1.27 0 1.45-.725 1.45-1.696V8.032c0-1.25-1.05-1.703-1.45-1.703H16.11z"
