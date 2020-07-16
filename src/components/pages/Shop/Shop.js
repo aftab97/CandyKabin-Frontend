@@ -702,7 +702,7 @@ export const Shop = ({ match }) => {
           <SubCategoryPage
             subCategory="Sweets And Candy"
             subSubCategory={subSubCategory}
-            brand={false}
+            brand="NA"
             dietary={dietary}
             sortByDate={sortByDate}
           />
@@ -715,7 +715,7 @@ export const Shop = ({ match }) => {
           <SubCategoryPage
             subCategory="Pick And Mix"
             subSubCategory={subSubCategory}
-            brand={false}
+            brand="NA"
             dietary={dietary}
             sortByDate={sortByDate}
           />
@@ -728,7 +728,7 @@ export const Shop = ({ match }) => {
           <SubCategoryPage
             subCategory="Traditional"
             subSubCategory={subSubCategory}
-            brand={false}
+            brand="NA"
             dietary={dietary}
             sortByDate={sortByDate}
           />
@@ -741,7 +741,7 @@ export const Shop = ({ match }) => {
           <SubCategoryPage
             subCategory="Clearance"
             subSubCategory={subSubCategory}
-            brand={false}
+            brand="NA"
             dietary={dietary}
             sortByDate={sortByDate}
           />
