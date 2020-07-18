@@ -133,6 +133,12 @@ body {
   color: #ffffff;
 }
 
+.page {
+  margin-top: 20px;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
 /* media queries */
 
 @media screen and (max-width: 550px) {
@@ -378,10 +384,13 @@ body {
   padding-right: 10px;
   border-radius: 10px;
   height: 40px;
+  text-align: center;
 }
 
-.header-login-button {
+.header-login-button > svg {
+  width: 25px;
   display: flex;
+  /* text-align: center; */
 }
 
 .basketOverlay {

@@ -40,7 +40,7 @@ export const Footer = () => {
         <ul>
           <h4 className="list-title-footer">LEGAL</h4>
           <li>
-            <Link to="/delivery-information">Privacy Policy</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
           </li>
         </ul>
       </div>

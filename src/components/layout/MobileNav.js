@@ -25,10 +25,36 @@ export const MobileNav = () => {
         <br />
         <br />
       </Collapsible>
+      <Collapsible trigger="GIFTS AND HAMPERS">
+        <br />
+        <br />
+        <a href="/gifts-and-hampers/products">PRODUCTS</a>
+        <br />
+        <br />
+      </Collapsible>
       <Collapsible trigger="NEW IN">
         <br />
         <br />
-        <a href="/new-in/products">Products</a>
+        <a href="/new-in/products">PRODUCTS</a>
+        <br />
+        <br />
+      </Collapsible>
+      <Collapsible trigger="MORE">
+        <br />
+        <br />
+        <a href="/about-us">ABOUT US</a>
+        <br />
+        <br />
+        <a href="/frequently-asked-questiions">FREQUENTLY ASKED QUESTIONS</a>
+        <br />
+        <br />
+        <a href="/customer-services">CUSTOMER SERVICES</a>
+        <br />
+        <br />
+        <a href="/allergy-information">ALLERGY INFORMATION</a>
+        <br />
+        <br />
+        <a href="/privacy-policy">PRIVACY POLICY</a>
         <br />
         <br />
       </Collapsible>

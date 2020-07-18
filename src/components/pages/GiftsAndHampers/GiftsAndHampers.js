@@ -3,11 +3,18 @@ import { SubCategoryPage } from "../SubCategoryPage/SubCategoryPage";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import Collapsible from "react-collapsible";
 
-export const NewIn = ({ match }) => {
+export const GiftsAndHampers = ({ match }) => {
   const [dietary, setDietary] = useState("NONE");
   const [sortByDate, setSortByDate] = useState(-1);
   const [brand, setBrand] = useState("NONE");
   const [subSubCategory, setSubSubCategory] = useState("NONE");
+
+  const handleRadioButton4 = (e) => {
+    setSubSubCategory(e.target.value);
+  };
+  const handleRadioButton3 = (e) => {
+    setBrand(e.target.value);
+  };
 
   const handleRadioButton2 = (e) => {
     setSortByDate(parseInt(e.target.value));
@@ -21,6 +28,13 @@ export const NewIn = ({ match }) => {
     setDietary(e.target.value);
   };
 
+  const handleFilterCollapse = (e) => {
+    let element = document.querySelector(".Collapsible__trigger.is-open");
+    element.classList.remove("is-open");
+    element.classList.add("is-closed");
+    let check = document.querySelector(".Collapsible__contentOuter");
+    check.style.height = "0px!important";
+  };
   return (
     <div className="shop">
       <div className="shop-links-container">
@@ -96,13 +110,13 @@ export const NewIn = ({ match }) => {
       </div>
 
       <Route
-        path="/new-in/products"
+        path="/gifts-and-hampers/products"
         // exact
         // component={ChocolateBars}
         exact
         render={() => (
           <SubCategoryPage
-            subCategory="New In"
+            subCategory="Gifts And Hampers"
             dietary={dietary}
             sortByDate={sortByDate}
           />

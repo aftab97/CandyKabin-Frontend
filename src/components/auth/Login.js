@@ -48,6 +48,7 @@ export default function Login() {
   return (
     <div className="page">
       <h2>Log in</h2>
+      <br />
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
       )}
@@ -68,6 +69,8 @@ export default function Login() {
 
         <input type="submit" value="Log in" />
       </form>
+      <h5>Register</h5>
+      <h5>Forgot Password</h5>
     </div>
   );
 }
