@@ -26,11 +26,12 @@ export const ProductPage = ({ match, location, history }) => {
           match.params.id.replace(/&/g, "%26") // handle the & so it changes to the URL format
       );
 
+      console.log(fetchedProduct.data);
+
       setProduct(fetchedProduct.data);
     };
 
     grabData();
-    console.log(product);
   }, []);
 
   const goBackButton = () => {

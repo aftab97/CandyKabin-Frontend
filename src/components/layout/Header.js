@@ -205,6 +205,11 @@ export default function Header() {
     // e.preventDefault();
   };
 
+  const handleSlideOut = () => {
+    let newBasketContainer = document.querySelector(".new-basket-container");
+    newBasketContainer.style.display = "flex";
+  };
+
   return (
     <header id="header">
       <div className="hamburger-button">
@@ -319,7 +324,8 @@ export default function Header() {
           <div
             className="header-basket-container"
             onMouseOver={handleMouseOver}
-            onClick={checkout}
+            // onClick={checkout}
+            onClick={handleSlideOut}
           >
             <h2>{shoppingCart.length}</h2>
             <svg width="22" height="24" xmlns="http://www.w3.org/2000/svg">

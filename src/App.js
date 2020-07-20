@@ -31,6 +31,7 @@ import { MobileNav } from "./components/layout/MobileNav";
 import { NewIn } from "./components/pages/NewIn/NewIn";
 import { GiftsAndHampers } from "./components/pages/GiftsAndHampers/GiftsAndHampers";
 import { Search } from "./components/pages/Search/Search";
+import { Basket } from "./components/pages/Basket/Basket";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -128,6 +129,7 @@ export default function App() {
               setTotalCost,
             }}
           >
+            <Basket />
             <Header />
             <Navbar />
             <MobileNav />
