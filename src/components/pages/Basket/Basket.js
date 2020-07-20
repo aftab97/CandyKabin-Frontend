@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import BasketContext from "../../../context/BasketContext";
 
 import { Button, makeStyles } from "@material-ui/core";
+import { Link, useHistory } from "react-router-dom";
 
 const useStlyes = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ const useStlyes = makeStyles((theme) => ({
 
 export const Basket = () => {
   const classes = useStlyes();
+  const history = useHistory();
 
   const { shoppingCart, setShoppingCart, productCost } = useContext(
     BasketContext
@@ -32,6 +34,84 @@ export const Basket = () => {
     let slider = document.querySelector(".new-basket-container");
     slider.style.display = "none";
   };
+
+  const handleCheckout = () => {
+    let slider = document.querySelector(".new-basket-container");
+    slider.style.display = "none";
+
+    history.push("/checkout");
+  };
+
+  const handlingAdd = (e) => {
+    console.log("adding more");
+
+    let productName = e.currentTarget.parentNode.parentNode.querySelector(
+      ".product-name-basket"
+    ).childNodes[0].data;
+
+    let nonSelectedItem = shoppingCart.filter(
+      (p) => p.productName !== productName
+    );
+
+    let selectedItem = shoppingCart.filter(
+      (p) => p.productName === productName
+    );
+
+    selectedItem[0].amount += 1;
+
+    let combinedArr = [];
+    combinedArr = [...selectedItem, ...nonSelectedItem];
+
+    combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+    setShoppingCart(combinedArr);
+    localStorage.setItem("basket", JSON.stringify(combinedArr));
+  };
+
+  const handlingReduce = (e) => {
+    console.log("reducing more");
+
+    let productName = e.currentTarget.parentNode.parentNode.querySelector(
+      ".product-name-basket"
+    ).childNodes[0].data;
+
+    let nonSelectedItem = shoppingCart.filter(
+      (p) => p.productName !== productName
+    );
+
+    let selectedItem = shoppingCart.filter(
+      (p) => p.productName === productName
+    );
+
+    if (selectedItem[0].amount > 1) {
+      selectedItem[0].amount -= 1;
+      let combinedArr = [];
+      combinedArr = [...selectedItem, ...nonSelectedItem];
+
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    }
+  };
+
+  const handleRemove = (e) => {
+    let productName = e.currentTarget.parentNode.parentNode.querySelector(
+      ".product-name-basket"
+    ).childNodes[0].data;
+
+    let nonSelectedItem = shoppingCart.filter(
+      (p) => p.productName !== productName
+    );
+
+    let combinedArr = [...nonSelectedItem];
+
+    combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+
+    setShoppingCart(combinedArr);
+    localStorage.setItem("basket", JSON.stringify(combinedArr));
+  };
+
   return (
     <div className="new-basket-container">
       <div className="basket-blur" onClick={handleSlider}>
@@ -39,7 +119,7 @@ export const Basket = () => {
       </div>
       <div className="basket-container-sidebar open-basket-slider">
         <div>
-          <h1>BASKET</h1>
+          <h1 className="new-basket-title">BASKET</h1>
         </div>
         <div className="fixed-height-basket">
           <ul>
@@ -56,21 +136,21 @@ export const Basket = () => {
                     </h5>
                     <button
                       className="basket-remove-button"
-                      // onClick={handleRemove}
+                      onClick={handleRemove}
                     >
                       REMOVE
                     </button>
                   </div>
                   <div className="basket-buttons-container">
                     <button
-                      // onClick={handlingAdd}
+                      onClick={handlingAdd}
                       className="basket-button-v1 shadow basket-button-increment"
                     >
                       +
                     </button>
                     <h4>{data.amount}</h4>
                     <button
-                      // onClick={handlingReduce}
+                      onClick={handlingReduce}
                       className="basket-button-v1 shadow basket-button-decrement"
                     >
                       -
@@ -97,7 +177,9 @@ export const Basket = () => {
         <div>
           {shoppingCart.length > 0 ? (
             <>
-              <Button className={classes.button}>CHECKOUT</Button>
+              <Button className={classes.button} onClick={handleCheckout}>
+                <Link to="/checkout">CHECKOUT</Link>
+              </Button>
             </>
           ) : (
             <>
@@ -106,7 +188,6 @@ export const Basket = () => {
               </Button>
             </>
           )}
-          {/* <Button className={classes.button}>CHECKOUT</Button> */}
         </div>
       </div>
     </div>

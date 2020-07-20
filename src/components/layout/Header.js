@@ -320,10 +320,13 @@ export default function Header() {
         )}
 
         {/* BASKET STUFF */}
-        <div className="basket-container" onMouseLeave={handleMouseLeave}>
+        <div
+          className="basket-container"
+          //  onMouseLeave={handleMouseLeave}
+        >
           <div
             className="header-basket-container"
-            onMouseOver={handleMouseOver}
+            // onMouseOver={handleMouseOver}
             // onClick={checkout}
             onClick={handleSlideOut}
           >
@@ -336,7 +339,7 @@ export default function Header() {
               />
             </svg>
           </div>
-          <div className="basketOverlay">
+          {/* <div className="basketOverlay">
             <h2 className="basket-title">BASKET</h2>
             {basketOverlayData}
             <h2 className="basket-title">Total: £{productCost.toFixed(2)}</h2>
@@ -345,7 +348,7 @@ export default function Header() {
                 <h2>CHECKOUT</h2>
               </Link>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

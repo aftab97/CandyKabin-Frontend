@@ -456,8 +456,13 @@ body {
   /* height: 100px; */
   border-bottom: 1px solid #e57098;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 .basket-title {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  margin: auto;
   border-bottom: 1px solid #e5e5e5;
   text-align: center;
 }
@@ -1717,6 +1722,13 @@ label > input {
 .basket-no-item-message {
   position: relative;
   top: 30vh;
+}
+
+.new-basket-title {
+  text-align: center;
+  margin: auto;
+  width: 200px;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 @media only screen and (max-width: 600px) {
