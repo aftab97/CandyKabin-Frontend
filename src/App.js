@@ -30,6 +30,7 @@ import { index } from "./components/pages/Admin";
 import { MobileNav } from "./components/layout/MobileNav";
 import { NewIn } from "./components/pages/NewIn/NewIn";
 import { GiftsAndHampers } from "./components/pages/GiftsAndHampers/GiftsAndHampers";
+import { Search } from "./components/pages/Search/Search";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -140,6 +141,7 @@ export default function App() {
                 <Route path="/register" component={Register} />
                 <Route exact path="/products" component={Products} />
                 <Route path="/products/:id" component={ProductPage} />
+                <Route path="/search/:id" component={Search} />
                 <Route path="/shop" component={Shop} />
                 <Route path="/new-in" component={NewIn} />
                 <Route path="/gifts-and-hampers" component={GiftsAndHampers} />

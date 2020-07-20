@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import BasketContext from "../../context/BasketContext";
 import UserContext from "../../context/UserContext";
@@ -11,6 +11,9 @@ export default function Header() {
     BasketContext
   );
   const { userData, setUserData } = useContext(UserContext);
+
+  const [search, setSearch] = useState("");
+
   const handlingAdd = (e) => {
     console.log("adding more");
 
@@ -191,6 +194,17 @@ export default function Header() {
     }
   };
 
+  const submit = async (e) => {
+    if (search.length > 0 && search !== " ") {
+      console.log("submitted");
+
+      history.push(`/search/${search}`);
+      setSearch("");
+    }
+
+    // e.preventDefault();
+  };
+
   return (
     <header id="header">
       <div className="hamburger-button">
@@ -227,6 +241,23 @@ export default function Header() {
         </a>
       </div>
       <div className="header-buttons-container">
+        <div className="search-container">
+          <form className="form" onSubmit={submit}>
+            <input
+              id="login"
+              type="search"
+              onChange={(e) => setSearch(e.currentTarget.value)}
+              value={search}
+              placeholder="Search Products..."
+            />
+
+            {/* <label htmlFor="login-password">Password</label>
+            <input id="login-password" type="password" onChange={(e) => e} />
+
+            <input type="submit" value="Log in" /> */}
+          </form>
+        </div>
+
         {userData.user ? (
           <div className="login-container">
             <button onClick={logout} className="header-login-button">

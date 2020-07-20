@@ -54,6 +54,7 @@ body {
 .header-buttons-container {
   display: flex;
   position: absolute;
+  top: 5px;
   right: 20px;
 }
 
@@ -81,6 +82,7 @@ body {
 }
 .form input[type="text"],
 .form input[type="email"],
+.form input[type="search"],
 .form input[type="password"] {
   width: 100%;
   padding: 0.3rem;
@@ -1609,6 +1611,16 @@ label > input {
   display: flex;
   justify-content: center;
 }
+
+.search-container {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.search-page {
+  width: 100% !important;
+}
+
 @media only screen and (max-width: 600px) {
   html,
   body {
@@ -1877,6 +1889,7 @@ label > input {
   }
 
   .header-buttons-container {
+    position: relative;
     right: 10px;
   }
   .static-page {
