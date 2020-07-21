@@ -89,7 +89,7 @@ export const ShoppingList = () => {
             margin: "auto",
             marginTop: 20,
             border: "1px solid #e5e5e5",
-            width: 50,
+            width: "95vw",
           }}
         >
           <tr
@@ -145,7 +145,9 @@ export const ShoppingList = () => {
                   </div>
                 </div>
               </td>
-              <td>{(item.amount * item.price).toFixed(2)}</td>
+              <td style={{ textAlign: "center" }}>
+                £{(item.amount * item.price).toFixed(2)}
+              </td>
             </tr>
           ))}
           <tr>

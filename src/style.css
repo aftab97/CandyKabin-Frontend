@@ -82,7 +82,6 @@ body {
 }
 .form input[type="text"],
 .form input[type="email"],
-.form input[type="search"],
 .form input[type="password"] {
   width: 100%;
   padding: 0.3rem;
@@ -91,6 +90,32 @@ body {
   background-color: #f0f0f0;
   font-size: 1.1rem;
 }
+
+.form input[type="search"] {
+  width: 100%;
+  /* padding: 0.3rem; */
+  border: 1px solid #c2c2c2;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  height: 40px;
+}
+
+.form input[type="search"]::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 1; /* Firefox */
+  padding-left: 5px;
+}
+
+.form input[type="search"]:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  padding-left: 5px;
+}
+
+.form input[type="search"]::-ms-input-placeholder {
+  /* Microsoft Edge */
+  padding-left: 5px;
+}
+
 .form input:focus {
   border: 1px solid #50a4e9;
   box-shadow: inset 0px 0px 5px rgba(38, 142, 228, 0.5);
@@ -99,7 +124,7 @@ body {
 .form input[type="submit"] {
   padding: 0.3rem 0.5rem;
   border: 1px solid #6aa051;
-  border-radius: 8px;
+  border-radius: 15px;
   background-color: #c8ecb7;
   font-size: 1.1rem;
 }
@@ -608,10 +633,11 @@ body {
 }
 
 .fixed-height-basket {
-  height: 75vh;
+  height: 70vh;
   overflow-y: scroll;
   overflow-x: hidden;
   border-top: 1px solid #e57098;
+  margin-right: 17px;
 }
 
 /* .fixed-height::-webkit-scrollbar {
@@ -964,14 +990,25 @@ body {
   }
 }
 
+@keyframes movein3 {
+  0% {
+    transform: translateY(-800px);
+  }
+  100% {
+    right: 0px;
+  }
+}
+
 .block-1 {
   position: relative;
-  animation: movein 2s 1;
+  display: none;
+  /* animation: movein 2s 1; */
 }
 
 .block-2 {
   position: relative;
-  animation: movein2 2s 1;
+  display: none;
+  /* animation: movein2 2s 1; */
 }
 
 .homepage-banner {
@@ -1155,6 +1192,7 @@ body {
 }
 
 .image-bottom-block-container {
+  display: none;
   position: relative;
   width: 300px;
   height: 300px;
@@ -1174,7 +1212,7 @@ body {
   height: 100%;
   /* box-shadow: 0px 0px 0px 4000px rgba(27, 61, 88, 0.5) inset; */
 
-  opacity: 0.6;
+  /* opacity: 0.6; */
   /*box-shadow: inset 0 0 0 4000px rgba(27,61,88,.5)!important;*/
 }
 
@@ -1478,6 +1516,14 @@ nav {
   animation: 1s left-thumbnail-move-in ease-in-out;
 }
 
+.new-basket-title-container {
+  margin-bottom: 10px;
+}
+
+.new-basket-price-container {
+  padding-bottom: 20px;
+}
+
 /* static pages */
 .static-page {
   width: 800px;
@@ -1627,6 +1673,7 @@ label > input {
 
 .payment-button-container {
   margin-top: 30px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -1663,7 +1710,6 @@ label > input {
 }
 
 .search-container {
-  margin-top: 5px;
   margin-right: 5px;
 }
 
@@ -1677,12 +1723,13 @@ label > input {
   position: fixed;
   height: 100%;
   /* background-color: white; */
-  z-index: 10;
+  z-index: 12;
   width: 100vw;
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
   color: #e57098;
   font-family: "Fredoka One", cursive;
+  top: 0;
 }
 .basket-blur {
   width: 60vw;
@@ -1698,7 +1745,8 @@ label > input {
 }
 
 .basket-container-sidebar > div {
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  /* padding-top: 20px; */
 }
 
 @keyframes slider-pop-out {
@@ -1729,6 +1777,25 @@ label > input {
   margin: auto;
   width: 200px;
   border-bottom: 1px solid #e5e5e5;
+}
+
+.page-button-selected-page {
+  background-color: #e57098;
+}
+
+.block-1-animation {
+  display: block;
+  animation: movein 1s 1;
+}
+
+.block-2-animation {
+  display: block;
+  animation: movein2 1s 1;
+}
+
+.block-3-animation {
+  display: block;
+  animation: movein3 1s 1;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1999,8 +2066,8 @@ label > input {
   }
 
   .header-buttons-container {
-    position: relative;
-    right: 10px;
+    position: absolute;
+    right: 2px;
   }
   .static-page {
     width: 90%;
@@ -2068,4 +2135,29 @@ label > input {
   td {
     padding-right: unset;
   }
+
+  .basket-container-sidebar {
+    width: 200vw;
+  }
+
+  .fixed-height-basket {
+    height: 70vh;
+    margin-right: unset;
+  }
+
+  .search-container {
+    display: none;
+  }
+
+  .basket-container-sidebar > div {
+    margin-top: 15px;
+  }
+
+  .pages-container {
+    display: block;
+  }
+
+  /* .image-bottom-block-container {
+    display: block;
+  } */
 }

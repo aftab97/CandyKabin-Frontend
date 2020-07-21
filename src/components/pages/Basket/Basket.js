@@ -114,11 +114,9 @@ export const Basket = () => {
 
   return (
     <div className="new-basket-container">
-      <div className="basket-blur" onClick={handleSlider}>
-        blur
-      </div>
+      <div className="basket-blur" onClick={handleSlider}></div>
       <div className="basket-container-sidebar open-basket-slider">
-        <div>
+        <div className="new-basket-title-container">
           <h1 className="new-basket-title">BASKET</h1>
         </div>
         <div className="fixed-height-basket">
@@ -165,7 +163,7 @@ export const Basket = () => {
             )}
           </ul>
         </div>
-        <div>
+        <div className="new-basket-price-container">
           {shoppingCart.length > 0 ? (
             <>
               <h2 className="basket-title">Total: £{productCost.toFixed(2)}</h2>

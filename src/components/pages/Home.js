@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import bannerImage from "../../img/banner.png";
 import Slider from "react-slick";
@@ -9,6 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 import slider1 from "../../img/home-slider-1.png";
 
 import box1 from "../../img/candy-box-image.png";
+import box2 from "../../img/cat-subscription-boxes.png";
+import box3 from "../../img/cat-american-candy.png";
 
 export default function Home() {
   const { userData } = useContext(UserContext);
@@ -21,6 +23,8 @@ export default function Home() {
     slidersToScroll: 1,
     arrows: true,
   };
+
+  const history = useHistory();
 
   const showIntro = () => {
     let intro = document.querySelector(".timeout-intro");
@@ -42,9 +46,25 @@ export default function Home() {
     secondArrow.classList.add("bounce");
     // secondArrow.classList.remove("bounce");
   };
+  const handleScroll2 = () => {
+    document.querySelector(".homepage-info-block").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+    // if (rect.top < 1 && rect. top > )
+    let secondArrow = document.querySelector(".home-down-arrow-container-2");
+    secondArrow.classList.add("bounce");
+    // secondArrow.classList.remove("bounce");
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
+
+    if (window.innerWidth <= 800) {
+      const leftBlock = document.querySelector(".block-1");
+      leftBlock.classList.add("block-1-animation");
+    }
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };
@@ -62,11 +82,60 @@ export default function Home() {
     const left = document.querySelector("#margin-left-image");
     const right = document.querySelector("#margin-right-image");
 
+    const leftBlock = document.querySelector(".block-1");
+    const rightBlock = document.querySelector(".block-2");
+
+    const bottomleftBlock = document.querySelector(".bottom-block-1");
+    const bottommiddleBlock = document.querySelector(".bottom-block-2");
+    const bottomrightBlock = document.querySelector(".bottom-block-3");
+
     console.log(dimensions.top);
-    if (dimensions.top < 700) {
-      left.classList.add("margin-right-image-animation");
-      right.classList.add("margin-left-image-animation");
+    if (window.innerWidth > 800) {
+      if (dimensions.top < 700) {
+        left.classList.add("margin-right-image-animation");
+        right.classList.add("margin-left-image-animation");
+      }
+      if (dimensions.top < -350) {
+        leftBlock.classList.add("block-1-animation");
+        rightBlock.classList.add("block-2-animation");
+      }
+      if (dimensions.top < -640) {
+        bottomleftBlock.classList.add("block-1-animation");
+        bottommiddleBlock.classList.add("block-3-animation");
+        bottomrightBlock.classList.add("block-2-animation");
+      }
     }
+
+    //check if mobile
+    if (window.innerWidth <= 800) {
+      const origin = document.querySelector(".slick-list");
+      const dimensions = origin.getBoundingClientRect();
+
+      console.log("mobile: " + dimensions.top);
+
+      console.log("is a mobile");
+
+      if (dimensions.top < -40) {
+        rightBlock.classList.add("block-1-animation");
+      }
+      if (dimensions.top < -250) {
+        bottomleftBlock.classList.add("block-1-animation");
+        bottommiddleBlock.classList.add("block-1-animation");
+        bottomrightBlock.classList.add("block-1-animation");
+      }
+    }
+  };
+
+  const box1Redirect = () => {
+    history.push("/shop/international");
+  };
+
+  const box2Redirect = () => {
+    history.push("/shop/sweets-and-candy");
+  };
+
+  const box3Redirect = () => {
+    history.push("/shop/clearance");
   };
 
   return (
@@ -140,7 +209,7 @@ export default function Home() {
         </div>
 
         <div className="home-down-arrow-container-2">
-          <button onClick={handleScroll}>
+          <button onClick={handleScroll2}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -179,40 +248,37 @@ export default function Home() {
           </div>
         </div>
         <div class="homepage-image-bottom-blocks">
-          <div class="image-bottom-block-container">
+          <div
+            class="image-bottom-block-container bottom-block-1"
+            onClick={box1Redirect}
+          >
             <img class="thumbnail-image-bottom-block" src={box1} />
             <div class="bottom-block-image-description-container">
-              <span class="bottom-block-image-description">
-                The Hamburger Collection
-              </span>
+              <span class="bottom-block-image-description">INTERNATIONAL</span>
             </div>
-            <p>Test Title</p>
+            <p style={{ fontWeight: 600 }}>INTERNATIONAL</p>
           </div>
 
-          <div class="image-bottom-block-container">
-            <img
-              class="thumbnail-image-bottom-block"
-              src="http://i.imgur.com/mNoKbYK.jpg"
-            />
+          <div
+            class="image-bottom-block-container bottom-block-2"
+            onClick={box2Redirect}
+          >
+            <img class="thumbnail-image-bottom-block" src={box2} />
             <div class="bottom-block-image-description-container">
-              <span class="bottom-block-image-description">
-                The Hamburger Collection
-              </span>
+              <span class="bottom-block-image-description">SWEETS & CANDY</span>
             </div>
-            <p>Test Title</p>
+            <p style={{ fontWeight: 600 }}>SWEETS & CANDY</p>
           </div>
 
-          <div class="image-bottom-block-container">
-            <img
-              class="thumbnail-image-bottom-block"
-              src="http://i.imgur.com/mNoKbYK.jpg"
-            />
+          <div
+            class="image-bottom-block-container bottom-block-3"
+            onClick={box3Redirect}
+          >
+            <img class="thumbnail-image-bottom-block" src={box3} />
             <div class="bottom-block-image-description-container">
-              <span class="bottom-block-image-description">
-                The Hamburger Collection
-              </span>
+              <span class="bottom-block-image-description">CLEARANCE</span>
             </div>
-            <p>Test Title</p>
+            <p style={{ fontWeight: 600 }}>CLEARANCE</p>
           </div>
         </div>
       </div>
