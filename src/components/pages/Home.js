@@ -90,6 +90,8 @@ export default function Home() {
     const bottomrightBlock = document.querySelector(".bottom-block-3");
 
     console.log(dimensions.top);
+
+    //check if desktop
     if (window.innerWidth > 800) {
       if (dimensions.top < 700) {
         left.classList.add("margin-right-image-animation");
