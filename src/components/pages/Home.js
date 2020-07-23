@@ -12,7 +12,7 @@ import box1 from "../../img/candy-box-image.png";
 import box2 from "../../img/cat-subscription-boxes.png";
 import box3 from "../../img/cat-american-candy.png";
 
-import testBanner from "../../img/banner-test-2.mp4";
+import testBanner from "../../img/banner-slide-1-test.mp4";
 import slider1 from "../../img/banner-slide-1.mp4";
 import slider2 from "../../img/banner-slide-2.mp4";
 import slider3 from "../../img/banner-slide-3.mp4";
@@ -161,7 +161,7 @@ export default function Home() {
         <Slider {...settings} className="homepage-slider">
           <div>
             <a href="#">
-              <video loop autoPlay src={slider1} />
+              <video loop autoPlay src={testBanner} />
             </a>
           </div>
           <div>
