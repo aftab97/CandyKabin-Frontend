@@ -6,11 +6,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import slider1 from "../../img/home-slider-1.png";
+// import slider1 from "../../img/home-slider-1.png";
 
 import box1 from "../../img/candy-box-image.png";
 import box2 from "../../img/cat-subscription-boxes.png";
 import box3 from "../../img/cat-american-candy.png";
+
+import testBanner from "../../img/banner-test-2.mp4";
+import slider1 from "../../img/banner-slide-1.mp4";
+import slider2 from "../../img/banner-slide-2.mp4";
+import slider3 from "../../img/banner-slide-3.mp4";
 
 export default function Home() {
   const { userData } = useContext(UserContext);
@@ -156,17 +161,17 @@ export default function Home() {
         <Slider {...settings} className="homepage-slider">
           <div>
             <a href="#">
-              <img src={slider1} />
+              <video loop autoPlay src={slider1} />
             </a>
           </div>
           <div>
             <a href="#">
-              <img src={slider1} />
+              <video loop autoPlay src={slider2} />
             </a>
           </div>
           <div>
             <a href="#">
-              <img src={slider1} />
+              <video loop autoPlay src={slider3} />
             </a>
           </div>
         </Slider>
