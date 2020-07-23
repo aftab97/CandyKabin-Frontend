@@ -3,6 +3,7 @@ import Axios from "axios";
 import holdOn from "react-hold-on";
 import BasketContext from "../../../context/BasketContext";
 import { useHistory } from "react-router-dom";
+import { useAlert } from "react-alert";
 
 export const Search = ({ match }) => {
   const [products, setProducts] = useState();
@@ -15,6 +16,8 @@ export const Search = ({ match }) => {
 
   const pageNumbers = [];
   let currentProducts = [];
+
+  const alert = useAlert();
 
   const history = useHistory();
 
@@ -109,6 +112,8 @@ export const Search = ({ match }) => {
 
       setShoppingCart(arr2); //this was prev finalshoppingcart
       localStorage.setItem("basket", JSON.stringify(arr2));
+
+      alert.success("ADDED TO BASKET");
     }
   };
 

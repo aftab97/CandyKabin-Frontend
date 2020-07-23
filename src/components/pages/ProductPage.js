@@ -7,9 +7,12 @@ import BasketContext from "../../context/BasketContext";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useAlert } from "react-alert";
 
 export const ProductPage = ({ match, location, history }) => {
   const [product, setProduct] = useState(undefined);
+
+  const alert = useAlert();
 
   const { shoppingCart, setShoppingCart, count, incrementCounter } = useContext(
     BasketContext
@@ -122,6 +125,8 @@ export const ProductPage = ({ match, location, history }) => {
 
       setShoppingCart(arr2);
       localStorage.setItem("basket", JSON.stringify(arr2));
+
+      alert.success("ADDED TO BASKET");
     }
   };
 
@@ -195,6 +200,7 @@ export const ProductPage = ({ match, location, history }) => {
 
       setShoppingCart(arr2);
       localStorage.setItem("basket", JSON.stringify(arr2));
+      alert.success("ADDED TO BASKET");
     }
   };
 
@@ -372,43 +378,6 @@ export const ProductPage = ({ match, location, history }) => {
                   </button>
                 </div>
               </div>
-              {/* <Slider {...settings} className="i-slider">
-                <div class="i-product-container">
-                  <a href="/test-product.html">
-                    <img src="https://candy.tobenmedia.co.uk/img/product.png" />
-                    <p>Herr's Carolina Reaper Cheese Curls</p>
-                    <p class="price">£4.25</p>
-                  </a>
-                </div>
-                <div class="i-product-container">
-                  <a href="/bubble-yum-jolly-rancher-blue-raspberry-79g.html">
-                    <img src="https://candy.tobenmedia.co.uk/img/product-2.png" />
-                    <p>Bubble Yum Jolly Rancher Blue Raspberry (79g) </p>
-                    <p class="price">£2.25</p>
-                  </a>
-                </div>
-                <div class="i-product-container">
-                  <a href="/cookie-dough-bites-cookies-n-cream-88g.html">
-                    <img src="https://candy.tobenmedia.co.uk/img/cookie-cream.png" />
-                    <p>Cookie Dough Bites - Cookies N Cream (88g)</p>
-                    <p class="price">£2.25</p>
-                  </a>
-                </div>
-                <div class="i-product-container">
-                  <a href="/calypso-triple-melon-lemonade-591ml.html">
-                    <img src="https://candy.tobenmedia.co.uk/img/calypso-drink.png" />
-                    <p>Calypso Triple Melon Lemonade (591ml)</p>
-                    <p class="price">£2.49</p>
-                  </a>
-                </div>
-                <div class="i-product-container">
-                  <a href="/fanta-apple-355ml.html">
-                    <img src="https://candy.tobenmedia.co.uk/img/fanta-apple.png" />
-                    <p>Fanta Apple (355ml)</p>
-                    <p class="price">£1.35</p>
-                  </a>
-                </div>
-              </Slider> */}
             </div>
           </div>
 
@@ -423,6 +392,14 @@ export const ProductPage = ({ match, location, history }) => {
               <></>
             )}
           </div>
+
+          {product.ingredients ? (
+            <div className="i-ingredients-mobile">
+              <p>{product.ingredients}</p>
+            </div>
+          ) : (
+            <></>
+          )}
 
           <div className="i-product-weight">{product.weight}</div>
         </div>

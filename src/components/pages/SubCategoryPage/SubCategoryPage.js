@@ -4,6 +4,7 @@ import holdOn from "react-hold-on";
 import BasketContext from "../../../context/BasketContext";
 import { useHistory } from "react-router-dom";
 import Emoji from "react-emoji-render";
+import { useAlert } from "react-alert";
 
 export const SubCategoryPage = (params) => {
   //set NONE to dietarty by default
@@ -43,6 +44,8 @@ export const SubCategoryPage = (params) => {
   let currentProducts = [];
 
   const history = useHistory();
+
+  const alert = useAlert();
 
   useEffect(() => {
     //if not subsub category or brand
@@ -246,6 +249,8 @@ export const SubCategoryPage = (params) => {
 
       setShoppingCart(arr2); //this was prev finalshoppingcart
       localStorage.setItem("basket", JSON.stringify(arr2));
+
+      alert.success("ADDED TO BASKET");
     }
   };
 

@@ -33,6 +33,9 @@ import { GiftsAndHampers } from "./components/pages/GiftsAndHampers/GiftsAndHamp
 import { Search } from "./components/pages/Search/Search";
 import { Basket } from "./components/pages/Basket/Basket";
 
+import { transitions, positions, Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+
 export default function App() {
   const [userData, setUserData] = useState({
     token: undefined,
@@ -105,6 +108,17 @@ export default function App() {
     // handle change in total cost
   }, [shoppingCart]);
 
+  // alert configirations
+  const options = {
+    // you can also just use 'bottom center'
+    position: positions.BOTTOM_CENTER,
+    timeout: 5000,
+    offset: "10px",
+    // you can also just use 'scale'
+    transition: transitions.SCALE,
+    containerStlye: { backgroundColor: "red" },
+  };
+
   return (
     <>
       <BrowserRouter>
@@ -129,48 +143,56 @@ export default function App() {
               setTotalCost,
             }}
           >
-            <Basket />
-            <Header />
-            <Navbar />
-            <MobileNav />
-            <div className="container">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/login" component={Login} />
-                {/* <Route path="/adminLogin" component={AdminLogin} />
+            <AlertProvider template={AlertTemplate} {...options}>
+              <Basket />
+              <Header />
+              <Navbar />
+              <MobileNav />
+              <div className="container">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/login" component={Login} />
+                  {/* <Route path="/adminLogin" component={AdminLogin} />
                 <Route path="/adminSummary" component={AdminSummary} /> */}
-                <Route path="/admin" component={index} />
-                <Route path="/register" component={Register} />
-                <Route exact path="/products" component={Products} />
-                <Route path="/products/:id" component={ProductPage} />
-                <Route path="/search/:id" component={Search} />
-                <Route path="/shop" component={Shop} />
-                <Route path="/new-in" component={NewIn} />
-                <Route path="/gifts-and-hampers" component={GiftsAndHampers} />
-                <Route path="/dietary" component={Dietary} />
-                <Route path="/three" component={Three} />
-                <Route path="/checkout" component={CheckoutPage} />
-                <Route path="/checkout2" component={CheckoutPage2} />
-                {/* static pages */}
-                <Route path="/customer-services" component={CustomerServices} />
-                <Route
-                  path="/allergy-information"
-                  component={AllergyInformation}
-                />
-                <Route
-                  path="/frequently-asked-questions"
-                  component={FrequentlyAskedQuestions}
-                />
-                <Route
-                  path="/delivery-information"
-                  component={DeliveryInformation}
-                />
-                <Route path="/returns-policy" component={ReturnsPolicy} />
-                <Route path="/about-us" component={AboutUs} />
-                <Route path="/privacy-policy" component={PrivacyPolicy} />
-              </Switch>
-            </div>
-            <Footer />
+                  <Route path="/admin" component={index} />
+                  <Route path="/register" component={Register} />
+                  <Route exact path="/products" component={Products} />
+                  <Route path="/products/:id" component={ProductPage} />
+                  <Route path="/search/:id" component={Search} />
+                  <Route path="/shop" component={Shop} />
+                  <Route path="/new-in" component={NewIn} />
+                  <Route
+                    path="/gifts-and-hampers"
+                    component={GiftsAndHampers}
+                  />
+                  <Route path="/dietary" component={Dietary} />
+                  <Route path="/three" component={Three} />
+                  <Route path="/checkout" component={CheckoutPage} />
+                  <Route path="/checkout2" component={CheckoutPage2} />
+                  {/* static pages */}
+                  <Route
+                    path="/customer-services"
+                    component={CustomerServices}
+                  />
+                  <Route
+                    path="/allergy-information"
+                    component={AllergyInformation}
+                  />
+                  <Route
+                    path="/frequently-asked-questions"
+                    component={FrequentlyAskedQuestions}
+                  />
+                  <Route
+                    path="/delivery-information"
+                    component={DeliveryInformation}
+                  />
+                  <Route path="/returns-policy" component={ReturnsPolicy} />
+                  <Route path="/about-us" component={AboutUs} />
+                  <Route path="/privacy-policy" component={PrivacyPolicy} />
+                </Switch>
+              </div>
+              <Footer />
+            </AlertProvider>
           </BasketContext.Provider>
         </UserContext.Provider>
       </BrowserRouter>
