@@ -517,6 +517,14 @@ export const AddProducts = () => {
               Calypso
             </label>
             <label>
+              <input type="radio" value="Kool-Aid" name="radio-button" />
+              Kool-Aid
+            </label>
+            <label>
+              <input type="radio" value="Twix" name="radio-button" />
+              Twix
+            </label>
+            <label>
               <input type="radio" value="M-And-Ms" name="radio-button" />
               M&M'S
             </label>

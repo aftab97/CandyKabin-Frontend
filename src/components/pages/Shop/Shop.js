@@ -301,6 +301,14 @@ export const Shop = ({ match }) => {
               Hershey's
             </label>
             <label>
+              <input type="radio" value="Twix" name="radio-button" />
+              Twix
+            </label>
+            <label>
+              <input type="radio" value="Kool-Aid" name="radio-button" />
+              Kool-Aid
+            </label>
+            <label>
               <input type="radio" value="Warheads" name="radio-button" />
               Warheads
             </label>
