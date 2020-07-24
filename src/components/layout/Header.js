@@ -212,8 +212,8 @@ export default function Header() {
 
   return (
     <header id="header">
-      <div className="hamburger-button">
-        <button onClick={openMobileNav}>|||</button>
+      <div className="hamburger-button" onClick={openMobileNav}>
+        <button>|||</button>
       </div>
 
       <Link to="/">

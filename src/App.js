@@ -119,6 +119,15 @@ export default function App() {
     containerStlye: { backgroundColor: "red" },
   };
 
+  const mouseLeaveHandle = (e) => {
+    document.querySelector("#shop-links").style.display = "none";
+    document.querySelector("#new-in-links").style.display = "none";
+    document.querySelector("#gifts-and-hampers-links").style.display = "none";
+    document.querySelector("#more-links").style.display = "none";
+    // document.querySelector("#traditional-links").style.display = "none";
+    // document.querySelector("#dietary-links").style.display = "none";
+  };
+
   return (
     <>
       <BrowserRouter>
@@ -148,7 +157,7 @@ export default function App() {
               <Header />
               <Navbar />
               <MobileNav />
-              <div className="container">
+              <div className="container" onMouseOver={mouseLeaveHandle}>
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/login" component={Login} />

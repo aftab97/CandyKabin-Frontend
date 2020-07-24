@@ -8,10 +8,31 @@ export const Navbar = () => {
     console.log(e.target.id);
 
     document.querySelector(`#${e.target.id}-links`).style.display = "block";
+
+    if (e.target.id === "shop") {
+      document.querySelector("#new-in-links").style.display = "none";
+      document.querySelector("#gifts-and-hampers-links").style.display = "none";
+      document.querySelector("#more-links").style.display = "none";
+    }
+    if (e.target.id === "gifts-and-hampers") {
+      document.querySelector("#shop-links").style.display = "none";
+      document.querySelector("#new-in-links").style.display = "none";
+      document.querySelector("#more-links").style.display = "none";
+    }
+    if (e.target.id === "new-in") {
+      document.querySelector("#shop-links").style.display = "none";
+      document.querySelector("#gifts-and-hampers-links").style.display = "none";
+      document.querySelector("#more-links").style.display = "none";
+    }
+    if (e.target.id === "more") {
+      document.querySelector("#shop-links").style.display = "none";
+      document.querySelector("#gifts-and-hampers-links").style.display = "none";
+      document.querySelector("#new-in-links").style.display = "none";
+    }
   };
 
   const mouseLeaveHandle = (e) => {
-    document.querySelector("#shop-header-links").style.display = "none";
+    document.querySelector("#shop-links").style.display = "none";
     document.querySelector("#new-in-links").style.display = "none";
     document.querySelector("#gifts-and-hampers-links").style.display = "none";
     document.querySelector("#more-links").style.display = "none";
@@ -20,19 +41,34 @@ export const Navbar = () => {
   };
 
   return (
-    <nav>
-      {/* <div className="banner">
+    <>
+      <nav>
+        {/* <div className="banner">
         <img src={banner} />
       </div> */}
-      <div onMouseLeave={mouseLeaveHandle}>
-        <h2 onMouseOver={hoverHandle} id="shop-header">
-          SHOP
-        </h2>
-        <div
-          className="list-link"
-          id="shop-header-links"
-          style={{ display: "none" }}
-        >
+        <div>
+          <h2 onMouseOver={hoverHandle} id="shop">
+            SHOP
+          </h2>
+        </div>
+        <div>
+          <h2 onMouseOver={hoverHandle} id="gifts-and-hampers">
+            GIFTS & HAMPERS
+          </h2>
+        </div>
+        <div>
+          <h2 onMouseOver={hoverHandle} id="new-in">
+            NEW IN
+          </h2>
+        </div>
+        <div>
+          <h2 onMouseOver={hoverHandle} id="more">
+            MORE
+          </h2>
+        </div>
+      </nav>
+      <div className="nav-reveal">
+        <div className="list-link" id="shop-links" style={{ display: "none" }}>
           <ul className="header-links">
             <li>
               <Link to="/shop/international">
@@ -62,11 +98,6 @@ export const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div onMouseLeave={mouseLeaveHandle}>
-        <h2 onMouseOver={hoverHandle} id="gifts-and-hampers">
-          GIFTS & HAMPERS
-        </h2>
         <div
           className="list-link"
           id="gifts-and-hampers-links"
@@ -81,11 +112,6 @@ export const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div onMouseLeave={mouseLeaveHandle}>
-        <h2 onMouseOver={hoverHandle} id="new-in">
-          NEW IN
-        </h2>
         <div
           className="list-link"
           id="new-in-links"
@@ -100,11 +126,6 @@ export const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div onMouseLeave={mouseLeaveHandle}>
-        <h2 onMouseOver={hoverHandle} id="more">
-          MORE
-        </h2>
         <div
           className="list-link"
           id="more-links"
@@ -140,6 +161,6 @@ export const Navbar = () => {
           </ul>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
