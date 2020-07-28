@@ -49,6 +49,8 @@ export const CheckoutPage = () => {
     (productarray) => (total += productarray.price * productarray.amount)
   );
 
+  let newTotalCost = 0;
+
   const makePayment = async (token, addresses) => {
     let body = {
       token,
@@ -61,12 +63,18 @@ export const CheckoutPage = () => {
 
     console.log(token, body);
 
+    console.log(productCost);
+    console.log(deliveryCost);
+    console.log(totalCost);
+
+    newTotalCost = productCost + deliveryCost;
+
     const response = await axios.post(`${process.env.REACT_APP_URL}/payment`, {
       token,
       shoppingCart,
       userData,
       productCost,
-      totalCost: productCost + deliveryCost,
+      newTotalCost: newTotalCost,
       deliveryCost,
     });
     const { status } = response.data;
@@ -133,7 +141,7 @@ export const CheckoutPage = () => {
             currency="GBP"
             billingAddress
             shippingAddress
-            amount={(productCost + deliveryCost) * 100}
+            amount={newTotalCost * 100}
           />
         ) : (
           <>

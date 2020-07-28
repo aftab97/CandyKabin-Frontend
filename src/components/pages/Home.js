@@ -48,6 +48,15 @@ export default function Home() {
     autoplaySpeed: 5000,
     arrows: true,
   };
+  let settingsMain = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+  };
+
   let settingsMobile = {
     infinite: true,
     slidesToShow: 1,
@@ -176,6 +185,26 @@ export default function Home() {
     setTimeout(() => showIntro(), 1000),
     (
       <div className="home-page">
+        <div>
+          <Slider {...settingsMain} className="homepage-slider">
+            <div>
+              <a href="#">
+                <video loop autoPlay src={testBanner} />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <video loop autoPlay src={slider2} />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <video loop autoPlay src={slider3} />
+              </a>
+            </div>
+          </Slider>
+        </div>
+
         <div className="block-1-new">
           <img src={king} className="block-1-image" />
           <img src={of} className="block-1-image" />

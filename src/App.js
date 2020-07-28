@@ -133,6 +133,21 @@ export default function App() {
     // handle change in total cost
   }, [shoppingCart]);
 
+  useEffect(() => {
+    console.log("aftab");
+
+    let cost = 0;
+    shoppingCart.map((item) => (cost += item.amount * item.price));
+
+    setProductCost(cost);
+
+    console.log(deliveryCost);
+
+    setTotalCost(cost + deliveryCost);
+
+    // handle change in total cost
+  }, [location]);
+
   // alert configirations
   const options = {
     // you can also just use 'bottom center'
