@@ -17,16 +17,44 @@ import slider1 from "../../img/banner-slide-1.mp4";
 import slider2 from "../../img/banner-slide-2.mp4";
 import slider3 from "../../img/banner-slide-3.mp4";
 
+import king from "../../img/king.png";
+import of from "../../img/of.png";
+import candy from "../../img/candy.png";
+
+import scrollDownTo from "../../img/scroll-down-to.png";
+import startShopping from "../../img/start-shopping.png";
+
+import candy1 from "../../img/candy-rs.png";
+import candy2 from "../../img/gummy-bear-rs.png";
+import candy3 from "../../img/hersheys-chocolate-rs.png";
+
 export default function Home() {
   const { userData } = useContext(UserContext);
-  const settings = {
-    dots: true,
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   autoplay: true,
+  //   autoplaySpeed: 5000,
+  //   slidesToShow: 2,
+  //   slidersToScroll: 1,
+  //   arrows: true,
+  // };
+
+  let settings = {
     infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    slidesToShow: 1,
-    slidersToScroll: 1,
     arrows: true,
+  };
+  let settingsMobile = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: false,
   };
 
   const history = useHistory();
@@ -64,74 +92,73 @@ export default function Home() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", scrollHandler);
-
-    if (window.innerWidth <= 800) {
-      const leftBlock = document.querySelector(".block-1");
-      leftBlock.classList.add("block-1-animation");
-    }
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
+    // window.addEventListener("scroll", scrollHandler);
+    // if (window.innerWidth <= 800) {
+    //   const leftBlock = document.querySelector(".block-1");
+    //   leftBlock.classList.add("block-1-animation");
+    // }
+    // return () => {
+    //   window.removeEventListener("scroll", scrollHandler);
+    // };
   }, []);
 
-  const scrollHandler = () => {
-    console.log("hello");
-    // TODO
-    // check positioning of elements and see if they where they are before adding animation to them
+  // const scrollHandler = () => {
+  //   console.log("hello");
+  //   // TODO
+  //   // check positioning of elements and see if they where they are before adding animation to them
 
-    const thumbnailRow = document.querySelector(".thumbnail-row");
+  //   const thumbnailRow = document.querySelector(".thumbnail-row");
 
-    const dimensions = thumbnailRow.getBoundingClientRect();
+  //   const dimensions = thumbnailRow.getBoundingClientRect();
 
-    const left = document.querySelector("#margin-left-image");
-    const right = document.querySelector("#margin-right-image");
+  //   const left = document.querySelector("#margin-left-image");
+  //   const right = document.querySelector("#margin-right-image");
 
-    const leftBlock = document.querySelector(".block-1");
-    const rightBlock = document.querySelector(".block-2");
+  //   const leftBlock = document.querySelector(".block-1");
+  //   const rightBlock = document.querySelector(".block-2");
 
-    const bottomleftBlock = document.querySelector(".bottom-block-1");
-    const bottommiddleBlock = document.querySelector(".bottom-block-2");
-    const bottomrightBlock = document.querySelector(".bottom-block-3");
+  //   const bottomleftBlock = document.querySelector(".bottom-block-1");
+  //   const bottommiddleBlock = document.querySelector(".bottom-block-2");
+  //   const bottomrightBlock = document.querySelector(".bottom-block-3");
 
-    console.log(dimensions.top);
+  //   console.log(dimensions.top);
 
-    //check if desktop
-    if (window.innerWidth > 800) {
-      if (dimensions.top < 700) {
-        left.classList.add("margin-right-image-animation");
-        right.classList.add("margin-left-image-animation");
-      }
-      if (dimensions.top < -350) {
-        leftBlock.classList.add("block-1-animation");
-        rightBlock.classList.add("block-2-animation");
-      }
-      if (dimensions.top < -640) {
-        bottomleftBlock.classList.add("block-1-animation");
-        bottommiddleBlock.classList.add("block-3-animation");
-        bottomrightBlock.classList.add("block-2-animation");
-      }
-    }
+  //   //check if desktop
+  //   if (window.innerWidth > 800) {
+  //     if (dimensions.top < 700) {
+  //       left.classList.add("margin-right-image-animation");
+  //       right.classList.add("margin-left-image-animation");
+  //     }
+  //     if (dimensions.top < -350) {
+  //       leftBlock.classList.add("block-1-animation");
+  //       rightBlock.classList.add("block-2-animation");
+  //     }
+  //     if (dimensions.top < -640) {
+  //       bottomleftBlock.classList.add("block-1-animation");
+  //       bottommiddleBlock.classList.add("block-3-animation");
+  //       bottomrightBlock.classList.add("block-2-animation");
+  //     }
+  //   }
 
-    //check if mobile
-    if (window.innerWidth <= 800) {
-      const origin = document.querySelector(".slick-list");
-      const dimensions = origin.getBoundingClientRect();
+  //   //check if mobile
+  //   if (window.innerWidth <= 800) {
+  //     const origin = document.querySelector(".slick-list");
+  //     const dimensions = origin.getBoundingClientRect();
 
-      console.log("mobile: " + dimensions.top);
+  //     console.log("mobile: " + dimensions.top);
 
-      console.log("is a mobile");
+  //     console.log("is a mobile");
 
-      if (dimensions.top < -40) {
-        rightBlock.classList.add("block-1-animation");
-      }
-      if (dimensions.top < -250) {
-        bottomleftBlock.classList.add("block-1-animation");
-        bottommiddleBlock.classList.add("block-1-animation");
-        bottomrightBlock.classList.add("block-1-animation");
-      }
-    }
-  };
+  //     if (dimensions.top < -40) {
+  //       rightBlock.classList.add("block-1-animation");
+  //     }
+  //     if (dimensions.top < -250) {
+  //       bottomleftBlock.classList.add("block-1-animation");
+  //       bottommiddleBlock.classList.add("block-1-animation");
+  //       bottomrightBlock.classList.add("block-1-animation");
+  //     }
+  //   }
+  // };
 
   const box1Redirect = () => {
     history.push("/shop/international");
@@ -149,6 +176,94 @@ export default function Home() {
     setTimeout(() => showIntro(), 1000),
     (
       <div className="home-page">
+        <div className="block-1-new">
+          <img src={king} className="block-1-image" />
+          <img src={of} className="block-1-image" />
+          <img src={candy} className="block-1-image" />
+        </div>
+        <div className="svg-container">
+          <svg
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            className="svg-1"
+          >
+            <path class="large-angle" d="M0 0 L100 90 L100 0 V100 H0"></path>
+          </svg>
+        </div>
+        <div className="block-2-new">
+          <img src={scrollDownTo} />
+          <img src={startShopping} />
+        </div>
+        <div className="svg-container-2">
+          <svg
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            className="svg-2"
+          >
+            <path class="large-angle" d="M0 0 L100 90 L100 0 V100 H0"></path>
+          </svg>
+        </div>
+        <div className="block-3-new">
+          <Slider {...settings} className="slider-desktop">
+            <div>
+              <a href="#">
+                <img src={candy1} className="box-img" />
+                <h2>TEST TITLE</h2>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src={candy2} className="box-img" />
+                <h2>TEST TITLE</h2>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src={candy3} className="box-img" />
+                <h2>TEST TITLE</h2>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src={candy3} className="box-img" />
+                <h2>TEST TITLE</h2>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src={candy1} className="box-img" />
+                <h2>TEST TITLE</h2>
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src={candy1} className="box-img" />
+                <h2>TEST TITLE</h2>
+              </a>
+            </div>
+          </Slider>
+
+          <Slider {...settingsMobile} className="slider-mobile">
+            <div>
+              <a href="#">
+                <img src={candy1} className="box-img" />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src={candy2} className="box-img" />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <img src={candy3} className="box-img" />
+              </a>
+            </div>
+          </Slider>
+
+          <br />
+        </div>
+
         {/* {userData.user ? (
         <h1>Welcome {userData.user.displayName}</h1>
       ) : (
@@ -158,7 +273,7 @@ export default function Home() {
         </>
       )} */}
 
-        <Slider {...settings} className="homepage-slider">
+        {/* <Slider {...settings} className="homepage-slider">
           <div>
             <a href="#">
               <video loop autoPlay src={testBanner} />
@@ -174,9 +289,9 @@ export default function Home() {
               <video loop autoPlay src={slider3} />
             </a>
           </div>
-        </Slider>
+        </Slider> */}
 
-        <div className="intro-container">
+        {/* <div className="intro-container">
           <h1 className="timeout-intro">THE BEST IN THE BUSINESS....</h1>
         </div>
 
@@ -287,7 +402,7 @@ export default function Home() {
             </div>
             <p style={{ fontWeight: 600 }}>CLEARANCE</p>
           </div>
-        </div>
+        </div> */}
       </div>
     )
   );
