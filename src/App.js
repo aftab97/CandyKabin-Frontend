@@ -1,5 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  useHistory,
+  Link,
+} from "react-router-dom";
 import Axios from "axios";
 import Header from "./components/layout/Header";
 import Home from "./components/pages/Home";
@@ -14,7 +20,7 @@ import { Shop } from "./components/pages/Shop/Shop";
 import { ProductPage } from "./components/pages/ProductPage";
 import { Dietary } from "./components/pages/Dietary/Dietary";
 import AdminSummary from "./components/pages/AdminSummary";
-import { Navbar } from "./components/layout/Navbar";
+// import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { Three } from "./components/Three";
 import { CheckoutPage } from "./components/pages/Checkout/CheckoutPage";
@@ -36,12 +42,31 @@ import { Basket } from "./components/pages/Basket/Basket";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
+// new nav imports
+import { ReactComponent as BellIcon } from "./icons/bell.svg";
+import { ReactComponent as BasketIcon } from "./icons/basket.svg";
+import { ReactComponent as MessengerIcon } from "./icons/messenger.svg";
+import { ReactComponent as CaretIcon } from "./icons/caret.svg";
+import { ReactComponent as PlusIcon } from "./icons/plus.svg";
+import { ReactComponent as CogIcon } from "./icons/cog.svg";
+import { ReactComponent as ChevronIcon } from "./icons/chevron.svg";
+import { ReactComponent as ArrowIcon } from "./icons/arrow.svg";
+import { ReactComponent as BoltIcon } from "./icons/bolt.svg";
+import { ReactComponent as LoginIcon } from "./icons/login.svg";
+import { ReactComponent as LogoutIcon } from "./icons/logout.svg";
+import { CSSTransition } from "react-transition-group";
+import Logo from "./img/logo-pink.png";
+import MobileLogo from "./img/logo-initials.png";
+import WorldEmoji from "./img/worldwide-emoji.png";
+
 export default function App() {
   const [userData, setUserData] = useState({
     token: undefined,
     user: undefined,
     email: undefined,
   });
+
+  const [open, setOpen] = useState(false);
 
   const [shoppingCart, setShoppingCart] = useState([]);
 
@@ -128,6 +153,10 @@ export default function App() {
     // document.querySelector("#dietary-links").style.display = "none";
   };
 
+  const handleMenuClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <BrowserRouter>
@@ -150,14 +179,39 @@ export default function App() {
               setDeliveryCost,
               totalCost,
               setTotalCost,
+              open,
+              setOpen,
             }}
           >
             <AlertProvider template={AlertTemplate} {...options}>
               <Basket />
-              <Header />
-              <Navbar />
+              {/* <Header />
+              <Navbar /> */}
+
+              <Navbar>
+                {userData.user ? (
+                  <NavItemLogout
+                    icon={<LogoutIcon onClick={handleMenuClose} />}
+                  />
+                ) : (
+                  <NavItemLogin
+                    icon={<LoginIcon onClick={handleMenuClose} />}
+                  />
+                )}
+                <NavItemBasket
+                  icon={<BasketIcon onClick={handleMenuClose} />}
+                />
+                <NavText text={"MENU"} icon={<CaretIcon />}>
+                  <DropdownMenu></DropdownMenu>
+                </NavText>
+              </Navbar>
+
               <MobileNav />
-              <div className="container" onMouseOver={mouseLeaveHandle}>
+              <div
+                className="container"
+                onClick={handleMenuClose}
+                // onMouseOver={mouseLeaveHandle}
+              >
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/login" component={Login} />
@@ -206,5 +260,363 @@ export default function App() {
         </UserContext.Provider>
       </BrowserRouter>
     </>
+  );
+}
+
+function Navbar(props) {
+  const [mobile, setMobile] = useState(false);
+
+  const { open, setOpen } = useContext(BasketContext);
+
+  //check if mobile
+  useEffect(() => {
+    if (window.innerWidth <= 800) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  }, []);
+
+  const history = useHistory();
+
+  const redirectToHomepage = () => {
+    history.push("/");
+    setOpen(false);
+  };
+  return (
+    <nav className="navbar">
+      <div className="new-logo" onClick={redirectToHomepage}>
+        {mobile ? <img src={MobileLogo} /> : <img src={Logo} />}
+      </div>
+      <ul className="navbar-nav">{props.children}</ul>
+    </nav>
+  );
+}
+
+function NavItem(props) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <li className="nav-item">
+      <a className="icon-button" onClick={() => setOpen(!open)}>
+        {props.icon}
+      </a>
+      {open && props.children}
+    </li>
+  );
+}
+
+function NavItemLogout(props) {
+  const { shoppingCart, setShoppingCart, productCost } = useContext(
+    BasketContext
+  );
+  const { userData, setUserData } = useContext(UserContext);
+
+  const logout = async () => {
+    //update db with shoopping cart /first clear then update
+    console.log(userData.user.id);
+    let basketData = shoppingCart;
+
+    const clear = await Axios.post(
+      `${process.env.REACT_APP_URL}/users/clearCart`,
+      { id: userData.user.id },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": userData.token,
+        },
+      }
+    );
+
+    const data = await shoppingCart.map((p) =>
+      Axios.post(
+        `${process.env.REACT_APP_URL}/users/updateCart`,
+        {
+          id: userData.user.id,
+          productId: p.id,
+          productName: p.productName,
+          amount: p.amount,
+          price: p.price,
+          orderNo: p.orderNo,
+          imageSrc: p.imageSrc,
+          weight: p.weight,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": userData.token,
+          },
+        }
+      )
+    );
+
+    localStorage.setItem("basket", "");
+
+    setShoppingCart([]);
+
+    setUserData({
+      token: undefined,
+      user: undefined,
+    });
+    localStorage.setItem("auth-token", "");
+  };
+
+  return (
+    <li className="nav-item" onClick={logout}>
+      <a className="icon-button">{props.icon}</a>
+    </li>
+  );
+}
+function NavItemLogin(props) {
+  const history = useHistory();
+  const login = () => history.push("/login");
+
+  return (
+    <li className="nav-item" onClick={login}>
+      <a className="icon-button">{props.icon}</a>
+    </li>
+  );
+}
+
+function NavItemBasket(props) {
+  const handleSlideOut = () => {
+    let newBasketContainer = document.querySelector(".new-basket-container");
+    newBasketContainer.style.display = "flex";
+  };
+
+  return (
+    <li className="nav-item">
+      <a className="icon-button" onClick={handleSlideOut}>
+        {props.icon}
+      </a>
+    </li>
+  );
+}
+
+function NavText(props) {
+  // const [open, setOpen] = useState(false);
+
+  const { open, setOpen } = useContext(BasketContext);
+
+  return (
+    <li className="nav-item-text">
+      <a className="icon-button-text" onClick={() => setOpen(!open)}>
+        <h2>{props.text}</h2>
+        {props.icon}
+      </a>
+
+      {open && props.children}
+    </li>
+  );
+}
+
+function DropdownMenu() {
+  const [activeMenu, setActiveMenu] = useState("main");
+  const [menuHeight, setMenuHeight] = useState(170);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
+  }, []);
+
+  function calcHeight(el) {
+    const height = el.offsetHeight;
+    setMenuHeight(height + 20);
+  }
+
+  function DropdownItem(props) {
+    return (
+      <a
+        href="#"
+        className="menu-item"
+        onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+      >
+        <span className="icon-button">{props.leftIcon}</span>
+        {props.children}
+        <span className="icon-right">{props.rightIcon}</span>
+      </a>
+    );
+  }
+
+  const { open, setOpen } = useContext(BasketContext);
+
+  return (
+    <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
+      <CSSTransition
+        in={activeMenu === "main"}
+        timeout={500}
+        classNames="menu-primary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem leftIcon={"🏠"}>
+            <Link
+              to={"/"}
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              HOMEPAGE
+            </Link>
+          </DropdownItem>
+          <DropdownItem
+            leftIcon={"🍬"}
+            rightIcon={<ChevronIcon />}
+            goToMenu="shop"
+          >
+            SHOP
+          </DropdownItem>
+          <DropdownItem leftIcon={"🎁"}>
+            <Link
+              to={"/gifts-and-hampers/products"}
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              GIFTS & HAMPERS
+            </Link>
+          </DropdownItem>
+          <DropdownItem leftIcon={"🔥"}>
+            <Link
+              to={"/new-in/products"}
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              NEW IN
+            </Link>
+          </DropdownItem>
+          <DropdownItem
+            leftIcon={"❓"}
+            rightIcon={<ChevronIcon />}
+            goToMenu="questions"
+          >
+            QUESTIONS
+          </DropdownItem>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === "settings"}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>My Tutorial</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>HTML</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>CSS</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>JavaScript</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>Awesome!</DropdownItem>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === "shop"}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>SHOP</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon={"🌎"}>
+            <Link to="/shop/international" onClick={() => setOpen(!open)}>
+              International
+            </Link>
+          </DropdownItem>
+
+          <DropdownItem leftIcon={"🍭"}>
+            <Link to="/shop/sweets-and-candy" onClick={() => setOpen(!open)}>
+              Sweets & Candy
+            </Link>
+          </DropdownItem>
+          <DropdownItem leftIcon={"🍡"}>
+            <Link to="/shop/pick-and-mix" onClick={() => setOpen(!open)}>
+              Pick & Mix
+            </Link>
+          </DropdownItem>
+
+          <DropdownItem leftIcon={"🍩"}>
+            <Link to="/shop/traditional" onClick={() => setOpen(!open)}>
+              Traditional
+            </Link>
+          </DropdownItem>
+          <DropdownItem leftIcon={"💸"}>
+            <Link to="/shop/clearance" onClick={() => setOpen(!open)}>
+              Clearance
+            </Link>
+          </DropdownItem>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === "questions"}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>QUESTIONS</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon={"🌎"}>
+            <Link to="/about-us" onClick={() => setOpen(!open)}>
+              ABOUT US
+            </Link>
+          </DropdownItem>
+
+          <DropdownItem>
+            <Link
+              to="/frequently-asked-questions"
+              onClick={() => setOpen(!open)}
+            >
+              FREQUENTLY ASKED QUESTIONS
+            </Link>
+          </DropdownItem>
+          <DropdownItem>
+            <Link to="/customer-services" onClick={() => setOpen(!open)}>
+              CUSTOMER SERVICES
+            </Link>
+          </DropdownItem>
+
+          <DropdownItem>
+            <Link to="/allergy-information" onClick={() => setOpen(!open)}>
+              ALLERGY INFORMATION
+            </Link>
+          </DropdownItem>
+          <DropdownItem>
+            <Link to="/privacy-policy" onClick={() => setOpen(!open)}>
+              PRIVACY POLICY
+            </Link>
+          </DropdownItem>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === "animals"}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>Animals</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon="🦘">Kangaroo</DropdownItem>
+          <DropdownItem leftIcon="🐸">Frog</DropdownItem>
+          <DropdownItem leftIcon="🦋">Horse?</DropdownItem>
+          <DropdownItem leftIcon="🦔">Hedgehog</DropdownItem>
+        </div>
+      </CSSTransition>
+    </div>
   );
 }

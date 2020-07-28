@@ -1,0 +1,11 @@
+<svg
+                width="32px"
+                height="32px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 12c8 0 10 6.478 10 12H2c0-5.522 2-12 10-12zm0-12a5.5 5.5 0 110 11 5.5 5.5 0 010-11z"
+                  fill="#535A6B"
+                  fill-rule="nonzero"
+                />
+              </svg>
