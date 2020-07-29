@@ -30,8 +30,8 @@
   },
   "scripts": {
     "homepage": "./",
-    "start": "cross-env REACT_APP_URL=http://localhost:5000/api REACT_APP_STRIPE_KEY=pk_test_51H7j8PG3oNiAXujCPbaKuku0zw552JZXcEm13WSe1F6M3IgfiCW7Pwv0vYxCQkPkdM9rrSpFA1RMKfMQMvsQXPXd00A5L5T9k6 react-scripts start",
-    "build": "cross-env REACT_APP_URL=http://178.62.61.143/api REACT_APP_STRIPE_KEY=pk_test_51H7j8PG3oNiAXujCPbaKuku0zw552JZXcEm13WSe1F6M3IgfiCW7Pwv0vYxCQkPkdM9rrSpFA1RMKfMQMvsQXPXd00A5L5T9k6 react-scripts build",
+    "start": "cross-env REACT_APP_URL=http://localhost:5000/api REACT_APP_STRIPE_KEY=pk_live_51H7j8PG3oNiAXujC3Dvj1Y4ow1y7NLnBTTbDgtNRJd5IjRVEilmuC6hzswqueINSV4U1wcMk4yMadpjncHMTWjgl00XtSbHp2K react-scripts start",
+    "build": "cross-env REACT_APP_URL=http://178.62.61.143/api REACT_APP_STRIPE_KEY=pk_live_51H7j8PG3oNiAXujC3Dvj1Y4ow1y7NLnBTTbDgtNRJd5IjRVEilmuC6hzswqueINSV4U1wcMk4yMadpjncHMTWjgl00XtSbHp2K react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
