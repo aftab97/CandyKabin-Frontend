@@ -44,7 +44,7 @@ body {
   display: flex;
   /* justify-content: space-evenly; */
   align-items: center;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   position: relative;
   z-index: 6;
 }
@@ -194,7 +194,7 @@ body {
   border: 1px solid white;
   border-radius: 20px;
   background-color: white;
-  /* color: #e57098; */
+  /* color: var(--secondary-color); */
   font-family: "Fredoka One", cursive;
 }
 .product-title {
@@ -224,7 +224,7 @@ body {
 
 .product-price {
   position: relative;
-  border: 3px solid #e57098;
+  border: 3px solid var(--secondary-color);
   /* width: 50px; */
   display: inline-block;
   margin: auto;
@@ -238,7 +238,7 @@ body {
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: #e57098;
+  background: var(--secondary-color);
   padding: 20px;
   border-radius: 50px;
   display: inline-block;
@@ -283,7 +283,7 @@ body {
   padding-top: 20px;
 }
 .product-page-button {
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   width: 30px;
   height: 30px;
   border-radius: 25px;
@@ -482,7 +482,7 @@ body {
   list-style: none;
   display: flex;
   /* height: 100px; */
-  border-bottom: 1px solid #e57098;
+  border-bottom: 1px solid var(--secondary-color);
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -501,7 +501,7 @@ body {
 .product-price-basket {
   padding-left: 20px;
   padding-right: 10px;
-  color: #e57098;
+  color: var(--secondary-color);
 }
 .basket-remove-button {
   color: white;
@@ -561,7 +561,7 @@ body {
 .shop-links {
   font-family: "Fredoka One", cursive;
   letter-spacing: 3px;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   position: relative;
   left: 0px;
   /* padding-left: 5vw;
@@ -584,7 +584,7 @@ body {
 .dietary-links {
   font-family: "Fredoka One", cursive;
   letter-spacing: 3px;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   position: relative;
   left: 0px;
   /* padding-left: 5vw;
@@ -608,7 +608,7 @@ body {
 .sidepanel-option {
   font-family: "Fredoka One", cursive;
   letter-spacing: 3px;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   position: relative;
   left: 0px;
   /* padding-left: 5vw;
@@ -639,7 +639,7 @@ body {
   height: 70vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  border-top: 1px solid #e57098;
+  border-top: 1px solid var(--secondary-color);
   margin-right: 17px;
 }
 
@@ -717,7 +717,7 @@ body {
 }
 
 .fixed-height-basket::-webkit-scrollbar-thumb {
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   border-radius: 20px;
   border-right: none;
   border-left: none;
@@ -820,7 +820,7 @@ body {
 .i-ingredients {
   padding-top: 60px;
   padding-bottom: 10px;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   position: relative;
@@ -1007,15 +1007,18 @@ body {
   }
 }
 
+.block-4-new {
+  display: flex;
+}
 .block-1 {
-  position: relative;
-  display: none;
+  /* position: relative;
+  display: none; */
   /* animation: movein 2s 1; */
 }
 
 .block-2 {
-  position: relative;
-  display: none;
+  /* position: relative;
+  display: none; */
   /* animation: movein2 2s 1; */
 }
 
@@ -1170,7 +1173,7 @@ nav {
   /* display: flex;
   justify-content: center;
   text-align: center;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   height: 80px;
   text-shadow: 2px 4px 4px #000000;
   font-family: "Fredoka One", cursive;
@@ -1494,7 +1497,7 @@ nav {
   width: 800px;
   min-height: 800px;
   margin: auto;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   border-radius: 25px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1555,14 +1558,14 @@ td {
 
 /* stripe button styling */
 .StripeCheckout {
-  background-color: #e57098 !important;
+  background-color: var(--secondary-color) !important;
   border-radius: 0 !important;
   background-image: none !important;
   padding: 0;
 }
 
 .StripeCheckout > span {
-  background-color: #e57098 !important;
+  background-color: var(--secondary-color) !important;
   color: black !important;
   border-radius: 0 !important;
   background-image: none !important;
@@ -1570,7 +1573,7 @@ td {
 
 .disabled-button-checkout {
   padding: 1px;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
   opacity: 0.7;
 }
 
@@ -1585,7 +1588,7 @@ td {
   font-weight: bold;
   box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   text-shadow: rgba(0, 0, 0, 0.25) 0px -1px 0px;
-  background-color: #e57098;
+  background-color: var(--secondary-color);
 }
 
 /* styling for radio buttons */
@@ -1692,7 +1695,7 @@ label > input {
   width: 100vw;
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
-  color: #e57098;
+  color: var(--secondary-color);
   font-family: "Fredoka One", cursive;
   top: 0;
 }
@@ -1745,7 +1748,7 @@ label > input {
 }
 
 .page-button-selected-page {
-  background-color: #e57098;
+  background-color: var(--secondary-color);
 }
 
 .block-1-animation {
@@ -1778,7 +1781,7 @@ video {
 
 /* alert styling */
 #__react-alert__ > div > div > div {
-  background-color: #e57098 !important;
+  background-color: var(--secondary-color) !important;
   border-radius: 20px !important;
 }
 
@@ -1786,7 +1789,9 @@ video {
 :root {
   --bg: white;
   --bg-accent: #484a4d;
-  --text-color: #fe1ed3;
+  --text-color: #ff1694;
+  --primary-color: #ffc627;
+  --secondary-color: #ff1694;
   --nav-size: 60px;
   --border: 1px solid #e7e8e9;
   --border-radius: 8px;
@@ -1969,7 +1974,7 @@ ul {
 .new-logo > img {
   /* width: 40vw; */
   margin: auto;
-  height: 50px;
+  height: 70px;
 }
 
 /* NEW HOMEPAGE */
@@ -1977,7 +1982,7 @@ ul {
   position: relative;
   /* top: 1px; */
   width: 100%;
-  background-color: #fe1ed3;
+  background-color: var(--primary-color);
 }
 
 .svg-container-2 {
@@ -1986,13 +1991,13 @@ ul {
   z-index: -1;
   /* top: 1px; */
   width: 100%;
-  background-color: #fe1ed3;
+  background-color: var(--primary-color);
   transform: rotate(180deg);
 }
 
 .block-1-new {
   height: 300px;
-  background-color: #fe1ed3;
+  background-color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2001,7 +2006,7 @@ ul {
 .block-2-new {
   position: relative;
   top: -10px;
-  background-color: white;
+  background-color: var(--secondary-color);
   text-align: center;
 }
 
@@ -2011,13 +2016,13 @@ ul {
 
 .block-3-new {
   position: relative;
-  background-color: #fe1ed3;
+  background-color: var(--primary-color);
   /* height: 300px; */
   top: -15px;
 }
 
 .svg-1 {
-  fill: white;
+  fill: var(--secondary-color);
   height: 100%;
 
   width: 100%;
@@ -2025,7 +2030,7 @@ ul {
 }
 
 .svg-2 {
-  fill: white;
+  fill: var(--secondary-color);
   height: 100%;
 
   width: 100%;
@@ -2055,6 +2060,52 @@ ul {
   width: 20vw;
 }
 
+.slider-block {
+  background-color: var(--primary-color);
+}
+
+.parallax-block {
+  background-image: url(./img/parallax-img.jpg);
+
+  /* Set a specific height */
+  /* min-height: 500px; */
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: -15px;
+  display: block;
+  /* display: table-cell; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* justify-content: center; */
+  margin: 0;
+}
+
+.parallax-block > img {
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  /* max-width: 50vw; */
+}
+
+.block-4-new {
+  padding: 20px;
+  text-align: center;
+}
+
+.block-1 {
+  width: 50vw;
+}
+
+.block-2 {
+  width: 50vw;
+}
+
 @media only screen and (max-width: 600px) {
   html,
   body {
@@ -2078,7 +2129,7 @@ ul {
   .hamburger-button {
     width: 50px;
     height: 50px;
-    background-color: #e57098;
+    background-color: var(--secondary-color);
     display: flex;
     position: relative;
     transform: rotate(90deg);
@@ -2106,7 +2157,7 @@ ul {
   }
 
   #hamburger {
-    background-color: #e57098;
+    background-color: var(--secondary-color);
     position: fixed;
     z-index: 10;
     width: 100vw;
@@ -2121,7 +2172,7 @@ ul {
   .Collapsible {
     font-family: "Fredoka One", cursive;
     display: block;
-    background-color: #e57098;
+    background-color: var(--secondary-color);
     text-align: center;
     text-shadow: 2px 2px 4px #808080;
     border-top: 1px solid white;
@@ -2434,7 +2485,7 @@ ul {
   .i-ingredients-mobile {
     display: block;
     margin-top: 10px;
-    background-color: #e57098;
+    background-color: var(--secondary-color);
     border-radius: 20px;
     padding: 10px;
   }
@@ -2494,6 +2545,20 @@ ul {
     right: -50px;
   }
 
+  .homepage-slider {
+    width: 100vw;
+  }
+
+  .homepage-slider .slick-next {
+    display: none !important;
+  }
+  .homepage-slider video {
+    width: 100vw;
+  }
+
+  .block-4-new {
+    flex-direction: column;
+  }
   /* .image-bottom-block-container {
     display: block;
   } */

@@ -28,6 +28,11 @@ import candy1 from "../../img/candy-rs.png";
 import candy2 from "../../img/gummy-bear-rs.png";
 import candy3 from "../../img/hersheys-chocolate-rs.png";
 
+import sliderNew1 from "../../img/new-test.mp4";
+import sliderNew2 from "../../img/new-test2.mp4";
+
+import logo from "../../img/logo-pink.png";
+
 export default function Home() {
   const { userData } = useContext(UserContext);
   // const settings = {
@@ -50,7 +55,7 @@ export default function Home() {
   };
   let settingsMain = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
@@ -185,21 +190,17 @@ export default function Home() {
     setTimeout(() => showIntro(), 1000),
     (
       <div className="home-page">
-        <div>
+        <div className="slider-block">
+          <br />
           <Slider {...settingsMain} className="homepage-slider">
             <div>
               <a href="#">
-                <video loop autoPlay src={testBanner} />
+                <video loop autoPlay src={sliderNew1} />
               </a>
             </div>
             <div>
               <a href="#">
-                <video loop autoPlay src={slider2} />
-              </a>
-            </div>
-            <div>
-              <a href="#">
-                <video loop autoPlay src={slider3} />
+                <video loop autoPlay src={sliderNew2} />
               </a>
             </div>
           </Slider>
@@ -291,6 +292,38 @@ export default function Home() {
           </Slider>
 
           <br />
+        </div>
+
+        <div className="parallax-block">
+          <img src={logo} />
+        </div>
+
+        <div className="block-4-new">
+          <div className="block-1">
+            <h2>AMERICAN SODA'S</h2>
+            <br />
+            <p>
+              Candy Kabin are proud to be one of the UK's biggest supplier of
+              American sodas, UK sodas and more! We have a huge range of sodas,
+              pop, chocolate milks and more, all designed to satisfy your
+              sweet-tooth and/or regress bigger kids back to their childhood! We
+              have some of the biggest names in soft drinks such as Mountain
+              Dew, Calypso, Chupa Chups, Fanta flavours and more. View our stock
+              today.
+            </p>
+            <br />
+          </div>
+          <div className="block-2">
+            <h2>AMERICAN CHOCOLATE</h2>
+            <br />
+            <p>
+              Nobody makes chocolate bars and nibbles like the Americans which
+              is why our team at Candy Kabin are proud to stock some of the most
+              iconic and well-known US brands. We have Hershey bars, Milk Duds,
+              M&M's, Chocnibbles and more. Order your chocolate products today.
+            </p>
+            <br />
+          </div>
         </div>
 
         {/* {userData.user ? (
