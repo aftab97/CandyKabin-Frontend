@@ -6,20 +6,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// import slider1 from "../../img/home-slider-1.png";
-
-import box1 from "../../img/candy-box-image.png";
-import box2 from "../../img/cat-subscription-boxes.png";
-import box3 from "../../img/cat-american-candy.png";
-
-import testBanner from "../../img/banner-slide-1-test.mp4";
-import slider1 from "../../img/banner-slide-1.mp4";
-import slider2 from "../../img/banner-slide-2.mp4";
-import slider3 from "../../img/banner-slide-3.mp4";
-
-import king from "../../img/king.png";
-import of from "../../img/of.png";
-import candy from "../../img/candy.png";
+import kingOfCandy from "../../img/king-of-candy-new.PNG";
+import youAreNowAKidInACandyStore from "../../img/you-are-now-a-kid-in-a-candy-store.PNG";
 
 import scrollDownTo from "../../img/scroll-down-to.png";
 import startShopping from "../../img/start-shopping.png";
@@ -27,6 +15,8 @@ import startShopping from "../../img/start-shopping.png";
 import candy1 from "../../img/candy-rs.png";
 import candy2 from "../../img/gummy-bear-rs.png";
 import candy3 from "../../img/hersheys-chocolate-rs.png";
+import candy4 from "../../img/candy-2-rs.png";
+import gifts from "../../img/gifts-rs.png";
 
 import sliderNew1 from "../../img/new-test.mp4";
 import sliderNew2 from "../../img/new-test2.mp4";
@@ -50,7 +40,7 @@ export default function Home() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     arrows: true,
   };
   let settingsMain = {
@@ -67,7 +57,7 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     arrows: false,
   };
 
@@ -207,9 +197,7 @@ export default function Home() {
         </div>
 
         <div className="block-1-new">
-          <img src={king} className="block-1-image" />
-          <img src={of} className="block-1-image" />
-          <img src={candy} className="block-1-image" />
+          <img src={kingOfCandy} className="block-1-image" />
         </div>
         <div className="svg-container">
           <svg
@@ -221,8 +209,7 @@ export default function Home() {
           </svg>
         </div>
         <div className="block-2-new">
-          <img src={scrollDownTo} />
-          <img src={startShopping} />
+          <img src={youAreNowAKidInACandyStore} />
         </div>
         <div className="svg-container-2">
           <svg
@@ -236,57 +223,66 @@ export default function Home() {
         <div className="block-3-new">
           <Slider {...settings} className="slider-desktop">
             <div>
-              <a href="#">
+              <a href="/shop/pick-and-mix">
                 <img src={candy1} className="box-img" />
-                <h2>TEST TITLE</h2>
+                <h2>Pick & Mix</h2>
               </a>
             </div>
             <div>
-              <a href="#">
+              <a href="/new-in/products">
                 <img src={candy2} className="box-img" />
-                <h2>TEST TITLE</h2>
+                <h2>New In</h2>
               </a>
             </div>
             <div>
-              <a href="#">
+              <a href="/search/hershey">
                 <img src={candy3} className="box-img" />
-                <h2>TEST TITLE</h2>
+                <h2>Hershey's Chocolate</h2>
               </a>
             </div>
             <div>
-              <a href="#">
-                <img src={candy3} className="box-img" />
-                <h2>TEST TITLE</h2>
+              <a href="/shop/traditional">
+                <img src={candy4} className="box-img" />
+                <h2>Traditional</h2>
               </a>
             </div>
             <div>
-              <a href="#">
-                <img src={candy1} className="box-img" />
-                <h2>TEST TITLE</h2>
-              </a>
-            </div>
-            <div>
-              <a href="#">
-                <img src={candy1} className="box-img" />
-                <h2>TEST TITLE</h2>
+              <a href="/gifts-and-hampers/products">
+                <img src={gifts} className="box-img" />
+                <h2>Gifts & Hampers</h2>
               </a>
             </div>
           </Slider>
 
           <Slider {...settingsMobile} className="slider-mobile">
             <div>
-              <a href="#">
+              <a href="/shop/pick-and-mix">
                 <img src={candy1} className="box-img" />
+                <h2>Pick & Mix</h2>
               </a>
             </div>
             <div>
-              <a href="#">
+              <a href="/new-in/products">
                 <img src={candy2} className="box-img" />
+                <h2>New In</h2>
               </a>
             </div>
             <div>
-              <a href="#">
+              <a href="/search/hershey">
                 <img src={candy3} className="box-img" />
+                <h2>Hershey's Chocolate</h2>
+              </a>
+            </div>
+            <div>
+              <a href="/shop/traditional">
+                <img src={candy4} className="box-img" />
+                <h2>Traditional</h2>
+              </a>
+            </div>
+            <div>
+              <a href="/gifts-and-hampers/products">
+                <img src={gifts} className="box-img" />
+                <h2>Gifts & Hampers</h2>
               </a>
             </div>
           </Slider>
@@ -313,6 +309,11 @@ export default function Home() {
             </p>
             <br />
           </div>
+        </div>
+
+        <div className="parallax-block-2">{/* <img src={logo} /> */}</div>
+
+        <div className="block-4-new">
           <div className="block-2">
             <h2>AMERICAN CHOCOLATE</h2>
             <br />

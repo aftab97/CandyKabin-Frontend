@@ -56,8 +56,9 @@ import { ReactComponent as LoginIcon } from "./icons/login.svg";
 import { ReactComponent as LogoutIcon } from "./icons/logout.svg";
 import { CSSTransition } from "react-transition-group";
 import Logo from "./img/logo-pink.png";
-import MobileLogo from "./img/logo-initials.png";
+import MobileLogo from "./img/logo-mobile.PNG";
 import WorldEmoji from "./img/worldwide-emoji.png";
+import { TextField } from "@material-ui/core";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -82,6 +83,8 @@ export default function App() {
 
   const incrementCounter = () => setCount((counter) => counter + 1);
   const decrementCounter = () => setCount((counter) => counter - 1);
+
+  // const history = useHistory();
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -204,6 +207,17 @@ export default function App() {
               <Navbar /> */}
 
               <Navbar>
+                {/* <form className="searchbar" onSubmit={handleSearchChange}>
+                  <TextField
+                    id="outlined-basic"
+                    label="Search product.."
+                    variant="outlined"
+                    onChange={(e) => {
+                      setSearch(e.target.value);
+                    }}
+                  />
+                </form> */}
+
                 {userData.user ? (
                   <NavItemLogout
                     icon={<LogoutIcon onClick={handleMenuClose} />}
@@ -298,13 +312,42 @@ function Navbar(props) {
     history.push("/");
     setOpen(false);
   };
+
   return (
-    <nav className="navbar">
-      <div className="new-logo" onClick={redirectToHomepage}>
-        {mobile ? <img src={MobileLogo} /> : <img src={Logo} />}
-      </div>
-      <ul className="navbar-nav">{props.children}</ul>
-    </nav>
+    <>
+      <nav className="navbar">
+        <div className="new-logo" onClick={redirectToHomepage}>
+          {mobile ? <img src={MobileLogo} /> : <img src={Logo} />}
+        </div>
+        <div className="navbar-icon">
+          <a target="_blank" href="https://www.instagram.com/candykabin/">
+            <svg
+              className="instagram-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+        </div>
+        <div className="navbar-icon">
+          <a target="_blank" href="https://www.facebook.com/candykabin1">
+            <svg
+              className="facebook-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-3 7h-1.924c-.615 0-1.076.252-1.076.889v1.111h3l-.238 3h-2.762v8h-3v-8h-2v-3h2v-1.923c0-2.022 1.064-3.077 3.461-3.077h2.539v3z" />
+            </svg>
+          </a>
+        </div>
+        <ul className="navbar-nav">{props.children}</ul>
+      </nav>
+    </>
   );
 }
 
@@ -375,21 +418,64 @@ function NavItemLogout(props) {
     });
     localStorage.setItem("auth-token", "");
   };
+  const history = useHistory();
+
+  const [search, setSearch] = useState("");
+
+  const handleSearchChange = () => {
+    if (search.length > 0 && search !== " ") {
+      history.push(`/search/${search}`);
+      setSearch("");
+    }
+  };
 
   return (
-    <li className="nav-item" onClick={logout}>
-      <a className="icon-button">{props.icon}</a>
-    </li>
+    <>
+      <form className="searchbar" onSubmit={handleSearchChange}>
+        <TextField
+          id="outlined-basic"
+          label="Search product.."
+          variant="outlined"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
+      </form>
+      <li className="nav-item" onClick={logout}>
+        <a className="icon-button">{props.icon}</a>
+      </li>
+    </>
   );
 }
 function NavItemLogin(props) {
   const history = useHistory();
   const login = () => history.push("/login");
 
+  const [search, setSearch] = useState("");
+
+  const handleSearchChange = () => {
+    if (search.length > 0 && search !== " ") {
+      history.push(`/search/${search}`);
+      setSearch("");
+    }
+  };
+
   return (
-    <li className="nav-item" onClick={login}>
-      <a className="icon-button">{props.icon}</a>
-    </li>
+    <>
+      <form className="searchbar" onSubmit={handleSearchChange}>
+        <TextField
+          id="outlined-basic"
+          label="Search product.."
+          variant="outlined"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
+      </form>
+      <li className="nav-item" onClick={login}>
+        <a className="icon-button">{props.icon}</a>
+      </li>
+    </>
   );
 }
 
@@ -441,15 +527,16 @@ function DropdownMenu() {
 
   function DropdownItem(props) {
     return (
-      <a
-        href="#"
-        className="menu-item"
-        onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
-      >
-        <span className="icon-button">{props.leftIcon}</span>
-        {props.children}
-        <span className="icon-right">{props.rightIcon}</span>
-      </a>
+      <>
+        <a
+          className="menu-item"
+          onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+        >
+          <span className="icon-button">{props.leftIcon}</span>
+          {props.children}
+          <span className="icon-right">{props.rightIcon}</span>
+        </a>
+      </>
     );
   }
 
@@ -509,6 +596,20 @@ function DropdownMenu() {
           >
             QUESTIONS
           </DropdownItem>
+          <form
+            className="searchbar-mobile"
+            // onSubmit={handleSearchChange}
+          >
+            <TextField
+              id="outlined-basic"
+              label="Search product.."
+              variant="outlined"
+              onChange={(e) => {
+                // setSearch(e.target.value);
+              }}
+            />
+          </form>
+          <br />
         </div>
       </CSSTransition>
 
@@ -612,24 +713,6 @@ function DropdownMenu() {
               PRIVACY POLICY
             </Link>
           </DropdownItem>
-        </div>
-      </CSSTransition>
-
-      <CSSTransition
-        in={activeMenu === "animals"}
-        timeout={500}
-        classNames="menu-secondary"
-        unmountOnExit
-        onEnter={calcHeight}
-      >
-        <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>Animals</h2>
-          </DropdownItem>
-          <DropdownItem leftIcon="🦘">Kangaroo</DropdownItem>
-          <DropdownItem leftIcon="🐸">Frog</DropdownItem>
-          <DropdownItem leftIcon="🦋">Horse?</DropdownItem>
-          <DropdownItem leftIcon="🦔">Hedgehog</DropdownItem>
         </div>
       </CSSTransition>
     </div>
