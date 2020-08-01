@@ -9,6 +9,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useAlert } from "react-alert";
 
+//dietary
+import halalLogo from "../../img/dietary/halal.PNG";
+import glutenFreeLogo from "../../img/dietary/gluten-free.PNG";
+import kosherLogo from "../../img/dietary/kosher.PNG";
+import veganLogo from "../../img/dietary/vegan.PNG";
+import vegetarianLogo from "../../img/dietary/vegetarian.PNG";
+
 export const ProductPage = ({ match, location, history }) => {
   const [product, setProduct] = useState(undefined);
 
@@ -242,9 +249,7 @@ export const ProductPage = ({ match, location, history }) => {
             <div className="i-title-image-container">
               <div className="i-title-container hvr-grow2">
                 <h2>
-                  <Emoji text=":heart_eyes:" />
                   <span className="i-title">{product.productName}</span>
-                  <Emoji text=":heart_eyes:" />
                 </h2>
               </div>
               <div className="i-image hvr-grow2">
@@ -262,11 +267,10 @@ export const ProductPage = ({ match, location, history }) => {
               <div className="i-price-container-mobile">
                 <div className="i-price-inner-container">
                   <div className="i-product-price-mobile mobile-button price-mobile-container hvr-grow2">
-                    <Emoji text="<3" />£{(product.price / 100).toFixed(2)}
-                    <Emoji text="<3" />
+                    £{(product.price / 100).toFixed(2)}
                   </div>
                   <div className="mobile-button-container-increment-decrement">
-                    <div className="mobile-button">
+                    <div className="mobile-button mobile-increase-button">
                       <button className="increase-mobile" onClick={increment}>
                         +
                       </button>
@@ -295,7 +299,7 @@ export const ProductPage = ({ match, location, history }) => {
               <ul className="i-sub-description hvr-grow2">
                 {product.subDescription1 ? (
                   <li className="hvr-grow">
-                    <Emoji text="<3" />
+                    🍭
                     {product.subDescription1}
                   </li>
                 ) : (
@@ -303,7 +307,7 @@ export const ProductPage = ({ match, location, history }) => {
                 )}
                 {product.subDescription2 ? (
                   <li className="hvr-grow">
-                    <Emoji text="<3" />
+                    🍭
                     {product.subDescription2}
                   </li>
                 ) : (
@@ -311,7 +315,7 @@ export const ProductPage = ({ match, location, history }) => {
                 )}
                 {product.subDescription3 ? (
                   <li className="hvr-grow">
-                    <Emoji text="<3" />
+                    🍭
                     {product.subDescription3}
                   </li>
                 ) : (
@@ -319,7 +323,7 @@ export const ProductPage = ({ match, location, history }) => {
                 )}
                 {product.subDescription4 ? (
                   <li className="hvr-grow">
-                    <Emoji text="<3" />
+                    🍭
                     {product.subDescription4}
                   </li>
                 ) : (
@@ -327,7 +331,7 @@ export const ProductPage = ({ match, location, history }) => {
                 )}
                 {product.subDescription5 ? (
                   <li className="hvr-grow">
-                    <Emoji text="<3" />
+                    🍭
                     {product.subDescription5}
                   </li>
                 ) : (
@@ -335,7 +339,7 @@ export const ProductPage = ({ match, location, history }) => {
                 )}
                 {product.subDescription6 ? (
                   <li className="hvr-grow">
-                    <Emoji text="<3" />
+                    🍭
                     {product.subDescription6}
                   </li>
                 ) : (
@@ -377,6 +381,50 @@ export const ProductPage = ({ match, location, history }) => {
                     <h2>ADD TO BASKET</h2>
                   </button>
                 </div>
+              </div>
+
+              <div className="i-dietary-container hvr-grow2">
+                {product.halal ? (
+                  <div className="dietary">
+                    <img src={halalLogo} className="dietary-img" />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {product.vegetarian ? (
+                  <div className="dietary">
+                    <img src={vegetarianLogo} className="dietary-img" />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {product.kosher ? (
+                  <div className="dietary">
+                    <img src={kosherLogo} className="dietary-img" />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {product.vegan ? (
+                  <div className="dietary">
+                    <img src={veganLogo} className="dietary-img" />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {product.fatFree ? <div className="dietary">true</div> : <></>}
+                {product.sugarFree ? (
+                  <div className="dietary">true</div>
+                ) : (
+                  <></>
+                )}
+                {product.glutenFree ? (
+                  <div className="dietary">
+                    <img src={glutenFreeLogo} className="dietary-img" />
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           </div>

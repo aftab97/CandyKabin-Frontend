@@ -796,6 +796,8 @@ body {
   position: relative;
 }
 .i-sub-description > li {
+  text-align: left;
+  padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -892,10 +894,10 @@ body {
 
 .i-product-price-container {
   margin-bottom: 20px;
-  background-color: rgb(94, 186, 125);
+  background-color: var(--secondary-color);
   text-align: center;
   margin-left: 20px;
-  border-radius: 10px;
+  border-radius: 70px;
   /* margin: auto; */
   padding: 20px 10px 20px 10px;
 }
@@ -910,7 +912,7 @@ body {
   display: flex;
   flex-direction: row;
   position: relative;
-  justify-content: center;
+  /* justify-content: center; */
   /* align-items: flex-start; */
 }
 
@@ -925,10 +927,10 @@ body {
 
 .i-amount-container {
   margin-bottom: 20px;
-  background-color: rgb(94, 186, 125);
+  background-color: var(--secondary-color);
   text-align: center;
   margin-left: 20px;
-  border-radius: 10px;
+  border-radius: 60px;
   padding: 30px 20px 30px 20px;
 }
 
@@ -938,10 +940,10 @@ body {
 
 .i-basket-container {
   margin-bottom: 20px;
-  background-color: rgb(94, 186, 125);
+  background-color: var(--secondary-color);
   text-align: center;
   margin-left: 20px;
-  border-radius: 10px;
+  border-radius: 70px;
   /* padding: 30px 20px 30px 20px; */
   width: 100px;
 }
@@ -952,10 +954,10 @@ body {
 }
 
 .decrease {
-  background-color: rgb(255, 77, 77);
+  background-color: var(--primary-color);
 }
 .increase {
-  background-color: rgb(94, 186, 125);
+  background-color: var(--primary-color);
 }
 
 /* SLIDER CSS */
@@ -1973,13 +1975,14 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 20%; */
+  /* width: 15%; */
   height: 60px;
 }
 
 .new-logo > img {
   /* width: 40vw; */
   margin: auto;
+  /* width: 100px; */
   height: 60px;
 }
 
@@ -2165,6 +2168,35 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.basket-amount-nav {
+  color: black;
+  position: absolute;
+  top: 50%;
+  transform: translateX(5px);
+  cursor: pointer;
+}
+
+.i-dietary-container {
+  margin-left: 20px;
+  width: 30vw;
+  display: flex;
+  background-color: white;
+  border-radius: 25px;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+}
+.i-dietary-container > ul {
+  display: block;
+}
+.dietary {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+.dietary-img {
+  width: 100px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -2392,7 +2424,7 @@ ul {
   }
   .mobile-button {
     padding: 10px;
-    background-color: rgb(94, 186, 125);
+    background-color: var(--secondary-color);
     border-radius: 20px;
     text-align: center;
     margin: auto;
@@ -2403,11 +2435,17 @@ ul {
   }
 
   .mobile-button > button {
+    width: 100%;
     font-weight: 600;
     font-size: 1em;
   }
   .mobile-decrease-button {
-    background-color: red;
+    background-color: var(--primary-color);
+    width: 70px;
+  }
+
+  .mobile-increase-button {
+    background-color: var(--primary-color);
     width: 70px;
   }
 
@@ -2415,7 +2453,8 @@ ul {
     text-align: center;
     font-size: 2.5em;
     overflow: auto;
-    width: 120px;
+    margin: auto;
+    /* width: 120px; */
   }
   .mobile-button-container-increment-decrement {
     margin: auto;
@@ -2424,8 +2463,6 @@ ul {
   .amount-mobile {
     font-size: 2.5em;
     margin: auto;
-    padding-top: 40px;
-    padding-bottom: 40px;
     width: 40px;
     border-radius: 10px;
   }
@@ -2621,6 +2658,20 @@ ul {
   .searchbar {
     display: none;
   }
+
+  .i-dietary-container {
+    margin-top: 20px;
+    margin-left: unset;
+    width: unset;
+  }
+
+  .dietary {
+    width: 50%;
+  }
+
+  /* .dietary-img {
+    width: 50%;
+  } */
   /* .image-bottom-block-container {
     display: block;
   } */

@@ -55,7 +55,7 @@ import { ReactComponent as BoltIcon } from "./icons/bolt.svg";
 import { ReactComponent as LoginIcon } from "./icons/login.svg";
 import { ReactComponent as LogoutIcon } from "./icons/logout.svg";
 import { CSSTransition } from "react-transition-group";
-import Logo from "./img/logo-pink.png";
+import Logo from "./img/logo-pink.PNG";
 import MobileLogo from "./img/logo-mobile.PNG";
 import WorldEmoji from "./img/worldwide-emoji.png";
 import { TextField } from "@material-ui/core";
@@ -480,6 +480,8 @@ function NavItemLogin(props) {
 }
 
 function NavItemBasket(props) {
+  const { shoppingCart } = useContext(BasketContext);
+
   const handleSlideOut = () => {
     let newBasketContainer = document.querySelector(".new-basket-container");
     newBasketContainer.style.display = "flex";
@@ -489,6 +491,7 @@ function NavItemBasket(props) {
     <li className="nav-item">
       <a className="icon-button" onClick={handleSlideOut}>
         {props.icon}
+        <h5 className="basket-amount-nav">{shoppingCart.length}</h5>
       </a>
     </li>
   );
