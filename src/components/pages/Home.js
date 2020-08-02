@@ -6,8 +6,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import kingOfCandy from "../../img/king-of-candy-new.PNG";
-import youAreNowAKidInACandyStore from "../../img/you-are-now-a-kid-in-a-candy-store.PNG";
+import kingOfCandy from "../../img/king-of-candy-new-new.png";
+import youAreNowAKidInACandyStore from "../../img/you-are-now-a-kid-in-a-candy-store-new.png";
 
 import scrollDownTo from "../../img/scroll-down-to.png";
 import startShopping from "../../img/start-shopping.png";
@@ -21,7 +21,7 @@ import gifts from "../../img/gifts-rs.png";
 import sliderNew1 from "../../img/new-test.mp4";
 import sliderNew2 from "../../img/new-test2.mp4";
 
-import logo from "../../img/logo-pink.png";
+import logo from "../../img/logo-pink-new.png";
 
 export default function Home() {
   const { userData } = useContext(UserContext);

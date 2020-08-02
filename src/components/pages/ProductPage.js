@@ -10,11 +10,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { useAlert } from "react-alert";
 
 //dietary
-import halalLogo from "../../img/dietary/halal.PNG";
-import glutenFreeLogo from "../../img/dietary/gluten-free.PNG";
-import kosherLogo from "../../img/dietary/kosher.PNG";
-import veganLogo from "../../img/dietary/vegan.PNG";
-import vegetarianLogo from "../../img/dietary/vegetarian.PNG";
+import halalLogo from "../../img/dietary/halal-new.png";
+import glutenFreeLogo from "../../img/dietary/gluten-free-new.png";
+import kosherLogo from "../../img/dietary/kosher-new.png";
+import veganLogo from "../../img/dietary/vegan-new.png";
+import vegetarianLogo from "../../img/dietary/vegetarian-new.png";
 
 export const ProductPage = ({ match, location, history }) => {
   const [product, setProduct] = useState(undefined);

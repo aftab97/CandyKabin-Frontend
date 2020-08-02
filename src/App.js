@@ -55,8 +55,8 @@ import { ReactComponent as BoltIcon } from "./icons/bolt.svg";
 import { ReactComponent as LoginIcon } from "./icons/login.svg";
 import { ReactComponent as LogoutIcon } from "./icons/logout.svg";
 import { CSSTransition } from "react-transition-group";
-import Logo from "./img/logo-pink.PNG";
-import MobileLogo from "./img/logo-mobile.PNG";
+import Logo from "./img/logo-pink-new.png";
+import MobileLogo from "./img/logo-mobile-new.png";
 import WorldEmoji from "./img/worldwide-emoji.png";
 import { TextField } from "@material-ui/core";
 
