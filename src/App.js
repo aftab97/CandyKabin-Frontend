@@ -545,6 +545,17 @@ function DropdownMenu() {
 
   const { open, setOpen } = useContext(BasketContext);
 
+  const [search, setSearch] = useState("");
+
+  const history = useHistory();
+
+  const handleSearchChange = () => {
+    if (search.length > 0 && search !== " ") {
+      history.push(`/search/${search}`);
+      setSearch("");
+    }
+  };
+
   return (
     <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
       <CSSTransition
@@ -599,16 +610,13 @@ function DropdownMenu() {
           >
             QUESTIONS
           </DropdownItem>
-          <form
-            className="searchbar-mobile"
-            // onSubmit={handleSearchChange}
-          >
+          <form className="searchbar-mobile" onSubmit={handleSearchChange}>
             <TextField
               id="outlined-basic"
               label="Search product.."
               variant="outlined"
               onChange={(e) => {
-                // setSearch(e.target.value);
+                setSearch(e.target.value);
               }}
             />
           </form>
