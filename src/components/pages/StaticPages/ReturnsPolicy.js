@@ -1,8 +1,21 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 export const ReturnsPolicy = () => {
   return (
     <div className="static-page">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Candy Kabin - PRODUCT RETURNS</title>
+        <meta
+          name="description"
+          content="You may return unopened items within 7 days of delivery ... contact us directly on 01706 632402"
+        />
+        <meta
+          name="keywords"
+          content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
+        />
+      </Helmet>
       <div className="static-page-title-container">
         <h1>Product Returns</h1>
       </div>

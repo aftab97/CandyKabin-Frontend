@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useAlert } from "react-alert";
+import { Helmet } from "react-helmet";
 
 //dietary
 import halalLogo from "../../img/dietary/halal-new.png";
@@ -222,6 +223,19 @@ export const ProductPage = ({ match, location, history }) => {
 
   return (
     <div className="individual-product-page">
+      {product ? (
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Candy Kabin - {match.params.id}</title>
+          <meta name="description" content={product.description} />
+          <meta
+            name="keywords"
+            content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
+          />
+        </Helmet>
+      ) : (
+        <></>
+      )}
       <button
         onClick={goBackButton}
         className="i-go-back-button-container hvr-grow2"
@@ -253,7 +267,7 @@ export const ProductPage = ({ match, location, history }) => {
                 </h2>
               </div>
               <div className="i-image hvr-grow2">
-                <img src={product.imageURL} />
+                <img src={product.imageURL} alt={product.productName} />
               </div>
 
               {product.ingredients ? (
@@ -386,28 +400,44 @@ export const ProductPage = ({ match, location, history }) => {
               <div className="i-dietary-container hvr-grow2">
                 {product.halal ? (
                   <div className="dietary">
-                    <img src={halalLogo} className="dietary-img" />
+                    <img
+                      src={halalLogo}
+                      className="dietary-img"
+                      alt="halal logo"
+                    />
                   </div>
                 ) : (
                   <></>
                 )}
                 {product.vegetarian ? (
                   <div className="dietary">
-                    <img src={vegetarianLogo} className="dietary-img" />
+                    <img
+                      src={vegetarianLogo}
+                      className="dietary-img"
+                      alt="vegetarian logo"
+                    />
                   </div>
                 ) : (
                   <></>
                 )}
                 {product.kosher ? (
                   <div className="dietary">
-                    <img src={kosherLogo} className="dietary-img" />
+                    <img
+                      src={kosherLogo}
+                      className="dietary-img"
+                      alt="kosher logo"
+                    />
                   </div>
                 ) : (
                   <></>
                 )}
                 {product.vegan ? (
                   <div className="dietary">
-                    <img src={veganLogo} className="dietary-img" />
+                    <img
+                      src={veganLogo}
+                      className="dietary-img"
+                      alt="vegan logo"
+                    />
                   </div>
                 ) : (
                   <></>
@@ -420,7 +450,11 @@ export const ProductPage = ({ match, location, history }) => {
                 )}
                 {product.glutenFree ? (
                   <div className="dietary">
-                    <img src={glutenFreeLogo} className="dietary-img" />
+                    <img
+                      src={glutenFreeLogo}
+                      className="dietary-img"
+                      alt="gluten free logo"
+                    />
                   </div>
                 ) : (
                   <></>

@@ -23,6 +23,8 @@ import sliderNew2 from "../../img/new-test2.mp4";
 
 import logo from "../../img/logo-pink-new.png";
 
+import { Helmet } from "react-helmet";
+
 export default function Home() {
   const { userData } = useContext(UserContext);
   // const settings = {
@@ -180,6 +182,18 @@ export default function Home() {
     setTimeout(() => showIntro(), 1000),
     (
       <div className="home-page">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Candy Kabin - KING OF CANDY</title>
+          <meta
+            name="description"
+            content="Rochdale based candy company supplying sweets and chocolates"
+          />
+          <meta
+            name="keywords"
+            content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
+          />
+        </Helmet>
         <div className="slider-block">
           <br />
           <Slider {...settingsMain} className="homepage-slider">
@@ -197,7 +211,11 @@ export default function Home() {
         </div>
 
         <div className="block-1-new">
-          <img src={kingOfCandy} className="block-1-image" />
+          <img
+            src={kingOfCandy}
+            className="block-1-image"
+            alt="king of candy"
+          />
         </div>
         <div className="svg-container">
           <svg
@@ -209,7 +227,10 @@ export default function Home() {
           </svg>
         </div>
         <div className="block-2-new">
-          <img src={youAreNowAKidInACandyStore} />
+          <img
+            src={youAreNowAKidInACandyStore}
+            alt="you are now a kid in a candy store"
+          />
         </div>
         <div className="svg-container-2">
           <svg
@@ -224,31 +245,31 @@ export default function Home() {
           <Slider {...settings} className="slider-desktop">
             <div>
               <a href="/shop/pick-and-mix">
-                <img src={candy1} className="box-img" />
+                <img src={candy1} className="box-img" alt="sweet" />
                 <h2>Pick & Mix</h2>
               </a>
             </div>
             <div>
               <a href="/new-in/products">
-                <img src={candy2} className="box-img" />
+                <img src={candy2} className="box-img" alt="sweet" />
                 <h2>New In</h2>
               </a>
             </div>
             <div>
               <a href="/search/hershey">
-                <img src={candy3} className="box-img" />
+                <img src={candy3} className="box-img" alt="sweet" />
                 <h2>Hershey's Chocolate</h2>
               </a>
             </div>
             <div>
               <a href="/shop/traditional">
-                <img src={candy4} className="box-img" />
+                <img src={candy4} className="box-img" alt="sweet" />
                 <h2>Traditional</h2>
               </a>
             </div>
             <div>
               <a href="/gifts-and-hampers/products">
-                <img src={gifts} className="box-img" />
+                <img src={gifts} className="box-img" alt="sweet" />
                 <h2>Gifts & Hampers</h2>
               </a>
             </div>
@@ -257,31 +278,31 @@ export default function Home() {
           <Slider {...settingsMobile} className="slider-mobile">
             <div>
               <a href="/shop/pick-and-mix">
-                <img src={candy1} className="box-img" />
+                <img src={candy1} className="box-img" alt="sweet" />
                 <h2>Pick & Mix</h2>
               </a>
             </div>
             <div>
               <a href="/new-in/products">
-                <img src={candy2} className="box-img" />
+                <img src={candy2} className="box-img" alt="sweet" />
                 <h2>New In</h2>
               </a>
             </div>
             <div>
               <a href="/search/hershey">
-                <img src={candy3} className="box-img" />
+                <img src={candy3} className="box-img" alt="sweet" />
                 <h2>Hershey's Chocolate</h2>
               </a>
             </div>
             <div>
               <a href="/shop/traditional">
-                <img src={candy4} className="box-img" />
+                <img src={candy4} className="box-img" alt="sweet" />
                 <h2>Traditional</h2>
               </a>
             </div>
             <div>
               <a href="/gifts-and-hampers/products">
-                <img src={gifts} className="box-img" />
+                <img src={gifts} className="box-img" alt="sweet" />
                 <h2>Gifts & Hampers</h2>
               </a>
             </div>
@@ -291,7 +312,7 @@ export default function Home() {
         </div>
 
         <div className="parallax-block">
-          <img src={logo} />
+          <img src={logo} alt="logo" />
         </div>
 
         <div className="block-4-new">
@@ -326,146 +347,6 @@ export default function Home() {
             <br />
           </div>
         </div>
-
-        {/* {userData.user ? (
-        <h1>Welcome {userData.user.displayName}</h1>
-      ) : (
-        <>
-          <h2>You are not logged in</h2>
-          <Link to="/login">Log in</Link>
-        </>
-      )} */}
-
-        {/* <Slider {...settings} className="homepage-slider">
-          <div>
-            <a href="#">
-              <video loop autoPlay src={testBanner} />
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <video loop autoPlay src={slider2} />
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <video loop autoPlay src={slider3} />
-            </a>
-          </div>
-        </Slider> */}
-
-        {/* <div className="intro-container">
-          <h1 className="timeout-intro">THE BEST IN THE BUSINESS....</h1>
-        </div>
-
-        <div className="home-down-arrow-container-1">
-          <button onClick={handleScroll}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              style={{ transform: "rotate(90deg)" }}
-            >
-              <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-            </svg>
-          </button>
-        </div>
-
-        <div class="row thumbnail-row non-mobile">
-          <div class="my-work-image" id="margin-left-image">
-            <img
-              class="thumbnail-image"
-              src="https://i8.amplience.net/i/jpl/image0-1-5f12b24ac192446145b7e45b2c657d05"
-            />
-            <div class="img__description_layer">
-              <span class="img__description">AMERICAN CANDY</span>
-            </div>
-          </div>
-          <div class="my-work-image" id="margin-right-image">
-            <img
-              class="thumbnail-image"
-              src="https://i8.amplience.net/i/jpl/image2-8c734dd33379f5142e4e98310241d268"
-            />
-            <div class="img__description_layer">
-              <span class="img__description">RETRO CANDY</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="home-down-arrow-container-2">
-          <button onClick={handleScroll2}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              style={{ transform: "rotate(90deg)" }}
-            >
-              <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-            </svg>
-          </button>
-        </div>
-
-        <div className="homepage-info-block">
-          <div className="block-1">
-            <h2>AMERICAN SODA'S</h2>
-            <br />
-            <p>
-              Candy Kabin are proud to be one of the UK's biggest supplier of
-              American sodas, UK sodas and more! We have a huge range of sodas,
-              pop, chocolate milks and more, all designed to satisfy your
-              sweet-tooth and/or regress bigger kids back to their childhood! We
-              have some of the biggest names in soft drinks such as Mountain
-              Dew, Calypso, Chupa Chups, Fanta flavours and more. View our stock
-              today.
-            </p>
-          </div>
-          <div className="block-2">
-            <h2>AMERICAN CHOCOLATE</h2>
-            <br />
-            <p>
-              Nobody makes chocolate bars and nibbles like the Americans which
-              is why our team at Candy Kabin are proud to stock some of the most
-              iconic and well-known US brands. We have Hershey bars, Milk Duds,
-              M&M's, Chocnibbles and more. Order your chocolate products today.
-            </p>
-          </div>
-        </div>
-        <div class="homepage-image-bottom-blocks">
-          <div
-            class="image-bottom-block-container bottom-block-1"
-            onClick={box1Redirect}
-          >
-            <img class="thumbnail-image-bottom-block" src={box1} />
-            <div class="bottom-block-image-description-container">
-              <span class="bottom-block-image-description">INTERNATIONAL</span>
-            </div>
-            <p style={{ fontWeight: 600 }}>INTERNATIONAL</p>
-          </div>
-
-          <div
-            class="image-bottom-block-container bottom-block-2"
-            onClick={box2Redirect}
-          >
-            <img class="thumbnail-image-bottom-block" src={box2} />
-            <div class="bottom-block-image-description-container">
-              <span class="bottom-block-image-description">SWEETS & CANDY</span>
-            </div>
-            <p style={{ fontWeight: 600 }}>SWEETS & CANDY</p>
-          </div>
-
-          <div
-            class="image-bottom-block-container bottom-block-3"
-            onClick={box3Redirect}
-          >
-            <img class="thumbnail-image-bottom-block" src={box3} />
-            <div class="bottom-block-image-description-container">
-              <span class="bottom-block-image-description">CLEARANCE</span>
-            </div>
-            <p style={{ fontWeight: 600 }}>CLEARANCE</p>
-          </div>
-        </div> */}
       </div>
     )
   );

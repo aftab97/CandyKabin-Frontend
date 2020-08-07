@@ -206,7 +206,11 @@ export const Search = ({ match }) => {
           index={data.productName}
           key={index}
         >
-          <img src={data.imageURL} onClick={handleImageRedirect} />
+          <img
+            src={data.imageURL}
+            onClick={handleImageRedirect}
+            alt={data.productName}
+          />
           <h2 onClick={handleRedirect} className="product-title">
             {data.productName}
           </h2>

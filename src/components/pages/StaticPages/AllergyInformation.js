@@ -1,8 +1,21 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 export const AllergyInformation = () => {
   return (
     <div className="static-page">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Candy Kabin - ALLERGY INFORMATION</title>
+        <meta
+          name="description"
+          content="You can also see the ingredients on all of our product pages. Simply select the product that you require and scroll down to the 'Product Description' section."
+        />
+        <meta
+          name="keywords"
+          content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
+        />
+      </Helmet>
       <div className="static-page-title-container">
         <h1>INFORMATION ON ALLEGENS</h1>
       </div>

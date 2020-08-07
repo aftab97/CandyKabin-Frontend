@@ -1,8 +1,21 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 export const PrivacyPolicy = () => {
   return (
     <div className="static-page">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Candy Kabin - PRIVACY POLICY</title>
+        <meta
+          name="description"
+          content="When you visit the Site, we automatically collect certain information about your device, including information about your web browser"
+        />
+        <meta
+          name="keywords"
+          content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
+        />
+      </Helmet>
       <div className="static-page-title-container">
         <h1>CANDY KABIN PRIVACY POLICY</h1>
       </div>

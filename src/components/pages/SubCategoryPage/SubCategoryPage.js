@@ -5,6 +5,7 @@ import BasketContext from "../../../context/BasketContext";
 import { useHistory } from "react-router-dom";
 import Emoji from "react-emoji-render";
 import { useAlert } from "react-alert";
+import { Helmet } from "react-helmet";
 
 export const SubCategoryPage = (params) => {
   //set NONE to dietarty by default
@@ -343,7 +344,11 @@ export const SubCategoryPage = (params) => {
           index={data.productName}
           key={index}
         >
-          <img src={data.imageURL} onClick={handleImageRedirect} />
+          <img
+            src={data.imageURL}
+            onClick={handleImageRedirect}
+            alt={data.productName}
+          />
           <h2 onClick={handleRedirect} className="product-title">
             {data.productName}
           </h2>
@@ -371,6 +376,18 @@ export const SubCategoryPage = (params) => {
     : handleTimeOut();
   return (
     <div className="products-component-container">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Candy Kabin - {params.subCategory}</title>
+        <meta
+          name="description"
+          content="products from Candy Kabin ranging from different types of candy to chocolates"
+        />
+        <meta
+          name="keywords"
+          content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
+        />
+      </Helmet>
       <div className="products-container">{defaultData}</div>
       <div className="pages-container">
         {pageNumbers.map((page) =>

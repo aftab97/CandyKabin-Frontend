@@ -89,7 +89,7 @@ export default function Header() {
       JSON.parse(localStorage.getItem("basket")).map((data, index) => (
         <li key={index} className="basket-list">
           <div className="basket-image-container">
-            <img src={data.imageSrc} />
+            <img src={data.imageSrc} alt="product-image" />
           </div>
           <div className="basket-info-container">
             <h4 className="product-name-basket">{data.productName}</h4>{" "}
@@ -217,7 +217,7 @@ export default function Header() {
       </div>
 
       <Link to="/">
-        <img src={Logo} className="logo" />
+        <img src={Logo} className="logo" alt="logo" />
       </Link>
       <div>
         <a target="_blank" href="https://www.instagram.com/candykabin/">

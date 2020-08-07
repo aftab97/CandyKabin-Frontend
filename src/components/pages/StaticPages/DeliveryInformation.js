@@ -1,8 +1,21 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 export const DeliveryInformation = () => {
   return (
     <div className="static-page">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Candy Kabin - DELIVERY INFORMATION</title>
+        <meta
+          name="description"
+          content="Delivery is priced on weight, UK Mainland, Scottish Highlands, Ireland, Northern Ireland. Candy Kabin will normally dispatch orders within 3-5 working days."
+        />
+        <meta
+          name="keywords"
+          content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
+        />
+      </Helmet>
       <div className="static-page-title-container">
         <h1>DELIVERY INFORMATION</h1>
       </div>
@@ -51,7 +64,7 @@ export const DeliveryInformation = () => {
         </p>
         <br />
         <p>
-          <span style={{ fontWeight: 600 }}>SIreland</span> - £7.99 - £24.99
+          <span style={{ fontWeight: 600 }}>Ireland</span> - £7.99 - £24.99
         </p>
         <br />
         <p>

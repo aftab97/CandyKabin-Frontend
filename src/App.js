@@ -317,7 +317,11 @@ function Navbar(props) {
     <>
       <nav className="navbar">
         <div className="new-logo" onClick={redirectToHomepage}>
-          {mobile ? <img src={MobileLogo} /> : <img src={Logo} />}
+          {mobile ? (
+            <img src={MobileLogo} alt="logo" />
+          ) : (
+            <img src={Logo} alt="logo" />
+          )}
         </div>
         <div className="navbar-icon">
           <a target="_blank" href="https://www.instagram.com/candykabin/">

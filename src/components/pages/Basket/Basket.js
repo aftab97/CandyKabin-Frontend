@@ -125,7 +125,7 @@ export const Basket = () => {
               JSON.parse(localStorage.getItem("basket")).map((data, index) => (
                 <li key={index} className="basket-list">
                   <div className="basket-image-container">
-                    <img src={data.imageSrc} />
+                    <img src={data.imageSrc} alt={data.productName} />
                   </div>
                   <div className="basket-info-container">
                     <h4 className="product-name-basket">{data.productName}</h4>{" "}

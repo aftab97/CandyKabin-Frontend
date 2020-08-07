@@ -1,8 +1,21 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 export const AboutUs = () => {
   return (
     <div className="static-page">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Candy Kabin - ABOUT US</title>
+        <meta
+          name="description"
+          content="New sweet shop Candy Kabin and best confectionary from the US & UK alike - Rochdale Online"
+        />
+        <meta
+          name="keywords"
+          content="Candy Kabin, Rochdale, About Us, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix"
+        />
+      </Helmet>
       <div className="static-page-title-container">
         <h1>About Us</h1>
       </div>

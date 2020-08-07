@@ -111,6 +111,7 @@ export const ShoppingList = () => {
                     <img
                       src={item.imageSrc}
                       style={{ maxWidth: 50, maxHeight: 70 }}
+                      alt={item.productName}
                     />
                   </div>
                   <div>

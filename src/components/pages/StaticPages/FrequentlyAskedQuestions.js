@@ -1,8 +1,21 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 export const FrequentlyAskedQuestions = () => {
   return (
     <div className="static-page">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Candy Kabin - FREQUENTLY ASKED QUESTIONS</title>
+        <meta
+          name="description"
+          content="What are your opening times? Monday - Saturday - 10am - 8pm. Sunday - 11am - 6pm. I have forgotten my Password. How do I contact you. How Can I Pay? Why do you need my email?"
+        />
+        <meta
+          name="keywords"
+          content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
+        />
+      </Helmet>
       <div className="static-page-title-container">
         <h1>COMMON QUESTIONS</h1>
       </div>

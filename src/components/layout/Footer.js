@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <div className="bottom-footer">
       <div className="footer-logo-container">
-        <img src={Logo} className="logo" />
+        <img src={Logo} className="logo" alt="logo" />
       </div>
       <div className="footer-list-container">
         <ul>
