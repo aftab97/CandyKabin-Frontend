@@ -81,6 +81,8 @@ export default function App() {
 
   const [productCost, setProductCost] = useState(0);
 
+  const [test, setTest] = useState(null);
+
   const incrementCounter = () => setCount((counter) => counter + 1);
   const decrementCounter = () => setCount((counter) => counter - 1);
 
@@ -114,11 +116,27 @@ export default function App() {
         const userRes = await Axios.get(`${process.env.REACT_APP_URL}/users/`, {
           headers: { "x-auth-token": token },
         });
-        console.log(userRes);
         setUserData({
           token,
           user: userRes.data,
         });
+      }
+
+      if (test === null) {
+        const getData = async () => {
+          const locationData = await Axios.get(
+            "https://extreme-ip-lookup.com/json"
+          );
+
+          setTest(true);
+
+          const sendData = await Axios.post(
+            `${process.env.REACT_APP_URL}/location/add`,
+            locationData.data
+          );
+        };
+
+        getData();
       }
     };
 
