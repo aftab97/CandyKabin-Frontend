@@ -2079,7 +2079,7 @@ ul {
   margin: auto;
   border: 10px solid black;
   width: 20vw;
-  border-radius: 160px;
+  border-radius: 100%;
   margin-bottom: 10px;
 }
 
