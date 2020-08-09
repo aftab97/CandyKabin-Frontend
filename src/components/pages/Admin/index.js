@@ -7,20 +7,22 @@ import { TrackLocations } from "./AdminPages/TrackLocations";
 export const index = () => {
   return (
     <div>
-      <div>
-        <button className="sidepanel-option">
-          <Link to="/admin/payment-lookup">PAYMENT LOOKUP</Link>
-        </button>
-      </div>
-      <div>
-        <button className="sidepanel-option">
-          <Link to="/admin/add-products">ADD PRODUCTS</Link>
-        </button>
-      </div>
-      <div>
-        <button className="sidepanel-option">
-          <Link to="/admin/track-location">TRACK LOCATIONS</Link>
-        </button>
+      <div className="sidepanel-container">
+        <div>
+          <button className="sidepanel-option">
+            <Link to="/admin/payment-lookup">PAYMENT LOOKUP</Link>
+          </button>
+        </div>
+        <div>
+          <button className="sidepanel-option">
+            <Link to="/admin/add-products">ADD PRODUCTS</Link>
+          </button>
+        </div>
+        <div>
+          <button className="sidepanel-option">
+            <Link to="/admin/track-location">TRACK LOCATIONS</Link>
+          </button>
+        </div>
       </div>
 
       <Route

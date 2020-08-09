@@ -2204,7 +2204,7 @@ ul {
 }
 
 .map {
-  height: 500px;
+  height: 80vh;
   background-color: white;
   padding: 1rem;
   border-radius: 20px;
@@ -2215,7 +2215,19 @@ ul {
 .map .leaflet-container {
   height: 100%;
 }
+.date-fields {
+  margin-top: 20px;
+}
+.date-fields > ul > form {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
 
+.sidepanel-container {
+  display: flex;
+}
 @media only screen and (max-width: 600px) {
   html,
   body {
