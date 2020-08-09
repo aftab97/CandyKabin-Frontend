@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import kingOfCandy from "../../img/king-of-candy-new-new.png";
+import kingOfCandy from "../../img/king-of-candy-new-new.jpeg";
 import youAreNowAKidInACandyStore from "../../img/you-are-now-a-kid-in-a-candy-store-new.png";
 
 import scrollDownTo from "../../img/scroll-down-to.png";
@@ -20,10 +20,14 @@ import gifts from "../../img/gifts-rs.png";
 
 import sliderNew1 from "../../img/new-test.mp4";
 import sliderNew2 from "../../img/new-test2.mp4";
+import sliderNew3 from "../../img/new-test3.mp4";
 
 import logo from "../../img/logo-pink-new.png";
 
 import { Helmet } from "react-helmet";
+
+import rightJellyBaby from "../../img/right-jelly-baby.png";
+import leftJellyBaby from "../../img/left-jelly-baby.png";
 
 export default function Home() {
   const { userData } = useContext(UserContext);
@@ -97,75 +101,6 @@ export default function Home() {
     // secondArrow.classList.remove("bounce");
   };
 
-  useEffect(() => {
-    // window.addEventListener("scroll", scrollHandler);
-    // if (window.innerWidth <= 800) {
-    //   const leftBlock = document.querySelector(".block-1");
-    //   leftBlock.classList.add("block-1-animation");
-    // }
-    // return () => {
-    //   window.removeEventListener("scroll", scrollHandler);
-    // };
-  }, []);
-
-  // const scrollHandler = () => {
-  //   console.log("hello");
-  //   // TODO
-  //   // check positioning of elements and see if they where they are before adding animation to them
-
-  //   const thumbnailRow = document.querySelector(".thumbnail-row");
-
-  //   const dimensions = thumbnailRow.getBoundingClientRect();
-
-  //   const left = document.querySelector("#margin-left-image");
-  //   const right = document.querySelector("#margin-right-image");
-
-  //   const leftBlock = document.querySelector(".block-1");
-  //   const rightBlock = document.querySelector(".block-2");
-
-  //   const bottomleftBlock = document.querySelector(".bottom-block-1");
-  //   const bottommiddleBlock = document.querySelector(".bottom-block-2");
-  //   const bottomrightBlock = document.querySelector(".bottom-block-3");
-
-  //   console.log(dimensions.top);
-
-  //   //check if desktop
-  //   if (window.innerWidth > 800) {
-  //     if (dimensions.top < 700) {
-  //       left.classList.add("margin-right-image-animation");
-  //       right.classList.add("margin-left-image-animation");
-  //     }
-  //     if (dimensions.top < -350) {
-  //       leftBlock.classList.add("block-1-animation");
-  //       rightBlock.classList.add("block-2-animation");
-  //     }
-  //     if (dimensions.top < -640) {
-  //       bottomleftBlock.classList.add("block-1-animation");
-  //       bottommiddleBlock.classList.add("block-3-animation");
-  //       bottomrightBlock.classList.add("block-2-animation");
-  //     }
-  //   }
-
-  //   //check if mobile
-  //   if (window.innerWidth <= 800) {
-  //     const origin = document.querySelector(".slick-list");
-  //     const dimensions = origin.getBoundingClientRect();
-
-  //     console.log("mobile: " + dimensions.top);
-
-  //     console.log("is a mobile");
-
-  //     if (dimensions.top < -40) {
-  //       rightBlock.classList.add("block-1-animation");
-  //     }
-  //     if (dimensions.top < -250) {
-  //       bottomleftBlock.classList.add("block-1-animation");
-  //       bottommiddleBlock.classList.add("block-1-animation");
-  //       bottomrightBlock.classList.add("block-1-animation");
-  //     }
-  //   }
-  // };
-
   const box1Redirect = () => {
     history.push("/shop/international");
   };
@@ -207,15 +142,22 @@ export default function Home() {
                 <video loop autoPlay src={sliderNew2} />
               </a>
             </div>
+            <div>
+              <a href="#">
+                <video loop autoPlay src={sliderNew3} />
+              </a>
+            </div>
           </Slider>
         </div>
 
         <div className="block-1-new">
+          <img src={leftJellyBaby} className="left-jelly-baby" />
           <img
             src={kingOfCandy}
             className="block-1-image"
             alt="king of candy"
           />
+          <img src={rightJellyBaby} className="right-jelly-baby" />
         </div>
         <div className="svg-container">
           <svg

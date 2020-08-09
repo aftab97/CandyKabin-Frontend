@@ -2228,6 +2228,21 @@ ul {
 .sidepanel-container {
   display: flex;
 }
+
+.left-jelly-baby {
+  position: absolute;
+  left: 0;
+  width: 10vw !important;
+  z-index: 3;
+}
+
+.right-jelly-baby {
+  position: absolute;
+  right: 0;
+  width: 10vw !important;
+  z-index: 3;
+}
+
 @media only screen and (max-width: 600px) {
   html,
   body {
@@ -2237,6 +2252,9 @@ ul {
   #header {
     position: relative;
     width: 100vw;
+  }
+  .amount {
+    top: 0px;
   }
 
   .home-down-arrow-container-1 {
@@ -2698,10 +2716,50 @@ ul {
     width: 50%;
   }
 
+  .block-1-new > img {
+    width: 70vw;
+  }
+
   /* .dietary-img {
     width: 50%;
   } */
   /* .image-bottom-block-container {
     display: block;
   } */
+}
+
+/* Tablet mode */
+@media only screen and (max-width: 900px) and (min-width: 640px) {
+  .product {
+    width: 25vw;
+  }
+
+  .products-container {
+    width: 100%;
+  }
+
+  .product > img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .pages-container {
+    width: 500px;
+  }
+
+  .footer-logo-container > img {
+    width: 100%;
+  }
+
+  .footer-logo-container {
+    width: 30%;
+  }
+  .footer-list-container {
+    width: 70%;
+    justify-content: space-around;
+  }
+
+  .footer-list-container > ul {
+    width: 100px;
+  }
 }
