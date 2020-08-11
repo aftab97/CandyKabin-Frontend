@@ -1148,7 +1148,8 @@ body {
 }
 
 .footer-logo-container > img {
-  width: 400px;
+  width: 250px;
+  display: flex;
 }
 
 .footer-list-container {
@@ -2077,7 +2078,7 @@ ul {
 
 .box-img {
   margin: auto;
-  border: 10px solid black;
+  border: 10px solid var(--secondary-color);
   width: 20vw;
   border-radius: 100%;
   margin-bottom: 10px;
@@ -2234,6 +2235,7 @@ ul {
   left: 0;
   width: 10vw !important;
   z-index: 3;
+  top: -55px;
 }
 
 .right-jelly-baby {
@@ -2241,6 +2243,13 @@ ul {
   right: 0;
   width: 10vw !important;
   z-index: 3;
+}
+
+.card {
+  position: relative;
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 150px !important;
 }
 
 @media only screen and (max-width: 600px) {

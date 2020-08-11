@@ -1,5 +1,6 @@
 import React from "react";
-import Logo from "../../img/logo.png";
+import Logo from "../../img/logo-pink-new.png";
+import Cards from "../../img/cards-gb.png";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -7,6 +8,7 @@ export const Footer = () => {
     <div className="bottom-footer">
       <div className="footer-logo-container">
         <img src={Logo} className="logo" alt="logo" />
+        <img src={Cards} className="card" alt="cards" />
       </div>
       <div className="footer-list-container">
         <ul>

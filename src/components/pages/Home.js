@@ -119,10 +119,10 @@ export default function Home() {
       <div className="home-page">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Candy Kabin - KING OF CANDY</title>
+          <title>Candy Kabin - American Sweets and American Candy</title>
           <meta
             name="description"
-            content="Rochdale based candy company supplying sweets and chocolates"
+            content="Sweets and Candy - We have the widest range of American Sweets and Candy at the very best prices. Our range includes Hershey, Reeses, Twizzlers, M&M's,..based in Rochdale"
           />
           <meta
             name="keywords"
@@ -151,13 +151,12 @@ export default function Home() {
         </div>
 
         <div className="block-1-new">
-          <img src={leftJellyBaby} className="left-jelly-baby" />
           <img
             src={kingOfCandy}
             className="block-1-image"
             alt="king of candy"
           />
-          <img src={rightJellyBaby} className="right-jelly-baby" />
+          <img src={rightJellyBaby} className="right-jelly-baby" alt="text" />
         </div>
         <div className="svg-container">
           <svg
@@ -169,6 +168,8 @@ export default function Home() {
           </svg>
         </div>
         <div className="block-2-new">
+          <img src={leftJellyBaby} className="left-jelly-baby" alt="text" />
+
           <img
             src={youAreNowAKidInACandyStore}
             alt="you are now a kid in a candy store"
