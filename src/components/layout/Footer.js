@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../img/logo-pink-new.png";
+import Logo from "../../img/Candy-Kabin-Logo-Bottom.png";
 import Cards from "../../img/cards-gb.png";
 import { Link } from "react-router-dom";
 
