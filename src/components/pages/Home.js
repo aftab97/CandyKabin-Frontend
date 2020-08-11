@@ -21,6 +21,7 @@ import gifts from "../../img/gifts-rs.png";
 import sliderNew1 from "../../img/new-test.mp4";
 import sliderNew2 from "../../img/new-test2.mp4";
 import sliderNew3 from "../../img/new-test3.mp4";
+import sliderNew4 from "../../img/new-test4.mp4";
 
 import logo from "../../img/logo-pink-new.png";
 
@@ -145,6 +146,11 @@ export default function Home() {
             <div>
               <a href="#">
                 <video loop autoPlay src={sliderNew3} />
+              </a>
+            </div>
+            <div>
+              <a href="#">
+                <video loop autoPlay src={sliderNew4} />
               </a>
             </div>
           </Slider>
