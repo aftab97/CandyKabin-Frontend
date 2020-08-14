@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin
+Disallow: /admin/payment-lookup
+Disallow: /admin/add-products
+Disallow: /admin/track-locations
+Sitemap: https://candykabin.co.uk/sitemap.xml
+
+User-agent: adsbot-google
+Disallow: /admin
+Disallow: /admin/payment-lookup
+Disallow: /admin/add-products
+Disallow: /admin/track-locations
+Sitemap: https://candykabin.co.uk/sitemap.xml

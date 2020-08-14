@@ -134,14 +134,14 @@ export default function Home() {
           <br />
           <Slider {...settingsMain} className="homepage-slider">
             <div>
-              <a href="#">
+              <Link to="/search/jolly%20rancher">
                 <video loop autoPlay src={sliderNew1} />
-              </a>
+              </Link>
             </div>
             <div>
-              <a href="#">
+              <Link to="/search/sour%20patch">
                 <video loop autoPlay src={sliderNew2} />
-              </a>
+              </Link>
             </div>
             <div>
               <a href="#">
@@ -149,9 +149,9 @@ export default function Home() {
               </a>
             </div>
             <div>
-              <a href="#">
+              <Link to="/search/takis">
                 <video loop autoPlay src={sliderNew4} />
-              </a>
+              </Link>
             </div>
           </Slider>
         </div>

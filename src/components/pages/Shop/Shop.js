@@ -38,7 +38,7 @@ export const Shop = ({ match }) => {
   return (
     <div className="shop">
       <div className="shop-links-container">
-        <ul className="shop-links">
+        {/* <ul className="shop-links">
           <li className="american-link">
             <Link to={`${match.url}/international`}>International</Link>
           </li>
@@ -54,7 +54,7 @@ export const Shop = ({ match }) => {
           <li className="candy-link">
             <Link to={`${match.url}/clearance`}>Clearance</Link>
           </li>
-        </ul>
+        </ul> */}
 
         <ul className="sub-sub-category-links sidepanel-option international-list">
           <h4>Category:</h4>
@@ -458,7 +458,7 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="Candy" name="radio-button" />
-              Candy
+              CANDY
             </label>
             <label>
               <input type="radio" value="Chocolate" name="radio-button" />
@@ -653,11 +653,89 @@ export const Shop = ({ match }) => {
                 <input type="radio" value="Jolly Rancher" name="radio-button" />
                 Jolly Rancher
               </label>
-              <br />
-
               <label>
                 <input type="radio" value="Calypso" name="radio-button" />
                 Calypso
+              </label>
+              <label>
+                <input type="radio" value="M-And-Ms" name="radio-button" />
+                M&M'S
+              </label>
+              <label>
+                <input type="radio" value="Sour Patch" name="radio-button" />
+                Sour Patch
+              </label>
+              <label>
+                <input type="radio" value="Fanta" name="radio-button" />
+                Fanta
+              </label>
+              <label>
+                <input type="radio" value="Nestle" name="radio-button" />
+                Nestle
+              </label>
+              <label>
+                <input type="radio" value="Hersheys" name="radio-button" />
+                Hershey's
+              </label>
+              <label>
+                <input type="radio" value="Twix" name="radio-button" />
+                Twix
+              </label>
+              <label>
+                <input type="radio" value="Kool-Aid" name="radio-button" />
+                Kool-Aid
+              </label>
+              <label>
+                <input type="radio" value="Warheads" name="radio-button" />
+                Warheads
+              </label>
+              <label>
+                <input type="radio" value="Laffy Taffy" name="radio-button" />
+                Laffy Taffy
+              </label>
+              <label>
+                <input type="radio" value="Dr Pepper" name="radio-button" />
+                Dr Pepper
+              </label>
+              <label>
+                <input type="radio" value="CAndC" name="radio-button" />
+                C&C
+              </label>
+              <label>
+                <input type="radio" value="SweedishFish" name="radio-button" />
+                SweedishFish
+              </label>
+              <label>
+                <input type="radio" value="Gatorade" name="radio-button" />
+                Gatorade
+              </label>
+              <label>
+                <input type="radio" value="Cheetos" name="radio-button" />
+                Cheetos
+              </label>
+              <label>
+                <input type="radio" value="Herrs" name="radio-button" />
+                Herrs
+              </label>
+              <label>
+                <input type="radio" value="Lifesavers" name="radio-button" />
+                Lifesavers
+              </label>
+              <label>
+                <input type="radio" value="Mike And Ike" name="radio-button" />
+                Mike & Ike
+              </label>
+              <label>
+                <input type="radio" value="Hostess" name="radio-button" />
+                Hostess
+              </label>
+              <label>
+                <input type="radio" value="Mrs Freshely" name="radio-button" />
+                Mrs Freshley
+              </label>
+              <label>
+                <input type="radio" value="Ice Breakers" name="radio-button" />
+                Ice Breakers
               </label>
             </form>
           </ul>

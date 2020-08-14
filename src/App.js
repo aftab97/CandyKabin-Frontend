@@ -38,6 +38,7 @@ import { NewIn } from "./components/pages/NewIn/NewIn";
 import { GiftsAndHampers } from "./components/pages/GiftsAndHampers/GiftsAndHampers";
 import { Search } from "./components/pages/Search/Search";
 import { Basket } from "./components/pages/Basket/Basket";
+import { NewPickAndMix } from "./components/pages/NewPickAndMix/index";
 
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
@@ -271,6 +272,7 @@ export default function App() {
                   <Route path="/search/:id" component={Search} />
                   <Route path="/shop" component={Shop} />
                   <Route path="/new-in" component={NewIn} />
+                  <Route path="/new-pick-and-mix" component={NewPickAndMix} />
                   <Route
                     path="/gifts-and-hampers"
                     component={GiftsAndHampers}
@@ -377,7 +379,7 @@ function NavItem(props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <li className="nav-item">
+    <li className="nav-item" key={"nav-item"}>
       <a className="icon-button" onClick={() => setOpen(!open)}>
         {props.icon}
       </a>
@@ -463,7 +465,7 @@ function NavItemLogout(props) {
           }}
         />
       </form>
-      <li className="nav-item" onClick={logout}>
+      <li className="nav-item" key={"nav-item-2"} onClick={logout}>
         <a className="icon-button">{props.icon}</a>
       </li>
     </>
@@ -494,7 +496,7 @@ function NavItemLogin(props) {
           }}
         />
       </form>
-      <li className="nav-item" onClick={login}>
+      <li className="nav-item" key={"nav-item"} onClick={login}>
         <a className="icon-button">{props.icon}</a>
       </li>
     </>
@@ -510,7 +512,7 @@ function NavItemBasket(props) {
   };
 
   return (
-    <li className="nav-item">
+    <li className="nav-item" key={"nav-item"}>
       <a className="icon-button" onClick={handleSlideOut}>
         {props.icon}
         <h5 className="basket-amount-nav">{shoppingCart.length}</h5>
@@ -525,7 +527,7 @@ function NavText(props) {
   const { open, setOpen } = useContext(BasketContext);
 
   return (
-    <li className="nav-item-text">
+    <li className="nav-item-text" key={"nav-item-text"}>
       <a className="icon-button-text" onClick={() => setOpen(!open)}>
         <h2>{props.text}</h2>
         {props.icon}

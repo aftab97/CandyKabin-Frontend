@@ -769,8 +769,8 @@ body {
 }
 
 .page-button-selected-page {
-  animation: 0.4s hoverUpButton ease-in;
-  transform: translateY(-10px);
+  /* animation: 0.4s hoverUpButton ease-in;
+  transform: translateY(-10px); */
 }
 
 .products-component-container {
@@ -1502,7 +1502,7 @@ nav {
   margin: auto;
   background-color: var(--secondary-color);
   border-radius: 25px;
-  margin-top: 20px;
+  margin-top: 80px;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px #808080;
 }
@@ -2252,6 +2252,114 @@ ul {
   width: 150px !important;
 }
 
+.pick-and-mix-container {
+  display: flex;
+}
+
+.pick-and-mix-container > .product-image-container {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+}
+
+.pick-and-mix-container > .product-image-container > img {
+  position: relative;
+  max-width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 20px;
+}
+
+.pick-and-mix-container > .product-detail-container {
+  position: relative;
+  left: 50%;
+  width: 50%;
+  background-color: white;
+}
+.pick-and-mix-image {
+  max-width: 200px;
+}
+.pick-and-mix-product-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+.pick-and-mix-product {
+  margin: 5px;
+  border: 5px solid white;
+  width: 210px;
+}
+
+.pick-and-mix-product:hover {
+  border: 5px solid #e5e5e5;
+}
+
+.pick-and-mix-product-title {
+  position: relative;
+  margin: auto;
+  width: 50%;
+}
+
+.p-m-selected {
+  border: 5px solid var(--secondary-color) !important;
+}
+.p-m-price {
+  display: none;
+}
+
+.product-uuid {
+  display: none;
+}
+
+.product-name-sub {
+  margin: auto;
+  width: 170px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 0.7rem !important;
+}
+
+.page-number-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.page-number-container > h2 {
+  position: relative;
+  top: 25px;
+}
+
+.page-button-selected-page-2 {
+  background-color: var(--text-color);
+}
+
+.pick-and-mix-button-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pick-and-mix-message {
+  opacity: 0;
+  margin: 5px;
+  color: var(--secondary-color);
+}
+
+.custom-styling {
+  color: var(--secondary-color);
+}
+
+.checkout-page .product-name-sub {
+  width: unset;
+}
+
 @media only screen and (max-width: 600px) {
   html,
   body {
@@ -2545,7 +2653,7 @@ ul {
   }
   .static-page {
     width: 90%;
-    margin-top: 20px;
+    margin-top: 80px;
   }
 
   .static-page-info-container {
@@ -2576,7 +2684,7 @@ ul {
   }
 
   .bottom-footer {
-    margin-top: 120px;
+    margin-top: 20px;
     flex-direction: column;
     text-align: center;
     height: unset;
@@ -2603,6 +2711,7 @@ ul {
     width: 300px !important;
     margin-left: unset;
     max-width: unset;
+    margin: auto;
     /* height: 50px; */
   }
 
@@ -2727,6 +2836,14 @@ ul {
 
   .block-1-new > img {
     width: 70vw;
+  }
+
+  .last-page {
+    display: none;
+  }
+
+  .first-page {
+    display: none;
   }
 
   /* .dietary-img {

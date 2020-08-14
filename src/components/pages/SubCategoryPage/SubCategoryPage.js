@@ -38,7 +38,7 @@ export const SubCategoryPage = (params) => {
     BasketContext
   );
 
-  const [currentPage, setCurrentPage] = useState(1);
+  let [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(12);
 
   const pageNumbers = [];
@@ -278,10 +278,8 @@ export const SubCategoryPage = (params) => {
   };
 
   const defaultStyling = () => {
-    let pageNumber1 = document.querySelector(
-      ".pages-container > button:nth-child(1)"
-    );
-    console.log(pageNumber1);
+    // let pageNumber2 = document.querySelectorAll("#page-number-2");
+    // pageNumber2[0].style.display = "block";
   };
 
   const handlePageChange = (e) => {
@@ -374,6 +372,32 @@ export const SubCategoryPage = (params) => {
         </div>
       )))
     : handleTimeOut();
+
+  useEffect(() => {
+    // if (document.querySelector(`#page-${currentPage + 1}`) !== null) {
+    //   document.querySelector(`#${currentPage + 1}`).style.display = "block";
+    // }
+  }, [currentPage]);
+
+  const handlePageChange2 = (e) => {
+    if (e.currentTarget.childNodes[0].data === "<") {
+      if (currentPage !== 1) {
+        setCurrentPage(--currentPage);
+      }
+    } else if (e.currentTarget.childNodes[0].data === "<<") {
+      setCurrentPage(1);
+    } else if (e.currentTarget.childNodes[0].data === ">>") {
+      console.log("last page");
+      setCurrentPage(pageNumbers.slice(-1)[0]);
+    } else if (e.currentTarget.childNodes[0].data === ">") {
+      if (currentPage !== pageNumbers.slice(-1)[0]) {
+        setCurrentPage(++currentPage);
+      }
+    } else {
+      setCurrentPage(parseInt(e.currentTarget.childNodes[0].data));
+    }
+  };
+
   return (
     <div className="products-component-container">
       <Helmet>
@@ -389,12 +413,12 @@ export const SubCategoryPage = (params) => {
         />
       </Helmet>
       <div className="products-container">{defaultData}</div>
-      <div className="pages-container">
+      {/* <div className="pages-container">
         {pageNumbers.map((page) =>
           page === 1 ? (
             <button
               className="page-button page-button-selected-page"
-              index={page}
+              index={`page-${page}`}
               onClick={handlePageChange}
             >
               {page}
@@ -402,13 +426,87 @@ export const SubCategoryPage = (params) => {
           ) : (
             <button
               className="page-button"
-              index={page}
+              index={`page-${page}`}
               onClick={handlePageChange}
             >
               {page}
             </button>
           )
         )}
+      </div> */}
+
+      <div className="page-number-container">
+        <button className="page-button first-page" onClick={handlePageChange2}>
+          &lt;&lt;
+        </button>
+
+        <button className="page-button" onClick={handlePageChange2}>
+          &lt;
+        </button>
+
+        {pageNumbers.includes(currentPage - 2) ? (
+          <button className="page-button" onClick={handlePageChange2}>
+            {currentPage - 2}
+          </button>
+        ) : (
+          <></>
+        )}
+
+        {pageNumbers.includes(currentPage - 1) ? (
+          <button className="page-button" onClick={handlePageChange2}>
+            {currentPage - 1}
+          </button>
+        ) : (
+          <></>
+        )}
+
+        <button
+          className="page-button page-button-selected-page"
+          onClick={handlePageChange2}
+        >
+          {currentPage}
+        </button>
+        {pageNumbers.includes(currentPage + 1) ? (
+          <button className="page-button" onClick={handlePageChange2}>
+            {currentPage + 1}
+          </button>
+        ) : (
+          <></>
+        )}
+
+        {pageNumbers.includes(currentPage + 2) ? (
+          <button className="page-button" onClick={handlePageChange2}>
+            {currentPage + 2}
+          </button>
+        ) : (
+          <></>
+        )}
+
+        {/* {pageNumbers.includes(currentPage + 3) ? (
+          <button className="page-button" onClick={handlePageChange2}>
+            {currentPage + 3}
+          </button>
+        ) : (
+          <></>
+        )}
+        {pageNumbers.includes(currentPage + 4) ? (
+          <button className="page-button" onClick={handlePageChange2}>
+            {currentPage + 4}
+          </button>
+        ) : (
+          <></>
+        )} */}
+
+        <h2>.....</h2>
+        <button className="page-button" onClick={handlePageChange2}>
+          {pageNumbers.slice(-1)[0]}
+        </button>
+        <button className="page-button" onClick={handlePageChange2}>
+          >
+        </button>
+        <button className="page-button last-page" onClick={handlePageChange2}>
+          >>
+        </button>
       </div>
     </div>
   );

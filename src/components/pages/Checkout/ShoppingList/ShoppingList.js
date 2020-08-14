@@ -15,25 +15,43 @@ export const ShoppingList = () => {
       ".product-name-table"
     ).childNodes[0].data;
 
-    console.log(productName);
+    if (productName === "Pick And Mix Bag") {
+      let UUID = e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+        ".product-uuid"
+      ).childNodes[0].data;
 
-    let nonSelectedItem = shoppingCart.filter(
-      (p) => p.productName !== productName
-    );
+      let nonSelectedItem = shoppingCart.filter((p) => p.UUID !== UUID);
 
-    let selectedItem = shoppingCart.filter(
-      (p) => p.productName === productName
-    );
+      let selectedItem = shoppingCart.filter((p) => p.UUID === UUID);
 
-    selectedItem[0].amount += 1;
+      selectedItem[0].amount += 1;
 
-    let combinedArr = [];
-    combinedArr = [...selectedItem, ...nonSelectedItem];
+      let combinedArr = [];
+      combinedArr = [...selectedItem, ...nonSelectedItem];
 
-    combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
 
-    setShoppingCart(combinedArr);
-    localStorage.setItem("basket", JSON.stringify(combinedArr));
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    } else {
+      let nonSelectedItem = shoppingCart.filter(
+        (p) => p.productName !== productName
+      );
+
+      let selectedItem = shoppingCart.filter(
+        (p) => p.productName === productName
+      );
+
+      selectedItem[0].amount += 1;
+
+      let combinedArr = [];
+      combinedArr = [...selectedItem, ...nonSelectedItem];
+
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    }
   };
 
   const handleDecrement = (e) => {
@@ -41,25 +59,43 @@ export const ShoppingList = () => {
       ".product-name-table"
     ).childNodes[0].data;
 
-    console.log(productName);
+    if (productName === "Pick And Mix Bag") {
+      let UUID = e.currentTarget.parentNode.parentNode.parentNode.querySelector(
+        ".product-uuid"
+      ).childNodes[0].data;
 
-    let nonSelectedItem = shoppingCart.filter(
-      (p) => p.productName !== productName
-    );
+      let nonSelectedItem = shoppingCart.filter((p) => p.UUID !== UUID);
 
-    let selectedItem = shoppingCart.filter(
-      (p) => p.productName === productName
-    );
+      let selectedItem = shoppingCart.filter((p) => p.UUID === UUID);
 
-    selectedItem[0].amount -= 1;
+      selectedItem[0].amount -= 1;
 
-    let combinedArr = [];
-    combinedArr = [...selectedItem, ...nonSelectedItem];
+      let combinedArr = [];
+      combinedArr = [...selectedItem, ...nonSelectedItem];
 
-    combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
 
-    setShoppingCart(combinedArr);
-    localStorage.setItem("basket", JSON.stringify(combinedArr));
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    } else {
+      let nonSelectedItem = shoppingCart.filter(
+        (p) => p.productName !== productName
+      );
+
+      let selectedItem = shoppingCart.filter(
+        (p) => p.productName === productName
+      );
+
+      selectedItem[0].amount -= 1;
+
+      let combinedArr = [];
+      combinedArr = [...selectedItem, ...nonSelectedItem];
+
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    }
   };
 
   const handleRemove = (e) => {
@@ -67,16 +103,32 @@ export const ShoppingList = () => {
       ".product-name-table"
     ).childNodes[0].data;
 
-    let nonSelectedItem = shoppingCart.filter(
-      (p) => p.productName !== productName
-    );
+    if (productName === "Pick And Mix Bag") {
+      let UUID = e.currentTarget.parentNode.parentNode.querySelector(
+        ".product-uuid"
+      ).childNodes[0].data;
 
-    let combinedArr = [...nonSelectedItem];
+      let nonSelectedItem = shoppingCart.filter((p) => p.UUID !== UUID);
 
-    combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+      let combinedArr = [];
+      combinedArr = [...nonSelectedItem];
 
-    setShoppingCart(combinedArr);
-    localStorage.setItem("basket", JSON.stringify(combinedArr));
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    } else {
+      let nonSelectedItem = shoppingCart.filter(
+        (p) => p.productName !== productName
+      );
+
+      let combinedArr = [...nonSelectedItem];
+
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    }
   };
 
   return shoppingCart ? (
@@ -116,8 +168,20 @@ export const ShoppingList = () => {
                   </div>
                   <div>
                     <div className="product-name-table">{item.productName}</div>
+                    <div>
+                      {item.subName ? (
+                        <ul className="product-name-sub">
+                          {item.subName.split(",").map((val, index) => (
+                            <li key={index}>{val}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                    <h4 className="product-uuid">{item.UUID}</h4>
                     <div className="product-individual-price-table">
-                      {item.price}
+                      £{item.price.toFixed(2)}
                     </div>
                     <div
                       className="product-remove-table"

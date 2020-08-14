@@ -49,23 +49,43 @@ export const Basket = () => {
       ".product-name-basket"
     ).childNodes[0].data;
 
-    let nonSelectedItem = shoppingCart.filter(
-      (p) => p.productName !== productName
-    );
+    if (productName === "Pick And Mix Bag") {
+      let UUID = e.currentTarget.parentNode.parentNode.querySelector(
+        ".product-uuid"
+      ).childNodes[0].data;
 
-    let selectedItem = shoppingCart.filter(
-      (p) => p.productName === productName
-    );
+      let nonSelectedItem = shoppingCart.filter((p) => p.UUID !== UUID);
 
-    selectedItem[0].amount += 1;
+      let selectedItem = shoppingCart.filter((p) => p.UUID === UUID);
 
-    let combinedArr = [];
-    combinedArr = [...selectedItem, ...nonSelectedItem];
+      selectedItem[0].amount += 1;
 
-    combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+      let combinedArr = [];
+      combinedArr = [...selectedItem, ...nonSelectedItem];
 
-    setShoppingCart(combinedArr);
-    localStorage.setItem("basket", JSON.stringify(combinedArr));
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    } else {
+      let nonSelectedItem = shoppingCart.filter(
+        (p) => p.productName !== productName
+      );
+
+      let selectedItem = shoppingCart.filter(
+        (p) => p.productName === productName
+      );
+
+      selectedItem[0].amount += 1;
+
+      let combinedArr = [];
+      combinedArr = [...selectedItem, ...nonSelectedItem];
+
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    }
   };
 
   const handlingReduce = (e) => {
@@ -75,23 +95,43 @@ export const Basket = () => {
       ".product-name-basket"
     ).childNodes[0].data;
 
-    let nonSelectedItem = shoppingCart.filter(
-      (p) => p.productName !== productName
-    );
+    if (productName === "Pick And Mix Bag") {
+      let UUID = e.currentTarget.parentNode.parentNode.querySelector(
+        ".product-uuid"
+      ).childNodes[0].data;
 
-    let selectedItem = shoppingCart.filter(
-      (p) => p.productName === productName
-    );
+      let nonSelectedItem = shoppingCart.filter((p) => p.UUID !== UUID);
 
-    if (selectedItem[0].amount > 1) {
+      let selectedItem = shoppingCart.filter((p) => p.UUID === UUID);
+
       selectedItem[0].amount -= 1;
+
       let combinedArr = [];
       combinedArr = [...selectedItem, ...nonSelectedItem];
 
-      combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
 
       setShoppingCart(combinedArr);
       localStorage.setItem("basket", JSON.stringify(combinedArr));
+    } else {
+      let nonSelectedItem = shoppingCart.filter(
+        (p) => p.productName !== productName
+      );
+
+      let selectedItem = shoppingCart.filter(
+        (p) => p.productName === productName
+      );
+
+      if (selectedItem[0].amount > 1) {
+        selectedItem[0].amount -= 1;
+        let combinedArr = [];
+        combinedArr = [...selectedItem, ...nonSelectedItem];
+
+        combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+
+        setShoppingCart(combinedArr);
+        localStorage.setItem("basket", JSON.stringify(combinedArr));
+      }
     }
   };
 
@@ -100,16 +140,32 @@ export const Basket = () => {
       ".product-name-basket"
     ).childNodes[0].data;
 
-    let nonSelectedItem = shoppingCart.filter(
-      (p) => p.productName !== productName
-    );
+    if (productName === "Pick And Mix Bag") {
+      let UUID = e.currentTarget.parentNode.parentNode.querySelector(
+        ".product-uuid"
+      ).childNodes[0].data;
 
-    let combinedArr = [...nonSelectedItem];
+      let nonSelectedItem = shoppingCart.filter((p) => p.UUID !== UUID);
 
-    combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+      let combinedArr = [];
+      combinedArr = [...nonSelectedItem];
 
-    setShoppingCart(combinedArr);
-    localStorage.setItem("basket", JSON.stringify(combinedArr));
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo); //keeps the order of the cart when it is updated
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    } else {
+      let nonSelectedItem = shoppingCart.filter(
+        (p) => p.productName !== productName
+      );
+
+      let combinedArr = [...nonSelectedItem];
+
+      combinedArr.sort((a, b) => a.orderNo - b.orderNo);
+
+      setShoppingCart(combinedArr);
+      localStorage.setItem("basket", JSON.stringify(combinedArr));
+    }
   };
 
   return (
@@ -129,6 +185,16 @@ export const Basket = () => {
                   </div>
                   <div className="basket-info-container">
                     <h4 className="product-name-basket">{data.productName}</h4>{" "}
+                    {data.subName ? (
+                      <ul className="product-name-sub">
+                        {data.subName.split(",").map((val, index) => (
+                          <li key={index}>{val}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <></>
+                    )}
+                    <h4 className="product-uuid">{data.UUID}</h4>
                     <h5 className="product-price-basket">
                       £{data.price.toFixed(2)}
                     </h5>
