@@ -7,6 +7,8 @@ export const AddProducts = () => {
   const [pickAndMix, setpickAndMix] = useState(false);
   const [traditional, settraditional] = useState(false);
   const [clearance, setclearance] = useState(false);
+  const [giftsAndHampers, setGiftsAndHampers] = useState(false);
+  const [newIn, setNewIn] = useState(false);
 
   const [category, setCategory] = useState(undefined);
   const [subCategory, setSubCategory] = useState(undefined);
@@ -54,6 +56,8 @@ export const AddProducts = () => {
       setpickAndMix(false);
       settraditional(false);
       setclearance(false);
+      setGiftsAndHampers(false);
+      setNewIn(false);
       setCategory("Shop");
       setSubCategory("International");
       brands.style.display = "block";
@@ -64,8 +68,10 @@ export const AddProducts = () => {
       setpickAndMix(false);
       settraditional(false);
       setclearance(false);
+      setGiftsAndHampers(false);
+      setNewIn(false);
       setCategory("Shop");
-      setSubCategory("Sweet And Candy");
+      setSubCategory("Sweets And Candy");
       brands.style.display = "none";
       category.style.display = "block";
     } else if (e.target.value === "pick and mix") {
@@ -74,6 +80,8 @@ export const AddProducts = () => {
       setpickAndMix(true);
       settraditional(false);
       setclearance(false);
+      setGiftsAndHampers(false);
+      setNewIn(false);
       setCategory("Shop");
       setSubCategory("Pick And Mix");
       brands.style.display = "none";
@@ -84,6 +92,8 @@ export const AddProducts = () => {
       setpickAndMix(false);
       settraditional(true);
       setclearance(false);
+      setGiftsAndHampers(false);
+      setNewIn(false);
       setCategory("Shop");
       setSubCategory("Traditional");
       brands.style.display = "none";
@@ -94,8 +104,34 @@ export const AddProducts = () => {
       setpickAndMix(false);
       settraditional(false);
       setclearance(true);
+      setGiftsAndHampers(false);
+      setNewIn(false);
       setCategory("Shop");
       setSubCategory("Clearance");
+      brands.style.display = "none";
+      category.style.display = "none";
+    } else if (e.target.value === "gifts and hampers") {
+      setInternational(false);
+      setsweetsAndCandy(false);
+      setpickAndMix(false);
+      settraditional(false);
+      setclearance(false);
+      setGiftsAndHampers(true);
+      setNewIn(false);
+      setCategory("Shop");
+      setSubCategory("Gifts And Hampers");
+      brands.style.display = "none";
+      category.style.display = "none";
+    } else if (e.target.value === "new in") {
+      setInternational(false);
+      setsweetsAndCandy(false);
+      setpickAndMix(false);
+      settraditional(false);
+      setclearance(false);
+      setGiftsAndHampers(false);
+      setNewIn(true);
+      setCategory("Shop");
+      setSubCategory("New In");
       brands.style.display = "none";
       category.style.display = "none";
     }
@@ -198,8 +234,6 @@ export const AddProducts = () => {
       sugarFree,
       glutenFree,
     };
-
-    console.log(body);
 
     const checkLoggedIn = async () => {
       const tokenRes = await Axios.post(
@@ -672,6 +706,18 @@ export const AddProducts = () => {
             <label>
               <input type="radio" value="clearance" name="radio-button" />
               clearance
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="gifts and hampers"
+                name="radio-button"
+              />
+              gifts and hampers
+            </label>
+            <label>
+              <input type="radio" value="new in" name="radio-button" />
+              new in
             </label>
           </form>
         </ul>
