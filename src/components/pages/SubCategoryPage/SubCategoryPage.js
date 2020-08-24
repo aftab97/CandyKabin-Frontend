@@ -50,7 +50,17 @@ export const SubCategoryPage = (params) => {
 
   useEffect(() => {
     //if not subsub category or brand
-    if (!params.subSubCategory) {
+    if (params.subCategory === "New In") {
+      const grabData = async () => {
+        const fetchedData = await Axios.get(
+          `${process.env.REACT_APP_URL}/product/newIn?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
+        );
+
+        setProducts(fetchedData.data);
+      };
+
+      grabData();
+    } else if (!params.subSubCategory) {
       const grabData = async () => {
         const fetchedData = await Axios.get(
           `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`

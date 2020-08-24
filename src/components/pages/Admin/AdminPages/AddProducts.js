@@ -8,7 +8,6 @@ export const AddProducts = () => {
   const [traditional, settraditional] = useState(false);
   const [clearance, setclearance] = useState(false);
   const [giftsAndHampers, setGiftsAndHampers] = useState(false);
-  const [newIn, setNewIn] = useState(false);
 
   const [category, setCategory] = useState(undefined);
   const [subCategory, setSubCategory] = useState(undefined);
@@ -38,6 +37,7 @@ export const AddProducts = () => {
   const [fatFree, setFatFree] = useState(undefined);
   const [sugarFree, setSugarFree] = useState(undefined);
   const [glutenFree, setGlutenFree] = useState(undefined);
+  const [newProdcut, setNewProduct] = useState(false);
 
   const { userData } = useContext(UserContext);
 
@@ -57,7 +57,6 @@ export const AddProducts = () => {
       settraditional(false);
       setclearance(false);
       setGiftsAndHampers(false);
-      setNewIn(false);
       setCategory("Shop");
       setSubCategory("International");
       brands.style.display = "block";
@@ -69,7 +68,6 @@ export const AddProducts = () => {
       settraditional(false);
       setclearance(false);
       setGiftsAndHampers(false);
-      setNewIn(false);
       setCategory("Shop");
       setSubCategory("Sweets And Candy");
       brands.style.display = "none";
@@ -81,7 +79,6 @@ export const AddProducts = () => {
       settraditional(false);
       setclearance(false);
       setGiftsAndHampers(false);
-      setNewIn(false);
       setCategory("Shop");
       setSubCategory("Pick And Mix");
       brands.style.display = "none";
@@ -93,7 +90,6 @@ export const AddProducts = () => {
       settraditional(true);
       setclearance(false);
       setGiftsAndHampers(false);
-      setNewIn(false);
       setCategory("Shop");
       setSubCategory("Traditional");
       brands.style.display = "none";
@@ -105,7 +101,6 @@ export const AddProducts = () => {
       settraditional(false);
       setclearance(true);
       setGiftsAndHampers(false);
-      setNewIn(false);
       setCategory("Shop");
       setSubCategory("Clearance");
       brands.style.display = "none";
@@ -117,21 +112,8 @@ export const AddProducts = () => {
       settraditional(false);
       setclearance(false);
       setGiftsAndHampers(true);
-      setNewIn(false);
       setCategory("Shop");
       setSubCategory("Gifts And Hampers");
-      brands.style.display = "none";
-      category.style.display = "none";
-    } else if (e.target.value === "new in") {
-      setInternational(false);
-      setsweetsAndCandy(false);
-      setpickAndMix(false);
-      settraditional(false);
-      setclearance(false);
-      setGiftsAndHampers(false);
-      setNewIn(true);
-      setCategory("Shop");
-      setSubCategory("New In");
       brands.style.display = "none";
       category.style.display = "none";
     }
@@ -233,6 +215,7 @@ export const AddProducts = () => {
       fatFree,
       sugarFree,
       glutenFree,
+      newIn: newProdcut,
     };
 
     const checkLoggedIn = async () => {
@@ -250,8 +233,13 @@ export const AddProducts = () => {
     window.location.reload();
   };
 
-  const handleCategory = (e) => {
+  const handleNewProduct = (e) => {
     console.log(e.target.value);
+    if (e.target.value == "yes") {
+      setNewProduct(true);
+    } else {
+      setNewProduct(false);
+    }
   };
 
   const internationalLogic = (
@@ -715,12 +703,21 @@ export const AddProducts = () => {
               />
               gifts and hampers
             </label>
-            <label>
-              <input type="radio" value="new in" name="radio-button" />
-              new in
-            </label>
           </form>
         </ul>
+      </div>
+      <div>
+        <h4>New Product?</h4>
+        <form onChange={handleNewProduct}>
+          <label>
+            <input type="radio" value="yes" name="radio-button" />
+            YES
+          </label>
+          <label>
+            <input type="radio" value="no" name="radio-button" />
+            NO
+          </label>
+        </form>
       </div>
       <div>{internationalLogic}</div>
     </div>
