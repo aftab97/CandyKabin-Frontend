@@ -205,9 +205,9 @@ export default function Home() {
               </a>
             </div>
             <div>
-              <a href="/search/hershey">
+              <a href="/shop/international">
                 <img src={candy3} className="box-img" alt="sweet" />
-                <h2>Hershey's Chocolate</h2>
+                <h2>International</h2>
               </a>
             </div>
             <div>

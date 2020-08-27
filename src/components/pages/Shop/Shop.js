@@ -313,6 +313,10 @@ export const Shop = ({ match }) => {
               Warheads
             </label>
             <label>
+              <input type="radio" value="Reeses" name="radio-button" />
+              Reese's
+            </label>
+            <label>
               <input type="radio" value="Laffy Taffy" name="radio-button" />
               Laffy Taffy
             </label>
@@ -326,7 +330,7 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="SweedishFish" name="radio-button" />
-              SweedishFish
+              SwedishFish
             </label>
             <label>
               <input type="radio" value="Gatorade" name="radio-button" />

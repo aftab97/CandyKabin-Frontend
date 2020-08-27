@@ -406,6 +406,11 @@ export const SubCategoryPage = (params) => {
     } else {
       setCurrentPage(parseInt(e.currentTarget.childNodes[0].data));
     }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -491,21 +496,6 @@ export const SubCategoryPage = (params) => {
         ) : (
           <></>
         )}
-
-        {/* {pageNumbers.includes(currentPage + 3) ? (
-          <button className="page-button" onClick={handlePageChange2}>
-            {currentPage + 3}
-          </button>
-        ) : (
-          <></>
-        )}
-        {pageNumbers.includes(currentPage + 4) ? (
-          <button className="page-button" onClick={handlePageChange2}>
-            {currentPage + 4}
-          </button>
-        ) : (
-          <></>
-        )} */}
 
         <h2>.....</h2>
         <button className="page-button" onClick={handlePageChange2}>

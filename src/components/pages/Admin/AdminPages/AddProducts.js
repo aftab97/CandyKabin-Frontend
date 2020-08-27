@@ -567,6 +567,10 @@ export const AddProducts = () => {
               Hershey's
             </label>
             <label>
+              <input type="radio" value="Reeses" name="radio-button" />
+              Reese's
+            </label>
+            <label>
               <input type="radio" value="Warheads" name="radio-button" />
               Warheads
             </label>
@@ -584,7 +588,7 @@ export const AddProducts = () => {
             </label>
             <label>
               <input type="radio" value="SweedishFish" name="radio-button" />
-              SweedishFish
+              SwedishFish
             </label>
             <label>
               <input type="radio" value="Gatorade" name="radio-button" />

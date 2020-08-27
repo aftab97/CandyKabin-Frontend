@@ -9,6 +9,9 @@ export const Footer = () => {
       <div className="footer-logo-container">
         <img src={Logo} className="logo" alt="logo" />
         <img src={Cards} className="card" alt="cards" />
+        <p className="copyright">
+          © Candy Kabin (UK) Ltd,14-16 Newgate, Rochdale, OL16 1BA Copyright ©
+        </p>
       </div>
       <div className="footer-list-container">
         <ul>

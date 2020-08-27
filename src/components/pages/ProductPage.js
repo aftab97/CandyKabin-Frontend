@@ -16,6 +16,7 @@ import glutenFreeLogo from "../../img/dietary/gluten-free-new.png";
 import kosherLogo from "../../img/dietary/kosher-new.png";
 import veganLogo from "../../img/dietary/vegan-new.png";
 import vegetarianLogo from "../../img/dietary/vegetarian-new.png";
+import sugarFreelogo from "../../img/dietary/sugar-free.png";
 
 export const ProductPage = ({ match, location, history }) => {
   const [product, setProduct] = useState(undefined);
@@ -400,11 +401,7 @@ export const ProductPage = ({ match, location, history }) => {
               <div className="i-dietary-container hvr-grow2">
                 {product.halal ? (
                   <div className="dietary">
-                    <img
-                      src={halalLogo}
-                      className="dietary-img"
-                      alt="halal logo"
-                    />
+                    <img src={halalLogo} className="dietary-img" alt="halal" />
                   </div>
                 ) : (
                   <></>
@@ -414,7 +411,7 @@ export const ProductPage = ({ match, location, history }) => {
                     <img
                       src={vegetarianLogo}
                       className="dietary-img"
-                      alt="vegetarian logo"
+                      alt="vegetarian"
                     />
                   </div>
                 ) : (
@@ -425,7 +422,7 @@ export const ProductPage = ({ match, location, history }) => {
                     <img
                       src={kosherLogo}
                       className="dietary-img"
-                      alt="kosher logo"
+                      alt="kosher"
                     />
                   </div>
                 ) : (
@@ -433,18 +430,20 @@ export const ProductPage = ({ match, location, history }) => {
                 )}
                 {product.vegan ? (
                   <div className="dietary">
-                    <img
-                      src={veganLogo}
-                      className="dietary-img"
-                      alt="vegan logo"
-                    />
+                    <img src={veganLogo} className="dietary-img" alt="vegan" />
                   </div>
                 ) : (
                   <></>
                 )}
                 {product.fatFree ? <div className="dietary">true</div> : <></>}
                 {product.sugarFree ? (
-                  <div className="dietary">true</div>
+                  <div className="dietary">
+                    <img
+                      src={sugarFreelogo}
+                      className="dietary-img"
+                      alt="sugar free"
+                    />
+                  </div>
                 ) : (
                   <></>
                 )}
@@ -453,7 +452,7 @@ export const ProductPage = ({ match, location, history }) => {
                     <img
                       src={glutenFreeLogo}
                       className="dietary-img"
-                      alt="gluten free logo"
+                      alt="gluten free"
                     />
                   </div>
                 ) : (
