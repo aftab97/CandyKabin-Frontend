@@ -144,7 +144,7 @@ export default function Home() {
               </Link>
             </div>
             <div>
-              <a href="#">
+              <a href="/search/pop%20tarts">
                 <video loop autoPlay src={sliderNew3} />
               </a>
             </div>
@@ -194,13 +194,13 @@ export default function Home() {
           <Slider {...settings} className="slider-desktop">
             <div>
               <a href="/shop/pick-and-mix">
-                <img src={candy1} className="box-img" alt="sweet" />
+                <img src={candy2} className="box-img" alt="sweet" />
                 <h2>Pick & Mix</h2>
               </a>
             </div>
             <div>
               <a href="/new-in/products">
-                <img src={candy2} className="box-img" alt="sweet" />
+                <img src={candy1} className="box-img" alt="sweet" />
                 <h2>New In</h2>
               </a>
             </div>

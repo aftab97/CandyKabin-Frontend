@@ -365,7 +365,7 @@ export const SubCategoryPage = (params) => {
             <button className="product-page-button" onClick={increment}>
               +
             </button>
-            <h4 className="amount">0</h4>
+            <h4 className="amount">1</h4>
 
             <button className="product-page-button" onClick={decrement}>
               -
@@ -428,27 +428,6 @@ export const SubCategoryPage = (params) => {
         />
       </Helmet>
       <div className="products-container">{defaultData}</div>
-      {/* <div className="pages-container">
-        {pageNumbers.map((page) =>
-          page === 1 ? (
-            <button
-              className="page-button page-button-selected-page"
-              index={`page-${page}`}
-              onClick={handlePageChange}
-            >
-              {page}
-            </button>
-          ) : (
-            <button
-              className="page-button"
-              index={`page-${page}`}
-              onClick={handlePageChange}
-            >
-              {page}
-            </button>
-          )
-        )}
-      </div> */}
 
       <div className="page-number-container">
         <button className="page-button first-page" onClick={handlePageChange2}>

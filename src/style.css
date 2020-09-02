@@ -1147,6 +1147,10 @@ body {
   margin: auto;
 }
 
+.footer-logo-container > p {
+  font-size: 0.5em;
+}
+
 .footer-logo-container > img {
   width: 250px;
   display: flex;
@@ -2371,6 +2375,7 @@ ul {
   background-repeat: repeat-x;
   background-image: url("./img/candy-kabin-banner.png");
   background-position: bottom;
+  background-size: 400px;
 }
 
 .bottom-banner-image {
@@ -2381,6 +2386,7 @@ ul {
   margin-top: 20px;
   background-repeat: no-repeat;
   background-repeat: repeat-x;
+  background-size: 400px;
   /* background-position-x: left; */
 }
 
@@ -2882,6 +2888,42 @@ ul {
   /* display set to none as the videos are not compatible with mobile */
   .slider-block {
     display: none;
+  }
+
+  .pick-and-mix-container {
+    flex-direction: column;
+  }
+
+  /* new sweet and mix page */
+  .pick-and-mix-container > .product-image-container {
+    position: relative;
+    width: unset;
+    height: unset;
+  }
+
+  .pick-and-mix-container > .product-detail-container {
+    width: unset;
+    left: unset;
+  }
+
+  .product-detail-container {
+    padding: 10px;
+  }
+
+  .pick-and-mix-product {
+    width: 140px;
+  }
+
+  .pick-and-mix-image {
+    max-width: 100px;
+  }
+
+  .parallax-block {
+    background-attachment: unset;
+  }
+
+  .parallax-block-2 {
+    background-attachment: unset;
   }
 
   /* .dietary-img {

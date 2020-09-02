@@ -330,7 +330,7 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="SweedishFish" name="radio-button" />
-              SwedishFish
+              Swedish Fish
             </label>
             <label>
               <input type="radio" value="Gatorade" name="radio-button" />
@@ -641,7 +641,7 @@ export const Shop = ({ match }) => {
           <ul className="">
             <form
               className="checkout-delivery-options-form-mobile sidepanel-option-mobile fixed-height-mobile"
-              onChange={handleRadioButton2}
+              onChange={handleRadioButton3}
             >
               <label>
                 <input

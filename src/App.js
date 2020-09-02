@@ -273,7 +273,7 @@ export default function App() {
                   <Route path="/search/:id" component={Search} />
                   <Route path="/shop" component={Shop} />
                   <Route path="/new-in" component={NewIn} />
-                  <Route path="/new-pick-and-mix" component={NewPickAndMix} />
+                  <Route path="/pick-and-mix" component={NewPickAndMix} />
                   <Route
                     path="/gifts-and-hampers"
                     component={GiftsAndHampers}
@@ -736,7 +736,7 @@ function DropdownMenu() {
             </Link>
           </DropdownItem>
           <DropdownItem leftIcon={"🍡"}>
-            <Link to="/shop/pick-and-mix" onClick={() => setOpen(!open)}>
+            <Link to="/pick-and-mix" onClick={() => setOpen(!open)}>
               Pick & Mix
             </Link>
           </DropdownItem>

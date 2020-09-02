@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
-import pouch from "../../../img/sweets-mix.jpg";
+// import pouch from "../../../img/sweets-mix.jpg";
+import pouch from "../../../img/sweets-mix2.png";
 import Axios from "axios";
 import BasketContext from "../../../context/BasketContext";
 
