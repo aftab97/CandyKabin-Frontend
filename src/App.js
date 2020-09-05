@@ -61,6 +61,7 @@ import MobileLogo from "./img/logo-mobile-new.png";
 import WorldEmoji from "./img/worldwide-emoji.png";
 import { TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import { Success } from "./components/pages/Checkout/Success";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -281,7 +282,8 @@ export default function App() {
                   <Route path="/dietary" component={Dietary} />
                   <Route path="/three" component={Three} />
                   <Route path="/checkout" component={CheckoutPage} />
-                  <Route path="/checkout2" component={CheckoutPage2} />
+                  <Route path="/success" component={Success} />
+                  {/* <Route path="/checkout2" component={CheckoutPage2} /> */}
                   {/* static pages */}
                   <Route
                     path="/customer-services"

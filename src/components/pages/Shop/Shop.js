@@ -437,14 +437,14 @@ export const Shop = ({ match }) => {
         </ul>
       </div>
       <Collapsible trigger="FILTER" id="products-collapsible">
-        <br />
+        {/* <br />
         <br />
         <a href="/shop/international">INTERNATIONAL</a>
         <br />
         <br />
         <a href="/shop/sweets-and-candy">SWEETS AND CANDY</a>
         <br />
-        <br />
+        <br /> */}
         <Collapsible trigger="CATEGORY" className="international-mobile">
           <form
             className="checkout-delivery-options-form"
