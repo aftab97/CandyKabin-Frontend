@@ -469,8 +469,8 @@ export const Shop = ({ match }) => {
               CHOCOLATE
             </label>
             <label>
-              <input type="radio" value="Soda / Drinks" name="radio-button" />
-              SODA / DRINKS
+              <input type="radio" value="Soda And Drinks" name="radio-button" />
+              SODA AND DRINKS
             </label>
             <label>
               <input type="radio" value="Crisps" name="radio-button" />

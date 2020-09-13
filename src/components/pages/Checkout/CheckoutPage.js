@@ -5,8 +5,13 @@ import { Shipping } from "./Shipping/Shipping";
 import { ShoppingList } from "./ShoppingList/ShoppingList";
 import UserContext from "../../../context/UserContext";
 import BasketContext from "../../../context/BasketContext";
+import { useHistory } from "react-router-dom";
 
 export const CheckoutPage = () => {
+  const history = useHistory();
+
+  const [displayMessage, setDisplayMessage] = useState(0);
+
   const {
     location,
     setLocation,
@@ -79,16 +84,18 @@ export const CheckoutPage = () => {
     });
     const { status } = response.data;
     console.log("Response:", response.data);
+
     if (status === "success") {
       console.log("Success! Check email for details");
+      history.push("/success");
     } else {
       console.log("something went wrong");
+      setDisplayMessage(1);
     }
   };
 
   useEffect(() => {
     console.log(location);
-
     if (typeof location === "undefined" || shoppingCart.length === 0) {
       setReadyForCheckout(false);
     } else {
@@ -124,6 +131,14 @@ export const CheckoutPage = () => {
       x.style.display = "block";
     }
   };
+
+  const handleCheckoutDisabledButton2 = () => {
+    // let x = document.getElementsByClassName("hidden-message-pop-up-2");
+    // x.style.display = "block";
+    console.log("setting display to block");
+    setDisplayMessage("block");
+  };
+
   return (
     <div className="checkout-page">
       <div className="checkout-section">
@@ -157,6 +172,16 @@ export const CheckoutPage = () => {
                 Please select your shipping location to continue with your
                 payment
               </h4>
+            </div>
+
+            <div
+              className="hidden-message-pop-up-2"
+              style={{ opacity: displayMessage }}
+            >
+              <h2>
+                Your payment was unsuccessful. Please try again or try
+                contacting Candy Kabin.
+              </h2>
             </div>
           </>
         )}

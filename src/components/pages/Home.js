@@ -266,16 +266,18 @@ export default function Home() {
 
         <div className="block-4-new">
           <div className="block-1">
-            <h2>AMERICAN SODA'S</h2>
+            <h2>Welcome to CandyKabin </h2>
             <br />
             <p>
-              Candy Kabin are proud to be one of the UK's biggest supplier of
-              American sodas, UK sodas and more! We have a huge range of sodas,
-              pop, chocolate milks and more, all designed to satisfy your
-              sweet-tooth and/or regress bigger kids back to their childhood! We
-              have some of the biggest names in soft drinks such as Mountain
-              Dew, Calypso, Chupa Chups, Fanta flavours and more. View our stock
-              today.
+              Candy Kabin are proud to be one of the UK’s biggest suppliers of
+              international confectionary. From a variety of sweets and snacks
+              we are proud to stock products from the USA, Sweden, Canada and
+              much much MORE! We have a huge range of Sodas, Candy, Chocolate &
+              Snacks to satisfy your cravings! And it doesn’t stop their. We
+              have designed a one stop shop to cater for everyone including
+              adults to help regress them back to their childhood! With over 100
+              pick and mix sweets thier is something for everyone at Candy
+              Kabin!
             </p>
             <br />
           </div>
@@ -285,13 +287,16 @@ export default function Home() {
 
         <div className="block-4-new">
           <div className="block-2">
-            <h2>AMERICAN CHOCOLATE</h2>
+            <h2>Our Story</h2>
             <br />
             <p>
-              Nobody makes chocolate bars and nibbles like the Americans which
-              is why our team at Candy Kabin are proud to stock some of the most
-              iconic and well-known US brands. We have Hershey bars, Milk Duds,
-              M&M's, Chocnibbles and more. Order your chocolate products today.
+              Established in February 2019, Candy Kabin is a family business
+              specialising in international grocery and confectionory. We are
+              located in the heart of Rochdale and offer both retail and online
+              ordering services. With our never ending range of sweets and
+              treats, we can be sure to supply you with exclusive and most
+              popular brands such as Jolly Rancher, Cheetos, Mike & Ikes, M&M’s,
+              Fanta, Calypso and much much more!
             </p>
             <br />
           </div>

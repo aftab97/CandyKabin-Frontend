@@ -816,7 +816,7 @@ body {
 
 .i-image > img {
   margin: 2vw;
-  max-width: 30vw;
+  max-width: 20vw;
 }
 
 .i-ingredients {
@@ -1656,6 +1656,11 @@ label > input {
   display: none;
 }
 
+/* .hidden-message-pop-up-2 {
+  margin-top: 10px;
+  display: none;
+} */
+
 .admin-page {
   text-align: center;
   margin: auto;
@@ -1825,7 +1830,7 @@ ul {
   border-bottom: var(--border);
   display: flex;
   width: 100vw;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-image: url(./img/candy-kabin-banner.png);
   background-repeat: repeat-x;
   background-position: bottom;
@@ -2311,7 +2316,6 @@ ul {
 .pick-and-mix-product-title {
   position: relative;
   margin: auto;
-  width: 50%;
 }
 
 .p-m-selected {
@@ -2382,14 +2386,19 @@ ul {
 } */
 
 .bottom-banner-image {
+  position: relative;
   height: 50px;
   width: 100%;
   background-image: url("./img/candy-kabin-banner.png");
   background-position: bottom;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   background-repeat: no-repeat;
   background-repeat: repeat-x;
   background-size: 400px;
+
+  background-color: white;
+  padding: 20px;
+  z-index: 2;
   /* background-position-x: left; */
 }
 
@@ -2414,6 +2423,134 @@ ul {
   position: relative;
   color: var(--text-color);
   text-align: center;
+}
+
+.info-button {
+  position: relative;
+  top: 0px;
+  text-align: end;
+  right: 5px;
+  top: 5px;
+  z-index: 2;
+}
+
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%, 0);
+  background-color: white;
+  width: 50vw;
+  text-align: left;
+  display: none;
+  z-index: 5;
+  box-shadow: 8px 12px 8px #696969;
+  border: 1px solid var(--text-color);
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--text-color);
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.modal-close > svg {
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  fill: white;
+}
+
+.modal-list {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: center;
+}
+
+.modal-list > li {
+  padding-top: 10px;
+}
+
+.p-a-m-amount {
+  position: relative;
+  /* top: -15px; */
+  /* text-align: center; */
+  opacity: 1;
+  color: white;
+  background-color: var(--text-color);
+  width: 25px;
+  padding: 5px;
+  /* text-align: center; */
+  border-radius: 15px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  left: 2px;
+}
+
+.p-a-m-amount > span > svg {
+  /* padding-left: 10px; */
+  fill: white;
+  width: 10px;
+}
+
+.p-a-m-image {
+  width: 50%;
+}
+
+.p-a-m-modal-sub-description-image-container {
+  display: flex;
+}
+
+.p-a-m--modal-title {
+  padding-top: 20px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.modal-dietary-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+}
+
+.modal-product-ingredients {
+  padding: 10px;
+}
+
+.p-a-m-remove-button {
+  position: relative;
+  /* bottom: -10px; */
+  text-align: start;
+  top: 2px;
+  z-index: 2;
+}
+
+.p-a-m-remove-button > button {
+  background-color: var(--text-color);
+  color: white;
+  border-radius: 100%;
+  width: 15px;
+  background-color: var(--text-color);
+  width: 25px;
+  padding: 5px;
+  position: absolute;
+  top: -18px;
+  opacity: 0;
+  left: 2px;
+}
+
+.amount-title-container {
+  display: flex;
+}
+
+.p-a-m-deselect-svg {
+  fill: white;
 }
 
 @media only screen and (max-width: 600px) {
@@ -2912,6 +3049,7 @@ ul {
 
   .pick-and-mix-container {
     flex-direction: column;
+    background-color: white;
   }
 
   /* new sweet and mix page */
@@ -2944,6 +3082,14 @@ ul {
 
   .parallax-block-2 {
     background-attachment: unset;
+  }
+
+  .pick-and-mix-container > .product-image-container > img {
+    max-width: 60vw;
+  }
+
+  #modal {
+    width: 85vw;
   }
 
   /* .dietary-img {
@@ -2987,5 +3133,20 @@ ul {
 
   .footer-list-container > ul {
     width: 100px;
+  }
+
+  #modal {
+    width: 85vw;
+    height: 70vh;
+    overflow-y: scroll;
+  }
+
+  .pick-and-mix-container > .product-detail-container {
+    left: 30%;
+    width: 70%;
+  }
+
+  .pick-and-mix-container > .product-image-container {
+    width: 30%;
   }
 }
