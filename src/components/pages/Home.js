@@ -12,9 +12,9 @@ import youAreNowAKidInACandyStore from "../../img/you-are-now-a-kid-in-a-candy-s
 import scrollDownTo from "../../img/scroll-down-to.png";
 import startShopping from "../../img/start-shopping.png";
 
-import candy1 from "../../img/candy-rs.png";
+import candy1 from "../../img/new-in-home.jpg";
 import candy2 from "../../img/gummy-bear-rs.png";
-import candy3 from "../../img/hersheys-chocolate-rs.png";
+import candy3 from "../../img/international-home.jpg";
 import candy4 from "../../img/candy-2-rs.png";
 import gifts from "../../img/gifts-rs.png";
 

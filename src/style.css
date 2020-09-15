@@ -3149,4 +3149,8 @@ ul {
   .pick-and-mix-container > .product-image-container {
     width: 30%;
   }
+
+  .slider-block {
+    display: none;
+  }
 }
