@@ -2501,6 +2501,7 @@ ul {
 
 .p-a-m-image {
   width: 50%;
+  height: 100%;
 }
 
 .p-a-m-modal-sub-description-image-container {
@@ -3097,13 +3098,6 @@ ul {
     height: 70vh;
     overflow-y: scroll;
   }
-
-  /* .dietary-img {
-    width: 50%;
-  } */
-  /* .image-bottom-block-container {
-    display: block;
-  } */
 }
 
 /* Tablet mode */
