@@ -3092,6 +3092,12 @@ ul {
     width: 85vw;
   }
 
+  #modal {
+    width: 85vw;
+    height: 70vh;
+    overflow-y: scroll;
+  }
+
   /* .dietary-img {
     width: 50%;
   } */
@@ -3133,12 +3139,6 @@ ul {
 
   .footer-list-container > ul {
     width: 100px;
-  }
-
-  #modal {
-    width: 85vw;
-    height: 70vh;
-    overflow-y: scroll;
   }
 
   .pick-and-mix-container > .product-detail-container {
