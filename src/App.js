@@ -323,12 +323,12 @@ function Navbar(props) {
 
   //check if mobile
   useEffect(() => {
-    if (window.innerWidth <= 800) {
+    if (window.innerWidth <= 1000) {
       setMobile(true);
     } else {
       setMobile(false);
     }
-  }, []);
+  }, [window.innerWidth]);
 
   const history = useHistory();
 

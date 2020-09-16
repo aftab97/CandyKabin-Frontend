@@ -226,21 +226,21 @@ export default function Home() {
 
           <Slider {...settingsMobile} className="slider-mobile">
             <div>
-              <a href="/shop/pick-and-mix">
+              <a href="/new-in/products">
                 <img src={candy1} className="box-img" alt="sweet" />
-                <h2>Pick & Mix</h2>
+                <h2>New In</h2>
               </a>
             </div>
             <div>
-              <a href="/new-in/products">
+              <a href="/pick-and-mix">
                 <img src={candy2} className="box-img" alt="sweet" />
-                <h2>New In</h2>
+                <h2>Pick & Mix</h2>
               </a>
             </div>
             <div>
               <a href="/search/hershey">
                 <img src={candy3} className="box-img" alt="sweet" />
-                <h2>Hershey's Chocolate</h2>
+                <h2>International</h2>
               </a>
             </div>
             <div>
