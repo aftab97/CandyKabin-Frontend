@@ -3159,9 +3159,9 @@ ul {
   }
 
   /* display set to none as the videos are not compatible with mobile */
-  /* .slider-block {
+  .slider-block {
     display: none;
-  } */
+  }
 
   .pick-and-mix-container {
     flex-direction: column;
@@ -3270,7 +3270,7 @@ ul {
     width: 30%;
   }
 
-  /* .slider-block {
+  .slider-block {
     display: none;
-  } */
+  }
 }
