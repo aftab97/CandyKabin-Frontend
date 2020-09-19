@@ -151,32 +151,32 @@ export default function Home() {
           <br />
           <Slider {...settingsMain} className="homepage-slider">
             <div>
-              <Link to="/search/rap snacks">
+              <Link to="/search/rap snacks?">
                 <video loop autoPlay playsInline src={sliderNew0} />
               </Link>
             </div>
             <div>
-              <Link to="/search/jolly%20rancher">
+              <Link to="/search/jolly%20rancher?">
                 <video loop autoPlay playsInline src={sliderNew1} />
               </Link>
             </div>
             <div>
-              <Link to="/search/sour%20patch">
+              <Link to="/search/sour%20patch?">
                 <video loop autoPlay playsInline src={sliderNew2} />
               </Link>
             </div>
             <div>
-              <a href="/search/pop%20tarts">
+              <a href="/search/pop%20tarts?">
                 <video loop autoPlay playsInline src={sliderNew3} />
               </a>
             </div>
             <div>
-              <Link to="/search/takis">
+              <Link to="/search/takis?">
                 <video loop autoPlay src={sliderNew4} />
               </Link>
             </div>
             <div>
-              <Link to="/search/bang">
+              <Link to="/search/bang?">
                 <video loop autoPlay src={sliderNew5} />
               </Link>
             </div>
