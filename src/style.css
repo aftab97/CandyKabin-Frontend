@@ -2554,6 +2554,121 @@ ul {
   fill: white;
 }
 
+.home-top-brand {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.home-top-brand > a {
+  width: 100%;
+}
+
+.home-top-brand-2 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  transform: translateY(100px);
+}
+
+.home-brand {
+  width: 55%;
+}
+
+.home-brand2 {
+  width: 55%;
+}
+
+.fanta {
+  transform: translateY(-150px);
+}
+
+.cheetos {
+  transform: translateY(-90px);
+}
+
+.sour {
+  transform: translateY(-60px);
+}
+
+.war {
+  transform: translateY(30px);
+}
+
+.haribo {
+  transform: translateY(0px) rotate(8deg);
+}
+
+.block-2-title {
+  width: 45vw;
+}
+
+.block-2-title-container {
+  display: flex;
+  /* text-align: center; */
+  justify-content: space-evenly;
+}
+
+.mike-jolly-container {
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  margin-left: 9vw;
+  transform: translateY(-10vh);
+  /* flex-direction: column;
+  transform: translate(20vw, -100px); */
+}
+
+.mike-jolly-container > a > img {
+  width: 70%;
+}
+
+.bang-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-right: 9vw;
+  transform: translateY(10vh);
+}
+
+.bang-container > a {
+  width: 100%;
+}
+
+.bang-container > a > img {
+  width: 80%;
+}
+
+.block-2-title-container > div {
+  width: 33%;
+}
+.home-top-brand-2 > a {
+  width: 100%;
+}
+
+/* not available */
+.not-available {
+  width: 98%;
+  height: 98%;
+  border-radius: 20px;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.not-available-message {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  color: grey;
+}
+
 @media only screen and (max-width: 600px) {
   html,
   body {
@@ -3097,6 +3212,17 @@ ul {
     width: 85vw;
     height: 70vh;
     overflow-y: scroll;
+  }
+  .home-brand {
+    width: 90%;
+  }
+
+  .home-brand2 {
+    width: 90%;
+  }
+
+  .haribo {
+    transform: translateY(-46px) rotate(8deg);
   }
 }
 

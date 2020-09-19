@@ -9,6 +9,21 @@ import "slick-carousel/slick/slick-theme.css";
 import kingOfCandy from "../../img/king-of-candy-new-new.jpeg";
 import youAreNowAKidInACandyStore from "../../img/you-are-now-a-kid-in-a-candy-store-new.png";
 
+// minibrands
+import fanta from "../../img/mini-brands/fanta.png";
+import cheetos from "../../img/mini-brands/cheetos.png";
+import sour from "../../img/mini-brands/sour.png";
+import herrs from "../../img/mini-brands/herrs.png";
+import war from "../../img/mini-brands/war.png";
+import mike from "../../img/mini-brands/mike.png";
+import cad from "../../img/mini-brands/cad.png";
+import dew from "../../img/mini-brands/dew.png";
+import haribo from "../../img/mini-brands/haribo.png";
+import stockleys from "../../img/mini-brands/stockleys.png";
+import hostess from "../../img/mini-brands/hostess.png";
+import jolly from "../../img/mini-brands/jolly.png";
+import bang from "../../img/mini-brands/bang.png";
+
 import scrollDownTo from "../../img/scroll-down-to.png";
 import startShopping from "../../img/start-shopping.png";
 
@@ -18,10 +33,12 @@ import candy3 from "../../img/international-home.jpg";
 import candy4 from "../../img/candy-2-rs.png";
 import gifts from "../../img/gifts-rs.png";
 
+import sliderNew0 from "../../img/new-test6.MOV";
 import sliderNew1 from "../../img/new-test.mp4";
 import sliderNew2 from "../../img/new-test2.mp4";
 import sliderNew3 from "../../img/new-test3.mp4";
 import sliderNew4 from "../../img/new-test4.mp4";
+import sliderNew5 from "../../img/new-test5.mov";
 
 import logo from "../../img/logo-pink-new.png";
 
@@ -134,23 +151,33 @@ export default function Home() {
           <br />
           <Slider {...settingsMain} className="homepage-slider">
             <div>
+              <Link to="/search/rap snacks">
+                <video loop autoPlay playsInline src={sliderNew0} />
+              </Link>
+            </div>
+            <div>
               <Link to="/search/jolly%20rancher">
-                <video loop autoPlay src={sliderNew1} />
+                <video loop autoPlay playsInline src={sliderNew1} />
               </Link>
             </div>
             <div>
               <Link to="/search/sour%20patch">
-                <video loop autoPlay src={sliderNew2} />
+                <video loop autoPlay playsInline src={sliderNew2} />
               </Link>
             </div>
             <div>
               <a href="/search/pop%20tarts">
-                <video loop autoPlay src={sliderNew3} />
+                <video loop autoPlay playsInline src={sliderNew3} />
               </a>
             </div>
             <div>
               <Link to="/search/takis">
                 <video loop autoPlay src={sliderNew4} />
+              </Link>
+            </div>
+            <div>
+              <Link to="/search/bang">
+                <video loop autoPlay src={sliderNew5} />
               </Link>
             </div>
           </Slider>
@@ -174,12 +201,63 @@ export default function Home() {
           </svg>
         </div>
         <div className="block-2-new">
+          <div className="home-top-brand">
+            <a href="/search/fanta?">
+              <img src={fanta} className="home-brand fanta" />
+            </a>
+            <a href="/search/cheetos?">
+              <img src={cheetos} className="home-brand cheetos" />
+            </a>
+            <a href="/search/sour patch?">
+              <img src={sour} className="home-brand sour" />
+            </a>
+            <a href="/search/herrs?">
+              <img src={herrs} className="home-brand herrs" />
+            </a>
+            <a href="/seatch/warheads?">
+              <img src={war} className="home-brand war" />
+            </a>
+          </div>
           <img src={leftJellyBaby} className="left-jelly-baby" alt="text" />
 
-          <img
-            src={youAreNowAKidInACandyStore}
-            alt="you are now a kid in a candy store"
-          />
+          <div className="block-2-title-container">
+            <div className="mike-jolly-container">
+              <a href="/search/mike?">
+                <img src={mike} />
+              </a>
+              <a href="/search/jolly rancher?">
+                <img src={jolly} />
+              </a>
+            </div>
+            <img
+              src={youAreNowAKidInACandyStore}
+              alt="you are now a kid in a candy store"
+              className="block-2-title"
+            />
+            <div className="bang-container">
+              <a href="/search/bang?">
+                <img src={bang} />
+              </a>
+            </div>
+          </div>
+
+          <div className="home-top-brand-2">
+            <a href="/search/cadbury?">
+              <img src={cad} className="home-brand2 fanta" />
+            </a>
+            <a href="/seach/dew?">
+              <img src={dew} className="home-brand2 cheetos" />
+            </a>
+            <a href="/search/haribo?">
+              <img src={haribo} className="home-brand2 sour haribo" />
+            </a>
+            <a href="/search/hostess?">
+              <img src={hostess} className="home-brand2 herrs" />
+            </a>
+            <a href="/search/stockleys?">
+              <img src={stockleys} className="home-brand2 war" />
+            </a>
+          </div>
         </div>
         <div className="svg-container-2">
           <svg
@@ -238,7 +316,7 @@ export default function Home() {
               </a>
             </div>
             <div>
-              <a href="/search/hershey">
+              <a href="/shop/international">
                 <img src={candy3} className="box-img" alt="sweet" />
                 <h2>International</h2>
               </a>
