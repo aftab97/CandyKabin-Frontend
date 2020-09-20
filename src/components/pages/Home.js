@@ -23,6 +23,7 @@ import stockleys from "../../img/mini-brands/stockleys.png";
 import hostess from "../../img/mini-brands/hostess.png";
 import jolly from "../../img/mini-brands/jolly.png";
 import bang from "../../img/mini-brands/bang.png";
+import cAndC from "../../img/mini-brands/c-a-c.png";
 
 import scrollDownTo from "../../img/scroll-down-to.png";
 import startShopping from "../../img/start-shopping.png";
@@ -202,8 +203,8 @@ export default function Home() {
         </div>
         <div className="block-2-new">
           <div className="home-top-brand">
-            <a href="/search/fanta?">
-              <img src={fanta} className="home-brand fanta" />
+            <a href="/search/search/C%20&%20C?">
+              <img src={cAndC} className="home-brand fanta" />
             </a>
             <a href="/search/cheetos?">
               <img src={cheetos} className="home-brand cheetos" />
@@ -211,7 +212,7 @@ export default function Home() {
             <a href="/search/sour patch?">
               <img src={sour} className="home-brand sour" />
             </a>
-            <a href="/search/herrs?">
+            <a href="/search/herr's?">
               <img src={herrs} className="home-brand herrs" />
             </a>
             <a href="/seatch/warheads?">
@@ -245,8 +246,8 @@ export default function Home() {
             <a href="/search/cadbury?">
               <img src={cad} className="home-brand2 fanta" />
             </a>
-            <a href="/seach/dew?">
-              <img src={dew} className="home-brand2 cheetos" />
+            <a href="/search/dew?">
+              <img src={dew} className="home-brand2 dew" />
             </a>
             <a href="/search/haribo?">
               <img src={haribo} className="home-brand2 sour haribo" />
@@ -271,7 +272,7 @@ export default function Home() {
         <div className="block-3-new">
           <Slider {...settings} className="slider-desktop">
             <div>
-              <a href="/shop/pick-and-mix">
+              <a href="/pick-and-mix">
                 <img src={candy2} className="box-img" alt="sweet" />
                 <h2>Pick & Mix</h2>
               </a>

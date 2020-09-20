@@ -2582,11 +2582,11 @@ ul {
 }
 
 .fanta {
-  transform: translateY(-150px);
+  transform: translate(40px, -150px);
 }
 
 .cheetos {
-  transform: translateY(-90px);
+  transform: translate(5vw, 5vh);
 }
 
 .sour {
@@ -2599,6 +2599,10 @@ ul {
 
 .haribo {
   transform: translateY(0px) rotate(8deg);
+}
+
+.dew {
+  transform: translate(-20px, -70px);
 }
 
 .block-2-title {
@@ -2638,7 +2642,7 @@ ul {
 }
 
 .bang-container > a > img {
-  width: 80%;
+  width: 50%;
 }
 
 .block-2-title-container > div {
@@ -2668,6 +2672,10 @@ ul {
   top: 50%;
   color: grey;
 }
+
+/* .cheetos {
+  transform: translateY(2px);
+} */
 
 @media only screen and (max-width: 600px) {
   html,
