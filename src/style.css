@@ -2673,6 +2673,10 @@ ul {
   color: grey;
 }
 
+.fanta2 {
+  transform: translate(131px, -113px);
+}
+
 /* .cheetos {
   transform: translateY(2px);
 } */
@@ -3232,6 +3236,14 @@ ul {
   .haribo {
     transform: translateY(-46px) rotate(8deg);
   }
+
+  .fanta2 {
+    transform: translate(47px, -112px);
+  }
+
+  .videoMobile {
+    display: none;
+  }
 }
 
 /* Tablet mode */
@@ -3279,6 +3291,10 @@ ul {
   }
 
   .slider-block {
+    display: none;
+  }
+
+  .videoMobile {
     display: none;
   }
 }

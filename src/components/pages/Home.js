@@ -153,32 +153,56 @@ export default function Home() {
           <Slider {...settingsMain} className="homepage-slider">
             <div>
               <Link to="/search/rap snacks?">
-                <video loop autoPlay playsInline src={sliderNew0} />
+                <video
+                  loop
+                  autoPlay
+                  playsInline
+                  src={sliderNew0}
+                  className="videoMobile"
+                />
               </Link>
             </div>
             <div>
               <Link to="/search/jolly%20rancher?">
-                <video loop autoPlay playsInline src={sliderNew1} />
+                <video
+                  loop
+                  autoPlay
+                  playsInline
+                  src={sliderNew1}
+                  className="videoMobile"
+                />
               </Link>
             </div>
             <div>
               <Link to="/search/sour%20patch?">
-                <video loop autoPlay playsInline src={sliderNew2} />
+                <video
+                  loop
+                  autoPlay
+                  playsInline
+                  src={sliderNew2}
+                  className="videoMobile"
+                />
               </Link>
             </div>
             <div>
               <a href="/search/pop%20tarts?">
-                <video loop autoPlay playsInline src={sliderNew3} />
+                <video
+                  loop
+                  autoPlay
+                  playsInline
+                  src={sliderNew3}
+                  className="videoMobile"
+                />
               </a>
             </div>
             <div>
               <Link to="/search/takis?">
-                <video loop autoPlay src={sliderNew4} />
+                <video loop autoPlay src={sliderNew4} className="videoMobile" />
               </Link>
             </div>
             <div>
               <Link to="/search/bang?">
-                <video loop autoPlay src={sliderNew5} />
+                <video loop autoPlay src={sliderNew5} className="videoMobile" />
               </Link>
             </div>
           </Slider>
@@ -204,7 +228,7 @@ export default function Home() {
         <div className="block-2-new">
           <div className="home-top-brand">
             <a href="/search/search/C%20&%20C?">
-              <img src={cAndC} className="home-brand fanta" />
+              <img src={cAndC} className="home-brand fanta2" />
             </a>
             <a href="/search/cheetos?">
               <img src={cheetos} className="home-brand cheetos" />
@@ -215,7 +239,7 @@ export default function Home() {
             <a href="/search/herr's?">
               <img src={herrs} className="home-brand herrs" />
             </a>
-            <a href="/seatch/warheads?">
+            <a href="/search/warheads?">
               <img src={war} className="home-brand war" />
             </a>
           </div>
