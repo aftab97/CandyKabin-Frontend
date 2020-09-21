@@ -160,7 +160,7 @@ export const PrivacyPolicy = () => {
           at the below:
         </p>
         <br />
-        <p>Candy Kabin, 14-16 Newgate, Rochdale OL16 1BA, 01706 632402.</p>
+        <p>Candy Kabin, 14-16 Newgate, Rochdale OL16 1BA, +44 7821 127312.</p>
         <br />
         <br />
       </div>

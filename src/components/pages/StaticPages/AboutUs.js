@@ -59,7 +59,7 @@ export const AboutUs = () => {
         <br />
         <p>Email: candykabin@gmail.com</p>
         <br />
-        <p>Telephone: 01706 632402</p>
+        <p>Telephone: +44 7821 127312</p>
         <br />
       </div>
     </div>

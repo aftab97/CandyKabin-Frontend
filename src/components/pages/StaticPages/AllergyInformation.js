@@ -73,7 +73,7 @@ export const AllergyInformation = () => {
           </span>
           <br />
           <br />
-          <span style={{ fontWeight: 600 }}>Telephone: 01706 632402</span>
+          <span style={{ fontWeight: 600 }}>Telephone: +44 7821 127312</span>
         </p>
         <br />
         <br />

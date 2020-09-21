@@ -2606,7 +2606,8 @@ ul {
 }
 
 .block-2-title {
-  width: 45vw;
+  height: 20vw;
+  width: 40vw;
 }
 
 .block-2-title-container {
@@ -3243,6 +3244,11 @@ ul {
 
   .videoMobile {
     display: none;
+  }
+
+  .block-2-title {
+    height: 23vw;
+    width: 48vw;
   }
 }
 

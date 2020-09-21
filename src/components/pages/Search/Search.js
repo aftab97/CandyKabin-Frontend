@@ -206,6 +206,15 @@ export const Search = ({ match }) => {
           index={data.productName}
           key={index}
         >
+          {data.showOnSite ? (
+            <></>
+          ) : (
+            <>
+              <div className="not-available">
+                <h2 className="not-available-message">OUT OF STOCK</h2>
+              </div>
+            </>
+          )}
           <img
             src={data.imageURL}
             onClick={handleImageRedirect}
