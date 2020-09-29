@@ -17,6 +17,7 @@ import kosherLogo from "../../img/dietary/kosher-new.png";
 import veganLogo from "../../img/dietary/vegan-new.png";
 import vegetarianLogo from "../../img/dietary/vegetarian-new.png";
 import sugarFreelogo from "../../img/dietary/sugar-free.png";
+import fatFree from "../../img/dietary/fat-free.png";
 
 export const ProductPage = ({ match, location, history }) => {
   const [product, setProduct] = useState(undefined);
@@ -406,6 +407,14 @@ export const ProductPage = ({ match, location, history }) => {
                 ) : (
                   <></>
                 )}
+                {product.fatFree ? (
+                  <div className="dietary">
+                    <img src={fatFree} className="dietary-img" alt="fatFree" />
+                  </div>
+                ) : (
+                  <></>
+                )}
+
                 {product.vegetarian ? (
                   <div className="dietary">
                     <img
