@@ -228,7 +228,7 @@ export const Search = ({ match }) => {
             <button className="product-page-button" onClick={increment}>
               +
             </button>
-            <h4 className="amount">0</h4>
+            <h4 className="amount">1</h4>
 
             <button className="product-page-button" onClick={decrement}>
               -

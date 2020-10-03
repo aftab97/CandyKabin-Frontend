@@ -400,13 +400,18 @@ export const ProductPage = ({ match, location, history }) => {
               </div>
 
               <div className="i-dietary-container hvr-grow2">
-                {product.halal ? (
+                {product.kosher ? (
                   <div className="dietary">
-                    <img src={halalLogo} className="dietary-img" alt="halal" />
+                    <img
+                      src={kosherLogo}
+                      className="dietary-img"
+                      alt="kosher"
+                    />
                   </div>
                 ) : (
                   <></>
                 )}
+
                 {product.fatFree ? (
                   <div className="dietary">
                     <img src={fatFree} className="dietary-img" alt="fatFree" />
@@ -426,17 +431,15 @@ export const ProductPage = ({ match, location, history }) => {
                 ) : (
                   <></>
                 )}
-                {product.kosher ? (
+
+                {product.halal ? (
                   <div className="dietary">
-                    <img
-                      src={kosherLogo}
-                      className="dietary-img"
-                      alt="kosher"
-                    />
+                    <img src={halalLogo} className="dietary-img" alt="halal" />
                   </div>
                 ) : (
                   <></>
                 )}
+
                 {product.vegan ? (
                   <div className="dietary">
                     <img src={veganLogo} className="dietary-img" alt="vegan" />
@@ -444,7 +447,6 @@ export const ProductPage = ({ match, location, history }) => {
                 ) : (
                   <></>
                 )}
-                {product.fatFree ? <div className="dietary">true</div> : <></>}
                 {product.sugarFree ? (
                   <div className="dietary">
                     <img

@@ -34,12 +34,12 @@ import candy3 from "../../img/international-home.jpg";
 import candy4 from "../../img/candy-2-rs.png";
 import gifts from "../../img/gifts-rs.png";
 
-import sliderNew0 from "../../img/new-test6.MOV";
+import sliderNew0 from "../../img/rap-banner.mp4";
 import sliderNew1 from "../../img/new-test.mp4";
 import sliderNew2 from "../../img/new-test2.mp4";
 import sliderNew3 from "../../img/new-test3.mp4";
 import sliderNew4 from "../../img/new-test4.mp4";
-import sliderNew5 from "../../img/new-test5.mov";
+import sliderNew5 from "../../img/bang-banner.mp4";
 
 import logo from "../../img/logo-pink-new.png";
 
@@ -227,7 +227,7 @@ export default function Home() {
         </div>
         <div className="block-2-new">
           <div className="home-top-brand">
-            <a href="/search/search/C%20&%20C?">
+            <a href="/search/C%20&%20C?">
               <img src={cAndC} className="home-brand fanta2" />
             </a>
             <a href="/search/cheetos?">
@@ -279,7 +279,7 @@ export default function Home() {
             <a href="/search/hostess?">
               <img src={hostess} className="home-brand2 herrs" />
             </a>
-            <a href="/search/stockleys?">
+            <a href="/shop/international">
               <img src={stockleys} className="home-brand2 war" />
             </a>
           </div>
