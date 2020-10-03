@@ -707,7 +707,7 @@ export const Shop = ({ match }) => {
               </label>
               <label>
                 <input type="radio" value="SweedishFish" name="radio-button" />
-                SweedishFish
+                Swedish Fish
               </label>
               <label>
                 <input type="radio" value="Gatorade" name="radio-button" />
