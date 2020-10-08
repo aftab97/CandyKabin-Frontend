@@ -149,8 +149,7 @@ export const NewPickAndMix = () => {
           {
             amount: 1,
             id: "",
-            imageSrc:
-              "https://cdn.shopify.com/s/files/1/0357/7944/4871/products/03-SWEET-STORE1774-Web-2000_445x445.jpg?v=1587211768",
+            imageSrc: "https://i.imgur.com/NfPeZwt.png",
             productName: "Pick And Mix Bag",
             subName: sub,
             UUID,
@@ -165,8 +164,7 @@ export const NewPickAndMix = () => {
           {
             amount: 1,
             id: "",
-            imageSrc:
-              "https://cdn.shopify.com/s/files/1/0357/7944/4871/products/03-SWEET-STORE1774-Web-2000_445x445.jpg?v=1587211768",
+            imageSrc: "https://i.imgur.com/NfPeZwt.png",
             productName: "Pick And Mix Bag",
             subName: sub,
             UUID,

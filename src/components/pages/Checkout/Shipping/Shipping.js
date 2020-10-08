@@ -89,6 +89,10 @@ export const Shipping = () => {
           cost = 24.99;
         }
         break;
+
+      case "COLLECTION":
+        cost = 0;
+        break;
     }
 
     setDeliveryCost(cost);
@@ -137,6 +141,10 @@ export const Shipping = () => {
               name="radio-button"
             />
             SCOTTISH HIGHLANDS & ISLANDS
+          </label>
+          <label>
+            <input type="radio" value="COLLECTION" name="radio-button" />
+            COLLECTION
           </label>
         </form>
       </div>

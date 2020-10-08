@@ -84,6 +84,8 @@ export default function App() {
 
   const [productCost, setProductCost] = useState(0);
 
+  let [discount, setDiscount] = useState(0);
+
   const [test, setTest] = useState(null);
 
   const incrementCounter = () => setCount((counter) => counter + 1);
@@ -220,6 +222,8 @@ export default function App() {
               setTotalCost,
               open,
               setOpen,
+              discount,
+              setDiscount,
             }}
           >
             <AlertProvider template={AlertTemplate} {...options}>

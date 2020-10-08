@@ -1564,14 +1564,14 @@ td {
 
 /* stripe button styling */
 .StripeCheckout {
-  background-color: var(--secondary-color) !important;
+  background-color: rgb(229, 112, 152) !important;
   border-radius: 0 !important;
   background-image: none !important;
   padding: 0;
 }
 
 .StripeCheckout > span {
-  background-color: var(--secondary-color) !important;
+  background-color: rgb(229, 112, 152) !important;
   color: black !important;
   border-radius: 0 !important;
   background-image: none !important;
@@ -1579,7 +1579,7 @@ td {
 
 .disabled-button-checkout {
   padding: 1px;
-  background-color: var(--secondary-color);
+  background-color: rgb(229, 112, 152);
   opacity: 0.7;
 }
 
@@ -1594,7 +1594,7 @@ td {
   font-weight: bold;
   box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   text-shadow: rgba(0, 0, 0, 0.25) 0px -1px 0px;
-  background-color: var(--secondary-color);
+  background-color: rgb(229, 112, 152);
 }
 
 /* styling for radio buttons */
@@ -2676,6 +2676,10 @@ ul {
 
 .fanta2 {
   transform: translate(131px, -113px);
+}
+
+.discount-button {
+  background-color: rgb(229, 112, 152) !important;
 }
 
 /* .cheetos {

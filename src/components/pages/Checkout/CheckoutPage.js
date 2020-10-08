@@ -22,6 +22,8 @@ export const CheckoutPage = () => {
     deliveryCost,
     productCost,
     totalCost,
+    discount,
+    setDiscount,
   } = useContext(BasketContext);
 
   const { userData } = useContext(UserContext);
@@ -66,13 +68,11 @@ export const CheckoutPage = () => {
       deliveryCost,
     };
 
-    console.log(token, body);
-
-    console.log(productCost);
-    console.log(deliveryCost);
-    console.log(totalCost);
-
-    newTotalCost = productCost + deliveryCost;
+    // newTotalCost = (productCost * (100 - discount)) / 100 + deliveryCost;
+    newTotalCost = (
+      productCost * ((100 - discount) / 100) +
+      deliveryCost
+    ).toFixed(2);
 
     const response = await axios.post(`${process.env.REACT_APP_URL}/payment`, {
       token,
@@ -81,6 +81,7 @@ export const CheckoutPage = () => {
       productCost,
       newTotalCost: newTotalCost,
       deliveryCost,
+      location,
     });
     const { status } = response.data;
     console.log("Response:", response.data);
@@ -95,7 +96,15 @@ export const CheckoutPage = () => {
   };
 
   useEffect(() => {
-    console.log(location);
+    console.log("calculating payment");
+
+    let cost = (productCost * ((100 - discount) / 100) + deliveryCost).toFixed(
+      2
+    );
+    console.log("cost: " + cost);
+  });
+
+  useEffect(() => {
     if (typeof location === "undefined" || shoppingCart.length === 0) {
       setReadyForCheckout(false);
     } else {
@@ -118,6 +127,7 @@ export const CheckoutPage = () => {
     return () => {
       setLocation(undefined);
       setDeliveryCost(0);
+      setDiscount(0);
     };
   }, []);
 

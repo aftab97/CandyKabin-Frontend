@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+import { TextField, Button, FormControl } from "@material-ui/core";
+import Axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
 import BasketContext from "../../../../context/BasketContext";
 
 export const ShoppingList = () => {
@@ -8,7 +10,11 @@ export const ShoppingList = () => {
     location,
     productCost,
     deliveryCost,
+    discount,
+    setDiscount,
   } = useContext(BasketContext);
+
+  let [discountCode, setDiscountCode] = useState("");
 
   const handleIncrement = (e) => {
     let productName = e.currentTarget.parentNode.parentNode.parentNode.querySelector(
@@ -52,6 +58,8 @@ export const ShoppingList = () => {
       setShoppingCart(combinedArr);
       localStorage.setItem("basket", JSON.stringify(combinedArr));
     }
+    // change discount back to 0
+    setDiscount(0);
   };
 
   const handleDecrement = (e) => {
@@ -96,6 +104,8 @@ export const ShoppingList = () => {
       setShoppingCart(combinedArr);
       localStorage.setItem("basket", JSON.stringify(combinedArr));
     }
+    // change discount back to 0
+    setDiscount(0);
   };
 
   const handleRemove = (e) => {
@@ -129,6 +139,46 @@ export const ShoppingList = () => {
       setShoppingCart(combinedArr);
       localStorage.setItem("basket", JSON.stringify(combinedArr));
     }
+
+    // change discount back to 0
+    setDiscount(0);
+  };
+
+  const handleDiscountSubmit = () => {
+    console.log("applying discount code");
+
+    const checkLoggedIn = async () => {
+      const getData = async () => {
+        const dataResp = await Axios.post(
+          `${process.env.REACT_APP_URL}/discounts/check`,
+          { code: discountCode }
+        );
+
+        setDiscount(parseInt(dataResp.data.discount));
+      };
+
+      getData();
+    };
+
+    checkLoggedIn();
+
+    // xhr request to grab code and check validity
+
+    //change state according to discount
+
+    //apply discount to final cost
+  };
+
+  let handleCost = () => {
+    let cost = (productCost.toFixed(2) * (100 - discount)) / 100;
+    return cost;
+  };
+
+  let handleTotalCost = () => {
+    let cost = ((productCost * (100 - discount)) / 100 + deliveryCost).toFixed(
+      2
+    );
+    return cost;
   };
 
   return shoppingCart ? (
@@ -216,8 +266,31 @@ export const ShoppingList = () => {
             </tr>
           ))}
           <tr>
+            <td>APPLY DISCOUNT CODE</td>
+            <td>
+              <FormControl>
+                <TextField
+                  id="outlined-basic"
+                  label="DISCOUNT CODE"
+                  variant="outlined"
+                  onChange={(e) => {
+                    setDiscountCode(e.currentTarget.value);
+                  }}
+                />
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleDiscountSubmit}
+                  className="discount-button"
+                >
+                  Apply
+                </Button>
+              </FormControl>
+            </td>
+          </tr>
+          <tr>
             <td>PRODUCT COST</td>
-            <td style={{ fontWeight: 600 }}>£{productCost.toFixed(2)}</td>
+            <td style={{ fontWeight: 600 }}>£{handleCost().toFixed(2)}</td>
           </tr>
           {location ? (
             <tr>
@@ -231,7 +304,8 @@ export const ShoppingList = () => {
             <tr>
               <td>TOTAL COST</td>
               <td style={{ fontWeight: 600 }}>
-                £{(productCost + deliveryCost).toFixed(2)}
+                £{handleTotalCost()}
+                {/* £{(productCost + deliveryCost).toFixed(2)} */}
               </td>
             </tr>
           ) : (
