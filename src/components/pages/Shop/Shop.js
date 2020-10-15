@@ -38,26 +38,8 @@ export const Shop = ({ match }) => {
   return (
     <div className="shop">
       <div className="shop-links-container">
-        {/* <ul className="shop-links">
-          <li className="american-link">
-            <Link to={`${match.url}/international`}>International</Link>
-          </li>
-          <li className="candy-link">
-            <Link to={`${match.url}/sweets-and-candy`}>Sweets & Candy</Link>
-          </li>
-          <li className="candy-link">
-            <Link to={`${match.url}/pick-and-mix`}>Pick & Mix</Link>
-          </li>
-          <li className="candy-link">
-            <Link to={`${match.url}/traditional`}>Traditional</Link>
-          </li>
-          <li className="candy-link">
-            <Link to={`${match.url}/clearance`}>Clearance</Link>
-          </li>
-        </ul> */}
-
         <ul className="sub-sub-category-links sidepanel-option international-list">
-          <h4>Category:</h4>
+          <h4>CATEGORY:</h4>
           <form
             className="checkout-delivery-options-form"
             onChange={handleRadioButton4}
@@ -260,7 +242,7 @@ export const Shop = ({ match }) => {
             className="checkout-delivery-options-form sidepanel-option fixed-height"
             onChange={handleRadioButton3}
           >
-            <h4>SORT BY Brand: </h4>
+            <h4>SORT BY BRAND: </h4>
 
             <label>
               <input
@@ -384,8 +366,8 @@ export const Shop = ({ match }) => {
               NONE
             </label>
             <label>
-              <input type="radio" value="HALAL" name="radio-button" />
-              HALAL
+              <input type="radio" value="KOSHER" name="radio-button" />
+              KOSHER
             </label>
             <label>
               <input type="radio" value="VEGETARIAN" name="radio-button" />
@@ -396,9 +378,10 @@ export const Shop = ({ match }) => {
               VEGAN
             </label>
             <label>
-              <input type="radio" value="KOSHER" name="radio-button" />
-              KOSHER
+              <input type="radio" value="HALAL" name="radio-button" />
+              HALAL
             </label>
+
             <label>
               <input type="radio" value="SUGAR FREE" name="radio-button" />
               SUGAR FREE

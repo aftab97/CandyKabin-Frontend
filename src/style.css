@@ -1547,6 +1547,7 @@ td {
 
 .table-row-container > div {
   padding-left: 5px;
+  padding-right: 5px;
 }
 
 .table-button {
@@ -1564,14 +1565,14 @@ td {
 
 /* stripe button styling */
 .StripeCheckout {
-  background-color: rgb(229, 112, 152) !important;
+  background-color: var(--text-color) !important;
   border-radius: 0 !important;
   background-image: none !important;
   padding: 0;
 }
 
 .StripeCheckout > span {
-  background-color: rgb(229, 112, 152) !important;
+  background-color: var(--text-color) !important;
   color: black !important;
   border-radius: 0 !important;
   background-image: none !important;
@@ -1579,7 +1580,7 @@ td {
 
 .disabled-button-checkout {
   padding: 1px;
-  background-color: rgb(229, 112, 152);
+  background-color: var(--text-color);
   opacity: 0.7;
 }
 
@@ -1594,7 +1595,7 @@ td {
   font-weight: bold;
   box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   text-shadow: rgba(0, 0, 0, 0.25) 0px -1px 0px;
-  background-color: rgb(229, 112, 152);
+  background-color: var(--text-color);
 }
 
 /* styling for radio buttons */
@@ -1794,6 +1795,8 @@ video {
 #__react-alert__ > div > div > div {
   background-color: var(--secondary-color) !important;
   border-radius: 20px !important;
+  min-width: 300px !important;
+  text-align: center;
 }
 
 /* NEW NAVBAR TEST - FIRESHIP.io */
@@ -2679,7 +2682,11 @@ ul {
 }
 
 .discount-button {
-  background-color: rgb(229, 112, 152) !important;
+  background-color: var(--text-color) !important;
+}
+
+.videoMobile {
+  width: 700px;
 }
 
 /* .cheetos {
@@ -3046,6 +3053,7 @@ ul {
 
   td {
     padding-right: unset;
+    padding-left: unset;
   }
 
   .basket-container-sidebar {

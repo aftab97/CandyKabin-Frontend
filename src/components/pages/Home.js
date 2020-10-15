@@ -40,6 +40,8 @@ import sliderNew2 from "../../img/new-test2.mp4";
 import sliderNew3 from "../../img/new-test3.mp4";
 import sliderNew4 from "../../img/new-test4.mp4";
 import sliderNew5 from "../../img/bang-banner.mp4";
+import sliderNew6 from "../../img/calpyso-banner.jpeg";
+import sliderNew7 from "../../img/c&c-banner.jpeg";
 
 import logo from "../../img/logo-pink-new.png";
 
@@ -203,6 +205,16 @@ export default function Home() {
             <div>
               <Link to="/search/bang?">
                 <video loop autoPlay src={sliderNew5} className="videoMobile" />
+              </Link>
+            </div>
+            <div>
+              <Link to="/search/calypso?">
+                <img src={sliderNew6} className="videoMobile" />
+              </Link>
+            </div>
+            <div>
+              <Link to="/search/calypso?">
+                <img src={sliderNew7} className="videoMobile" />
               </Link>
             </div>
           </Slider>

@@ -2,6 +2,7 @@ import { TextField, Button, FormControl } from "@material-ui/core";
 import Axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import BasketContext from "../../../../context/BasketContext";
+import { useAlert } from "react-alert";
 
 export const ShoppingList = () => {
   const {
@@ -15,6 +16,8 @@ export const ShoppingList = () => {
   } = useContext(BasketContext);
 
   let [discountCode, setDiscountCode] = useState("");
+
+  const alert = useAlert();
 
   const handleIncrement = (e) => {
     let productName = e.currentTarget.parentNode.parentNode.parentNode.querySelector(
@@ -145,8 +148,6 @@ export const ShoppingList = () => {
   };
 
   const handleDiscountSubmit = () => {
-    console.log("applying discount code");
-
     const checkLoggedIn = async () => {
       const getData = async () => {
         const dataResp = await Axios.post(
@@ -155,18 +156,18 @@ export const ShoppingList = () => {
         );
 
         setDiscount(parseInt(dataResp.data.discount));
+
+        if (dataResp.data.discount !== 0) {
+          alert.success(`${dataResp.data.discount}% DISCOUNT APPLIED`);
+        } else {
+          alert.error("INVALID DISCOUNT CODE");
+        }
       };
 
       getData();
     };
 
     checkLoggedIn();
-
-    // xhr request to grab code and check validity
-
-    //change state according to discount
-
-    //apply discount to final cost
   };
 
   let handleCost = () => {

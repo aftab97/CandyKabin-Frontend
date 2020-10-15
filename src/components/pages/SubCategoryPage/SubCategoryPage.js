@@ -14,25 +14,6 @@ export const SubCategoryPage = (params) => {
     radiobtn.checked = true;
   }, []);
 
-  // useEffect(() => {
-  //   let listAmount = document.querySelectorAll(".shop-links > li").length;
-
-  //   for (let i = 1; i < listAmount + 1; i++) {
-  //     let listLink = document.querySelector(`.shop-links > li:nth-child(${i})`);
-
-  //     if (listLink.classList.contains("emoji-list")) {
-  //       listLink.classList.remove("emoji-list");
-  //     }
-  //   }
-
-  //   let subCategory = params.subCategory.toLowerCase();
-
-  //   if (params.subCategory.includes(" ")) {
-  //     subCategory = subCategory.replace(" ", "-");
-  //   }
-  //   let link = document.querySelector(`.${subCategory}-link`);
-  //   link.classList.add("emoji-list");
-  // }, []);
   const [products, setProducts] = useState();
   const { shoppingCart, setShoppingCart, count, incrementCounter } = useContext(
     BasketContext
