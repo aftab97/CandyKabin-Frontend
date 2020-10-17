@@ -201,6 +201,8 @@ export const SubCategoryPage = (params) => {
           orderNo: count,
           imageSrc: image.src,
           totalCost,
+          UUID: "",
+          subName: "",
         },
       ]);
 
@@ -215,6 +217,8 @@ export const SubCategoryPage = (params) => {
           orderNo: count,
           imageSrc: image.src,
           totalCost,
+          UUID: "",
+          subName: "",
         },
       ];
 
@@ -233,6 +237,8 @@ export const SubCategoryPage = (params) => {
                 orderNo: b.orderNo,
                 imageSrc: b.imageSrc,
                 totalCost: b.totalCost,
+                UUID: b.UUID,
+                subName: b.subName,
               })
             : ((a[i].amount += b.amount), (a[i].totalCost += b.totalCost)),
           a

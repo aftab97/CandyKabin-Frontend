@@ -291,7 +291,7 @@ export default function Home() {
             <a href="/search/hostess?">
               <img src={hostess} className="home-brand2 herrs" />
             </a>
-            <a href="/shop/international">
+            <a href="/shop/traditional">
               <img src={stockleys} className="home-brand2 war" />
             </a>
           </div>
