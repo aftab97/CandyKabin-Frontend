@@ -123,6 +123,10 @@ export const Shipping = () => {
           onChange={handleRadioButtion}
         >
           <label>
+            <input type="radio" value="COLLECTION" name="radio-button" />
+            COLLECT FROM STORE
+          </label>
+          <label>
             <input type="radio" value="UK MAINLAND" name="radio-button" />
             UK MAINLAND
           </label>
@@ -141,10 +145,6 @@ export const Shipping = () => {
               name="radio-button"
             />
             SCOTTISH HIGHLANDS & ISLANDS
-          </label>
-          <label>
-            <input type="radio" value="COLLECTION" name="radio-button" />
-            COLLECTION
           </label>
         </form>
       </div>

@@ -22,7 +22,7 @@ import sugarFreelogo from "../../../img/dietary/sugar-free.png";
 const useStlyes = makeStyles((theme) => ({
   button: {
     width: 200,
-    backgroundColor: "#e57098",
+    backgroundColor: "#ff1694",
     color: "white",
   },
 }));

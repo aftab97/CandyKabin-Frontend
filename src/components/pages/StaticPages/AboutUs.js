@@ -57,7 +57,7 @@ export const AboutUs = () => {
         <br />
         <h4>Enquiries</h4>
         <br />
-        <p>Email: enquires@candykabin.com</p>
+        <p>Email: enquiries@candykabin </p>
         <br />
         <p>Telephone: +44 7821 127312</p>
         <br />

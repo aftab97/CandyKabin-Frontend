@@ -213,7 +213,7 @@ export default function Home() {
               </Link>
             </div>
             <div>
-              <Link to="/search/calypso?">
+              <Link to="/search/c%20&%20c?">
                 <img src={sliderNew7} className="videoMobile" />
               </Link>
             </div>

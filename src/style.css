@@ -470,12 +470,12 @@ body {
 
 .basket-button-increment {
   color: white;
-  background-color: rgb(94, 186, 125);
+  background-color: var(--blue-button);
 }
 
 .basket-button-decrement {
   color: white;
-  background-color: rgb(255, 77, 77);
+  background-color: var(--blue-button);
 }
 
 .basket-list {
@@ -505,7 +505,7 @@ body {
 }
 .basket-remove-button {
   color: white;
-  background-color: rgb(255, 77, 77);
+  background-color: var(--blue-button);
   width: 100px;
   height: 20px;
   border-radius: 25px;
@@ -1810,6 +1810,7 @@ video {
   --border: 1px solid #e7e8e9;
   --border-radius: 8px;
   --speed: 500ms;
+  --blue-button: #38ceef;
 }
 
 ul {
@@ -2419,7 +2420,8 @@ ul {
 }
 .green-tick {
   margin-top: 100px;
-  width: 200px;
+  width: 100px;
+  margin-bottom: 20px;
 }
 
 .success-page {

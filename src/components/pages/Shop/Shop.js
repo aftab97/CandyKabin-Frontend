@@ -103,47 +103,47 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="Bubble Gum" name="radio-button" />
-              Bubble Gum
+              BUBBLE GUM
             </label>
             <label>
               <input type="radio" value="Chocolate" name="radio-button" />
-              Chocolate
+              CHOCOLATE
             </label>
             <label>
               <input type="radio" value="Fun Candy" name="radio-button" />
-              Fun Candy
+              FUN CANDY
             </label>
             <label>
               <input type="radio" value="Hard Candy" name="radio-button" />
-              Hard Candy
+              HARD CANDY
             </label>
             <label>
               <input type="radio" value="Soft Candy" name="radio-button" />
-              Soft Candy
+              SOFT CANDY
             </label>
             <label>
               <input type="radio" value="Jellybeans" name="radio-button" />
-              Jellybeans
+              JELLYBEANS
             </label>
             <label>
-              <input type="radio" value="Liquorice" name="radio-button" />
-              Liquorice
+              <input type="radio" value="Licourice" name="radio-button" />
+              LIQUORICE
             </label>
             <label>
               <input type="radio" value="Lollipops" name="radio-button" />
-              Lollipops
+              LOLLIPOPS
             </label>
             <label>
               <input type="radio" value="Novelty Candy" name="radio-button" />
-              Novelty Candy
+              NOVELTY CANDY
             </label>
             <label>
               <input type="radio" value="Powder Sherbet" name="radio-button" />
-              Powder Sherbet
+              POWDER SHERBET
             </label>
             <label>
               <input type="radio" value="Toffee" name="radio-button" />
-              Toffee
+              TOFFEE
             </label>
           </form>
         </ul>
@@ -166,28 +166,28 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="Hard Candy" name="radio-button" />
-              Hard Candy
+              HARD CANDY
             </label>
             <label>
               <input type="radio" value="Soft Candy" name="radio-button" />
-              Soft Candy
+              SOFT CANDY
             </label>
             <label>
               <input type="radio" value="Chocolate" name="radio-button" />
-              Chocolate
+              CHOCOLATE
             </label>
             <label>
               <input type="radio" value="Sour Candy" name="radio-button" />
-              Sour Candy
+              SOUR CANDY
             </label>
             <label>
               <input type="radio" value="Chewy Candy" name="radio-button" />
-              Chewy Candy
+              CHEWY CANDY
             </label>
           </form>
         </ul>
         <ul className="sub-sub-category-links sidepanel-option traditional-list">
-          <h4>Category:</h4>
+          <h4>CATEGORY:</h4>
           <form
             className="checkout-delivery-options-form"
             onChange={handleRadioButton4}
@@ -208,15 +208,15 @@ export const Shop = ({ match }) => {
                 value="Hard Boiled Candy"
                 name="radio-button"
               />
-              Hard Boiled Candy
+              HARD BOILED CANDY
             </label>
             <label>
               <input type="radio" value="Soft Candy" name="radio-button" />
-              Soft Candy
+              SOFT CANDY
             </label>
             <label>
               <input type="radio" value="Licourice" name="radio-button" />
-              Licourice
+              LIQUORICE
             </label>
             <label>
               <input
@@ -224,15 +224,15 @@ export const Shop = ({ match }) => {
                 value="Powder And Sherbets"
                 name="radio-button"
               />
-              Powder And Sherbets
+              POWDER AND SHERBETS
             </label>
             <label>
               <input type="radio" value="Toffee" name="radio-button" />
-              Toffee
+              TOFFEE
             </label>
             <label>
               <input type="radio" value="Chocolate" name="radio-button" />
-              Chocolate
+              CHOCOLATE
             </label>
           </form>
         </ul>
@@ -256,11 +256,11 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="Jolly Rancher" name="radio-button" />
-              Jolly Rancher
+              JOLLY RANCHER
             </label>
             <label>
               <input type="radio" value="Calypso" name="radio-button" />
-              Calypso
+              CALYPSO
             </label>
             <label>
               <input type="radio" value="M-And-Ms" name="radio-button" />
@@ -268,43 +268,43 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="Sour Patch" name="radio-button" />
-              Sour Patch
+              SOUR PATCH
             </label>
             <label>
               <input type="radio" value="Fanta" name="radio-button" />
-              Fanta
+              FANTA
             </label>
             <label>
               <input type="radio" value="Nestle" name="radio-button" />
-              Nestle
+              NESTLE
             </label>
             <label>
               <input type="radio" value="Hersheys" name="radio-button" />
-              Hershey's
+              HERSHEY'S
             </label>
             <label>
               <input type="radio" value="Twix" name="radio-button" />
-              Twix
+              TWIX
             </label>
             <label>
               <input type="radio" value="Kool-Aid" name="radio-button" />
-              Kool-Aid
+              KOOL-AID
             </label>
             <label>
               <input type="radio" value="Warheads" name="radio-button" />
-              Warheads
+              WARHEADS
             </label>
             <label>
               <input type="radio" value="Reeses" name="radio-button" />
-              Reese's
+              REESE's
             </label>
             <label>
               <input type="radio" value="Laffy Taffy" name="radio-button" />
-              Laffy Taffy
+              LAFFY TAFFY
             </label>
             <label>
               <input type="radio" value="Dr Pepper" name="radio-button" />
-              Dr Pepper
+              DR PEPPER
             </label>
             <label>
               <input type="radio" value="CAndC" name="radio-button" />
@@ -312,39 +312,39 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="SweedishFish" name="radio-button" />
-              Swedish Fish
+              SWEDISH FISH
             </label>
             <label>
               <input type="radio" value="Gatorade" name="radio-button" />
-              Gatorade
+              GATORADE
             </label>
             <label>
               <input type="radio" value="Cheetos" name="radio-button" />
-              Cheetos
+              CHEETOS
             </label>
             <label>
               <input type="radio" value="Herrs" name="radio-button" />
-              Herrs
+              HERRS
             </label>
             <label>
               <input type="radio" value="Lifesavers" name="radio-button" />
-              Lifesavers
+              LIFESAVERS
             </label>
             <label>
               <input type="radio" value="Mike And Ike" name="radio-button" />
-              Mike & Ike
+              MIKE & IKE
             </label>
             <label>
               <input type="radio" value="Hostess" name="radio-button" />
-              Hostess
+              HOSTESS
             </label>
             <label>
               <input type="radio" value="Mrs Freshely" name="radio-button" />
-              Mrs Freshley
+              MRS FRESHLEYS
             </label>
             <label>
               <input type="radio" value="Ice Breakers" name="radio-button" />
-              Ice Breakers
+              ICE BREAKERS
             </label>
           </form>
         </ul>
@@ -490,47 +490,47 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="Bubble Gum" name="radio-button" />
-              Bubble Gum
+              BUBBLE GUM
             </label>
             <label>
               <input type="radio" value="Chocolate" name="radio-button" />
-              Chocolate
+              CHOCOLATE
             </label>
             <label>
               <input type="radio" value="Fun Candy" name="radio-button" />
-              Fun Candy
+              FUN CANDY
             </label>
             <label>
               <input type="radio" value="Hard Candy" name="radio-button" />
-              Hard Candy
+              HARD CANDY
             </label>
             <label>
               <input type="radio" value="Soft Candy" name="radio-button" />
-              Soft Candy
+              SOFT CANDY
             </label>
             <label>
               <input type="radio" value="Jellybeans" name="radio-button" />
-              Jellybeans
+              JELLYBEANS
             </label>
             <label>
-              <input type="radio" value="Liquorice" name="radio-button" />
-              Liquorice
+              <input type="radio" value="Licourice" name="radio-button" />
+              LIQUORICE
             </label>
             <label>
               <input type="radio" value="Lollipops" name="radio-button" />
-              Lollipops
+              LOLLIPOPS
             </label>
             <label>
               <input type="radio" value="Novelty Candy" name="radio-button" />
-              Novelty Candy
+              NOVELTY CANDY
             </label>
             <label>
               <input type="radio" value="Powder Sherbet" name="radio-button" />
-              Powder Sherbet
+              POWDER SHERBET
             </label>
             <label>
               <input type="radio" value="Toffee" name="radio-button" />
-              Toffee
+              TOFFEE
             </label>
           </form>
         </Collapsible>
@@ -551,23 +551,23 @@ export const Shop = ({ match }) => {
             </label>
             <label>
               <input type="radio" value="Hard Candy" name="radio-button" />
-              Hard Candy
+              HARD CANDY
             </label>
             <label>
               <input type="radio" value="Soft Candy" name="radio-button" />
-              Soft Candy
+              SOFT CANDY
             </label>
             <label>
               <input type="radio" value="Chocolate" name="radio-button" />
-              Chocolate
+              CHOCOLATE
             </label>
             <label>
               <input type="radio" value="Sour Candy" name="radio-button" />
-              Sour Candy
+              SOUR CANDY
             </label>
             <label>
               <input type="radio" value="Chewy Candy" name="radio-button" />
-              Chewy Candy
+              CHEWY CANDY
             </label>
           </form>
         </Collapsible>
@@ -592,15 +592,15 @@ export const Shop = ({ match }) => {
                 value="Hard Boiled Candy"
                 name="radio-button"
               />
-              Hard Boiled Candy
+              HARD BOILED CANDY
             </label>
             <label>
               <input type="radio" value="Soft Candy" name="radio-button" />
-              Soft Candy
+              SOFT CANDY
             </label>
             <label>
               <input type="radio" value="Licourice" name="radio-button" />
-              Licourice
+              LIQUORICE
             </label>
             <label>
               <input
@@ -608,15 +608,15 @@ export const Shop = ({ match }) => {
                 value="Powder And Sherbets"
                 name="radio-button"
               />
-              Powder And Sherbets
+              POWDER AND SHERBETS
             </label>
             <label>
               <input type="radio" value="Toffee" name="radio-button" />
-              Toffee
+              TOFFEE
             </label>
             <label>
               <input type="radio" value="Chocolate" name="radio-button" />
-              Chocolate
+              CHOCOLATE
             </label>
           </form>
         </Collapsible>
@@ -638,11 +638,11 @@ export const Shop = ({ match }) => {
               </label>
               <label>
                 <input type="radio" value="Jolly Rancher" name="radio-button" />
-                Jolly Rancher
+                JOLLY RANCHER
               </label>
               <label>
                 <input type="radio" value="Calypso" name="radio-button" />
-                Calypso
+                CALYPSO
               </label>
               <label>
                 <input type="radio" value="M-And-Ms" name="radio-button" />
@@ -650,39 +650,43 @@ export const Shop = ({ match }) => {
               </label>
               <label>
                 <input type="radio" value="Sour Patch" name="radio-button" />
-                Sour Patch
+                SOUR PATCH
               </label>
               <label>
                 <input type="radio" value="Fanta" name="radio-button" />
-                Fanta
+                FANTA
               </label>
               <label>
                 <input type="radio" value="Nestle" name="radio-button" />
-                Nestle
+                NESTLE
               </label>
               <label>
                 <input type="radio" value="Hersheys" name="radio-button" />
-                Hershey's
+                HERSHEY'S
               </label>
               <label>
                 <input type="radio" value="Twix" name="radio-button" />
-                Twix
+                TWIX
               </label>
               <label>
                 <input type="radio" value="Kool-Aid" name="radio-button" />
-                Kool-Aid
+                KOOL-AID
               </label>
               <label>
                 <input type="radio" value="Warheads" name="radio-button" />
-                Warheads
+                WARHEADS
+              </label>
+              <label>
+                <input type="radio" value="Reeses" name="radio-button" />
+                REESE's
               </label>
               <label>
                 <input type="radio" value="Laffy Taffy" name="radio-button" />
-                Laffy Taffy
+                LAFFY TAFFY
               </label>
               <label>
                 <input type="radio" value="Dr Pepper" name="radio-button" />
-                Dr Pepper
+                DR PEPPER
               </label>
               <label>
                 <input type="radio" value="CAndC" name="radio-button" />
@@ -690,39 +694,39 @@ export const Shop = ({ match }) => {
               </label>
               <label>
                 <input type="radio" value="SweedishFish" name="radio-button" />
-                Swedish Fish
+                SWEDISH FISH
               </label>
               <label>
                 <input type="radio" value="Gatorade" name="radio-button" />
-                Gatorade
+                GATORADE
               </label>
               <label>
                 <input type="radio" value="Cheetos" name="radio-button" />
-                Cheetos
+                CHEETOS
               </label>
               <label>
                 <input type="radio" value="Herrs" name="radio-button" />
-                Herrs
+                HERRS
               </label>
               <label>
                 <input type="radio" value="Lifesavers" name="radio-button" />
-                Lifesavers
+                LIFESAVERS
               </label>
               <label>
                 <input type="radio" value="Mike And Ike" name="radio-button" />
-                Mike & Ike
+                MIKE & IKE
               </label>
               <label>
                 <input type="radio" value="Hostess" name="radio-button" />
-                Hostess
+                HOSTESS
               </label>
               <label>
                 <input type="radio" value="Mrs Freshely" name="radio-button" />
-                Mrs Freshley
+                MRS FRESHLEYS
               </label>
               <label>
                 <input type="radio" value="Ice Breakers" name="radio-button" />
-                Ice Breakers
+                ICE BREAKERS
               </label>
             </form>
           </ul>
