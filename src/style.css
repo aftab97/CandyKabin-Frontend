@@ -2345,6 +2345,8 @@ ul {
   display: flex;
   text-align: center;
   justify-content: center;
+  position: relative;
+  z-index: 5;
 }
 
 .page-number-container > h2 {
