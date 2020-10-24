@@ -197,7 +197,7 @@ export const ShoppingList = () => {
         >
           <tr
             className="checkount-table-header"
-            style={{ backgroundColor: "#e57098" }}
+            style={{ backgroundColor: "#ff1694" }}
           >
             <th style={{ paddingTop: 10, paddingBottom: 10 }}>
               Your Order Details

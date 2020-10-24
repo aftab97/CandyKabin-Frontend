@@ -43,7 +43,7 @@ import sliderNew5 from "../../img/bang-banner.mp4";
 import sliderNew6 from "../../img/calpyso-banner.jpeg";
 import sliderNew7 from "../../img/c&c-banner.jpeg";
 
-import logo from "../../img/logo-pink-new.png";
+import logo from "../../img/parallax-img.png";
 
 import { Helmet } from "react-helmet";
 

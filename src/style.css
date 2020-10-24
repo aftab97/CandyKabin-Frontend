@@ -1573,7 +1573,7 @@ td {
 
 .StripeCheckout > span {
   background-color: var(--text-color) !important;
-  color: black !important;
+  color: white !important;
   border-radius: 0 !important;
   background-image: none !important;
 }
@@ -1596,6 +1596,7 @@ td {
   box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   text-shadow: rgba(0, 0, 0, 0.25) 0px -1px 0px;
   background-color: var(--text-color);
+  color: white;
 }
 
 /* styling for radio buttons */
@@ -2127,7 +2128,7 @@ ul {
 }
 
 .parallax-block > img {
-  width: 50vw;
+  width: 33vw;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -2613,8 +2614,10 @@ ul {
 }
 
 .block-2-title {
-  height: 20vw;
-  width: 40vw;
+  position: relative;
+  top: 50px;
+  height: 17vw;
+  width: 34vw;
 }
 
 .block-2-title-container {
