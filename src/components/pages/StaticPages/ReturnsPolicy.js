@@ -9,7 +9,7 @@ export const ReturnsPolicy = () => {
         <title>Candy Kabin - PRODUCT RETURNS</title>
         <meta
           name="description"
-          content="You may return unopened items within 7 days of delivery ... contact us directly on +44 7821 127312"
+          content="You may return unopened items within 7 days of delivery ... contact us directly on +44 7857 563943"
         />
         <meta
           name="keywords"
@@ -42,7 +42,7 @@ export const ReturnsPolicy = () => {
         <br />
         <p>
           Should you have any questions regarding an order please contact us
-          directly on +44 7821 127312.
+          directly on +44 7857 563943.
         </p>
 
         <br />

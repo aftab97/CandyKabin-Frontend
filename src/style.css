@@ -2711,6 +2711,10 @@ ul {
     top: 0px;
   }
 
+  .slider-segment {
+    display: none;
+  }
+
   .ck-banner {
     display: none;
   }

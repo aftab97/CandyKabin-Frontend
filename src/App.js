@@ -305,7 +305,7 @@ export default function App() {
                     path="/delivery-information"
                     component={DeliveryInformation}
                   />
-                  <Route path="/returns-policy" component={ReturnsPolicy} />
+                  <Route path="/contact-us" component={ReturnsPolicy} />
                   <Route path="/about-us" component={AboutUs} />
                   <Route path="/privacy-policy" component={PrivacyPolicy} />
                 </Switch>

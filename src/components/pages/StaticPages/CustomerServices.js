@@ -27,7 +27,7 @@ export const CustomerServices = () => {
           enquiries. Should you need any help ordering a product, wish to check
           availability, have questions regarding allergens or anything that
           relates to our products please feel free to contact our team directly
-          on +44 7821 127312.
+          on +44 7857 563943.
         </p>
         <br />
         <h4>I'm new, how do I order?</h4>

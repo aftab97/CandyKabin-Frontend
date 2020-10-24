@@ -69,11 +69,11 @@ export const AllergyInformation = () => {
           <br />
           <br />
           <span style={{ fontWeight: 600 }}>
-            Enquiries - Email: candykabin@gmail.com
+            Enquiries - Email: enquiries@candykabin.co.uk
           </span>
           <br />
           <br />
-          <span style={{ fontWeight: 600 }}>Telephone: +44 7821 127312</span>
+          <span style={{ fontWeight: 600 }}>Telephone: +44 7857 563943</span>
         </p>
         <br />
         <br />

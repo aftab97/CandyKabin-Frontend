@@ -292,7 +292,7 @@ export const NewPickAndMix = () => {
         <p>
           All sweets are preset to 50g for 50p. Enjoy the most delicious,
           softest and freshest sweets chosen by yourself and our team of sweet
-          pickers will put togather your combination of sweets!
+          pickers will put together your combination of sweets!
         </p>
         <br />
         <p>

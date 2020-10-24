@@ -153,7 +153,7 @@ export default function Home() {
         <div className="slider-block">
           <br />
           <Slider {...settingsMain} className="homepage-slider">
-            <div>
+            <div className="slider-segment">
               <Link to="/search/rap snacks?">
                 <video
                   loop
@@ -164,7 +164,7 @@ export default function Home() {
                 />
               </Link>
             </div>
-            <div>
+            <div className="slider-segment">
               <Link to="/search/jolly%20rancher?">
                 <video
                   loop
@@ -175,7 +175,7 @@ export default function Home() {
                 />
               </Link>
             </div>
-            <div>
+            <div className="slider-segment">
               <Link to="/search/sour%20patch?">
                 <video
                   loop
@@ -186,7 +186,7 @@ export default function Home() {
                 />
               </Link>
             </div>
-            <div>
+            <div className="slider-segment">
               <a href="/search/pop%20tarts?">
                 <video
                   loop
@@ -197,22 +197,22 @@ export default function Home() {
                 />
               </a>
             </div>
-            <div>
+            <div className="slider-segment">
               <Link to="/search/takis?">
                 <video loop autoPlay src={sliderNew4} className="videoMobile" />
               </Link>
             </div>
-            <div>
+            <div className="slider-segment">
               <Link to="/search/bang?">
                 <video loop autoPlay src={sliderNew5} className="videoMobile" />
               </Link>
             </div>
-            <div>
+            <div className="slider-segment">
               <Link to="/search/calypso?">
                 <img src={sliderNew6} className="videoMobile" />
               </Link>
             </div>
-            <div>
+            <div className="slider-segment">
               <Link to="/search/c%20&%20c?">
                 <img src={sliderNew7} className="videoMobile" />
               </Link>

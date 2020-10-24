@@ -18,7 +18,7 @@ export const Success = () => {
       <div className="success-page">
         <img src={greenTick} className="green-tick" />
         <h2>
-          Congratulations on your order! You will recieve a email soon detailing
+          Congratulations on your order! You will receive a email soon detailing
           your full order.
         </h2>
       </div>

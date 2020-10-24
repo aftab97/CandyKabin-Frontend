@@ -45,10 +45,10 @@ export const FrequentlyAskedQuestions = () => {
           Our Postal Address is: Candy Kabin, 14-16 Newgate, Rochdale, OL16 1BA
         </p>
         <br />
-        <p>By Phone number: +44 7821 127312</p>
+        <p>By Phone number: +44 7857 563943</p>
         <br />
 
-        <p>By Email: candykabin@gmail.com</p>
+        <p>By Email: enquiries@candykabin.co.uk</p>
         <br />
         <h4>How Can I Pay?</h4>
         <p>
@@ -117,7 +117,7 @@ export const FrequentlyAskedQuestions = () => {
         <br />
 
         <h4>Can you Guide me Through an Order</h4>
-        <p>Of course, please contact us directly on +44 7821 127312.</p>
+        <p>Of course, please contact us directly on +44 7857 563943.</p>
         <br />
         <h4>Can I change or amend my order after it has been placed?</h4>
         <p>
