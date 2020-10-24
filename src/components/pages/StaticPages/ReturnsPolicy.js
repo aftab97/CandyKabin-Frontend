@@ -6,7 +6,7 @@ export const ReturnsPolicy = () => {
     <div className="static-page">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Candy Kabin - PRODUCT RETURNS</title>
+        <title>Candy Kabin - CONTACT US</title>
         <meta
           name="description"
           content="You may return unopened items within 7 days of delivery ... contact us directly on +44 7857 563943"
@@ -44,6 +44,9 @@ export const ReturnsPolicy = () => {
           Should you have any questions regarding an order please contact us
           directly on +44 7857 563943.
         </p>
+        <br />
+        <p>Telephone: +44 7857 563943</p>
+        <p>Email: enquiries@candykabin.co.uk</p>
 
         <br />
       </div>

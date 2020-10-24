@@ -2121,14 +2121,12 @@ ul {
   top: -15px;
   display: block;
   /* display: table-cell; */
-  padding-top: 50px;
-  padding-bottom: 50px;
   /* justify-content: center; */
   margin: 0;
 }
 
 .parallax-block > img {
-  width: 33vw;
+  width: 40vw;
   margin-left: auto;
   margin-right: auto;
   display: block;
