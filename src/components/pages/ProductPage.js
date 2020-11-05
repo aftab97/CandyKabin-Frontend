@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useLayoutEffect } from "react";
 import { stringifyUrl } from "query-string";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -220,6 +220,85 @@ export const ProductPage = ({ match, location, history }) => {
     }
   };
 
+  const handleNormalPurchase = (e) =>{
+    
+    let productName = document.querySelector(".i-title ").innerHTML;
+    let pickedAmount = parseInt(document.querySelector(".i-amount").innerHTML);
+    let data = parseFloat(
+      document.querySelector(".i-product-price").childNodes[1].data
+    );
+    let id = document.querySelector(".add-to-basket-button").id;
+
+    let image = document.querySelector(".i-image > img");
+
+    let nonParsedWeight = document.querySelector(".i-product-weight")
+      .childNodes[0].data;
+
+    let weight = parseInt(nonParsedWeight);
+
+    let totalCost = pickedAmount * data;
+
+      incrementCounter();
+      setShoppingCart([
+        ...shoppingCart,
+        {
+          id,
+          productName,
+          amount: 1,
+          price: data,
+          weight,
+          orderNo: count,
+          imageSrc: image.src,
+          totalCost,
+          UUID: "",
+          subName: "",
+        },
+      ]);
+
+      let finalAmount = [
+        ...shoppingCart,
+        {
+          id,
+          productName,
+          amount: 1,
+          price: data,
+          weight,
+          orderNo: count,
+          imageSrc: image.src,
+          totalCost,
+          UUID: "",
+          subName: "",
+        },
+      ];
+
+      var arr2 = finalAmount.reduce((a, b) => {
+        var i = a.findIndex((x) => x.productName === b.productName);
+        return (
+          i === -1
+            ? a.push({
+                id: b.id,
+                productName: b.productName,
+                amount: b.amount,
+                price: b.price,
+                weight: b.weight,
+                orderNo: b.orderNo,
+                imageSrc: b.imageSrc,
+                totalCost: b.totalCost,
+                UUID: b.UUID,
+                subName: b.subName,
+              })
+            : ((a[i].amount += b.amount), (a[i].totalCost += b.totalCost)),
+          a
+        );
+      }, []);
+
+      setShoppingCart(arr2);
+      localStorage.setItem("basket", JSON.stringify(arr2));
+
+      alert.success("ADDED TO BASKET");
+    
+  }
+
   const settings = {
     dots: true,
     infinite: true,
@@ -229,6 +308,96 @@ export const ProductPage = ({ match, location, history }) => {
     slidersToScroll: 1,
   };
 
+  useEffect(()=>{
+    var screenWidth = window.screen.availWidth;
+
+    console.log(screenWidth)
+  },[])
+
+
+  const handleMouseMove = (e) =>{
+    //Movement Animation to happen
+    const card = document.querySelector(".card-2");
+    const container = document.querySelector(".container-2");
+    
+    //Items
+    const title = document.querySelector(".title-2");
+    const sneaker = document.querySelector(".sneaker img");
+    const purchase = document.querySelector(".purchase");
+    const description = document.querySelector(".info h3");
+    const sizes = document.querySelector(".sizes");
+    const price = document.querySelector(".price-2");
+
+    
+
+    
+
+    if (window.screen.availWidth > 600) {
+      container.addEventListener("mousemove", (e) => {
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      });
+    }
+    
+  }
+
+  const handleMouseEnter = () =>{
+     //Movement Animation to happen
+     const card = document.querySelector(".card-2");
+     const container = document.querySelector(".container-2");
+     
+     //Items
+     const title = document.querySelector(".title-2");
+     const sneaker = document.querySelector(".sneaker img");
+     const purchase = document.querySelector(".purchase");
+     const description = document.querySelector(".info h3");
+     const sizes = document.querySelector(".sizes");
+     const price = document.querySelector(".price-2");
+
+
+     if (window.screen.availWidth > 600) {
+    container.addEventListener("mouseenter", () => {
+        card.style.transition = "none";
+        //Popout
+        title.style.transform = "translateZ(150px)";
+        price.style.transform = "translateZ(150px)";
+        sneaker.style.transform = "translateZ(200px) rotateZ(-45deg)";
+        description.style.transform = "translateZ(125px)";
+        sizes.style.transform = "translateZ(100px)";
+        purchase.style.transform = "translateZ(75px)";
+      });
+    }
+  }
+
+  const handleMouseLeave = () =>{
+    //Movement Animation to happen
+    const card = document.querySelector(".card-2");
+    const container = document.querySelector(".container-2");
+    
+    //Items
+    const title = document.querySelector(".title-2");
+    const price = document.querySelector(".price-2");
+    const sneaker = document.querySelector(".sneaker img");
+    const purchase = document.querySelector(".purchase");
+    const description = document.querySelector(".info h3");
+    const sizes = document.querySelector(".sizes");
+
+    if (window.screen.availWidth > 600) {
+    //Animate Out
+    container.addEventListener("mouseleave", () => {
+      card.style.transition = "all 0.5s ease";
+      card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+      //Popback
+      title.style.transform = "translateZ(0px)";
+      price.style.transform = "translateZ(0px)";
+      sneaker.style.transform = "translateZ(0px) rotateZ(0deg)";
+      description.style.transform = "translateZ(0px)";
+      sizes.style.transform = "translateZ(0px)";
+      purchase.style.transform = "translateZ(0px)";
+    });
+  }
+  }
   return (
     <div className="individual-product-page">
       {product ? (
@@ -265,17 +434,124 @@ export const ProductPage = ({ match, location, history }) => {
         </div>
       </button>
 
+     
+
       {product ? (
         <div className="i-product-container">
           <div className="i-title-image-subDescription-container">
             <div className="i-title-image-container">
-              <div className="i-title-container hvr-grow2">
+              
+              <div className="i-title-container hvr-grow2" style={{display:"none"}}>
                 <h2>
                   <span className="i-title">{product.productName}</span>
                 </h2>
               </div>
-              <div className="i-image hvr-grow2">
+              
+
+              <div className="i-image hvr-grow2" style={{display:"none"}}>
                 <img src={product.imageURL} alt={product.productName} />
+              </div>
+
+              <div className="container-2 " onMouseMove={handleMouseMove} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                <div className="card-2">
+                  <div className="sneaker">
+                    <div className="circle"></div>
+                    <img src={product.imageURL} alt={product.productName} className="sneaker-img"/>
+                  </div>
+                  <div className="info">
+                    <h1 className="title-2">{product.productName}</h1>
+                    <h2 className="price-2">£{(product.price / 100).toFixed(2)}</h2>
+                    <h3>
+                      {product.description}
+                      <br/>
+                      {product.subDescription1 ? <><br/>{product.subDescription1}</>:<></>}
+                      {product.subDescription2 ? <><br/>{product.subDescription2}</>:<></>}
+                      {product.subDescription3 ? <><br/>{product.subDescription3}</>:<></>}
+                      {product.subDescription4 ? <><br/>{product.subDescription4}</>:<></>}
+                      {product.subDescription5 ? <><br/>{product.subDescription5}</>:<></>}
+                      {product.subDescription6 ? <><br/>{product.subDescription6}</>:<></>}
+                    </h3>
+                    <div className="sizes">
+                    {product.kosher ? (
+                  <div className="dietary">
+                    <img
+                      src={kosherLogo}
+                      className="dietary-img"
+                      alt="kosher"
+                    />
+                  </div>
+                ) : (
+                  <></>
+                )}
+
+                {product.fatFree ? (
+                  <div className="dietary">
+                    <img src={fatFree} className="dietary-img" alt="fatFree" />
+                  </div>
+                ) : (
+                  <></>
+                )}
+
+                {product.vegetarian ? (
+                  <div className="dietary">
+                    <img
+                      src={vegetarianLogo}
+                      className="dietary-img"
+                      alt="vegetarian"
+                    />
+                  </div>
+                ) : (
+                  <></>
+                )}
+
+                {product.halal ? (
+                  <div className="dietary">
+                    <img src={halalLogo} className="dietary-img" alt="halal" />
+                  </div>
+                ) : (
+                  <></>
+                )}
+
+                {product.vegan ? (
+                  <div className="dietary">
+                    <img src={veganLogo} className="dietary-img" alt="vegan" />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {product.sugarFree ? (
+                  <div className="dietary">
+                    <img
+                      src={sugarFreelogo}
+                      className="dietary-img"
+                      alt="sugar free"
+                    />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {product.glutenFree ? (
+                  <div className="dietary">
+                    <img
+                      src={glutenFreeLogo}
+                      className="dietary-img"
+                      alt="gluten free"
+                    />
+                  </div>
+                ) : (
+                  <></>
+                )}
+
+                      {/* <button>39</button>
+                      <button>40</button>
+                      <button class="active">42</button>
+                      <button>44</button> */}
+                    </div>
+                    <div class="purchase">
+                      <button onClick={handleNormalPurchase}>Purchase</button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {product.ingredients ? (
@@ -318,7 +594,7 @@ export const ProductPage = ({ match, location, history }) => {
             </div>
 
             <div className="i-sub-description-container">
-              <ul className="i-sub-description hvr-grow2">
+              <ul className="i-sub-description hvr-grow2" style={{display:"none"}}>
                 {product.subDescription1 ? (
                   <li className="hvr-grow">
                     🍭
@@ -405,7 +681,11 @@ export const ProductPage = ({ match, location, history }) => {
                 </div>
               </div>
 
-              <div className="i-dietary-container hvr-grow2">
+              
+            </div>
+          </div>
+
+          <div className="i-dietary-container hvr-grow2" style={{display:"none"}}>
                 {product.kosher ? (
                   <div className="dietary">
                     <img
@@ -476,15 +756,13 @@ export const ProductPage = ({ match, location, history }) => {
                   <></>
                 )}
               </div>
-            </div>
-          </div>
 
           <div className="i-product-description-container hvr-grow2">
-            {product.description ? (
+            {product.ingredients ? (
               <p className="i-product-description">
-                <Emoji text=":fire::fire::fire::fire:" />
-                {product.description}
-                <Emoji text=":fire::fire::fire::fire:" />
+                <Emoji text=":fire::fire:" />
+                {product.ingredients}
+                <Emoji text=":fire::fire:" />
               </p>
             ) : (
               <></>
