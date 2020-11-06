@@ -291,12 +291,10 @@ export const ProductPage = ({ match, location, history }) => {
           a
         );
       }, []);
-
+      
       setShoppingCart(arr2);
       localStorage.setItem("basket", JSON.stringify(arr2));
-
       alert.success("ADDED TO BASKET");
-    
   }
 
   const settings = {
@@ -307,13 +305,6 @@ export const ProductPage = ({ match, location, history }) => {
     sliderToShow: 1,
     slidersToScroll: 1,
   };
-
-  useEffect(()=>{
-    var screenWidth = window.screen.availWidth;
-
-    console.log(screenWidth)
-  },[])
-
 
   const handleMouseMove = (e) =>{
     //Movement Animation to happen
@@ -413,7 +404,8 @@ export const ProductPage = ({ match, location, history }) => {
       ) : (
         <></>
       )}
-      <button
+
+     <button
         onClick={goBackButton}
         className="i-go-back-button-container hvr-grow2"
       >
@@ -546,6 +538,7 @@ export const ProductPage = ({ match, location, history }) => {
                       <button>40</button>
                       <button class="active">42</button>
                       <button>44</button> */}
+
                     </div>
                     <div class="purchase">
                       <button onClick={handleNormalPurchase}>Purchase</button>
@@ -779,9 +772,11 @@ export const ProductPage = ({ match, location, history }) => {
 
           <div className="i-product-weight">{product.weight}</div>
         </div>
-      ) : (
+       ) : (
         <div>loading...</div>
-      )}
+      )} 
+
+
     </div>
   );
 };
