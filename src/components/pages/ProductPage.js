@@ -462,6 +462,12 @@ export const ProductPage = ({ match, location, history }) => {
                       {product.subDescription4 ? <><br/>{product.subDescription4}</>:<></>}
                       {product.subDescription5 ? <><br/>{product.subDescription5}</>:<></>}
                       {product.subDescription6 ? <><br/>{product.subDescription6}</>:<></>}
+                      {product.ingredients ? (
+                        <><br/><br/>{product.ingredients}</>
+                        
+                      ) : (
+                        <></>
+                      )}
                     </h3>
                     <div className="sizes">
                     {product.kosher ? (
@@ -547,13 +553,13 @@ export const ProductPage = ({ match, location, history }) => {
                 </div>
               </div>
 
-              {product.ingredients ? (
+              {/* {product.ingredients ? (
                 <div className="i-ingredients">
                   <p>{product.ingredients}</p>
                 </div>
               ) : (
                 <></>
-              )}
+              )} */}
 
               <div className="i-price-container-mobile">
                 <div className="i-price-inner-container">
@@ -750,7 +756,7 @@ export const ProductPage = ({ match, location, history }) => {
                 )}
               </div>
 
-          <div className="i-product-description-container hvr-grow2">
+          {/* <div className="i-product-description-container hvr-grow2">
             {product.ingredients ? (
               <p className="i-product-description">
                 <Emoji text=":fire::fire:" />
@@ -760,15 +766,15 @@ export const ProductPage = ({ match, location, history }) => {
             ) : (
               <></>
             )}
-          </div>
+          </div> */}
 
-          {product.ingredients ? (
+          {/* {product.ingredients ? (
             <div className="i-ingredients-mobile">
               <p>{product.ingredients}</p>
             </div>
           ) : (
             <></>
-          )}
+          )} */}
 
           <div className="i-product-weight">{product.weight}</div>
         </div>
