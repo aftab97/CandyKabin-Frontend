@@ -2749,10 +2749,13 @@ ul {
   transition: all 0.75s ease-out;
 }
 
+.price-2 {
+  color: var(--text-color);
+}
+
 .info h2 {
   font-size: 1.7rem;
   transition: all 0.75s ease-out;
-  color: #f54642;
 }
 
 .info h3 {
@@ -2789,7 +2792,7 @@ button.active {
 .purchase button {
   width: 100%;
   padding: 1rem 0rem;
-  background: #f54642;
+  background: var(--text-color);
   border: none;
   color: white;
   cursor: pointer;
