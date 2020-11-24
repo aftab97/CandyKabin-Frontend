@@ -233,6 +233,22 @@ body {
   font-size: 2vw;
 }
 
+.product-discount {
+  margin-top: 10px;
+  color: var(--secondary-color);
+  font-size: 2vw;
+}
+
+.discount {
+  border: 1px solid var(--secondary-color);
+  top: 45%;
+  position: absolute;
+  width: 70px;
+  transform: rotate(15deg);
+  color: red;
+  display: flex;
+}
+
 .product-basket-button {
   margin-top: 10px;
   color: #fff !important;
@@ -2751,6 +2767,7 @@ ul {
 
 .price-2 {
   color: var(--text-color);
+  width: 70px;
 }
 
 .info h2 {
@@ -3401,6 +3418,14 @@ button.active {
   .individual-product-page {
     margin-right: 5vw;
     margin-left: 5vw;
+  }
+
+  .product-discount {
+    font-size: 2em;
+  }
+  .discount {
+    top: unset;
+    transform: translate(0, -15px);
   }
 }
 

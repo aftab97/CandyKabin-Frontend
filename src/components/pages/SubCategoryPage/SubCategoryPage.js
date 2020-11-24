@@ -6,6 +6,9 @@ import { useHistory } from "react-router-dom";
 import Emoji from "react-emoji-render";
 import { useAlert } from "react-alert";
 import { Helmet } from "react-helmet";
+import {ReactComponent as DiagonalLine} from "../../../icons/diagonal-line.svg";
+ 
+
 
 export const SubCategoryPage = (params) => {
   //set NONE to dietarty by default
@@ -171,6 +174,14 @@ export const SubCategoryPage = (params) => {
       e.currentTarget.parentNode.querySelector(".product-price").childNodes[1]
         .data
     );
+
+    let discount = e.currentTarget.parentNode.querySelector(".product-discount");
+
+    if (discount !== null){
+      console.log("discount exists")
+      data =  parseFloat(e.currentTarget.parentNode.querySelector(".product-discount").childNodes[1]
+      .data);
+    } 
 
     let parsedInt = parseFloat(data);
 
@@ -356,7 +367,11 @@ export const SubCategoryPage = (params) => {
           <h2 onClick={handleRedirect} className="product-title">
             {data.productName}
           </h2>
-          <h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>
+
+          {data.discountPrice ? <h3 className="product-price">£{(data.price / 100).toFixed(2)}<div className="discount"></div></h3>:<h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>}
+          
+          {data.discountPrice ? <h3 className="product-discount">£{(data.discountPrice / 100).toFixed(2)}</h3>:<></>}
+          
           <div className="quantity">
             <button className="product-page-button" onClick={increment}>
               +
@@ -379,11 +394,7 @@ export const SubCategoryPage = (params) => {
       )))
     : handleTimeOut();
 
-  useEffect(() => {
-    // if (document.querySelector(`#page-${currentPage + 1}`) !== null) {
-    //   document.querySelector(`#${currentPage + 1}`).style.display = "block";
-    // }
-  }, [currentPage]);
+  
 
   const handlePageChange2 = (e) => {
     if (e.currentTarget.childNodes[0].data === "<") {

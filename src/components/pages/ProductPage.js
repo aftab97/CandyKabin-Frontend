@@ -68,11 +68,20 @@ export const ProductPage = ({ match, location, history }) => {
   };
 
   const handleClick = (e) => {
-    let productName = document.querySelector(".i-title ").innerHTML;
+    let productName = document.querySelector(".i-title ").textContent.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
     let pickedAmount = parseInt(document.querySelector(".i-amount").innerHTML);
     let data = parseFloat(
       document.querySelector(".i-product-price").childNodes[1].data
     );
+
+    // check if discount available
+    let discount = document.querySelector(".i-product-price-discount");
+
+    if (discount !== null){
+      data = parseFloat(
+        document.querySelector(".i-product-price-discount").childNodes[1].data)
+    }
+
     let id = e.currentTarget.querySelector(".add-to-basket-button").id;
 
     let image = document.querySelector(".i-image > img");
@@ -147,13 +156,23 @@ export const ProductPage = ({ match, location, history }) => {
   };
 
   const handleClick2 = (e) => {
-    let productName = document.querySelector(".i-title ").innerHTML;
+    let productName = document.querySelector(".i-title ").textContent.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
     let pickedAmount = parseInt(
       document.querySelector(".amount-mobile").innerHTML
     );
     let data = parseFloat(
       document.querySelector(".i-product-price").childNodes[1].data
     );
+
+    // check if discount available
+    let discount = document.querySelector(".i-product-price-discount");
+
+    if (discount !== null){
+      data = parseFloat(
+        document.querySelector(".i-product-price-discount").childNodes[1].data)
+    }
+
+    
     let id = e.currentTarget.querySelector(".add-to-basket-button").id;
 
     let image = document.querySelector(".i-image > img");
@@ -222,11 +241,23 @@ export const ProductPage = ({ match, location, history }) => {
 
   const handleNormalPurchase = (e) =>{
     
-    let productName = document.querySelector(".i-title ").innerHTML;
+    let productName = document.querySelector(".i-title ").textContent.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+
+    console.log("PRODUCT NAME: " + productName)
     let pickedAmount = parseInt(document.querySelector(".i-amount").innerHTML);
     let data = parseFloat(
       document.querySelector(".i-product-price").childNodes[1].data
     );
+
+
+    // check if discount available
+    let discount = document.querySelector(".i-product-price-discount");
+
+    if (discount !== null){
+      data = parseFloat(
+        document.querySelector(".i-product-price-discount").childNodes[1].data)
+    }
+
     let id = document.querySelector(".add-to-basket-button").id;
 
     let image = document.querySelector(".i-image > img");
@@ -345,6 +376,7 @@ export const ProductPage = ({ match, location, history }) => {
      const description = document.querySelector(".info h3");
      const sizes = document.querySelector(".sizes");
      const price = document.querySelector(".price-2");
+     const price3 = document.querySelector(".price-3");
 
 
      if (window.screen.availWidth > 600) {
@@ -357,6 +389,9 @@ export const ProductPage = ({ match, location, history }) => {
         description.style.transform = "translateZ(125px)";
         sizes.style.transform = "translateZ(100px)";
         purchase.style.transform = "translateZ(75px)";
+        if(price3 !== null){
+          price3.style.transform = "translateZ(150px)";
+        }
       });
     }
   }
@@ -369,6 +404,7 @@ export const ProductPage = ({ match, location, history }) => {
     //Items
     const title = document.querySelector(".title-2");
     const price = document.querySelector(".price-2");
+    const price3 = document.querySelector(".price-3");
     const sneaker = document.querySelector(".sneaker img");
     const purchase = document.querySelector(".purchase");
     const description = document.querySelector(".info h3");
@@ -386,6 +422,10 @@ export const ProductPage = ({ match, location, history }) => {
       description.style.transform = "translateZ(0px)";
       sizes.style.transform = "translateZ(0px)";
       purchase.style.transform = "translateZ(0px)";
+
+      if (price3 !== null){
+        price3.style.transform = "translateZ(0px)";
+      }
     });
   }
   }
@@ -452,7 +492,9 @@ export const ProductPage = ({ match, location, history }) => {
                   </div>
                   <div className="info">
                     <h1 className="title-2">{product.productName}</h1>
-                    <h2 className="price-2">£{(product.price / 100).toFixed(2)}</h2>
+                    {product.discountPrice? <h2 className="price-2">£{(product.price / 100).toFixed(2)}<div className="discount"></div></h2>:<h2 className="price-2">£{(product.price / 100).toFixed(2)}</h2>}
+                    {product.discountPrice? <h2 className="price-3">£{(product.discountPrice / 100).toFixed(2)}</h2>:<></>}
+                    
                     <h3>
                       {product.description}
                       <br/>
@@ -651,6 +693,12 @@ export const ProductPage = ({ match, location, history }) => {
                   <h3 className="i-product-price">
                     £{(product.price / 100).toFixed(2)}
                   </h3>
+                  
+                  {product.discountPrice ? 
+                  <h3 className="i-product-price-discount" style={{display:"none"}}>
+                    £{(product.discountPrice / 100).toFixed(2)}
+                  </h3>:<></>
+                  }
                 </div>
                 <div>
                   <button

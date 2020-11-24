@@ -43,6 +43,14 @@ export const Search = ({ match }) => {
         .data
     );
 
+    let discount = e.currentTarget.parentNode.querySelector(".product-discount");
+
+    if (discount !== null){
+      console.log("discount exists")
+      data =  parseFloat(e.currentTarget.parentNode.querySelector(".product-discount").childNodes[1]
+      .data);
+    } 
+    
     let parsedInt = parseFloat(data);
 
     let pickedAmount = parseInt(
@@ -229,7 +237,10 @@ export const Search = ({ match }) => {
           <h2 onClick={handleRedirect} className="product-title">
             {data.productName}
           </h2>
-          <h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>
+          {data.discountPrice ? <h3 className="product-price">£{(data.price / 100).toFixed(2)}<div className="discount"></div></h3>:<h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>}
+          
+          {data.discountPrice ? <h3 className="product-discount">£{(data.discountPrice / 100).toFixed(2)}</h3>:<></>}
+          
           <div className="quantity">
             <button className="product-page-button" onClick={increment}>
               +
