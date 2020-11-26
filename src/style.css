@@ -2726,6 +2726,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 .card-2 {
   transform-style: preserve-3d;
@@ -2787,7 +2788,21 @@ ul {
   justify-content: space-between;
   transition: all 0.75s ease-out;
 }
-.sizes button {
+.i-quantity-container {
+  margin-top: 10px;
+  transition: all 0.75s ease-out;
+}
+
+.i-quantity-container h4 {
+  margin-bottom: 5px;
+}
+
+.i-quantity {
+  display: flex;
+  justify-content: space-around;
+}
+
+.i-quantity button {
   padding: 0.5rem 2rem;
   background: none;
   border: none;
@@ -2797,7 +2812,7 @@ ul {
   font-weight: bold;
   color: #585858;
 }
-button.active {
+button.active-quantity {
   background: #585858;
   color: white;
 }
@@ -3426,6 +3441,10 @@ button.active {
   .discount {
     top: unset;
     transform: translate(0, -15px);
+  }
+
+  .i-quantity button {
+    padding: 0.5rem 1.5rem;
   }
 }
 

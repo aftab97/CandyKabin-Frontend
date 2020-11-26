@@ -21,6 +21,7 @@ import fatFree from "../../img/dietary/fat-free.png";
 
 export const ProductPage = ({ match, location, history }) => {
   const [product, setProduct] = useState(undefined);
+  let [quantity, setQuantity] = useState(1);
 
   const alert = useAlert();
 
@@ -250,6 +251,8 @@ export const ProductPage = ({ match, location, history }) => {
     );
 
 
+
+
     // check if discount available
     let discount = document.querySelector(".i-product-price-discount");
 
@@ -275,7 +278,7 @@ export const ProductPage = ({ match, location, history }) => {
         {
           id,
           productName,
-          amount: 1,
+          amount: quantity,
           price: data,
           weight,
           orderNo: count,
@@ -291,7 +294,7 @@ export const ProductPage = ({ match, location, history }) => {
         {
           id,
           productName,
-          amount: 1,
+          amount: quantity,
           price: data,
           weight,
           orderNo: count,
@@ -377,6 +380,7 @@ export const ProductPage = ({ match, location, history }) => {
      const sizes = document.querySelector(".sizes");
      const price = document.querySelector(".price-2");
      const price3 = document.querySelector(".price-3");
+     const quantity = document.querySelector(".i-quantity-container") ;
 
 
      if (window.screen.availWidth > 600) {
@@ -388,7 +392,8 @@ export const ProductPage = ({ match, location, history }) => {
         sneaker.style.transform = "translateZ(200px) rotateZ(-45deg)";
         description.style.transform = "translateZ(125px)";
         sizes.style.transform = "translateZ(100px)";
-        purchase.style.transform = "translateZ(75px)";
+        quantity.style.transform = "translateZ(75px)";
+        purchase.style.transform = "translateZ(50px)";
         if(price3 !== null){
           price3.style.transform = "translateZ(150px)";
         }
@@ -409,6 +414,7 @@ export const ProductPage = ({ match, location, history }) => {
     const purchase = document.querySelector(".purchase");
     const description = document.querySelector(".info h3");
     const sizes = document.querySelector(".sizes");
+    const quantity = document.querySelector(".i-quantity-container");
 
     if (window.screen.availWidth > 600) {
     //Animate Out
@@ -422,12 +428,23 @@ export const ProductPage = ({ match, location, history }) => {
       description.style.transform = "translateZ(0px)";
       sizes.style.transform = "translateZ(0px)";
       purchase.style.transform = "translateZ(0px)";
+      quantity.style.transform = "translateZ(0px)";
 
       if (price3 !== null){
         price3.style.transform = "translateZ(0px)";
       }
     });
   }
+  }
+
+  const handleQuantityClick = (e) => {
+
+    setQuantity(parseInt(e.currentTarget.childNodes[0].data))
+
+    // remove all the classes with the class active-quantity
+
+
+
   }
   return (
     <div className="individual-product-page">
@@ -581,13 +598,17 @@ export const ProductPage = ({ match, location, history }) => {
                 ) : (
                   <></>
                 )}
-
-                      {/* <button>39</button>
-                      <button>40</button>
-                      <button class="active">42</button>
-                      <button>44</button> */}
-
-                    </div>
+           </div>
+           
+             <div className="i-quantity-container">
+             <h4>Amount: </h4>
+             <div className="i-quantity">
+                    <button className={quantity===1 ? "active-quantity":<></> } onClick={handleQuantityClick}>1</button>
+                    <button className={quantity===2 ? "active-quantity":<></> } onClick={handleQuantityClick}>2</button>
+                    <button className={quantity===5 ? "active-quantity":<></> } onClick={handleQuantityClick}>5</button>
+                    <button className={quantity===10 ? "active-quantity":<></> } onClick={handleQuantityClick}>10</button>
+             </div>
+             </div>
                     <div class="purchase">
                       <button onClick={handleNormalPurchase}>Purchase</button>
                     </div>
@@ -603,7 +624,7 @@ export const ProductPage = ({ match, location, history }) => {
                 <></>
               )} */}
 
-              <div className="i-price-container-mobile">
+              <div className="i-price-container-mobile" style={{display:"none"}}>
                 <div className="i-price-inner-container">
                   <div className="i-product-price-mobile mobile-button price-mobile-container hvr-grow2">
                     £{(product.price / 100).toFixed(2)}
@@ -685,7 +706,7 @@ export const ProductPage = ({ match, location, history }) => {
                   <></>
                 )}
               </ul>
-              <div className="i-price-basket">
+              <div className="i-price-basket" style={{display:"none"}}>
                 <div
                   className={`i-product-price-container hvr-grow`}
                   index={product.productName}
@@ -824,7 +845,7 @@ export const ProductPage = ({ match, location, history }) => {
             <></>
           )} */}
 
-          <div className="i-product-weight">{product.weight}</div>
+          <div className="i-product-weight" style={{display:"none"}}>{product.weight}</div>
         </div>
        ) : (
         <div>loading...</div>
