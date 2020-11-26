@@ -2782,6 +2782,8 @@ ul {
   color: #585858;
   font-weight: lighter;
   transition: all 0.75s ease-out;
+  max-height: 100px;
+  overflow-y: scroll;
 }
 .sizes {
   display: flex;
