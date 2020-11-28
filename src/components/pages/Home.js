@@ -197,7 +197,7 @@ export default function Home() {
                 />
               </a>
             </div>
-            <div className="slider-segment">
+            {/* <div className="slider-segment">
               <Link to="/search/takis?">
                 <video loop autoPlay src={sliderNew4} className="videoMobile" />
               </Link>
@@ -206,7 +206,7 @@ export default function Home() {
               <Link to="/search/bang?">
                 <video loop autoPlay src={sliderNew5} className="videoMobile" />
               </Link>
-            </div>
+            </div> */}
             <div className="slider-segment">
               <Link to="/search/calypso?">
                 <img src={sliderNew6} className="videoMobile" />
