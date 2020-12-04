@@ -29,10 +29,10 @@ export const AddProducts = () => {
   const [subDescription4, setSubDescription4] = useState(undefined);
   const [subDescription5, setSubDescription5] = useState(undefined);
   const [subDescription6, setSubDescription6] = useState(undefined);
-  const [subDescription7, setSubDescription6] = useState(undefined);
-  const [subDescription8, setSubDescription6] = useState(undefined);
-  const [subDescription9, setSubDescription6] = useState(undefined);
-  const [subDescription10, setSubDescription6] = useState(undefined);
+  const [subDescription7, setSubDescription7] = useState(undefined);
+  const [subDescription8, setSubDescription8] = useState(undefined);
+  const [subDescription9, setSubDescription9] = useState(undefined);
+  const [subDescription10, setSubDescription10] = useState(undefined);
   const [dietary, setDietary] = useState([]);
   const [halal, setHalal] = useState(undefined);
   const [vegetarian, setVegetarian] = useState(undefined);
