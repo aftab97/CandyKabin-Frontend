@@ -705,6 +705,38 @@ export const ProductPage = ({ match, location, history }) => {
                 ) : (
                   <></>
                 )}
+                {product.subDescription7 ? (
+                  <li className="hvr-grow">
+                    🍭
+                    {product.subDescription7}
+                  </li>
+                ) : (
+                  <></>
+                )}
+                {product.subDescription8 ? (
+                  <li className="hvr-grow">
+                    🍭
+                    {product.subDescription8}
+                  </li>
+                ) : (
+                  <></>
+                )}
+                {product.subDescription9 ? (
+                  <li className="hvr-grow">
+                    🍭
+                    {product.subDescription9}
+                  </li>
+                ) : (
+                  <></>
+                )}
+                {product.subDescription10 ? (
+                  <li className="hvr-grow">
+                    🍭
+                    {product.subDescription10}
+                  </li>
+                ) : (
+                  <></>
+                )}
               </ul>
               <div className="i-price-basket" style={{display:"none"}}>
                 <div
