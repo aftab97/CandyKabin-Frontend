@@ -33,6 +33,11 @@ export const AddProducts = () => {
   const [subDescription8, setSubDescription8] = useState(undefined);
   const [subDescription9, setSubDescription9] = useState(undefined);
   const [subDescription10, setSubDescription10] = useState(undefined);
+  const [subDescription11, setSubDescription11] = useState(undefined);
+  const [subDescription12, setSubDescription12] = useState(undefined);
+  const [subDescription13, setSubDescription13] = useState(undefined);
+  const [subDescription14, setSubDescription14] = useState(undefined);
+  const [subDescription15, setSubDescription15] = useState(undefined);
   const [dietary, setDietary] = useState([]);
   const [halal, setHalal] = useState(undefined);
   const [vegetarian, setVegetarian] = useState(undefined);
@@ -216,6 +221,11 @@ export const AddProducts = () => {
       subDescription8,
       subDescription9,
       subDescription10,
+      subDescription11,
+      subDescription12,
+      subDescription13,
+      subDescription14,
+      subDescription15,
       halal,
       vegetarian,
       kosher,
@@ -413,6 +423,56 @@ export const AddProducts = () => {
           name="Sub Description"
           onChange={(e) => {
             setSubDescription10(e.target.value);
+          }}
+        ></textarea>
+      </div>
+      <div>
+        <label>Sub Description 11:</label>
+        <textarea
+          placeholder="Leave blank if no Sub Description..."
+          name="Sub Description"
+          onChange={(e) => {
+            setSubDescription11(e.target.value);
+          }}
+        ></textarea>
+      </div>
+      <div>
+        <label>Sub Description 12:</label>
+        <textarea
+          placeholder="Leave blank if no Sub Description..."
+          name="Sub Description"
+          onChange={(e) => {
+            setSubDescription12(e.target.value);
+          }}
+        ></textarea>
+      </div>
+      <div>
+        <label>Sub Description 13:</label>
+        <textarea
+          placeholder="Leave blank if no Sub Description..."
+          name="Sub Description"
+          onChange={(e) => {
+            setSubDescription13(e.target.value);
+          }}
+        ></textarea>
+      </div>
+      <div>
+        <label>Sub Description 14:</label>
+        <textarea
+          placeholder="Leave blank if no Sub Description..."
+          name="Sub Description"
+          onChange={(e) => {
+            setSubDescription14(e.target.value);
+          }}
+        ></textarea>
+      </div>
+      <div>
+        <label>Sub Description 15:</label>
+        <textarea
+          placeholder="Leave blank if no Sub Description..."
+          name="Sub Description"
+          onChange={(e) => {
+            setSubDescription15(e.target.value);
           }}
         ></textarea>
       </div>

@@ -521,6 +521,15 @@ export const ProductPage = ({ match, location, history }) => {
                       {product.subDescription4 ? <><br/>{product.subDescription4}</>:<></>}
                       {product.subDescription5 ? <><br/>{product.subDescription5}</>:<></>}
                       {product.subDescription6 ? <><br/>{product.subDescription6}</>:<></>}
+                      {product.subDescription7 ? <><br/>{product.subDescription7}</>:<></>}
+                      {product.subDescription8 ? <><br/>{product.subDescription8}</>:<></>}
+                      {product.subDescription9 ? <><br/>{product.subDescription9}</>:<></>}
+                      {product.subDescription10 ? <><br/>{product.subDescription10}</>:<></>}
+                      {product.subDescription11 ? <><br/>{product.subDescription11}</>:<></>}
+                      {product.subDescription12 ? <><br/>{product.subDescription12}</>:<></>}
+                      {product.subDescription13 ? <><br/>{product.subDescription13}</>:<></>}
+                      {product.subDescription14 ? <><br/>{product.subDescription14}</>:<></>}
+                      {product.subDescription15 ? <><br/>{product.subDescription15}</>:<></>}
                       {product.ingredients ? (
                         <><br/><br/>{product.ingredients}</>
                         

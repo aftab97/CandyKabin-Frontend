@@ -2744,7 +2744,7 @@ ul {
   justify-content: center;
 }
 .sneaker img {
-  width: 15rem;
+  width: 25rem;
   z-index: 2;
   transition: all 0.75s ease-out;
 }
