@@ -169,30 +169,6 @@ export const AddProducts = () => {
     if (dietaryArray.includes("GLUTEN FREE")) {
       setGlutenFree(true);
     }
-
-    // if (dietary.map((val) => val === "HALAL")) {
-    //   console.log("true halal");
-    //   //   setHalal(true);
-    // } else if (dietary.map((val) => val === "KOSHER")) {
-    //   console.log("true kosher");
-
-    //   //   setKosher(true);
-    // }
-    // if (dietary.map((val) => val === "VEGAN")) {
-    //   setVegan(true);
-    // }
-    // if (dietary.map((val) => val === "FAT FREE")) {
-    //   setFatFree(true);
-    // }
-    // if (dietary.map((val) => val === "SUGAR FREE")) {
-    //   setSugarFree(true);
-    // }
-    // if (dietary.map((val) => val === "VEGETARIAN")) {
-    //   setVegetarian(true);
-    // }
-    // if (dietary.map((val) => val === "GLUTEN FREE")) {
-    //   setGlutenFree(true);
-    // }
   };
 
   const handleSubmit = () => {
@@ -234,6 +210,7 @@ export const AddProducts = () => {
       sugarFree,
       glutenFree,
       newIn: newProdcut,
+      showOnSearch: true,
     };
 
     const checkLoggedIn = async () => {

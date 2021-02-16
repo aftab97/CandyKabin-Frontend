@@ -2838,6 +2838,14 @@ button.active-quantity {
   position: absolute;
 }
 
+.email-container > form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  /* text-align: center; */
+}
+
 @media only screen and (max-width: 600px) {
   html,
   body {

@@ -3,6 +3,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import { PaymentLookup } from "./AdminPages/PaymentLookup";
 import { AddProducts } from "./AdminPages/AddProducts";
 import { TrackLocations } from "./AdminPages/TrackLocations";
+import { EmailInStock } from "./AdminPages/EmailInStock";
 
 export const index = () => {
   return (
@@ -23,6 +24,11 @@ export const index = () => {
             <Link to="/admin/track-location">TRACK LOCATIONS</Link>
           </button>
         </div>
+        <div>
+          <button className="sidepanel-option">
+            <Link to="/admin/email-in-stock">EMAIL BACK IN STOCK</Link>
+          </button>
+        </div>
       </div>
 
       <Route
@@ -40,6 +46,7 @@ export const index = () => {
         render={() => <AddProducts />}
       />
       <Route path="/admin/track-location" render={() => <TrackLocations />} />
+      <Route path="/admin/email-in-stock" render={() => <EmailInStock />} />
     </div>
   );
 };
