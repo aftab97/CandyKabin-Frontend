@@ -3672,4 +3672,10 @@ body {
   .products-container {
     margin-top: unset;
   }
+  .ticker-container {
+    display: none;
+  }
+  .navbar {
+    margin-top: unset;
+  }
 }
