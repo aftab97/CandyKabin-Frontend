@@ -5,12 +5,34 @@ import BasketContext from "../../../context/BasketContext";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 
+import {
+  FormControl,
+  InputLabel,
+  makeStyles,
+  MenuItem,
+  Select,
+} from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 140,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+  title: {
+    color: "#ff1694",
+  },
+}));
+
 export const Search = ({ match }) => {
   const [products, setProducts] = useState();
   const { shoppingCart, setShoppingCart, count, incrementCounter } = useContext(
     BasketContext
   );
 
+  const classes = useStyles();
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(12);
 
@@ -43,14 +65,18 @@ export const Search = ({ match }) => {
         .data
     );
 
-    let discount = e.currentTarget.parentNode.querySelector(".product-discount");
+    let discount = e.currentTarget.parentNode.querySelector(
+      ".product-discount"
+    );
 
-    if (discount !== null){
-      console.log("discount exists")
-      data =  parseFloat(e.currentTarget.parentNode.querySelector(".product-discount").childNodes[1]
-      .data);
-    } 
-    
+    if (discount !== null) {
+      console.log("discount exists");
+      data = parseFloat(
+        e.currentTarget.parentNode.querySelector(".product-discount")
+          .childNodes[1].data
+      );
+    }
+
     let parsedInt = parseFloat(data);
 
     let pickedAmount = parseInt(
@@ -237,10 +263,23 @@ export const Search = ({ match }) => {
           <h2 onClick={handleRedirect} className="product-title">
             {data.productName}
           </h2>
-          {data.discountPrice ? <h3 className="product-price">£{(data.price / 100).toFixed(2)}<div className="discount"></div></h3>:<h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>}
-          
-          {data.discountPrice ? <h3 className="product-discount">£{(data.discountPrice / 100).toFixed(2)}</h3>:<></>}
-          
+          {data.discountPrice ? (
+            <h3 className="product-price">
+              £{(data.price / 100).toFixed(2)}
+              <div className="discount"></div>
+            </h3>
+          ) : (
+            <h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>
+          )}
+
+          {data.discountPrice ? (
+            <h3 className="product-discount">
+              £{(data.discountPrice / 100).toFixed(2)}
+            </h3>
+          ) : (
+            <></>
+          )}
+
           <div className="quantity">
             <button className="product-page-button" onClick={increment}>
               +
@@ -264,6 +303,34 @@ export const Search = ({ match }) => {
     : handleTimeOut();
   return (
     <div className="products-component-container search-page">
+      <div className="amount-per-page">
+        {
+          <FormControl variant="outlined" className={classes.formControl}>
+            <InputLabel
+              id="demo-simple-select-outlined-label"
+              className={classes.title}
+            >
+              Products Per Page
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-outlined-label"
+              id="demo-simple-select-outlined"
+              value={productsPerPage}
+              onChange={(e) => {
+                setProductsPerPage(e.target.value);
+              }}
+              label="Products Per Page: "
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={40}>Fourty</MenuItem>
+              <MenuItem value={50}>Fifty</MenuItem>
+              <MenuItem value={100}>Hundred</MenuItem>
+            </Select>
+          </FormControl>
+        }
+      </div>
       <div className="products-container">{defaultData}</div>
       <div className="pages-container">
         {pageNumbers.map((page) =>

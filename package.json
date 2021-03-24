@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.11.2",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.7.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -28,6 +29,7 @@
     "react-router-dom": "^5.1.2",
     "react-router-sitemap": "^1.2.0",
     "react-scripts": "3.4.1",
+    "react-scroll-parallax": "^2.3.5",
     "react-slick": "^0.26.1",
     "react-stripe-checkout": "^2.6.3",
     "react-transition-group": "^4.4.1",

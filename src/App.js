@@ -59,9 +59,12 @@ import { CSSTransition } from "react-transition-group";
 import Logo from "./img/logo-pink-new-aftab.png";
 import MobileLogo from "./img/logo-mobile-new.png";
 import WorldEmoji from "./img/worldwide-emoji.png";
-import { TextField } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { IconButton, InputBase, Paper, TextField } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Icon from "@material-ui/core/Icon";
+import SearchIcon from "@material-ui/icons/Search";
 import { Success } from "./components/pages/Checkout/Success";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -227,12 +230,13 @@ export default function App() {
             }}
           >
             <AlertProvider template={AlertTemplate} {...options}>
-              <Basket />
-              {/* <Header />
+              <ParallaxProvider>
+                <Basket />
+                {/* <Header />
               <Navbar /> */}
 
-              <Navbar>
-                {/* <form className="searchbar" onSubmit={handleSearchChange}>
+                <Navbar>
+                  {/* <form className="searchbar" onSubmit={handleSearchChange}>
                   <TextField
                     id="outlined-basic"
                     label="Search product.."
@@ -243,75 +247,76 @@ export default function App() {
                   />
                 </form> */}
 
-                {userData.user ? (
-                  <NavItemLogout
-                    icon={<LogoutIcon onClick={handleMenuClose} />}
+                  {userData.user ? (
+                    <NavItemLogout
+                      icon={<LogoutIcon onClick={handleMenuClose} />}
+                    />
+                  ) : (
+                    <NavItemLogin
+                      icon={<LoginIcon onClick={handleMenuClose} />}
+                    />
+                  )}
+                  <NavItemBasket
+                    icon={<BasketIcon onClick={handleMenuClose} />}
                   />
-                ) : (
-                  <NavItemLogin
-                    icon={<LoginIcon onClick={handleMenuClose} />}
-                  />
-                )}
-                <NavItemBasket
-                  icon={<BasketIcon onClick={handleMenuClose} />}
-                />
-                <NavText text={"MENU"} icon={<CaretIcon />}>
-                  <DropdownMenu></DropdownMenu>
-                </NavText>
-              </Navbar>
+                  <NavText text={"MENU"} icon={<CaretIcon />}>
+                    <DropdownMenu></DropdownMenu>
+                  </NavText>
+                </Navbar>
 
-              <MobileNav />
-              <div
-                className="container"
-                onClick={handleMenuClose}
-                // onMouseOver={mouseLeaveHandle}
-              >
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/login" component={Login} />
-                  {/* <Route path="/adminLogin" component={AdminLogin} />
+                <MobileNav />
+                <div
+                  className="container"
+                  onClick={handleMenuClose}
+                  // onMouseOver={mouseLeaveHandle}
+                >
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/login" component={Login} />
+                    {/* <Route path="/adminLogin" component={AdminLogin} />
                 <Route path="/adminSummary" component={AdminSummary} /> */}
-                  <Route path="/admin" component={index} />
-                  <Route path="/register" component={Register} />
-                  <Route exact path="/products" component={Products} />
-                  <Route path="/products/:id" component={ProductPage} />
-                  <Route path="/search/:id" component={Search} />
-                  <Route path="/shop" component={Shop} />
-                  <Route path="/new-in" component={NewIn} />
-                  <Route path="/pick-and-mix" component={NewPickAndMix} />
-                  <Route
-                    path="/gifts-and-hampers"
-                    component={GiftsAndHampers}
-                  />
-                  <Route path="/dietary" component={Dietary} />
-                  <Route path="/three" component={Three} />
-                  <Route path="/checkout" component={CheckoutPage} />
-                  <Route path="/success" component={Success} />
-                  {/* <Route path="/checkout2" component={CheckoutPage2} /> */}
-                  {/* static pages */}
-                  <Route
-                    path="/customer-services"
-                    component={CustomerServices}
-                  />
-                  <Route
-                    path="/allergy-information"
-                    component={AllergyInformation}
-                  />
-                  <Route
-                    path="/frequently-asked-questions"
-                    component={FrequentlyAskedQuestions}
-                  />
-                  <Route
-                    path="/delivery-information"
-                    component={DeliveryInformation}
-                  />
-                  <Route path="/contact-us" component={ReturnsPolicy} />
-                  <Route path="/about-us" component={AboutUs} />
-                  <Route path="/privacy-policy" component={PrivacyPolicy} />
-                </Switch>
-              </div>
-              <div className="bottom-banner-image"></div>
-              <Footer />
+                    <Route path="/admin" component={index} />
+                    <Route path="/register" component={Register} />
+                    <Route exact path="/products" component={Products} />
+                    <Route path="/products/:id" component={ProductPage} />
+                    <Route path="/search/:id" component={Search} />
+                    <Route path="/shop" component={Shop} />
+                    <Route path="/new-in" component={NewIn} />
+                    <Route path="/pick-and-mix" component={NewPickAndMix} />
+                    <Route
+                      path="/gifts-and-hampers"
+                      component={GiftsAndHampers}
+                    />
+                    <Route path="/dietary" component={Dietary} />
+                    <Route path="/three" component={Three} />
+                    <Route path="/checkout" component={CheckoutPage} />
+                    <Route path="/success" component={Success} />
+                    {/* <Route path="/checkout2" component={CheckoutPage2} /> */}
+                    {/* static pages */}
+                    <Route
+                      path="/customer-services"
+                      component={CustomerServices}
+                    />
+                    <Route
+                      path="/allergy-information"
+                      component={AllergyInformation}
+                    />
+                    <Route
+                      path="/frequently-asked-questions"
+                      component={FrequentlyAskedQuestions}
+                    />
+                    <Route
+                      path="/delivery-information"
+                      component={DeliveryInformation}
+                    />
+                    <Route path="/contact-us" component={ReturnsPolicy} />
+                    <Route path="/about-us" component={AboutUs} />
+                    <Route path="/privacy-policy" component={PrivacyPolicy} />
+                  </Switch>
+                </div>
+                <div className="bottom-banner-image"></div>
+                <Footer />
+              </ParallaxProvider>
             </AlertProvider>
           </BasketContext.Provider>
         </UserContext.Provider>
@@ -322,6 +327,7 @@ export default function App() {
 
 function Navbar(props) {
   const [mobile, setMobile] = useState(false);
+  const [search, setSearch] = useState("");
 
   const { open, setOpen } = useContext(BasketContext);
 
@@ -339,6 +345,14 @@ function Navbar(props) {
   const redirectToHomepage = () => {
     history.push("/");
     setOpen(false);
+  };
+
+  const classes = useStyles();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    history.push(`/search/${search}`);
+    setSearch("");
   };
 
   return (
@@ -381,7 +395,29 @@ function Navbar(props) {
         </div>
 
         <div className="ck-banner"></div>
-        <ul className="navbar-nav">{props.children}</ul>
+        <div className="menu-searchbar-contianer">
+          <Paper className={classes.root}>
+            <form onSubmit={handleSearchSubmit}>
+              <InputBase
+                className={classes.input}
+                placeholder="Search ... "
+                inputProps={{ "aria-label": "search google maps" }}
+                onChange={(e) => {
+                  setSearch(e.currentTarget.value);
+                }}
+                value={search}
+              />
+              <IconButton
+                type="submit"
+                className={classes.iconButton}
+                aria-label="search"
+              >
+                <SearchIcon />
+              </IconButton>
+            </form>
+          </Paper>
+        </div>
+        <div className="navbar-nav">{props.children}</div>
       </nav>
     </>
   );
@@ -400,7 +436,7 @@ function NavItem(props) {
   );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   searchBar: {
     "& .MuiFormLabel-root.Mui-focused": {
       color: "#ff1694", // or black
@@ -414,7 +450,26 @@ const useStyles = makeStyles({
     borderColor: "#ff1694 !important",
     color: "red",
   },
-});
+  root: {
+    height: 50,
+    padding: "2px 4px",
+    display: "flex",
+    alignItems: "center",
+    width: 500,
+    margin: "auto",
+  },
+  input: {
+    marginLeft: theme.spacing(1),
+    flex: 1,
+  },
+  iconButton: {
+    padding: 10,
+  },
+  divider: {
+    height: 28,
+    margin: 4,
+  },
+}));
 
 function NavItemLogout(props) {
   const { shoppingCart, setShoppingCart, productCost } = useContext(
@@ -484,30 +539,11 @@ function NavItemLogout(props) {
 
   return (
     <>
-      <form className="searchbar" onSubmit={handleSearchChange}>
-        <TextField
-          id="outlined-basic"
-          label="Search product.."
-          variant="outlined"
-          className={classes.searchBar}
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-          InputLabelProps={{
-            classes: {
-              root: classes.cssLabel,
-            },
-          }}
-          InputProps={{
-            classes: {
-              notchedOutline: classes.notchedOutline,
-            },
-          }}
-        />
-      </form>
-      <li className="nav-item" key={"nav-item-2"} onClick={logout}>
-        <a className="icon-button">{props.icon}</a>
-      </li>
+      <div>
+        <li className="nav-item" key={"nav-item-2"} onClick={logout}>
+          <a className="icon-button">{props.icon}</a>
+        </li>
+      </div>
     </>
   );
 }
@@ -526,7 +562,7 @@ function NavItemLogin(props) {
 
   return (
     <>
-      <form className="searchbar" onSubmit={handleSearchChange}>
+      {/* <form className="searchbar" onSubmit={handleSearchChange}>
         <TextField
           id="outlined-basic"
           label="Search product.."
@@ -535,7 +571,7 @@ function NavItemLogin(props) {
             setSearch(e.target.value);
           }}
         />
-      </form>
+      </form> */}
       <li className="nav-item" key={"nav-item"} onClick={login}>
         <a className="icon-button">{props.icon}</a>
       </li>

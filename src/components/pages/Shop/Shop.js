@@ -9,6 +9,24 @@ export const Shop = ({ match }) => {
   const [brand, setBrand] = useState("NONE");
   const [subSubCategory, setSubSubCategory] = useState("NONE");
 
+  useEffect(() => {
+    console.log("reset");
+    setDietary("NONE");
+    setBrand("NONE");
+    setSortByDate(-1);
+
+    let radiobtn = document.getElementById("default-checked-option2");
+    let radiobtn2 = document.getElementById("default-checked-option3");
+    let radiobtn3 = document.getElementById("default-checked-option4");
+    let radiobtn4 = document.getElementById("default-checked-option5");
+    let radiobtn5 = document.getElementById("default-checked-option6");
+    radiobtn.checked = true;
+    radiobtn2.checked = true;
+    radiobtn3.checked = true;
+    radiobtn4.checked = true;
+    radiobtn5.checked = true;
+  }, [subSubCategory]);
+
   const handleRadioButton4 = (e) => {
     setSubSubCategory(e.target.value);
   };
@@ -250,7 +268,7 @@ export const Shop = ({ match }) => {
                 value="NONE"
                 name="radio-button"
                 defaultChecked
-                id="default-checked-option3"
+                id="default-checked-option2"
               />
               NONE
             </label>
@@ -361,7 +379,7 @@ export const Shop = ({ match }) => {
                 value="NONE"
                 name="radio-button"
                 defaultChecked
-                id="default-checked-option"
+                id="default-checked-option3"
               />
               NONE
             </label>
@@ -408,7 +426,7 @@ export const Shop = ({ match }) => {
                 value="-1"
                 name="radio-button"
                 defaultChecked
-                id="default-checked-option2"
+                id="default-checked-option4"
               />
               NEWEST
             </label>
@@ -632,7 +650,7 @@ export const Shop = ({ match }) => {
                   value="-1"
                   name="radio-button"
                   defaultChecked
-                  id="default-checked-option3"
+                  id="default-checked-option5"
                 />
                 NONE
               </label>
@@ -744,7 +762,7 @@ export const Shop = ({ match }) => {
                   value="-1"
                   name="radio-button"
                   defaultChecked
-                  id="default-checked-option2"
+                  id="default-checked-option6"
                 />
                 NEWEST
               </label>

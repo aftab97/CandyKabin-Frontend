@@ -6,11 +6,30 @@ import { useHistory } from "react-router-dom";
 import Emoji from "react-emoji-render";
 import { useAlert } from "react-alert";
 import { Helmet } from "react-helmet";
-import {ReactComponent as DiagonalLine} from "../../../icons/diagonal-line.svg";
- 
+import { ReactComponent as DiagonalLine } from "../../../icons/diagonal-line.svg";
+import {
+  FormControl,
+  InputLabel,
+  makeStyles,
+  MenuItem,
+  Select,
+} from "@material-ui/core";
 
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 140,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+  title: {
+    color: "#ff1694",
+  },
+}));
 
 export const SubCategoryPage = (params) => {
+  const classes = useStyles();
   //set NONE to dietarty by default
   useEffect(() => {
     let radiobtn = document.getElementById("default-checked-option");
@@ -23,7 +42,7 @@ export const SubCategoryPage = (params) => {
   );
 
   let [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(12);
+  const [productsPerPage, setProductsPerPage] = useState(10);
 
   const pageNumbers = [];
   let currentProducts = [];
@@ -34,12 +53,15 @@ export const SubCategoryPage = (params) => {
 
   useEffect(() => {
     //if not subsub category or brand
+
+    console.log(params);
+
     if (params.subCategory === "New In") {
       const grabData = async () => {
         const fetchedData = await Axios.get(
           `${process.env.REACT_APP_URL}/product/newIn?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
         );
-
+        fetchedData.data.sort((a, b) => b.showOnSite - a.showOnSite);
         setProducts(fetchedData.data);
       };
 
@@ -50,6 +72,7 @@ export const SubCategoryPage = (params) => {
           `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
         );
 
+        fetchedData.data.sort((a, b) => b.showOnSite - a.showOnSite);
         setProducts(fetchedData.data);
       };
 
@@ -61,6 +84,7 @@ export const SubCategoryPage = (params) => {
             `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&brand=${params.brand}&date=${params.sortByDate}&dietary=${params.dietary}`
           );
 
+          fetchedData.data.sort((a, b) => b.showOnSite - a.showOnSite);
           setProducts(fetchedData.data);
         };
 
@@ -71,6 +95,7 @@ export const SubCategoryPage = (params) => {
             `${process.env.REACT_APP_URL}/product/products?subCategory=${params.subCategory}&subSubCategory=${params.subSubCategory}&date=${params.sortByDate}&dietary=${params.dietary}`
           );
 
+          fetchedData.data.sort((a, b) => b.showOnSite - a.showOnSite);
           setProducts(fetchedData.data);
         };
         grabData();
@@ -175,13 +200,17 @@ export const SubCategoryPage = (params) => {
         .data
     );
 
-    let discount = e.currentTarget.parentNode.querySelector(".product-discount");
+    let discount = e.currentTarget.parentNode.querySelector(
+      ".product-discount"
+    );
 
-    if (discount !== null){
-      console.log("discount exists")
-      data =  parseFloat(e.currentTarget.parentNode.querySelector(".product-discount").childNodes[1]
-      .data);
-    } 
+    if (discount !== null) {
+      console.log("discount exists");
+      data = parseFloat(
+        e.currentTarget.parentNode.querySelector(".product-discount")
+          .childNodes[1].data
+      );
+    }
 
     let parsedInt = parseFloat(data);
 
@@ -368,10 +397,23 @@ export const SubCategoryPage = (params) => {
             {data.productName}
           </h2>
 
-          {data.discountPrice ? <h3 className="product-price">£{(data.price / 100).toFixed(2)}<div className="discount"></div></h3>:<h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>}
-          
-          {data.discountPrice ? <h3 className="product-discount">£{(data.discountPrice / 100).toFixed(2)}</h3>:<></>}
-          
+          {data.discountPrice ? (
+            <h3 className="product-price">
+              £{(data.price / 100).toFixed(2)}
+              <div className="discount"></div>
+            </h3>
+          ) : (
+            <h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>
+          )}
+
+          {data.discountPrice ? (
+            <h3 className="product-discount">
+              £{(data.discountPrice / 100).toFixed(2)}
+            </h3>
+          ) : (
+            <></>
+          )}
+
           <div className="quantity">
             <button className="product-page-button" onClick={increment}>
               +
@@ -393,8 +435,6 @@ export const SubCategoryPage = (params) => {
         </div>
       )))
     : handleTimeOut();
-
-  
 
   const handlePageChange2 = (e) => {
     if (e.currentTarget.childNodes[0].data === "<") {
@@ -434,6 +474,35 @@ export const SubCategoryPage = (params) => {
           content="Candy Kabin, Rochdale, Delivery information, Candy, Sweets, American, Chocolate, International, Traditional, Pick and Mix, Jolly Rancher, Calypso, M&M's, Sour Patch, Fanta, Nestle, Hershey's, Twix, Kool-Aid"
         />
       </Helmet>
+      <div className="amount-per-page">
+        {
+          <FormControl variant="outlined" className={classes.formControl}>
+            <InputLabel
+              id="demo-simple-select-outlined-label"
+              className={classes.title}
+            >
+              Products Per Page
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-outlined-label"
+              id="demo-simple-select-outlined"
+              value={productsPerPage}
+              onChange={(e) => {
+                setProductsPerPage(e.target.value);
+              }}
+              label="Products Per Page: "
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={40}>Fourty</MenuItem>
+              <MenuItem value={50}>Fifty</MenuItem>
+              <MenuItem value={100}>Hundred</MenuItem>
+            </Select>
+          </FormControl>
+        }
+      </div>
+
       <div className="products-container">{defaultData}</div>
 
       <div className="page-number-container">
