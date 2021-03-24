@@ -144,6 +144,33 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const { userData } = useContext(UserContext);
 
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   autoplay: true,
+  //   autoplaySpeed: 5000,
+  //   slidesToShow: 2,
+  //   slidersToScroll: 1,
+  //   arrows: true,
+  // };
+
+  let settings = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+  };
+  let settingsMain = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+  };
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [expanded2, setExpanded2] = React.useState(false);
@@ -681,6 +708,41 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+        </div>
+        <br />
+        <div className="block-3-new">
+          <Slider {...settings} className="slider-desktop">
+            <div>
+              <a href="/pick-and-mix">
+                <img src={candy2} className="box-img" alt="sweet" />
+                <h2>Pick & Mix</h2>
+              </a>
+            </div>
+            <div>
+              <a href="/new-in/products">
+                <img src={candy1} className="box-img" alt="sweet" />
+                <h2>New In</h2>
+              </a>
+            </div>
+            <div>
+              <a href="/shop/international">
+                <img src={candy3} className="box-img" alt="sweet" />
+                <h2>International</h2>
+              </a>
+            </div>
+            <div>
+              <a href="/shop/traditional">
+                <img src={candy4} className="box-img" alt="sweet" />
+                <h2>Traditional</h2>
+              </a>
+            </div>
+            <div>
+              <a href="/gifts-and-hampers/products">
+                <img src={gifts} className="box-img" alt="sweet" />
+                <h2>Gifts & Hampers</h2>
+              </a>
+            </div>
+          </Slider>
         </div>
 
         <div className="top-selections">

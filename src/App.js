@@ -65,6 +65,7 @@ import Icon from "@material-ui/core/Icon";
 import SearchIcon from "@material-ui/icons/Search";
 import { Success } from "./components/pages/Checkout/Success";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { Ticker, TickerBanner } from "./components/ticker/Ticker";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -234,7 +235,7 @@ export default function App() {
                 <Basket />
                 {/* <Header />
               <Navbar /> */}
-
+                <TickerBanner />
                 <Navbar>
                   {/* <form className="searchbar" onSubmit={handleSearchChange}>
                   <TextField
