@@ -403,13 +403,21 @@ export const SubCategoryPage = (params) => {
               <div className="discount"></div>
             </h3>
           ) : (
-            <h3 className="product-price">£{(data.price / 100).toFixed(2)}</h3>
+            <>
+              <h3 className="product-price">
+                £{(data.price / 100).toFixed(2)}
+              </h3>
+            </>
           )}
 
           {data.discountPrice ? (
-            <h3 className="product-discount">
-              £{(data.discountPrice / 100).toFixed(2)}
-            </h3>
+            <div className="now-discount-container">
+              <h5 className="now-tag">Now</h5>
+
+              <h3 className="product-discount">
+                £{(data.discountPrice / 100).toFixed(2)}
+              </h3>
+            </div>
           ) : (
             <></>
           )}

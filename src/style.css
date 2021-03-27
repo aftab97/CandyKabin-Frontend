@@ -2950,7 +2950,7 @@ body {
 }
 
 .product-price {
-  text-decoration: solid grey line-through;
+  /* text-decoration: solid grey line-through; */
   color: rgba(0, 0, 0, 0.54);
 }
 
@@ -2975,6 +2975,12 @@ body {
 
 .navbar {
   margin-top: 15px;
+}
+h5.now-tag {
+  position: fixed;
+  left: 28%;
+  transform: translateY(6px);
+  color: var(--text-color);
 }
 
 /* ------------------------------------------------- */
@@ -3677,5 +3683,12 @@ body {
   }
   .navbar {
     margin-top: unset;
+  }
+  h5.now-tag {
+    color: var(--text-color);
+    position: fixed;
+    top: 70%;
+    left: 25%;
+    /* text-align: center; */
   }
 }
