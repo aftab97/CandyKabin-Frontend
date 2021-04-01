@@ -2768,7 +2768,7 @@ ul {
 }
 
 .price-2 {
-  color: var(--text-color);
+  /* color: var(--text-color); */
   width: 70px;
 }
 
@@ -2946,7 +2946,7 @@ body {
 }
 
 .price-2 {
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
 }
 
 .product-price {
