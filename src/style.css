@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-  margin-top: 60px;
+  padding-top: 80px;
   min-height: 700px;
 }
 
@@ -343,7 +343,7 @@ body {
 
 .instagram-svg {
   margin-left: 10px;
-  fill: var(--secondary-color);
+  fill: white;
   transition: 0.4s ease;
 }
 
@@ -353,7 +353,7 @@ body {
 
 .facebook-svg {
   margin-left: 10px;
-  fill: var(--secondary-color);
+  fill: white;
   transition: 0.4s ease;
 }
 
@@ -1359,6 +1359,10 @@ nav {
   /* overflow-y: auto; */
 }
 
+.home-page {
+  transform: translate(0, -160px);
+}
+
 .home-page .slick-slide {
   /* box-sizing: border-box; */
   /* width: 900px; */
@@ -1528,7 +1532,7 @@ nav {
   background-color: var(--secondary-color);
   border-radius: 25px;
   margin-top: 80px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .static-page-title-container {
@@ -1651,7 +1655,7 @@ label > input {
   background-color: white;
   padding: 5px;
   border-radius: 10px;
-  margin-top: 5px;
+  margin-top: 25px;
   margin-bottom: 5px;
 }
 .i-go-back-button-inner-container {
@@ -1914,21 +1918,23 @@ ul {
 }
 
 .nav-item-text h2 {
-  color: var(--text-color);
+  color: white;
 }
 .icon-button-text {
   display: flex;
   flex-direction: row;
+  cursor: pointer;
+
   /* padding-right: 40px; */
 }
 .icon-button-text svg {
-  fill: var(--text-color);
+  fill: white;
   width: 20px;
   height: 20px;
 }
 
 .icon-button path {
-  fill: var(--text-color);
+  fill: white;
 }
 
 /* Dropdown Menu */
@@ -1958,6 +1964,15 @@ ul {
   border-radius: var(--border-radius);
   transition: background var(--speed);
   padding: 0.5rem;
+  cursor: pointer !important;
+}
+
+.shop-back-link {
+  color: var(--text-color) !important;
+}
+
+.shop-back-link-icon path {
+  fill: var(--text-color);
 }
 
 .menu-item a {
@@ -2050,6 +2065,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 100px;
 }
 
 .block-1-new > img {
@@ -2124,6 +2140,7 @@ ul {
 }
 
 .slider-block {
+  padding-top: 100px;
   background-color: var(--primary-color);
 }
 
@@ -2185,7 +2202,9 @@ ul {
 
 .block-4-new {
   padding: 20px;
+  color: white;
   text-align: center;
+  margin-top: 60px;
 }
 
 .block-1 {
@@ -2423,7 +2442,7 @@ ul {
   background-repeat: repeat-x;
   background-size: 400px;
 
-  background-color: white;
+  background-color: var(--primary-color);
   padding: 20px;
   z-index: 2;
   /* background-position-x: left; */
@@ -2727,7 +2746,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  padding-bottom: 40px;
 }
 .card-2 {
   transform-style: preserve-3d;
@@ -2852,7 +2871,7 @@ button.active-quantity {
   min-height: 100px;
   border-bottom: unset;
   background-image: unset;
-  border-bottom: 2px solid var(--text-color);
+  border-bottom: 2px solid white;
   height: unset;
   justify-content: space-around;
   background-color: unset;
@@ -2910,7 +2929,8 @@ body {
 }
 /* --------------------- HOME PAGE ------------------*/
 .container {
-  margin-top: 100px;
+  /* padding-top: 1px; */
+  background-color: var(--primary-color);
 }
 .top-selections {
   padding-top: 10px;
@@ -2963,7 +2983,7 @@ body {
 }
 
 .block-3-new {
-  background-color: unset;
+  /* background-color: unset; */
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -2974,7 +2994,7 @@ body {
 }
 
 .navbar {
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 h5.now-tag {
   position: fixed;
@@ -2984,6 +3004,63 @@ h5.now-tag {
 }
 
 /* ------------------------------------------------- */
+
+/* NEW HOME PAGE */
+.homepage-container-new {
+  padding-left: 50px;
+  padding-right: 50px;
+  border: grey;
+}
+.homepage-top-slider-individual {
+  width: 100%;
+}
+
+.homepage-banner-1 {
+  background-color: #e5348b;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-banner-2 {
+  background-color: #34c1e2;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.homepage-banner-3 {
+  background-color: #e5348b;
+  height: 50px;
+  color: white;
+}
+
+.homepage-banner-3-links {
+  display: flex;
+  /* padding: 5px; */
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a.homepage-banner-3-links-last {
+  margin-left: 25%;
+}
+
+.shop {
+  margin-bottom: unset;
+}
+
+.shop {
+  padding-top: 50px;
+}
+
+.container-2 {
+  background-color: white;
+}
 
 @media only screen and (max-width: 600px) {
   html,
@@ -3559,9 +3636,16 @@ h5.now-tag {
     width: 48vw;
   }
   .sneaker img {
-    width: 20rem;
+    width: 15rem;
   }
 
+  .navbar {
+    border-bottom: 1px solid var(--text-color);
+  }
+
+  .static-page-title-container {
+    padding-top: 10px;
+  }
   .container-2:hover .info {
     transition-duration: none;
     transition-property: none;
@@ -3594,6 +3678,37 @@ h5.now-tag {
 
   .i-quantity button {
     padding: 0.5rem 1.5rem;
+  }
+
+  .instagram-svg {
+    fill: var(--text-color);
+  }
+  .facebook-svg {
+    fill: var(--text-color);
+  }
+
+  .icon-button path {
+    fill: var(--text-color);
+  }
+
+  .icon-button-text {
+    fill: var(--text-color);
+  }
+
+  .icon-button-text svg path {
+    fill: var(--text-color);
+  }
+
+  .nav-item-text h2 {
+    color: var(--text-color);
+  }
+
+  .block-1 {
+    background-color: var(--primary-color);
+  }
+
+  .block-2 {
+    background-color: var(--primary-color);
   }
 }
 

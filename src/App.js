@@ -66,6 +66,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Success } from "./components/pages/Checkout/Success";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Ticker, TickerBanner } from "./components/ticker/Ticker";
+import { NewHome } from "./components/pages/NewHome";
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -235,7 +236,7 @@ export default function App() {
                 <Basket />
                 {/* <Header />
               <Navbar /> */}
-                <TickerBanner />
+                {/* <TickerBanner /> */}
                 <Navbar>
                   {/* <form className="searchbar" onSubmit={handleSearchChange}>
                   <TextField
@@ -273,6 +274,7 @@ export default function App() {
                 >
                   <Switch>
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/newhome" component={NewHome} />
                     <Route path="/login" component={Login} />
                     {/* <Route path="/adminLogin" component={AdminLogin} />
                 <Route path="/adminSummary" component={AdminSummary} /> */}
@@ -764,8 +766,11 @@ function DropdownMenu() {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>SHOP</h2>
+          <DropdownItem
+            goToMenu="main"
+            leftIcon={<ArrowIcon className="shop-back-link-icon" />}
+          >
+            <h2 className="shop-back-link">SHOP</h2>
           </DropdownItem>
           <DropdownItem leftIcon={"🌎"}>
             <Link to="/shop/international" onClick={() => setOpen(!open)}>

@@ -499,9 +499,10 @@ export const ProductPage = ({ match, location, history }) => {
 
               <div
                 className="container-2 "
+                style={{ backgroundColor: "unset" }}
                 // onMouseMove={handleMouseMove} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
               >
-                <div className="card-2">
+                <div className="card-2" style={{ backgroundColor: "white" }}>
                   <div className="sneaker">
                     <div className="circle"></div>
                     <img
