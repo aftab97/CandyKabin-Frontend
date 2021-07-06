@@ -842,6 +842,19 @@ export const Shop = ({ match }) => {
           />
         )}
       />
+      <Route
+        path="/shop/wholesale"
+        exact
+        render={() => (
+          <SubCategoryPage
+            subCategory="Wholesale"
+            subSubCategory={subSubCategory}
+            brand="NA"
+            dietary={dietary}
+            sortByDate={sortByDate}
+          />
+        )}
+      />
     </div>
   );
 };

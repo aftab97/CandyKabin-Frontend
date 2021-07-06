@@ -475,9 +475,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function NavItemLogout(props) {
-  const { shoppingCart, setShoppingCart, productCost } = useContext(
-    BasketContext
-  );
+  const { shoppingCart, setShoppingCart, productCost } =
+    useContext(BasketContext);
   const { userData, setUserData } = useContext(UserContext);
 
   const classes = useStyles();
@@ -687,6 +686,16 @@ function DropdownMenu() {
             goToMenu="shop"
           >
             SHOP
+          </DropdownItem>
+          <DropdownItem leftIcon={"📦"}>
+            <Link
+              to={"/shop/wholesale"}
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              WHOLESALE
+            </Link>
           </DropdownItem>
           <DropdownItem leftIcon={"🎁"}>
             <Link

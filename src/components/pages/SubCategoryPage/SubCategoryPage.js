@@ -37,9 +37,8 @@ export const SubCategoryPage = (params) => {
   }, []);
 
   const [products, setProducts] = useState();
-  const { shoppingCart, setShoppingCart, count, incrementCounter } = useContext(
-    BasketContext
-  );
+  const { shoppingCart, setShoppingCart, count, incrementCounter } =
+    useContext(BasketContext);
 
   let [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(10);
@@ -155,6 +154,16 @@ export const SubCategoryPage = (params) => {
         sweetsAndCandyMobile.style.display = "block";
         pickAndMixMobile.style.display = "none";
         traditionalMobile.style.display = "none";
+      } else if (params.subCategory === "Wholesale") {
+        international.style.display = "none";
+        sweetsAndCandy.style.display = "none";
+        pickAndMix.style.display = "none";
+        traditional.style.display = "none";
+
+        internationalMobile.style.display = "none";
+        sweetsAndCandyMobile.style.display = "none";
+        pickAndMixMobile.style.display = "none";
+        traditionalMobile.style.display = "none";
       } else if (params.subCategory === "Pick And Mix") {
         international.style.display = "none";
         sweetsAndCandy.style.display = "none";
@@ -200,9 +209,8 @@ export const SubCategoryPage = (params) => {
         .data
     );
 
-    let discount = e.currentTarget.parentNode.querySelector(
-      ".product-discount"
-    );
+    let discount =
+      e.currentTarget.parentNode.querySelector(".product-discount");
 
     if (discount !== null) {
       console.log("discount exists");
@@ -218,9 +226,9 @@ export const SubCategoryPage = (params) => {
       e.currentTarget.parentNode.querySelector(".amount").childNodes[0].data
     );
 
-    let nonParsedWeight = e.currentTarget.parentNode.querySelector(
-      ".product-weight"
-    ).childNodes[0].data;
+    let nonParsedWeight =
+      e.currentTarget.parentNode.querySelector(".product-weight").childNodes[0]
+        .data;
 
     let weight = parseInt(nonParsedWeight);
 

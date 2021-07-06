@@ -8,6 +8,7 @@ export const AddProducts = () => {
   const [traditional, settraditional] = useState(false);
   const [clearance, setclearance] = useState(false);
   const [giftsAndHampers, setGiftsAndHampers] = useState(false);
+  const [wholeSale, setWholeSale] = useState(false);
 
   const [category, setCategory] = useState(undefined);
   const [subCategory, setSubCategory] = useState(undefined);
@@ -125,6 +126,18 @@ export const AddProducts = () => {
       setSubCategory("Gifts And Hampers");
       brands.style.display = "none";
       category.style.display = "none";
+    } else if (e.target.value === "wholesale") {
+      setInternational(false);
+      setsweetsAndCandy(false);
+      setpickAndMix(false);
+      settraditional(false);
+      setclearance(false);
+      setGiftsAndHampers(false);
+      setWholeSale(true);
+      setCategory("Shop");
+      setSubCategory("Wholesale");
+      brands.style.display = "block";
+      category.style.display = "block";
     }
   };
 
@@ -791,6 +804,10 @@ export const AddProducts = () => {
                 name="radio-button"
               />
               gifts and hampers
+            </label>
+            <label>
+              <input type="radio" value="wholesale" name="radio-button" />
+              wholesale
             </label>
           </form>
         </ul>
